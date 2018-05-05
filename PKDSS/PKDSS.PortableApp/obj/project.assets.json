@@ -7906,11 +7906,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Jobs\\balitanah\\PKDSS\\PKDSS.PortableApp\\PKDSS.PortableApp.csproj",
+      "projectUniqueName": "C:\\Jobs\\balitanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.PortableApp\\PKDSS.PortableApp.csproj",
       "projectName": "PKDSS.PortableApp",
-      "projectPath": "C:\\Jobs\\balitanah\\PKDSS\\PKDSS.PortableApp\\PKDSS.PortableApp.csproj",
+      "projectPath": "C:\\Jobs\\balitanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.PortableApp\\PKDSS.PortableApp.csproj",
       "packagesPath": "C:\\Users\\mifma\\.nuget\\packages\\",
-      "outputPath": "C:\\Jobs\\balitanah\\PKDSS\\PKDSS.PortableApp\\obj\\",
+      "outputPath": "C:\\Jobs\\balitanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.PortableApp\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -7935,8 +7935,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\Jobs\\balitanah\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj": {
-              "projectPath": "C:\\Jobs\\balitanah\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj"
+            "C:\\Jobs\\balitanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj": {
+              "projectPath": "C:\\Jobs\\balitanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj"
             }
           }
         }

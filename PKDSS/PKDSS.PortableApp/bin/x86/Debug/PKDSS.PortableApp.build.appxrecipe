@@ -10,22 +10,22 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>4357cfae-05bf-444c-864c-2a44d8e56222</PackageIdentityName>
     <PackageIdentityPublisher>CN=mifma</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Jobs\balitanah\PKDSS\PKDSS.PortableApp\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Jobs\balitanah\PKDSS\PKDSS.PortableApp\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\x86\Debug\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Jobs\balitanah\PKDSS\PKDSS.PortableApp\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Jobs\balitanah\PKDSS\PKDSS.PortableApp\bin\x86\Debug\PKDSS.PortableApp.exe">
+    <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\x86\Debug\PKDSS.PortableApp.exe">
       <PackagePath>entrypoint\PKDSS.PortableApp.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mifma\.nuget\packages\colorcode.core\2.0.3\lib\netstandard1.4\ColorCode.Core.dll">
@@ -562,7 +562,7 @@
     <AppxPackagedFile Include="C:\Users\mifma\.nuget\packages\win2d.uwp\1.21.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Jobs\balitanah\PKDSS\PKDSS.CoreLibrary\bin\Debug\netstandard2.0\PKDSS.CoreLibrary.dll">
+    <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\bin\Debug\netstandard2.0\PKDSS.CoreLibrary.dll">
       <PackagePath>PKDSS.CoreLibrary.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mifma\.nuget\packages\robmikh.compositionsurfacefactory\0.7.3\lib\uap10.0\Robmikh.CompositionSurfaceFactory.winmd">
@@ -571,37 +571,37 @@
     <AppxPackagedFile Include="C:\Users\mifma\.nuget\packages\win2d.uwp\1.21.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Jobs\balitanah\PKDSS\PKDSS.PortableApp\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Jobs\balitanah\PKDSS\PKDSS.PortableApp\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Jobs\balitanah\PKDSS\PKDSS.PortableApp\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Jobs\balitanah\PKDSS\PKDSS.PortableApp\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Jobs\balitanah\PKDSS\PKDSS.PortableApp\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Jobs\balitanah\PKDSS\PKDSS.PortableApp\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Jobs\balitanah\PKDSS\PKDSS.PortableApp\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Jobs\balitanah\PKDSS\PKDSS.PortableApp\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Jobs\balitanah\PKDSS\PKDSS.PortableApp\bin\x86\Debug\PKDSS.PortableApp.xr.xml">
+    <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\x86\Debug\PKDSS.PortableApp.xr.xml">
       <PackagePath>PKDSS.PortableApp.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17125.0\Windows.winmd">
@@ -727,11 +727,11 @@
     <AppxPackagedFile Include="C:\Users\mifma\.nuget\packages\microsoft.toolkit.uwp.ui.controls\2.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\TileControl\TileControl.xaml">
       <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\TileControl\TileControl.xaml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Jobs\balitanah\PKDSS\PKDSS.PortableApp\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Jobs\balitanah\PKDSS\PKDSS.PortableApp\bin\x86\Debug\Core\PKDSS.PortableApp.exe">
+    <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\x86\Debug\Core\PKDSS.PortableApp.exe">
       <PackagePath>PKDSS.PortableApp.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

@@ -1,0 +1,65 @@
+[
+  {
+    "No": 1,
+    "Tanaman": "Padi",
+    "C1": 3.5477,
+    "C2": 0.004433,
+    "Pupuk": "Urea"
+  },
+  {
+    "No": 2,
+    "Tanaman": "Padi",
+    "C1": 0.024152,
+    "C2": 0.00667,
+    "Pupuk": "SP36"
+  },
+  {
+    "No": 3,
+    "Tanaman": "Padi",
+    "C1": 0.059912,
+    "C2": 0.004799,
+    "Pupuk": "KCL"
+  },
+  {
+    "No": 4,
+    "Tanaman": "Jagung",
+    "C1": 22.002,
+    "C2": 0.00351,
+    "Pupuk": "Urea"
+  },
+  {
+    "No": 5,
+    "Tanaman": "Jagung",
+    "C1": 0.01334,
+    "C2": 0.01413,
+    "Pupuk": "SP36"
+  },
+  {
+    "No": 6,
+    "Tanaman": "Jagung",
+    "C1": 1.6259,
+    "C2": 0.00269,
+    "Pupuk": "KCL"
+  },
+  {
+    "No": 7,
+    "Tanaman": "Kedelai",
+    "C1": 3.0824,
+    "C2": 0.010375,
+    "Pupuk": "Urea"
+  },
+  {
+    "No": 8,
+    "Tanaman": "Kedelai",
+    "C1": 0.41157,
+    "C2": 0.00255,
+    "Pupuk": "SP36"
+  },
+  {
+    "No": 9,
+    "Tanaman": "Kedelai",
+    "C1": 2.6289,
+    "C2": 0.008224,
+    "Pupuk": "KCL"
+  }
+]

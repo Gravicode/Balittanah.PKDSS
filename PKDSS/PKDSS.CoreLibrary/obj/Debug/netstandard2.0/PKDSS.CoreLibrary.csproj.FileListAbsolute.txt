@@ -9,3 +9,14 @@ C:\Jobs\balitanah\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLib
 C:\Jobs\balitanah\PKDSS\PKDSS.CoreLibrary\bin\Debug\netstandard2.0\PKDSS.CoreLibrary.pdb
 C:\Jobs\balitanah\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.dll
 C:\Jobs\balitanah\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.pdb
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\bin\Debug\netstandard2.0\PKDSS.CoreLibrary.deps.json
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\bin\Debug\netstandard2.0\PKDSS.CoreLibrary.dll
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\bin\Debug\netstandard2.0\PKDSS.CoreLibrary.pdb
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.csprojResolveAssemblyReference.cache
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.Properties.Resources.resources
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.csproj.GenerateResource.cache
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.csproj.CoreCompileInputs.cache
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.AssemblyInfoInputs.cache
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.AssemblyInfo.cs
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.dll
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.pdb
