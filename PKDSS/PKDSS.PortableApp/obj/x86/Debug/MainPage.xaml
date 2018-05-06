@@ -20,11 +20,13 @@
             
         </StackPanel>
         <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="20">
-            <Button x:ConnectionId='2' FontSize="28" Width="900" Height="70" Content="Entry/Edit Data Hasil Uji Tanah" Name="BtnEntry"></Button>
-            <Button x:ConnectionId='3' FontSize="28" Width="900" Height="70" Content="Rekomendasi Pemupukan" Name="BtnRekomendasi"></Button>
-            <Button x:ConnectionId='4' FontSize="28" Width="900" Height="70" Content="Update Kriteria Dosis Pemupukan" Name="BtnUpdate"></Button>
-            <Button x:ConnectionId='5' FontSize="28" Width="900" Height="70" Content="Pengaturan File Data" Name="BtnPengaturan"></Button>
-            <Button x:ConnectionId='6' FontSize="28" Width="900" Height="70" Content="Tentang PKDSS dan User Manual" Name="BtnAbout"></Button>
+            <Button x:ConnectionId='1' FontSize="28" Width="900" Height="60" Content="Entry/Edit Data Hasil Uji Tanah" Name="BtnEntry"></Button>
+            <Button x:ConnectionId='2' FontSize="28" Width="900" Height="60" Content="Rekomendasi Pemupukan" Name="BtnRekomendasi"></Button>
+            <Button x:ConnectionId='3' FontSize="28" Width="900" Height="60" Content="Update Kriteria Dosis Pemupukan" Name="BtnUpdate"></Button>
+            <Button x:ConnectionId='4' FontSize="28" Width="900" Height="60" Content="Pengaturan File Data" Name="BtnPengaturan"></Button>
+            <Button x:ConnectionId='5' FontSize="28" Width="900" Height="60" Content="Tentang PKDSS dan User Manual" Name="BtnAbout"></Button>
+            <Button x:ConnectionId='6' FontSize="28" Width="900" Height="60" Content="Keluar" Name="BtnExit"></Button>
+
         </StackPanel>
         <StackPanel Grid.Row="2" Margin="0,0,0,10" >
             <TextBlock  HorizontalTextAlignment="Center" Text="BADAN PENELITIAN DAN PENGEMBANGAN PERTANIAN" FontSize="28"></TextBlock>

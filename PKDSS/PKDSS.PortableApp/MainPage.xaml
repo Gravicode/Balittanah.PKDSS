@@ -8,27 +8,32 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Vertical">
-            <TextBlock HorizontalTextAlignment="Center" Text="Phosporus and Pottasium Decission Support System" FontSize="40"></TextBlock>
-            <TextBlock  HorizontalTextAlignment="Center" Text="PKDSS - Version 1.0, Copyright BBSDLP 2018"></TextBlock>
-            <TextBlock  HorizontalTextAlignment="Center" Text="PKDSS is a Fertilizer recommendation model used as a tool in determining fertilizer requirement for a given crop based on soil testing."></TextBlock>
+            <TextBlock HorizontalTextAlignment="Center" Text="Phosporus and Pottasium Decission Support System" FontSize="48"></TextBlock>
+            <TextBlock  HorizontalTextAlignment="Center" Text="PKDSS - Version 1.0, Copyright BBSDLP 2018" FontSize="25"></TextBlock>
+            <TextBlock  HorizontalTextAlignment="Center" Text="PKDSS is a Fertilizer recommendation model used as a tool in determining fertilizer requirement for a given crop based on soil testing." FontSize="18"></TextBlock>
             
         </StackPanel>
         <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="20">
-            <Button FontSize="28" Width="900" Height="70" Content="Entry/Edit Data Hasil Uji Tanah" Name="BtnEntry"></Button>
-            <Button FontSize="28" Width="900" Height="70" Content="Rekomendasi Pemupukan" Name="BtnRekomendasi"></Button>
-            <Button FontSize="28" Width="900" Height="70" Content="Update Kriteria Dosis Pemupukan" Name="BtnUpdate"></Button>
-            <Button FontSize="28" Width="900" Height="70" Content="Pengaturan File Data" Name="BtnPengaturan"></Button>
-            <Button FontSize="28" Width="900" Height="70" Content="Tentang PKDSS dan User Manual" Name="BtnAbout"></Button>
+            <Button FontSize="28" Width="900" Height="100" Content="Entry/Edit Data Hasil Uji Tanah" Name="BtnEntry"></Button>
+            <Button FontSize="28" Width="900" Height="100" Content="Rekomendasi Pemupukan" Name="BtnRekomendasi"></Button>
+            <Button FontSize="28" Width="900" Height="100" Content="Update Kriteria Dosis Pemupukan" Name="BtnUpdate"></Button>
+            <Button FontSize="28" Width="900" Height="100" Content="Pengaturan File Data" Name="BtnPengaturan"></Button>
+            <Button FontSize="28" Width="900" Height="100" Content="Tentang PKDSS dan User Manual" Name="BtnAbout"></Button>
+            <Button FontSize="28" Width="900" Height="100" Content="Keluar" Name="BtnExit"></Button>
+
         </StackPanel>
-        <StackPanel Grid.Row="2" Margin="0,0,0,10" >
-            <TextBlock  HorizontalTextAlignment="Center" Text="BADAN PENELITIAN DAN PENGEMBANGAN PERTANIAN" FontSize="28"></TextBlock>
-            <TextBlock  HorizontalTextAlignment="Center" Text="KEMENTERIAN PERTANIAN" FontSize="28"></TextBlock>
+        <StackPanel Grid.Row="2" Margin="0,0,0,20" >
+            <TextBlock  HorizontalTextAlignment="Center" Text="BADAN PENELITIAN DAN PENGEMBANGAN PERTANIAN" FontSize="32"></TextBlock>
+            <TextBlock  HorizontalTextAlignment="Center" Text="KEMENTERIAN PERTANIAN" FontSize="32"></TextBlock>
         </StackPanel>
         
     </Grid>

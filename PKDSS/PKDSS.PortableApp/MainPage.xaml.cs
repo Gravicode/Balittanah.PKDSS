@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Popups;
@@ -36,6 +37,8 @@ namespace PKDSS.PortableApp
             BtnPengaturan.Click += AllButton_Click;
             BtnRekomendasi.Click += AllButton_Click;
             BtnUpdate.Click += AllButton_Click;
+            BtnExit.Click += AllButton_Click;
+            BtnExit.Visibility = Visibility.Collapsed;
             /*
             var newWidth = this.Width / 2;
             BtnEntry.Width = newWidth;
@@ -53,6 +56,9 @@ namespace PKDSS.PortableApp
             {
                 case "BtnEntry":
                     Frame.Navigate(typeof(EntryPage),"Nothing");
+                    break;
+                case "BtnExit":
+                    CoreApplication.Exit();
                     break;
                 default:
                     var dialog = new MessageDialog("Maaf, menu belum tersedia");

@@ -1,1 +1,1 @@
-C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\PKDSS.PortableApp.csproj;x86
+C:\jobs\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\PKDSS.PortableApp.csproj;x86

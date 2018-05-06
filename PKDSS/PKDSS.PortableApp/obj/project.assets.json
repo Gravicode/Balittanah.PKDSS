@@ -5078,10 +5078,10 @@
       "type": "package",
       "path": "microsoft.net.native.sharedlibrary-arm/2.0.0",
       "files": [
+        "Microsoft.Net.Native.SharedLibrary-arm.2.0.0.nupkg.sha512",
+        "Microsoft.Net.Native.SharedLibrary-arm.nuspec",
         "build/Microsoft.Net.Native.SharedLibrary-arm.props",
         "build/Microsoft.Net.Native.SharedLibrary-arm.targets",
-        "microsoft.net.native.sharedlibrary-arm.2.0.0.nupkg.sha512",
-        "microsoft.net.native.sharedlibrary-arm.nuspec",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.Concurrent.iltoc",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.Concurrent.iltocpdb",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.iltoc",
@@ -5429,10 +5429,10 @@
       "type": "package",
       "path": "microsoft.net.native.sharedlibrary-x64/2.0.0",
       "files": [
+        "Microsoft.Net.Native.SharedLibrary-x64.2.0.0.nupkg.sha512",
+        "Microsoft.Net.Native.SharedLibrary-x64.nuspec",
         "build/Microsoft.Net.Native.SharedLibrary-x64.props",
         "build/Microsoft.Net.Native.SharedLibrary-x64.targets",
-        "microsoft.net.native.sharedlibrary-x64.2.0.0.nupkg.sha512",
-        "microsoft.net.native.sharedlibrary-x64.nuspec",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.Concurrent.iltoc",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.Concurrent.iltocpdb",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.iltoc",
@@ -5780,10 +5780,10 @@
       "type": "package",
       "path": "microsoft.net.native.sharedlibrary-x86/2.0.0",
       "files": [
+        "Microsoft.Net.Native.SharedLibrary-x86.2.0.0.nupkg.sha512",
+        "Microsoft.Net.Native.SharedLibrary-x86.nuspec",
         "build/Microsoft.Net.Native.SharedLibrary-x86.props",
         "build/Microsoft.Net.Native.SharedLibrary-x86.targets",
-        "microsoft.net.native.sharedlibrary-x86.2.0.0.nupkg.sha512",
-        "microsoft.net.native.sharedlibrary-x86.nuspec",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.Concurrent.iltoc",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.Concurrent.iltocpdb",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.iltoc",
@@ -6148,10 +6148,10 @@
       "path": "microsoft.netcore.platforms/2.0.0",
       "files": [
         "LICENSE.TXT",
+        "Microsoft.NETCore.Platforms.2.0.0.nupkg.sha512",
+        "Microsoft.NETCore.Platforms.nuspec",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.2.0.0.nupkg.sha512",
-        "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -6585,6 +6585,8 @@
       "path": "netstandard.library/2.0.1",
       "files": [
         "LICENSE.TXT",
+        "NETStandard.Library.2.0.1.nupkg.sha512",
+        "NETStandard.Library.nuspec",
         "THIRD-PARTY-NOTICES.TXT",
         "build/NETStandard.Library.targets",
         "build/netstandard2.0/NETStandard.Library.targets",
@@ -6702,9 +6704,7 @@
         "build/netstandard2.0/ref/mscorlib.dll",
         "build/netstandard2.0/ref/netstandard.dll",
         "build/netstandard2.0/ref/netstandard.xml",
-        "lib/netstandard1.0/_._",
-        "netstandard.library.2.0.1.nupkg.sha512",
-        "netstandard.library.nuspec"
+        "lib/netstandard1.0/_._"
       ]
     },
     "Newtonsoft.Json/11.0.2": {
@@ -7906,11 +7906,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Jobs\\balitanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.PortableApp\\PKDSS.PortableApp.csproj",
+      "projectUniqueName": "C:\\jobs\\Balittanah.PKDSS\\PKDSS\\PKDSS.PortableApp\\PKDSS.PortableApp.csproj",
       "projectName": "PKDSS.PortableApp",
-      "projectPath": "C:\\Jobs\\balitanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.PortableApp\\PKDSS.PortableApp.csproj",
+      "projectPath": "C:\\jobs\\Balittanah.PKDSS\\PKDSS\\PKDSS.PortableApp\\PKDSS.PortableApp.csproj",
       "packagesPath": "C:\\Users\\mifma\\.nuget\\packages\\",
-      "outputPath": "C:\\Jobs\\balitanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.PortableApp\\obj\\",
+      "outputPath": "C:\\jobs\\Balittanah.PKDSS\\PKDSS\\PKDSS.PortableApp\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -7926,17 +7926,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\experiment\\TinyCLR\\TinyCLR6\\nuget": {},
-        "C:\\experiment\\TinyCLR\\TinyCLR9\\TinyCLR OS Libraries v0.9.0": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://dotnet.myget.org/F/aspnetcore-ci-dev/api/v3/index.json": {},
-        "https://www.myget.org/F/nanoframework-dev/api/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\Jobs\\balitanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj": {
-              "projectPath": "C:\\Jobs\\balitanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj"
+            "C:\\jobs\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj": {
+              "projectPath": "C:\\jobs\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj"
             }
           }
         }
