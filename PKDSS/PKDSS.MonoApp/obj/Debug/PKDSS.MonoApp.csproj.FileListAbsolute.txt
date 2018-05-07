@@ -1,0 +1,16 @@
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\PKDSS.MonoApp.exe.config
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\PKDSS.MonoApp.exe
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\PKDSS.MonoApp.pdb
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\PKDSS.CoreLibrary.dll
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\PKDSS.CoreLibrary.pdb
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.csprojResolveAssemblyReference.cache
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.Form1.resources
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.Properties.Resources.resources
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.csproj.GenerateResource.cache
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.csproj.CoreCompileInputs.cache
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.csproj.CopyComplete
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.exe
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.pdb
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.EntryFrm.resources
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\Newtonsoft.Json.dll
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\Newtonsoft.Json.xml
