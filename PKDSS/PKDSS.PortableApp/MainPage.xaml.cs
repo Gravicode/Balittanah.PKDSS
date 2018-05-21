@@ -39,6 +39,7 @@ namespace PKDSS.PortableApp
             BtnUpdate.Click += AllButton_Click;
             BtnExit.Click += AllButton_Click;
             BtnExit.Visibility = Visibility.Collapsed;
+            CoreLibrary.LocationHelper.Init();
             /*
             var newWidth = this.Width / 2;
             BtnEntry.Width = newWidth;

@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\jobs\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\ARM\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-06T04:02:21.278</Modified>
+      <Modified>2018-05-21T21:06:54.070</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\jobs\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\ARM\Debug\PKDSS.PortableApp.exe">
       <PackagePath>entrypoint\PKDSS.PortableApp.exe</PackagePath>
-      <Modified>2018-05-06T04:02:19.242</Modified>
+      <Modified>2018-05-21T21:06:52.432</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mifma\.nuget\packages\colorcode.core\2.0.3\lib\netstandard1.4\ColorCode.Core.dll">
       <PackagePath>ColorCode.Core.dll</PackagePath>
@@ -753,7 +753,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\jobs\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\bin\Debug\netstandard2.0\PKDSS.CoreLibrary.dll">
       <PackagePath>PKDSS.CoreLibrary.dll</PackagePath>
-      <Modified>2018-05-05T11:24:48.705</Modified>
+      <Modified>2018-05-21T21:04:41.302</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mifma\.nuget\packages\robmikh.compositionsurfacefactory\0.7.3\lib\uap10.0\Robmikh.CompositionSurfaceFactory.winmd">
       <PackagePath>Robmikh.CompositionSurfaceFactory.winmd</PackagePath>
@@ -972,11 +972,11 @@
     <AppxPackagedFile Include="C:\jobs\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-06T04:02:20.082</Modified>
+      <Modified>2018-05-21T21:06:53.205</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\jobs\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\ARM\Debug\Core\PKDSS.PortableApp.exe">
       <PackagePath>PKDSS.PortableApp.exe</PackagePath>
-      <Modified>2018-05-06T04:02:21.271</Modified>
+      <Modified>2018-05-21T21:06:54.070</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
