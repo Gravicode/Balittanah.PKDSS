@@ -7,6 +7,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Resources" />
       <RootProperty Name="Content" />
+      <RootProperty Name="Background" />
     </RootType>
     <RootType FullName="Microsoft.Toolkit.Uwp.UI.Controls.Expander">
       <RootProperty Name="HeaderTemplate" />
@@ -33,6 +34,8 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="HorizontalTextAlignment" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="FontWeight" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
@@ -55,6 +58,8 @@
       <RootProperty Name="Spacing" />
       <RootProperty Name="Name" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="Padding" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Name" />
@@ -64,6 +69,7 @@
       <RootProperty Name="Width" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Height" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
@@ -100,5 +106,6 @@
       <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="PKDSS.PortableApp.MainPage" />
+    <RootType FullName="PKDSS.PortableApp.SensorPage" />
   </Roots.RootTypes>
 </Roots>

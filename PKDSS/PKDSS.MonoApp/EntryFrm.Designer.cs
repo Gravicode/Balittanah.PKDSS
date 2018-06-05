@@ -125,6 +125,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.AutoScroll = true;
             this.tabPage1.Controls.Add(this.TxtNoSample);
             this.tabPage1.Controls.Add(this.label32);
             this.tabPage1.Controls.Add(this.TxtNoHorizon);
@@ -436,6 +437,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.AutoScroll = true;
             this.tabPage2.Controls.Add(this.TxtKejenuhanBasa);
             this.tabPage2.Controls.Add(this.label36);
             this.tabPage2.Controls.Add(this.TxtAldd);
@@ -737,6 +739,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.AutoScroll = true;
             this.tabPage3.Controls.Add(this.BtnBack);
             this.tabPage3.Controls.Add(this.BtnCalculate);
             this.tabPage3.Controls.Add(this.TxtKCL);

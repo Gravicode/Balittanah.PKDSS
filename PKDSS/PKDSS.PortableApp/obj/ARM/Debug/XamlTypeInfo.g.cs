@@ -204,7 +204,7 @@ namespace PKDSS.PortableApp.PKDSS_PortableApp_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[17];
+            _typeNameTable = new string[18];
             _typeNameTable[0] = "Microsoft.Toolkit.Uwp.UI.Controls.Expander";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.ContentControl";
             _typeNameTable[2] = "String";
@@ -219,11 +219,12 @@ namespace PKDSS.PortableApp.PKDSS_PortableApp_XamlTypeInfo
             _typeNameTable[11] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[12] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[13] = "PKDSS.PortableApp.MainPage";
-            _typeNameTable[14] = "Microsoft.Toolkit.Uwp.UI.Extensions.NavigationViewExtensions";
-            _typeNameTable[15] = "Int32";
-            _typeNameTable[16] = "Windows.UI.Xaml.Controls.NavigationView";
+            _typeNameTable[14] = "PKDSS.PortableApp.SensorPage";
+            _typeNameTable[15] = "Microsoft.Toolkit.Uwp.UI.Extensions.NavigationViewExtensions";
+            _typeNameTable[16] = "Int32";
+            _typeNameTable[17] = "Windows.UI.Xaml.Controls.NavigationView";
 
-            _typeTable = new global::System.Type[17];
+            _typeTable = new global::System.Type[18];
             _typeTable[0] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.Expander);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
             _typeTable[2] = typeof(global::System.String);
@@ -238,9 +239,10 @@ namespace PKDSS.PortableApp.PKDSS_PortableApp_XamlTypeInfo
             _typeTable[11] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[12] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[13] = typeof(global::PKDSS.PortableApp.MainPage);
-            _typeTable[14] = typeof(global::Microsoft.Toolkit.Uwp.UI.Extensions.NavigationViewExtensions);
-            _typeTable[15] = typeof(global::System.Int32);
-            _typeTable[16] = typeof(global::Windows.UI.Xaml.Controls.NavigationView);
+            _typeTable[14] = typeof(global::PKDSS.PortableApp.SensorPage);
+            _typeTable[15] = typeof(global::Microsoft.Toolkit.Uwp.UI.Extensions.NavigationViewExtensions);
+            _typeTable[16] = typeof(global::System.Int32);
+            _typeTable[17] = typeof(global::Windows.UI.Xaml.Controls.NavigationView);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -278,7 +280,8 @@ namespace PKDSS.PortableApp.PKDSS_PortableApp_XamlTypeInfo
         private object Activate_0_Expander() { return new global::Microsoft.Toolkit.Uwp.UI.Controls.Expander(); }
         private object Activate_10_EntryPage() { return new global::PKDSS.PortableApp.EntryPage(); }
         private object Activate_13_MainPage() { return new global::PKDSS.PortableApp.MainPage(); }
-        private object Activate_14_NavigationViewExtensions() { return new global::Microsoft.Toolkit.Uwp.UI.Extensions.NavigationViewExtensions(); }
+        private object Activate_14_SensorPage() { return new global::PKDSS.PortableApp.SensorPage(); }
+        private object Activate_15_NavigationViewExtensions() { return new global::Microsoft.Toolkit.Uwp.UI.Extensions.NavigationViewExtensions(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -366,20 +369,27 @@ namespace PKDSS.PortableApp.PKDSS_PortableApp_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 14:   //  Microsoft.Toolkit.Uwp.UI.Extensions.NavigationViewExtensions
+            case 14:   //  PKDSS.PortableApp.SensorPage
+                userType = new global::PKDSS.PortableApp.PKDSS_PortableApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_14_SensorPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 15:   //  Microsoft.Toolkit.Uwp.UI.Extensions.NavigationViewExtensions
                 userType = new global::PKDSS.PortableApp.PKDSS_PortableApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_14_NavigationViewExtensions;
+                userType.Activator = Activate_15_NavigationViewExtensions;
                 userType.AddMemberName("SelectedIndex");
                 userType.AddMemberName("CollapseOnClick");
                 userType.SetIsBindable();
                 xamlType = userType;
                 break;
 
-            case 15:   //  Int32
+            case 16:   //  Int32
                 xamlType = new global::PKDSS.PortableApp.PKDSS_PortableApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 16:   //  Windows.UI.Xaml.Controls.NavigationView
+            case 17:   //  Windows.UI.Xaml.Controls.NavigationView
                 xamlType = new global::PKDSS.PortableApp.PKDSS_PortableApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }

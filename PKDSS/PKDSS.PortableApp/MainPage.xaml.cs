@@ -57,6 +57,9 @@ namespace PKDSS.PortableApp
                 case "BtnEntry":
                     Frame.Navigate(typeof(EntryPage),"Nothing");
                     break;
+                case "BtnPengaturan":
+                    Frame.Navigate(typeof(SensorPage), "Nothing");
+                    break;
                 case "BtnExit":
                     CoreApplication.Exit();
                     break;

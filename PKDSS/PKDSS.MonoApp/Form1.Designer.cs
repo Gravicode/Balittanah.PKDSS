@@ -121,6 +121,7 @@
             // 
             // panel3
             // 
+            this.panel3.AutoScroll = true;
             this.panel3.Controls.Add(this.BtnExit);
             this.panel3.Controls.Add(this.BtnAbout);
             this.panel3.Controls.Add(this.BtnPengaturan);

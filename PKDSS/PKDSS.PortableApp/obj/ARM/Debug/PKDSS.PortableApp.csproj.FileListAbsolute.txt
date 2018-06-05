@@ -842,7 +842,6 @@ C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\ARM\Debug\Microso
 C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\ARM\Debug\Microsoft.Graphics.Canvas.winmd
 C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\ARM\Debug\PKDSS.CoreLibrary.dll
 C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\ARM\Debug\PKDSS.CoreLibrary.pdb
-C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\PKDSS.PortableApp.csprojResolveAssemblyReference.cache
 C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\App.g.i.cs
 C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\App.g.cs
 C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\EntryPage.g.i.cs
@@ -969,3 +968,11 @@ C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\Microso
 C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\Microsoft.Xaml.Interactions.pri.xml
 C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\Microsoft.Xaml.Interactivity.pri.xml
 C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\ProjectArchitectures.txt
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\PKDSS.PortableApp.csprojAssemblyReference.cache
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\ARM\Debug\SensorPage.xbf
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\ARM\Debug\GHIElectronics.UWP.LowLevelDrivers.dll
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\ARM\Debug\GHIElectronics.UWP.Shields.FEZHAT.dll
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\SensorPage.g.i.cs
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\SensorPage.g.cs
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\SensorPage.xaml
+C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\SensorPage.xbf
