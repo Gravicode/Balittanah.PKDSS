@@ -8,6 +8,11 @@ namespace PKDSS.CoreLibrary
 {
     public class LocationHelper
     {
+        public static void Init()
+        {
+            var x = DataLokasi;
+        }
+
         private static List<Lokasi> _lokasi;
 
         public static List<Lokasi> DataLokasi

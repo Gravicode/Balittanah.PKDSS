@@ -31,13 +31,21 @@
     <AppXManifest Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\ARM\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+<<<<<<< HEAD
       <Modified>2018-06-05T23:52:05.932</Modified>
+=======
+      <Modified>2018-05-21T21:06:54.070</Modified>
+>>>>>>> eaba6103008bf7be1f909a5b6c9611abec89ab0c
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\ARM\Debug\PKDSS.PortableApp.exe">
       <PackagePath>entrypoint\PKDSS.PortableApp.exe</PackagePath>
+<<<<<<< HEAD
       <Modified>2018-06-05T23:52:04.548</Modified>
+=======
+      <Modified>2018-05-21T21:06:52.432</Modified>
+>>>>>>> eaba6103008bf7be1f909a5b6c9611abec89ab0c
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mifma\.nuget\packages\colorcode.core\2.0.3\lib\netstandard1.4\ColorCode.Core.dll">
       <PackagePath>ColorCode.Core.dll</PackagePath>
@@ -761,7 +769,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\bin\Debug\netstandard2.0\PKDSS.CoreLibrary.dll">
       <PackagePath>PKDSS.CoreLibrary.dll</PackagePath>
+<<<<<<< HEAD
       <Modified>2018-06-05T20:28:18.231</Modified>
+=======
+      <Modified>2018-05-21T21:04:41.302</Modified>
+>>>>>>> eaba6103008bf7be1f909a5b6c9611abec89ab0c
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mifma\.nuget\packages\robmikh.compositionsurfacefactory\0.7.3\lib\uap10.0\Robmikh.CompositionSurfaceFactory.winmd">
       <PackagePath>Robmikh.CompositionSurfaceFactory.winmd</PackagePath>
@@ -996,11 +1008,19 @@
     <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+<<<<<<< HEAD
       <Modified>2018-06-05T23:30:42.642</Modified>
+=======
+      <Modified>2018-05-21T21:06:53.205</Modified>
+>>>>>>> eaba6103008bf7be1f909a5b6c9611abec89ab0c
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\bin\ARM\Debug\Core\PKDSS.PortableApp.exe">
       <PackagePath>PKDSS.PortableApp.exe</PackagePath>
+<<<<<<< HEAD
       <Modified>2018-06-05T23:52:05.926</Modified>
+=======
+      <Modified>2018-05-21T21:06:54.070</Modified>
+>>>>>>> eaba6103008bf7be1f909a5b6c9611abec89ab0c
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -16,7 +16,11 @@
                             <TextBlock Text="{Binding}" 
                                VerticalAlignment="Center"
                                Foreground="White"
+<<<<<<< HEAD
                                FontSize="22" />
+=======
+                               FontSize="14" />
+>>>>>>> eaba6103008bf7be1f909a5b6c9611abec89ab0c
                         </Border>
                     </DataTemplate>
                 </Setter.Value>
@@ -37,6 +41,7 @@
                     <StackPanel>
                         <RelativePanel>
                             <StackPanel x:ConnectionId='27' x:Name="Observasi" Margin="20">
+<<<<<<< HEAD
                                 <TextBox x:ConnectionId='35' FontSize="28" x:Name="TxtNoForm" Header= "No Form" PlaceholderText="001" Margin="0,24,0,0" Width="300" HorizontalAlignment="Left" InputScope="Text"/>
                                 <TextBox x:ConnectionId='36' FontSize="28" x:Name="TxtMappingUnit" Header="Mapping Unit" Margin="0,24,0,0"  Width="300" HorizontalAlignment="Left" InputScope="Text" />
                                 <TextBox x:ConnectionId='37' FontSize="28" x:Name="TxtNoTanah" Header="No Tanah" Margin="0,24,0,0"  Width="300" HorizontalAlignment="Left" InputScope="Text" />
@@ -57,15 +62,43 @@
                                     <x:String>WA</x:String>
                                 </ComboBox>
                                 <ComboBox x:ConnectionId='34' FontSize="28" x:Name="CmbKabupaten" Header="Kabupaten" PlaceholderText="" Margin="0,24,0,0"  Width="300">
+=======
+                                <TextBox x:ConnectionId='35' FontSize="16" x:Name="TxtNoForm" Header= "No Form" PlaceholderText="001" Margin="0,24,0,0" Width="180" HorizontalAlignment="Left" InputScope="Text"/>
+                                <TextBox x:ConnectionId='36' FontSize="16" x:Name="TxtMappingUnit" Header="Mapping Unit" Margin="0,24,0,0"  Width="180" HorizontalAlignment="Left" InputScope="Text" />
+                                <TextBox x:ConnectionId='37' FontSize="16" x:Name="TxtNoTanah" Header="No Tanah" Margin="0,24,0,0"  Width="180" HorizontalAlignment="Left" InputScope="Text" />
+                                <TextBox x:ConnectionId='38' FontSize="16" x:Name="TxtPengirim" Header="Pengirim" Margin="0,24,0,0" PlaceholderText=""  Width="180" HorizontalAlignment="Left" InputScope="Text" />
+                                <RelativePanel>
+                                    <TextBox x:ConnectionId='40' FontSize="16" x:Name="TxtKordinatX" Header="Kordinat X" PlaceholderText="0.005" Margin="0,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="Text" />
+                                    <TextBox x:ConnectionId='41' FontSize="16" x:Name="TxtKordinatY" Header="Kordinat Y" PlaceholderText="0.004" Margin="10,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="Text"  RelativePanel.RightOf="TxtKordinatX"/>
+                                </RelativePanel>
+                                <TextBox x:ConnectionId='39' FontSize="16" x:Name="TxtInitial" Header= "Inisial" Margin="0,24,0,0" MaxLength="320" Width="180" HorizontalAlignment="Left" InputScope="Text"/>
+
+                            </StackPanel>
+                            <StackPanel x:ConnectionId='28' Name="Observasi2" Margin="20" RelativePanel.RightOf="Observasi">
+                                <TextBox x:ConnectionId='29' FontSize="16" x:Name="TxtNoObs" Header="No Obs" Margin="0,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="Number" />
+                                <TextBox x:ConnectionId='30' FontSize="16" x:Name="TxtYear" Header="Alamat" PlaceholderText="" Margin="0,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="DateYear" />
+                                <TextBox x:ConnectionId='31' FontSize="16" x:Name="TxtDesa" Header="Desa" Margin="0,24,0,0" PlaceholderText="" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="Text" />
+                                <TextBox x:ConnectionId='32' FontSize="16" x:Name="TxtKecamatan" Header="Kecamatan" Margin="0,24,0,0" PlaceholderText="" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="Text" />
+                                <ComboBox x:ConnectionId='33' FontSize="16" x:Name="CmbPropinsi" Header="Propinsi" PlaceholderText="" Margin="0,24,0,0"  Width="180">
+                                    <x:String>WA</x:String>
+                                </ComboBox>
+                                <ComboBox x:ConnectionId='34' FontSize="16" x:Name="CmbKabupaten" Header="Kabupaten" PlaceholderText="" Margin="0,24,0,0"  Width="180">
+>>>>>>> eaba6103008bf7be1f909a5b6c9611abec89ab0c
                                     <x:String>WA</x:String>
                                 </ComboBox>
 
                             </StackPanel>
                         </RelativePanel>
                         <RelativePanel Margin="20">
+<<<<<<< HEAD
                             <TextBox x:ConnectionId='24' FontSize="28" x:Name="TxtNoHorizon" Header="No Horizon" PlaceholderText="" Margin="0,24,0,0" MaxLength="50" Width="250" HorizontalAlignment="Left" InputScope="Text" />
                             <TextBox x:ConnectionId='25' FontSize="28" x:Name="TxtNoSample" Header="No Sample" PlaceholderText="" Margin="10,24,0,0" MaxLength="50" Width="250" HorizontalAlignment="Left" InputScope="Text" RelativePanel.RightOf="TxtNoHorizon" />
                             <TextBox x:ConnectionId='26' FontSize="28" x:Name="TxtNoBalitTanah" Header="No Balit Tanah" PlaceholderText="" Margin="10,24,0,0" MaxLength="50" Width="250" HorizontalAlignment="Left" InputScope="Text" RelativePanel.RightOf="TxtNoSample" />
+=======
+                            <TextBox x:ConnectionId='24' FontSize="16" x:Name="TxtNoHorizon" Header="No Horizon" PlaceholderText="" Margin="0,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="Text" />
+                            <TextBox x:ConnectionId='25' FontSize="16" x:Name="TxtNoSample" Header="No Sample" PlaceholderText="" Margin="10,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="Text" RelativePanel.RightOf="TxtNoHorizon" />
+                            <TextBox x:ConnectionId='26' FontSize="16" x:Name="TxtNoBalitTanah" Header="No Balit Tanah" PlaceholderText="" Margin="10,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="Text" RelativePanel.RightOf="TxtNoSample" />
+>>>>>>> eaba6103008bf7be1f909a5b6c9611abec89ab0c
 
                         </RelativePanel>
                     </StackPanel>
@@ -79,15 +112,23 @@
                     <Grid >
                         <StackPanel>
                             <RelativePanel>
+<<<<<<< HEAD
                                 <ComboBox x:ConnectionId='22' FontSize="28" x:Name="CmbTekstur" Header="Tekstur" PlaceholderText="" Margin="24,24,0,0"  Width="300">
                                     <x:String>WA</x:String>
                                 </ComboBox>
                                 <ComboBox x:ConnectionId='23' FontSize="28" x:Name="CmbKomoditas" Header="Komoditas" PlaceholderText="" Margin="35,24,0,0"  Width="300" RelativePanel.RightOf="CmbTekstur">
+=======
+                                <ComboBox x:ConnectionId='22' FontSize="16" x:Name="CmbTekstur" Header="Tekstur" PlaceholderText="" Margin="24,24,0,0"  Width="180">
+                                    <x:String>WA</x:String>
+                                </ComboBox>
+                                <ComboBox x:ConnectionId='23' FontSize="16" x:Name="CmbKomoditas" Header="Komoditas" PlaceholderText="" Margin="35,24,0,0"  Width="180" RelativePanel.RightOf="CmbTekstur">
+>>>>>>> eaba6103008bf7be1f909a5b6c9611abec89ab0c
                                     <x:String>WA</x:String>
                                 </ComboBox>
                             </RelativePanel>
                             <RelativePanel>
                                 <StackPanel x:ConnectionId='6' x:Name="Unsur" Margin="20">
+<<<<<<< HEAD
                                     <TextBox x:ConnectionId='15' FontSize="28" x:Name="TxtPh" Header= "pH" Margin="0,24,0,0" MaxLength="280" Width="300" HorizontalAlignment="Left" InputScope="NumberFullWidth"/>
                                     <TextBox x:ConnectionId='16' FontSize="28" x:Name="TxtCOrganik" Header="C-Organik (%)" Margin="0,24,0,0" MaxLength="50" Width="300" HorizontalAlignment="Left" InputScope="NumberFullWidth" />
                                     <TextBox x:ConnectionId='17' FontSize="28" x:Name="TxtNTotal" Header="N-Total (%)" PlaceholderText="" Margin="0,24,0,0" MaxLength="50" Width="300" HorizontalAlignment="Left" InputScope="NumberFullWidth" />
@@ -105,6 +146,25 @@
                                     <TextBox x:ConnectionId='12' FontSize="28" x:Name="TxtMgdd" Header= "Mg-dd (cmol/kg)" Margin="0,24,0,0" MaxLength="280" Width="300" HorizontalAlignment="Left" InputScope="NumberFullWidth"/>
                                     <TextBox x:ConnectionId='13' FontSize="28" x:Name="TxtAldd" Header="Al-dd (cmol/kg)" Margin="0,24,0,0" MaxLength="50" Width="300" HorizontalAlignment="Left" InputScope="NumberFullWidth" />
                                     <TextBox x:ConnectionId='14' FontSize="28" x:Name="TxtKejenuhanBasa" Header="Kejenuhan Basa" PlaceholderText="" Margin="0,24,0,0" MaxLength="50" Width="300" HorizontalAlignment="Left" InputScope="NumberFullWidth" />
+=======
+                                    <TextBox x:ConnectionId='15' FontSize="16" x:Name="TxtPh" Header= "pH" Margin="0,24,0,0" MaxLength="320" Width="180" HorizontalAlignment="Left" InputScope="NumberFullWidth"/>
+                                    <TextBox x:ConnectionId='16' FontSize="16" x:Name="TxtCOrganik" Header="C-Organik (%)" Margin="0,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="NumberFullWidth" />
+                                    <TextBox x:ConnectionId='17' FontSize="16" x:Name="TxtNTotal" Header="N-Total (%)" PlaceholderText="" Margin="0,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="NumberFullWidth" />
+                                    <TextBox x:ConnectionId='18' FontSize="16" x:Name="TxtKTK" Header="KTK Liat (cmol/kg)" Margin="0,24,0,0" PlaceholderText="" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="NumberFullWidth" />
+                                    <TextBox x:ConnectionId='19' FontSize="16" x:Name="TxtPBray" Header= "P-Bray 1 (ppm P205)" Margin="0,24,0,0" MaxLength="320" Width="180" HorizontalAlignment="Left" InputScope="NumberFullWidth"/>
+                                    <TextBox x:ConnectionId='20' FontSize="16" x:Name="TxtPOlsen" Header="P-Olsen (ppm P205)" Margin="0,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="NumberFullWidth" />
+                                    <TextBox x:ConnectionId='21' FontSize="16" x:Name="TxtP205" Header="P205 Potensial (mg/100g)" PlaceholderText="" Margin="0,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="NumberFullWidth" />
+
+                                </StackPanel>
+                                <StackPanel x:ConnectionId='7' x:Name="Unsur2" Margin="20" RelativePanel.RightOf="Unsur">
+                                    <TextBox x:ConnectionId='8' FontSize="16" x:Name="TxtK205" Header= "K205 Potensial (mg/100g)" Margin="0,24,0,0" MaxLength="320" Width="180" HorizontalAlignment="Left" InputScope="NumberFullWidth"/>
+                                    <TextBox x:ConnectionId='9' FontSize="16" x:Name="TxtRetensiP" Header="Retensi P (%)" Margin="0,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="NumberFullWidth" />
+                                    <TextBox x:ConnectionId='10' FontSize="16" x:Name="TxtKdd" Header="K-dd (cmol/kg)" PlaceholderText="" Margin="0,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="NumberFullWidth" />
+                                    <TextBox x:ConnectionId='11' FontSize="16" x:Name="TxtCadd" Header="Ca-dd (cmol/kg)" Margin="0,24,0,0" PlaceholderText="" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="NumberFullWidth" />
+                                    <TextBox x:ConnectionId='12' FontSize="16" x:Name="TxtMgdd" Header= "Mg-dd (cmol/kg)" Margin="0,24,0,0" MaxLength="320" Width="180" HorizontalAlignment="Left" InputScope="NumberFullWidth"/>
+                                    <TextBox x:ConnectionId='13' FontSize="16" x:Name="TxtAldd" Header="Al-dd (cmol/kg)" Margin="0,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="NumberFullWidth" />
+                                    <TextBox x:ConnectionId='14' FontSize="16" x:Name="TxtKejenuhanBasa" Header="Kejenuhan Basa" PlaceholderText="" Margin="0,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="NumberFullWidth" />
+>>>>>>> eaba6103008bf7be1f909a5b6c9611abec89ab0c
 
                                 </StackPanel>
                             </RelativePanel>
@@ -121,16 +181,22 @@
                     <Grid >
                         <StackPanel Orientation="Vertical" Margin="0,0,0,20">
 
+<<<<<<< HEAD
                             <TextBox x:ConnectionId='3' FontSize="28" IsReadOnly="True" x:Name="TxtUrea" Header= "Urea" Margin="0,24,0,0" MaxLength="280" Width="300" HorizontalAlignment="Left" InputScope="Text"/>
                             <TextBox x:ConnectionId='4' FontSize="28" IsReadOnly="True" x:Name="TxtSP36" Header="SP36" Margin="0,24,0,0" MaxLength="50" Width="300" HorizontalAlignment="Left" InputScope="Text" />
                             <TextBox x:ConnectionId='5' FontSize="28" IsReadOnly="True" x:Name="TxtKCL" Header="KCL" PlaceholderText="" Margin="0,24,0,0" MaxLength="50" Width="300" HorizontalAlignment="Left" InputScope="Text" />
+=======
+                            <TextBox x:ConnectionId='3' FontSize="16" IsReadOnly="True" x:Name="TxtUrea" Header= "Urea" Margin="0,24,0,0" MaxLength="320" Width="180" HorizontalAlignment="Left" InputScope="Text"/>
+                            <TextBox x:ConnectionId='4' FontSize="16" IsReadOnly="True" x:Name="TxtSP36" Header="SP36" Margin="0,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="Text" />
+                            <TextBox x:ConnectionId='5' FontSize="16" IsReadOnly="True" x:Name="TxtKCL" Header="KCL" PlaceholderText="" Margin="0,24,0,0" MaxLength="50" Width="180" HorizontalAlignment="Left" InputScope="Text" />
+>>>>>>> eaba6103008bf7be1f909a5b6c9611abec89ab0c
 
                         </StackPanel>
                     </Grid>
                 </controls:Expander>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="20,20,20,20" Spacing="20">
-                    <Button x:ConnectionId='1' HorizontalAlignment="Center" Background="#296cd8"  Content="Kalkulasi" Width="300" FontSize="40" Name="BtnCalculate"></Button>
-                    <Button x:ConnectionId='2' HorizontalAlignment="Center" Background="#f9a509"  Content="Kembali"   Width="300" FontSize="40" Name="BtnBack"></Button>
+                    <Button x:ConnectionId='1' HorizontalAlignment="Center" Background="#296cd8"  Content="Kalkulasi" Width="150" FontSize="20" Name="BtnCalculate"></Button>
+                    <Button x:ConnectionId='2' HorizontalAlignment="Center" Background="#f9a509"  Content="Kembali"   Width="150" FontSize="20" Name="BtnBack"></Button>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
