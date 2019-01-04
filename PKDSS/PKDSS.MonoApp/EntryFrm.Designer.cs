@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.TxtNoSample = new System.Windows.Forms.TextBox();
@@ -105,10 +106,28 @@
             this.label28 = new System.Windows.Forms.Label();
             this.TxtUrea = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.BtnProcess = new System.Windows.Forms.Button();
+            this.BtnViewChart = new System.Windows.Forms.Button();
+            this.BtnScan = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.LstFiles = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.PicChart = new System.Windows.Forms.PictureBox();
+            this.TimerFile = new System.Windows.Forms.Timer(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.TxtStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicChart)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -116,11 +135,13 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1057, 629);
+            this.tabControl1.Size = new System.Drawing.Size(793, 511);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -160,278 +181,312 @@
             this.tabPage1.Controls.Add(this.TxtNoForm);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1049, 600);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(785, 485);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Info Lokasi Observasi";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // TxtNoSample
             // 
-            this.TxtNoSample.Location = new System.Drawing.Point(247, 461);
+            this.TxtNoSample.Location = new System.Drawing.Point(185, 375);
+            this.TxtNoSample.Margin = new System.Windows.Forms.Padding(2);
             this.TxtNoSample.Name = "TxtNoSample";
-            this.TxtNoSample.Size = new System.Drawing.Size(205, 34);
+            this.TxtNoSample.Size = new System.Drawing.Size(155, 28);
             this.TxtNoSample.TabIndex = 36;
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(242, 429);
+            this.label32.Location = new System.Drawing.Point(182, 349);
+            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(134, 29);
+            this.label32.Size = new System.Drawing.Size(104, 24);
             this.label32.TabIndex = 35;
             this.label32.Text = "No Sample";
             // 
             // TxtNoHorizon
             // 
-            this.TxtNoHorizon.Location = new System.Drawing.Point(13, 461);
+            this.TxtNoHorizon.Location = new System.Drawing.Point(10, 375);
+            this.TxtNoHorizon.Margin = new System.Windows.Forms.Padding(2);
             this.TxtNoHorizon.Name = "TxtNoHorizon";
-            this.TxtNoHorizon.Size = new System.Drawing.Size(228, 34);
+            this.TxtNoHorizon.Size = new System.Drawing.Size(172, 28);
             this.TxtNoHorizon.TabIndex = 34;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(8, 429);
+            this.label13.Location = new System.Drawing.Point(6, 349);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(134, 29);
+            this.label13.Size = new System.Drawing.Size(106, 24);
             this.label13.TabIndex = 33;
             this.label13.Text = "No Horizon";
             // 
             // CmbKabupaten
             // 
             this.CmbKabupaten.FormattingEnabled = true;
-            this.CmbKabupaten.Location = new System.Drawing.Point(370, 384);
+            this.CmbKabupaten.Location = new System.Drawing.Point(278, 312);
+            this.CmbKabupaten.Margin = new System.Windows.Forms.Padding(2);
             this.CmbKabupaten.Name = "CmbKabupaten";
-            this.CmbKabupaten.Size = new System.Drawing.Size(317, 37);
+            this.CmbKabupaten.Size = new System.Drawing.Size(239, 30);
             this.CmbKabupaten.TabIndex = 32;
             // 
             // CmbPropinsi
             // 
             this.CmbPropinsi.FormattingEnabled = true;
-            this.CmbPropinsi.Location = new System.Drawing.Point(370, 315);
+            this.CmbPropinsi.Location = new System.Drawing.Point(278, 256);
+            this.CmbPropinsi.Margin = new System.Windows.Forms.Padding(2);
             this.CmbPropinsi.Name = "CmbPropinsi";
-            this.CmbPropinsi.Size = new System.Drawing.Size(317, 37);
+            this.CmbPropinsi.Size = new System.Drawing.Size(239, 30);
             this.CmbPropinsi.TabIndex = 31;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(169, 318);
+            this.label31.Location = new System.Drawing.Point(127, 258);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(35, 29);
+            this.label31.Size = new System.Drawing.Size(27, 24);
             this.label31.TabIndex = 30;
             this.label31.Text = "Y:";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(8, 319);
+            this.label30.Location = new System.Drawing.Point(6, 259);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(36, 29);
+            this.label30.Size = new System.Drawing.Size(29, 24);
             this.label30.TabIndex = 29;
             this.label30.Text = "X:";
             // 
             // TxtKordinatY
             // 
-            this.TxtKordinatY.Location = new System.Drawing.Point(210, 316);
+            this.TxtKordinatY.Location = new System.Drawing.Point(158, 257);
+            this.TxtKordinatY.Margin = new System.Windows.Forms.Padding(2);
             this.TxtKordinatY.Name = "TxtKordinatY";
-            this.TxtKordinatY.Size = new System.Drawing.Size(107, 34);
+            this.TxtKordinatY.Size = new System.Drawing.Size(81, 28);
             this.TxtKordinatY.TabIndex = 28;
             // 
             // TxtNoBalitTanah
             // 
-            this.TxtNoBalitTanah.Location = new System.Drawing.Point(458, 461);
+            this.TxtNoBalitTanah.Location = new System.Drawing.Point(344, 375);
+            this.TxtNoBalitTanah.Margin = new System.Windows.Forms.Padding(2);
             this.TxtNoBalitTanah.Name = "TxtNoBalitTanah";
-            this.TxtNoBalitTanah.Size = new System.Drawing.Size(229, 34);
+            this.TxtNoBalitTanah.Size = new System.Drawing.Size(173, 28);
             this.TxtNoBalitTanah.TabIndex = 27;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(453, 429);
+            this.label14.Location = new System.Drawing.Point(340, 349);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(172, 29);
+            this.label14.Size = new System.Drawing.Size(133, 24);
             this.label14.TabIndex = 26;
             this.label14.Text = "No Balit Tanah";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(365, 355);
+            this.label12.Location = new System.Drawing.Point(274, 288);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(129, 29);
+            this.label12.Size = new System.Drawing.Size(101, 24);
             this.label12.TabIndex = 22;
             this.label12.Text = "Kabupaten";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(365, 287);
+            this.label11.Location = new System.Drawing.Point(274, 233);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 29);
+            this.label11.Size = new System.Drawing.Size(78, 24);
             this.label11.TabIndex = 20;
             this.label11.Text = "Propinsi";
             // 
             // TxtKecamatan
             // 
-            this.TxtKecamatan.Location = new System.Drawing.Point(370, 247);
+            this.TxtKecamatan.Location = new System.Drawing.Point(278, 201);
+            this.TxtKecamatan.Margin = new System.Windows.Forms.Padding(2);
             this.TxtKecamatan.Name = "TxtKecamatan";
-            this.TxtKecamatan.Size = new System.Drawing.Size(317, 34);
+            this.TxtKecamatan.Size = new System.Drawing.Size(239, 28);
             this.TxtKecamatan.TabIndex = 19;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(365, 215);
+            this.label10.Location = new System.Drawing.Point(274, 175);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(133, 29);
+            this.label10.Size = new System.Drawing.Size(104, 24);
             this.label10.TabIndex = 18;
             this.label10.Text = "Kecamatan";
             // 
             // TxtDesa
             // 
-            this.TxtDesa.Location = new System.Drawing.Point(370, 178);
+            this.TxtDesa.Location = new System.Drawing.Point(278, 145);
+            this.TxtDesa.Margin = new System.Windows.Forms.Padding(2);
             this.TxtDesa.Name = "TxtDesa";
-            this.TxtDesa.Size = new System.Drawing.Size(317, 34);
+            this.TxtDesa.Size = new System.Drawing.Size(239, 28);
             this.TxtDesa.TabIndex = 17;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(365, 146);
+            this.label9.Location = new System.Drawing.Point(274, 119);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 29);
+            this.label9.Size = new System.Drawing.Size(53, 24);
             this.label9.TabIndex = 16;
             this.label9.Text = "Desa";
             // 
             // TxtYear
             // 
-            this.TxtYear.Location = new System.Drawing.Point(370, 105);
+            this.TxtYear.Location = new System.Drawing.Point(278, 85);
+            this.TxtYear.Margin = new System.Windows.Forms.Padding(2);
             this.TxtYear.Name = "TxtYear";
-            this.TxtYear.Size = new System.Drawing.Size(317, 34);
+            this.TxtYear.Size = new System.Drawing.Size(239, 28);
             this.TxtYear.TabIndex = 15;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(365, 73);
+            this.label8.Location = new System.Drawing.Point(274, 59);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 29);
+            this.label8.Size = new System.Drawing.Size(65, 24);
             this.label8.TabIndex = 14;
             this.label8.Text = "Tahun";
             // 
             // TxtNoObs
             // 
-            this.TxtNoObs.Location = new System.Drawing.Point(370, 35);
+            this.TxtNoObs.Location = new System.Drawing.Point(278, 28);
+            this.TxtNoObs.Margin = new System.Windows.Forms.Padding(2);
             this.TxtNoObs.Name = "TxtNoObs";
-            this.TxtNoObs.Size = new System.Drawing.Size(317, 34);
+            this.TxtNoObs.Size = new System.Drawing.Size(239, 28);
             this.TxtNoObs.TabIndex = 13;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(365, 3);
+            this.label7.Location = new System.Drawing.Point(274, 2);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 29);
+            this.label7.Size = new System.Drawing.Size(75, 24);
             this.label7.TabIndex = 12;
             this.label7.Text = "No Obs";
             // 
             // TxtInitial
             // 
-            this.TxtInitial.Location = new System.Drawing.Point(13, 387);
+            this.TxtInitial.Location = new System.Drawing.Point(10, 314);
+            this.TxtInitial.Margin = new System.Windows.Forms.Padding(2);
             this.TxtInitial.Name = "TxtInitial";
-            this.TxtInitial.Size = new System.Drawing.Size(317, 34);
+            this.TxtInitial.Size = new System.Drawing.Size(239, 28);
             this.TxtInitial.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 355);
+            this.label6.Location = new System.Drawing.Point(6, 288);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 29);
+            this.label6.Size = new System.Drawing.Size(56, 24);
             this.label6.TabIndex = 10;
             this.label6.Text = "Inisial";
             // 
             // TxtKordinatX
             // 
-            this.TxtKordinatX.Location = new System.Drawing.Point(50, 316);
+            this.TxtKordinatX.Location = new System.Drawing.Point(38, 257);
+            this.TxtKordinatX.Margin = new System.Windows.Forms.Padding(2);
             this.TxtKordinatX.Name = "TxtKordinatX";
-            this.TxtKordinatX.Size = new System.Drawing.Size(107, 34);
+            this.TxtKordinatX.Size = new System.Drawing.Size(81, 28);
             this.TxtKordinatX.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 287);
+            this.label5.Location = new System.Drawing.Point(6, 233);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 29);
+            this.label5.Size = new System.Drawing.Size(79, 24);
             this.label5.TabIndex = 8;
             this.label5.Text = "Kordinat";
             // 
             // TxtPengirim
             // 
-            this.TxtPengirim.Location = new System.Drawing.Point(13, 247);
+            this.TxtPengirim.Location = new System.Drawing.Point(10, 201);
+            this.TxtPengirim.Margin = new System.Windows.Forms.Padding(2);
             this.TxtPengirim.Name = "TxtPengirim";
-            this.TxtPengirim.Size = new System.Drawing.Size(317, 34);
+            this.TxtPengirim.Size = new System.Drawing.Size(239, 28);
             this.TxtPengirim.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 215);
+            this.label4.Location = new System.Drawing.Point(6, 175);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 29);
+            this.label4.Size = new System.Drawing.Size(85, 24);
             this.label4.TabIndex = 6;
             this.label4.Text = "Pengirim";
             // 
             // TxtNoTanah
             // 
-            this.TxtNoTanah.Location = new System.Drawing.Point(13, 178);
+            this.TxtNoTanah.Location = new System.Drawing.Point(10, 145);
+            this.TxtNoTanah.Margin = new System.Windows.Forms.Padding(2);
             this.TxtNoTanah.Name = "TxtNoTanah";
-            this.TxtNoTanah.Size = new System.Drawing.Size(317, 34);
+            this.TxtNoTanah.Size = new System.Drawing.Size(239, 28);
             this.TxtNoTanah.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 146);
+            this.label3.Location = new System.Drawing.Point(6, 119);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 29);
+            this.label3.Size = new System.Drawing.Size(94, 24);
             this.label3.TabIndex = 4;
             this.label3.Text = "No Tanah";
             // 
             // TxtMappingUnit
             // 
-            this.TxtMappingUnit.Location = new System.Drawing.Point(13, 105);
+            this.TxtMappingUnit.Location = new System.Drawing.Point(10, 85);
+            this.TxtMappingUnit.Margin = new System.Windows.Forms.Padding(2);
             this.TxtMappingUnit.Name = "TxtMappingUnit";
-            this.TxtMappingUnit.Size = new System.Drawing.Size(317, 34);
+            this.TxtMappingUnit.Size = new System.Drawing.Size(239, 28);
             this.TxtMappingUnit.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 73);
+            this.label2.Location = new System.Drawing.Point(6, 59);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 29);
+            this.label2.Size = new System.Drawing.Size(121, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mapping Unit";
             // 
             // TxtNoForm
             // 
-            this.TxtNoForm.Location = new System.Drawing.Point(13, 35);
+            this.TxtNoForm.Location = new System.Drawing.Point(10, 28);
+            this.TxtNoForm.Margin = new System.Windows.Forms.Padding(2);
             this.TxtNoForm.Name = "TxtNoForm";
-            this.TxtNoForm.Size = new System.Drawing.Size(317, 34);
+            this.TxtNoForm.Size = new System.Drawing.Size(239, 28);
             this.TxtNoForm.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 3);
+            this.label1.Location = new System.Drawing.Point(6, 2);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 29);
+            this.label1.Size = new System.Drawing.Size(85, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "No Form";
             // 
@@ -471,269 +526,302 @@
             this.tabPage2.Controls.Add(this.label25);
             this.tabPage2.Controls.Add(this.label26);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1049, 600);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Size = new System.Drawing.Size(785, 485);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Input Data Unsur Tanah";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // TxtKejenuhanBasa
             // 
-            this.TxtKejenuhanBasa.Location = new System.Drawing.Point(370, 535);
+            this.TxtKejenuhanBasa.Location = new System.Drawing.Point(278, 435);
+            this.TxtKejenuhanBasa.Margin = new System.Windows.Forms.Padding(2);
             this.TxtKejenuhanBasa.Name = "TxtKejenuhanBasa";
-            this.TxtKejenuhanBasa.Size = new System.Drawing.Size(317, 34);
+            this.TxtKejenuhanBasa.Size = new System.Drawing.Size(239, 28);
             this.TxtKejenuhanBasa.TabIndex = 57;
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(365, 503);
+            this.label36.Location = new System.Drawing.Point(274, 409);
+            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(188, 29);
+            this.label36.Size = new System.Drawing.Size(148, 24);
             this.label36.TabIndex = 56;
             this.label36.Text = "Kejenuhan Basa";
             // 
             // TxtAldd
             // 
-            this.TxtAldd.Location = new System.Drawing.Point(370, 467);
+            this.TxtAldd.Location = new System.Drawing.Point(278, 379);
+            this.TxtAldd.Margin = new System.Windows.Forms.Padding(2);
             this.TxtAldd.Name = "TxtAldd";
-            this.TxtAldd.Size = new System.Drawing.Size(317, 34);
+            this.TxtAldd.Size = new System.Drawing.Size(239, 28);
             this.TxtAldd.TabIndex = 55;
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(365, 435);
+            this.label35.Location = new System.Drawing.Point(274, 353);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(177, 29);
+            this.label35.Size = new System.Drawing.Size(138, 24);
             this.label35.TabIndex = 54;
             this.label35.Text = "Al-dd (cmol/kg)";
             // 
             // TxtP205
             // 
-            this.TxtP205.Location = new System.Drawing.Point(13, 535);
+            this.TxtP205.Location = new System.Drawing.Point(10, 435);
+            this.TxtP205.Margin = new System.Windows.Forms.Padding(2);
             this.TxtP205.Name = "TxtP205";
-            this.TxtP205.Size = new System.Drawing.Size(317, 34);
+            this.TxtP205.Size = new System.Drawing.Size(239, 28);
             this.TxtP205.TabIndex = 53;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(8, 503);
+            this.label34.Location = new System.Drawing.Point(6, 409);
+            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(290, 29);
+            this.label34.Size = new System.Drawing.Size(223, 24);
             this.label34.TabIndex = 52;
             this.label34.Text = "P205 Potensial (mg/100g)";
             // 
             // TxtPOlsen
             // 
-            this.TxtPOlsen.Location = new System.Drawing.Point(13, 467);
+            this.TxtPOlsen.Location = new System.Drawing.Point(10, 379);
+            this.TxtPOlsen.Margin = new System.Windows.Forms.Padding(2);
             this.TxtPOlsen.Name = "TxtPOlsen";
-            this.TxtPOlsen.Size = new System.Drawing.Size(317, 34);
+            this.TxtPOlsen.Size = new System.Drawing.Size(239, 28);
             this.TxtPOlsen.TabIndex = 51;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(8, 435);
+            this.label33.Location = new System.Drawing.Point(6, 353);
+            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(232, 29);
+            this.label33.Size = new System.Drawing.Size(180, 24);
             this.label33.TabIndex = 50;
             this.label33.Text = "P-Olsen (ppm P205)";
             // 
             // CmbKomoditas
             // 
             this.CmbKomoditas.FormattingEnabled = true;
-            this.CmbKomoditas.Location = new System.Drawing.Point(370, 45);
+            this.CmbKomoditas.Location = new System.Drawing.Point(278, 37);
+            this.CmbKomoditas.Margin = new System.Windows.Forms.Padding(2);
             this.CmbKomoditas.Name = "CmbKomoditas";
-            this.CmbKomoditas.Size = new System.Drawing.Size(317, 37);
+            this.CmbKomoditas.Size = new System.Drawing.Size(239, 30);
             this.CmbKomoditas.TabIndex = 49;
             // 
             // CmbTekstur
             // 
             this.CmbTekstur.FormattingEnabled = true;
-            this.CmbTekstur.Location = new System.Drawing.Point(13, 46);
+            this.CmbTekstur.Location = new System.Drawing.Point(10, 37);
+            this.CmbTekstur.Margin = new System.Windows.Forms.Padding(2);
             this.CmbTekstur.Name = "CmbTekstur";
-            this.CmbTekstur.Size = new System.Drawing.Size(317, 37);
+            this.CmbTekstur.Size = new System.Drawing.Size(239, 30);
             this.CmbTekstur.TabIndex = 48;
             // 
             // TxtMgdd
             // 
-            this.TxtMgdd.Location = new System.Drawing.Point(370, 397);
+            this.TxtMgdd.Location = new System.Drawing.Point(278, 323);
+            this.TxtMgdd.Margin = new System.Windows.Forms.Padding(2);
             this.TxtMgdd.Name = "TxtMgdd";
-            this.TxtMgdd.Size = new System.Drawing.Size(317, 34);
+            this.TxtMgdd.Size = new System.Drawing.Size(239, 28);
             this.TxtMgdd.TabIndex = 47;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(365, 365);
+            this.label15.Location = new System.Drawing.Point(274, 297);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(190, 29);
+            this.label15.Size = new System.Drawing.Size(148, 24);
             this.label15.TabIndex = 46;
             this.label15.Text = "Mg-dd (cmol/kg)";
             // 
             // TxtCadd
             // 
-            this.TxtCadd.Location = new System.Drawing.Point(370, 329);
+            this.TxtCadd.Location = new System.Drawing.Point(278, 267);
+            this.TxtCadd.Margin = new System.Windows.Forms.Padding(2);
             this.TxtCadd.Name = "TxtCadd";
-            this.TxtCadd.Size = new System.Drawing.Size(317, 34);
+            this.TxtCadd.Size = new System.Drawing.Size(239, 28);
             this.TxtCadd.TabIndex = 45;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(365, 297);
+            this.label16.Location = new System.Drawing.Point(274, 241);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(186, 29);
+            this.label16.Size = new System.Drawing.Size(144, 24);
             this.label16.TabIndex = 44;
             this.label16.Text = "Ca-dd (cmol/kg)";
             // 
             // TxtKdd
             // 
-            this.TxtKdd.Location = new System.Drawing.Point(370, 257);
+            this.TxtKdd.Location = new System.Drawing.Point(278, 209);
+            this.TxtKdd.Margin = new System.Windows.Forms.Padding(2);
             this.TxtKdd.Name = "TxtKdd";
-            this.TxtKdd.Size = new System.Drawing.Size(317, 34);
+            this.TxtKdd.Size = new System.Drawing.Size(239, 28);
             this.TxtKdd.TabIndex = 43;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(365, 225);
+            this.label17.Location = new System.Drawing.Point(274, 183);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(172, 29);
+            this.label17.Size = new System.Drawing.Size(133, 24);
             this.label17.TabIndex = 42;
             this.label17.Text = "K-dd (cmol/kg)";
             // 
             // TxtRetensiP
             // 
-            this.TxtRetensiP.Location = new System.Drawing.Point(370, 188);
+            this.TxtRetensiP.Location = new System.Drawing.Point(278, 153);
+            this.TxtRetensiP.Margin = new System.Windows.Forms.Padding(2);
             this.TxtRetensiP.Name = "TxtRetensiP";
-            this.TxtRetensiP.Size = new System.Drawing.Size(317, 34);
+            this.TxtRetensiP.Size = new System.Drawing.Size(239, 28);
             this.TxtRetensiP.TabIndex = 41;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(365, 156);
+            this.label18.Location = new System.Drawing.Point(274, 127);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(161, 29);
+            this.label18.Size = new System.Drawing.Size(122, 24);
             this.label18.TabIndex = 40;
             this.label18.Text = "Retensi P (%)";
             // 
             // TxtK205
             // 
-            this.TxtK205.Location = new System.Drawing.Point(370, 115);
+            this.TxtK205.Location = new System.Drawing.Point(278, 93);
+            this.TxtK205.Margin = new System.Windows.Forms.Padding(2);
             this.TxtK205.Name = "TxtK205";
-            this.TxtK205.Size = new System.Drawing.Size(317, 34);
+            this.TxtK205.Size = new System.Drawing.Size(239, 28);
             this.TxtK205.TabIndex = 39;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(365, 83);
+            this.label19.Location = new System.Drawing.Point(274, 67);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(290, 29);
+            this.label19.Size = new System.Drawing.Size(223, 24);
             this.label19.TabIndex = 38;
             this.label19.Text = "K205 Potensial (mg/100g)";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(365, 13);
+            this.label20.Location = new System.Drawing.Point(274, 11);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(128, 29);
+            this.label20.Size = new System.Drawing.Size(98, 24);
             this.label20.TabIndex = 36;
             this.label20.Text = "Komoditas";
             // 
             // TxtPBray
             // 
-            this.TxtPBray.Location = new System.Drawing.Point(13, 397);
+            this.TxtPBray.Location = new System.Drawing.Point(10, 323);
+            this.TxtPBray.Margin = new System.Windows.Forms.Padding(2);
             this.TxtPBray.Name = "TxtPBray";
-            this.TxtPBray.Size = new System.Drawing.Size(317, 34);
+            this.TxtPBray.Size = new System.Drawing.Size(239, 28);
             this.TxtPBray.TabIndex = 35;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(8, 365);
+            this.label21.Location = new System.Drawing.Point(6, 297);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(235, 29);
+            this.label21.Size = new System.Drawing.Size(182, 24);
             this.label21.TabIndex = 34;
             this.label21.Text = "P-Bray 1 (ppm P205)";
             // 
             // TxtKTK
             // 
-            this.TxtKTK.Location = new System.Drawing.Point(13, 329);
+            this.TxtKTK.Location = new System.Drawing.Point(10, 267);
+            this.TxtKTK.Margin = new System.Windows.Forms.Padding(2);
             this.TxtKTK.Name = "TxtKTK";
-            this.TxtKTK.Size = new System.Drawing.Size(317, 34);
+            this.TxtKTK.Size = new System.Drawing.Size(239, 28);
             this.TxtKTK.TabIndex = 33;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(8, 297);
+            this.label22.Location = new System.Drawing.Point(6, 241);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(212, 29);
+            this.label22.Size = new System.Drawing.Size(162, 24);
             this.label22.TabIndex = 32;
             this.label22.Text = "KTK Liat (cmol/kg)";
             // 
             // TxtNTotal
             // 
-            this.TxtNTotal.Location = new System.Drawing.Point(13, 257);
+            this.TxtNTotal.Location = new System.Drawing.Point(10, 209);
+            this.TxtNTotal.Margin = new System.Windows.Forms.Padding(2);
             this.TxtNTotal.Name = "TxtNTotal";
-            this.TxtNTotal.Size = new System.Drawing.Size(317, 34);
+            this.TxtNTotal.Size = new System.Drawing.Size(239, 28);
             this.TxtNTotal.TabIndex = 31;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(8, 225);
+            this.label23.Location = new System.Drawing.Point(6, 183);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(138, 29);
+            this.label23.Size = new System.Drawing.Size(103, 24);
             this.label23.TabIndex = 30;
             this.label23.Text = "N-Total (%)";
             // 
             // TxtCOrganik
             // 
-            this.TxtCOrganik.Location = new System.Drawing.Point(13, 188);
+            this.TxtCOrganik.Location = new System.Drawing.Point(10, 153);
+            this.TxtCOrganik.Margin = new System.Windows.Forms.Padding(2);
             this.TxtCOrganik.Name = "TxtCOrganik";
-            this.TxtCOrganik.Size = new System.Drawing.Size(317, 34);
+            this.TxtCOrganik.Size = new System.Drawing.Size(239, 28);
             this.TxtCOrganik.TabIndex = 29;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(8, 156);
+            this.label24.Location = new System.Drawing.Point(6, 127);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(167, 29);
+            this.label24.Size = new System.Drawing.Size(127, 24);
             this.label24.TabIndex = 28;
             this.label24.Text = "C-Organik (%)";
             // 
             // TxtPh
             // 
-            this.TxtPh.Location = new System.Drawing.Point(13, 115);
+            this.TxtPh.Location = new System.Drawing.Point(10, 93);
+            this.TxtPh.Margin = new System.Windows.Forms.Padding(2);
             this.TxtPh.Name = "TxtPh";
-            this.TxtPh.Size = new System.Drawing.Size(317, 34);
+            this.TxtPh.Size = new System.Drawing.Size(239, 28);
             this.TxtPh.TabIndex = 27;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(8, 83);
+            this.label25.Location = new System.Drawing.Point(6, 67);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(44, 29);
+            this.label25.Size = new System.Drawing.Size(35, 24);
             this.label25.TabIndex = 26;
             this.label25.Text = "pH";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(8, 13);
+            this.label26.Location = new System.Drawing.Point(6, 11);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(94, 29);
+            this.label26.Size = new System.Drawing.Size(72, 24);
             this.label26.TabIndex = 24;
             this.label26.Text = "Tekstur";
             // 
@@ -749,91 +837,218 @@
             this.tabPage3.Controls.Add(this.TxtUrea);
             this.tabPage3.Controls.Add(this.label29);
             this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1049, 600);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Size = new System.Drawing.Size(785, 485);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Rekomendasi Pupuk";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // BtnBack
             // 
-            this.BtnBack.Location = new System.Drawing.Point(161, 223);
+            this.BtnBack.Location = new System.Drawing.Point(121, 181);
+            this.BtnBack.Margin = new System.Windows.Forms.Padding(2);
             this.BtnBack.Name = "BtnBack";
-            this.BtnBack.Size = new System.Drawing.Size(164, 51);
+            this.BtnBack.Size = new System.Drawing.Size(123, 41);
             this.BtnBack.TabIndex = 37;
             this.BtnBack.Text = "K&embali";
             this.BtnBack.UseVisualStyleBackColor = true;
             // 
             // BtnCalculate
             // 
-            this.BtnCalculate.Location = new System.Drawing.Point(8, 223);
+            this.BtnCalculate.Location = new System.Drawing.Point(6, 181);
+            this.BtnCalculate.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCalculate.Name = "BtnCalculate";
-            this.BtnCalculate.Size = new System.Drawing.Size(147, 51);
+            this.BtnCalculate.Size = new System.Drawing.Size(110, 41);
             this.BtnCalculate.TabIndex = 36;
             this.BtnCalculate.Text = "&Kalkulasi";
             this.BtnCalculate.UseVisualStyleBackColor = true;
             // 
             // TxtKCL
             // 
-            this.TxtKCL.Location = new System.Drawing.Point(8, 183);
+            this.TxtKCL.Location = new System.Drawing.Point(6, 149);
+            this.TxtKCL.Margin = new System.Windows.Forms.Padding(2);
             this.TxtKCL.Name = "TxtKCL";
             this.TxtKCL.ReadOnly = true;
-            this.TxtKCL.Size = new System.Drawing.Size(317, 34);
+            this.TxtKCL.Size = new System.Drawing.Size(239, 28);
             this.TxtKCL.TabIndex = 35;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(3, 151);
+            this.label27.Location = new System.Drawing.Point(2, 123);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(59, 29);
+            this.label27.Size = new System.Drawing.Size(45, 24);
             this.label27.TabIndex = 34;
             this.label27.Text = "KCL";
             // 
             // TxtSP36
             // 
-            this.TxtSP36.Location = new System.Drawing.Point(8, 110);
+            this.TxtSP36.Location = new System.Drawing.Point(6, 89);
+            this.TxtSP36.Margin = new System.Windows.Forms.Padding(2);
             this.TxtSP36.Name = "TxtSP36";
             this.TxtSP36.ReadOnly = true;
-            this.TxtSP36.Size = new System.Drawing.Size(317, 34);
+            this.TxtSP36.Size = new System.Drawing.Size(239, 28);
             this.TxtSP36.TabIndex = 33;
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(3, 78);
+            this.label28.Location = new System.Drawing.Point(2, 63);
+            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(71, 29);
+            this.label28.Size = new System.Drawing.Size(54, 24);
             this.label28.TabIndex = 32;
             this.label28.Text = "SP36";
             // 
             // TxtUrea
             // 
-            this.TxtUrea.Location = new System.Drawing.Point(8, 40);
+            this.TxtUrea.Location = new System.Drawing.Point(6, 32);
+            this.TxtUrea.Margin = new System.Windows.Forms.Padding(2);
             this.TxtUrea.Name = "TxtUrea";
             this.TxtUrea.ReadOnly = true;
-            this.TxtUrea.Size = new System.Drawing.Size(317, 34);
+            this.TxtUrea.Size = new System.Drawing.Size(239, 28);
             this.TxtUrea.TabIndex = 31;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(3, 8);
+            this.label29.Location = new System.Drawing.Point(2, 6);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(65, 29);
+            this.label29.Size = new System.Drawing.Size(50, 24);
             this.label29.TabIndex = 30;
             this.label29.Text = "Urea";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.statusStrip1);
+            this.tabPage4.Controls.Add(this.groupBox3);
+            this.tabPage4.Controls.Add(this.groupBox2);
+            this.tabPage4.Controls.Add(this.groupBox1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(785, 485);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Scanning";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.BtnProcess);
+            this.groupBox3.Controls.Add(this.BtnViewChart);
+            this.groupBox3.Controls.Add(this.BtnScan);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(231, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(190, 234);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Actions";
+            // 
+            // BtnProcess
+            // 
+            this.BtnProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProcess.Location = new System.Drawing.Point(6, 106);
+            this.BtnProcess.Name = "BtnProcess";
+            this.BtnProcess.Size = new System.Drawing.Size(178, 38);
+            this.BtnProcess.TabIndex = 2;
+            this.BtnProcess.Text = "&Process";
+            this.BtnProcess.UseVisualStyleBackColor = true;
+            // 
+            // BtnViewChart
+            // 
+            this.BtnViewChart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnViewChart.Location = new System.Drawing.Point(6, 66);
+            this.BtnViewChart.Name = "BtnViewChart";
+            this.BtnViewChart.Size = new System.Drawing.Size(178, 34);
+            this.BtnViewChart.TabIndex = 1;
+            this.BtnViewChart.Text = "&View in Chart";
+            this.BtnViewChart.UseVisualStyleBackColor = true;
+            // 
+            // BtnScan
+            // 
+            this.BtnScan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnScan.Location = new System.Drawing.Point(6, 19);
+            this.BtnScan.Name = "BtnScan";
+            this.BtnScan.Size = new System.Drawing.Size(178, 41);
+            this.BtnScan.TabIndex = 0;
+            this.BtnScan.Text = "&Scan";
+            this.BtnScan.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.LstFiles);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(8, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(217, 234);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Choose Sample File";
+            // 
+            // LstFiles
+            // 
+            this.LstFiles.FormattingEnabled = true;
+            this.LstFiles.ItemHeight = 20;
+            this.LstFiles.Location = new System.Drawing.Point(6, 19);
+            this.LstFiles.Name = "LstFiles";
+            this.LstFiles.Size = new System.Drawing.Size(205, 204);
+            this.LstFiles.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.PicChart);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(8, 246);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(771, 211);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Chart";
+            // 
+            // PicChart
+            // 
+            this.PicChart.Location = new System.Drawing.Point(6, 19);
+            this.PicChart.Name = "PicChart";
+            this.PicChart.Size = new System.Drawing.Size(759, 180);
+            this.PicChart.TabIndex = 1;
+            this.PicChart.TabStop = false;
+            // 
+            // TimerFile
+            // 
+            this.TimerFile.Interval = 2000;
+            this.TimerFile.Tick += new System.EventHandler(this.TimerFile_Tick);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TxtStatus});
+            this.statusStrip1.Location = new System.Drawing.Point(3, 460);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(779, 22);
+            this.statusStrip1.TabIndex = 4;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // TxtStatus
+            // 
+            this.TxtStatus.Name = "TxtStatus";
+            this.TxtStatus.Size = new System.Drawing.Size(32, 17);
+            this.TxtStatus.Text = "Idle..";
+            // 
             // EntryFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1057, 629);
+            this.ClientSize = new System.Drawing.Size(793, 511);
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EntryFrm";
-            this.Text = "EntryFrm";
+            this.Text = "Soil Sensing v0.1";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -841,6 +1056,14 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PicChart)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -924,5 +1147,17 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox TxtPOlsen;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button BtnProcess;
+        private System.Windows.Forms.Button BtnViewChart;
+        private System.Windows.Forms.Button BtnScan;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ListBox LstFiles;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox PicChart;
+        private System.Windows.Forms.Timer TimerFile;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel TxtStatus;
     }
 }

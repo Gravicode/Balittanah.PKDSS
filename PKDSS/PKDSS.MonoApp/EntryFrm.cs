@@ -1,9 +1,13 @@
-﻿using PKDSS.CoreLibrary;
+﻿using Grpc.Core;
+using PKDSS.CoreLibrary;
+using PKDSS.MonoApp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,9 +61,43 @@ namespace PKDSS.MonoApp
 
             CmbPropinsi.SelectedIndexChanged += CmbPropinsi_SelectionChanged;         
             CmbPropinsi.SelectedIndex = 0;
+
+            BtnProcess.Click += (a, b) => { MessageBox.Show("Maaf, fungsi belum tersedia"); };
+            BtnViewChart.Click += BtnViewChart_Click;
+            BtnScan.Click += BtnScan_Click;
+                
+            TimerFile.Enabled = true;
+            TimerFile.Start();
+         
         }
 
-    
+        private async void BtnScan_Click(object sender, EventArgs e)
+        {
+            Channel channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
+
+            var client = new Datahub.MessageHub.MessageHubClient(channel);
+          
+            var reply = await client.DoScanAsync(new Datahub.DataRequest { Parameter = "" });
+
+            TxtStatus.Text = reply.Result;
+
+            channel.ShutdownAsync().Wait();
+
+        }
+
+        private void BtnViewChart_Click(object sender, EventArgs e)
+        {
+            var FileSel = LstFiles.SelectedValue.ToString();
+            if (FileSel != null)
+            {
+                RawChart chart = new RawChart();
+                chart.LoadFile(FileSel);
+                var brush = new SolidBrush(Color.Green);
+                var bmp = chart.DrawChart(PicChart.Size, new Pen(brush));
+                PicChart.Image = bmp;
+                PicChart.Refresh();
+            }
+        }
 
         private void CmbPropinsi_SelectionChanged(object sender, EventArgs e)
         {
@@ -75,6 +113,7 @@ namespace PKDSS.MonoApp
         {
             var newFrm = new Form1();
             newFrm.Show();
+            TimerFile.Stop();
             this.Close();
 
         }
@@ -90,5 +129,40 @@ namespace PKDSS.MonoApp
             }
             catch { }
         }
+
+        static List<FileScan> ScannedFiles;
+        private void TimerFile_Tick(object sender, EventArgs e)
+        {
+            var PathScan = ConfigurationManager.AppSettings["ScanFolder"];
+            if (ScannedFiles == null)
+                ScannedFiles = new List<FileScan>();
+            else
+                ScannedFiles.Clear();
+            if (Directory.Exists(PathScan))
+            {
+                var files = Directory.GetFiles(PathScan, "*.json");
+                foreach(var item in files)
+                {
+                    ScannedFiles.Add(new FileScan() { FullName = item, Name=Path.GetFileName(item) });
+                }
+                //LstFiles.Items.Clear();
+                LstFiles.DisplayMember = "Name";
+                LstFiles.ValueMember = "FullName";
+                LstFiles.DataSource = ScannedFiles;
+                
+            }
+        }
+    }
+    public class DataGelombang
+    {
+        public List<double> wavenumber { get; set; }
+        public List<double> absorbance { get; set; }
+
+    }
+    public class FileScan
+    {
+        public DateTime CreatedDate { get; set; }
+        public string FullName { get; set; }
+        public string Name { get; set; }
     }
 }

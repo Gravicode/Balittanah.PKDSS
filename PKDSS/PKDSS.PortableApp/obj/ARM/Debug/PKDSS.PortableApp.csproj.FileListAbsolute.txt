@@ -976,3 +976,6 @@ C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\SensorP
 C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\SensorPage.g.cs
 C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\SensorPage.xaml
 C:\Jobs\balitanah\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\SensorPage.xbf
+C:\jobs\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\PKDSS.PortableApp.csprojAssemblyReference.cache
+C:\jobs\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\SensorPage.xaml
+C:\jobs\Balittanah.PKDSS\PKDSS\PKDSS.PortableApp\obj\ARM\Debug\SensorPage.xbf
