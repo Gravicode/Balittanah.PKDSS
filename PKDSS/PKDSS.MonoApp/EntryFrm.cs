@@ -1,5 +1,6 @@
 ﻿using Grpc.Core;
 using PKDSS.CoreLibrary;
+using PKDSS.MonoApp.Helper;
 using PKDSS.MonoApp.Helpers;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace PKDSS.MonoApp
 {
     public partial class EntryFrm : Form
     {
+        NamedPipesCom comm;
         public EntryFrm()
         {
             InitializeComponent();
@@ -25,6 +27,11 @@ namespace PKDSS.MonoApp
 
         void Setup()
         {
+            comm = new NamedPipesCom();
+            comm.DataReceived += (string Message)=>
+            {
+                Console.WriteLine("data from named pipes :" + Message);
+            };
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
             CmbKomoditas.Items.Clear();
@@ -68,11 +75,14 @@ namespace PKDSS.MonoApp
                 
             TimerFile.Enabled = true;
             TimerFile.Start();
-         
+   
         }
+
+      
 
         private async void BtnScan_Click(object sender, EventArgs e)
         {
+            /*
             Channel channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
 
             var client = new Datahub.MessageHub.MessageHubClient(channel);
@@ -82,7 +92,8 @@ namespace PKDSS.MonoApp
             TxtStatus.Text = reply.Result;
 
             channel.ShutdownAsync().Wait();
-
+            */
+            comm.SendMessage("Scan");
         }
 
         private void BtnViewChart_Click(object sender, EventArgs e)
