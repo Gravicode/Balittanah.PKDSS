@@ -121,11 +121,28 @@ namespace PKDSS.MonoApp.Helpers
                 return false;
             }
         }
+        public List<DrawPoint> GetDataGelombangInXY()
+        {
+            var dataPoints = new List<DrawPoint>();
+            if (data!=null)
+            {
+                for(int i=0;i<data.wavenumber.Count;i++)
+                {
+                    dataPoints.Add(new DrawPoint() { X= data.wavenumber[i], Y = data.absorbance[i] });
+                }
+            }
+
+            return dataPoints;
+        }
+
+
     }
-    struct DrawPoint
+
+    
+    public class DrawPoint
     {
-        public double X;
-        public double Y;
+        public double X { set; get; }
+        public double Y { set; get; }
       
     }
 }

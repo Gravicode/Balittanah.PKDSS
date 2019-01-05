@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PKDSS.MonoApp
 {
@@ -103,12 +104,29 @@ namespace PKDSS.MonoApp
             {
                 RawChart chart = new RawChart();
                 chart.LoadFile(FileSel);
-                var brush = new SolidBrush(Color.Green);
-                var bmp = chart.DrawChart(PicChart.Size, new Pen(brush));
-                PicChart.Image = bmp;
-                PicChart.Refresh();
+                var dt = chart.GetDataGelombangInXY();
+                chart1.DataSource = dt;
+                chart1.Series["Series1"].XValueMember = "X";
+                chart1.Series["Series1"].YValueMembers = "Y";
+                chart1.Series["Series1"].ChartType = SeriesChartType.Line;
+                chart1.Series["Series1"].IsVisibleInLegend = false;
+
+                chart1.ChartAreas[0].AxisX.Title = "Wave Number";
+                chart1.ChartAreas[0].AxisY.Title = "Absorbance";
+                chart1.ChartAreas[0].AxisY.LabelStyle.Format = "";
             }
-        }
+                /*
+                var FileSel = LstFiles.SelectedValue.ToString();
+                if (FileSel != null)
+                {
+                    RawChart chart = new RawChart();
+                    chart.LoadFile(FileSel);
+                    var brush = new SolidBrush(Color.Green);
+                    var bmp = chart.DrawChart(PicChart.Size, new Pen(brush));
+                    PicChart.Image = bmp;
+                    PicChart.Refresh();
+                }*/
+            }
 
         private void CmbPropinsi_SelectionChanged(object sender, EventArgs e)
         {
@@ -125,6 +143,7 @@ namespace PKDSS.MonoApp
             var newFrm = new Form1();
             newFrm.Show();
             TimerFile.Stop();
+            comm.Dispose();
             this.Close();
 
         }
@@ -154,7 +173,8 @@ namespace PKDSS.MonoApp
                 var files = Directory.GetFiles(PathScan, "*.json");
                 foreach(var item in files)
                 {
-                    ScannedFiles.Add(new FileScan() { FullName = item, Name=Path.GetFileName(item) });
+                    var FileNameNude = Path.GetFileName(item).Replace(Path.GetExtension(item),"");
+                    ScannedFiles.Add(new FileScan() { FullName = item, Name=FileNameNude, CreatedDate = new DateTime(  ) });
                 }
                 //LstFiles.Items.Clear();
                 LstFiles.DisplayMember = "Name";

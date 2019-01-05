@@ -38,7 +38,7 @@ namespace PKDSS.MonoApp.Helper
         }
         async Task Setup()
         {
-            pipeServer = new NamedPipeServerStream(PipeName, PipeDirection.Out);
+            pipeServer = new NamedPipeServerStream(PipeName, PipeDirection.InOut);
 
             Console.WriteLine("NamedPipeServerStream object created.");
 
