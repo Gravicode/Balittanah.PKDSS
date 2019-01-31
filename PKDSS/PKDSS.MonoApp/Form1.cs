@@ -16,7 +16,7 @@ namespace PKDSS.MonoApp
         public Form1()
         {
             InitializeComponent();
-            gps = new Helper.GpsDevice("COM11");
+            gps = new Helper.GpsDevice("COM12");
             gps.StartGPS();
             Setup();
         }

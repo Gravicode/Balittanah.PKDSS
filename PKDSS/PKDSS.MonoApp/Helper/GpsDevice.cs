@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO.Ports;
 using System.Diagnostics;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace PKDSS.MonoApp.Helper
 {
@@ -234,7 +235,7 @@ namespace PKDSS.MonoApp.Helper
         private readonly int _timeOut;
         private readonly double _minDistanceBetweenPoints;
         private bool _isStarted;
-        private Thread _processor;
+        //private Thread _processor;
 
         public delegate void LineProcessor(string line);
 
@@ -266,10 +267,36 @@ namespace PKDSS.MonoApp.Helper
                     return false;
                 }
                 _isStarted = true;
-                _processor = new Thread(ThreadProc);
-                _processor.Start();
+                if (!_serialPort.IsOpen)
+                {
+                    _serialPort.Open();
+                }
+                _serialPort.DataReceived += _serialPort_DataReceived;
+                //_processor = new Thread(ThreadProc);
+                //_processor.Start();
             }
             return true;
+        }
+
+        private void _serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            int bytesToRead = _serialPort.BytesToRead;
+            if (bytesToRead > 0)
+            {
+                byte[] buffer = new byte[bytesToRead];
+                _serialPort.Read(buffer, 0, buffer.Length);
+                try
+                {
+                    string temp = new string(System.Text.Encoding.UTF8.GetChars(buffer));
+                    Debug.Print(temp);
+                    ProcessBytes(temp);
+                }
+                catch (Exception ex)
+                {
+                    // only process lines we can parse.
+                    Debug.Print(ex.ToString());
+                }
+            }
         }
 
         public bool Stop()
@@ -281,10 +308,11 @@ namespace PKDSS.MonoApp.Helper
                     return false;
                 }
                 _isStarted = false;
+                /*
                 if (!_processor.Join(5000))
                 {
                     _processor.Abort();
-                }
+                }*/
                 return true;
             }
         }
@@ -296,6 +324,7 @@ namespace PKDSS.MonoApp.Helper
             {
                 _serialPort.Open();
             }
+            
             while (_isStarted)
             {
                 int bytesToRead = _serialPort.BytesToRead;
@@ -327,9 +356,73 @@ namespace PKDSS.MonoApp.Helper
 
         private void ProcessBytes(string temp)
         {
+            if (temp.IndexOf('\n') != -1)
+            {
+                string[] parts = Regex.Split(temp,"\r\n");
+                //_data += parts[0];
+                //_data = _data.Trim();
+                foreach (var parsedLine in parts)
+                {
+                    _data = parsedLine;
+                    if (_data != string.Empty)
+                    {
+                        if (_data.IndexOf("$GPRMC") == 0)
+                        {
+                            Debug.Print("GOT $GPRMC LINE");
+                            if (GpsData != null)
+                            {
+                                GpsPoint gpsPoint = GprmcParser.Parse(_data);
+                                if (gpsPoint != null)
+                                {
+                                    bool isOk = true;
+                                    if (_lastPoint != null)
+                                    {
+                                        double distance = GeoDistanceCalculator.DistanceInMiles(gpsPoint.Latitude, gpsPoint.Longitude,
+                                                                                       _lastPoint.Latitude, _lastPoint.Longitude);
+                                        double distInFeet = distance * 5280;
+                                        Debug.Print("distance = " + distance + " mi (" + distInFeet + " feet)");
+                                        if (distance < _minDistanceBetweenPoints)
+                                        {
+                                            // Too close to the last point....don't raise the event
+                                            isOk = false;
+                                        }
+                                        DateTime now = DateTime.Now;
+                                        TimeSpan diffseconds = (now - _lastDateTime);
+                                        if (diffseconds.Seconds > 60)
+                                        {
+                                            // A minute has gone by, so update
+                                            isOk = true;
+                                            _lastDateTime = now;
+                                        }
+                                    }
+                                    _lastPoint = gpsPoint;
+
+                                    // Raise the event
+                                    if (isOk)
+                                    {
+                                        GpsData(gpsPoint);
+                                    }
+                                }
+                            }
+                        }
+                        if (RawLine != null)
+                        {
+                            RawLine(_data);
+                        }
+                    }
+                
+                    //temp = parts[1];
+                    _data = string.Empty;
+                }
+            }
+            //_data += temp;
+        }
+        /*
+         private void ProcessBytes(string temp)
+        {
             while (temp.IndexOf('\n') != -1)
             {
-                string[] parts = temp.Split('\n');
+                string[] parts = Regex.Split(temp,"\r\n");
                 _data += parts[0];
                 _data = _data.Trim();
                 if (_data != string.Empty)
@@ -383,7 +476,7 @@ namespace PKDSS.MonoApp.Helper
             }
             _data += temp;
         }
-
+        */
     }
     public class GpsPoint
     {
