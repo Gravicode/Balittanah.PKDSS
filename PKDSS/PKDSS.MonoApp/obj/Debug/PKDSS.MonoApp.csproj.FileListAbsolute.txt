@@ -398,3 +398,5 @@ C:\jobs\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.
 C:\jobs\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.csproj.CopyComplete
 C:\jobs\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.exe
 C:\jobs\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.pdb
+C:\jobs\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\NmeaParser.dll
+C:\jobs\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\NmeaParser.xml

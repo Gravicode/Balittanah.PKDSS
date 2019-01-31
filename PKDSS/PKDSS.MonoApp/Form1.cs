@@ -7,20 +7,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using System.Device.Location;
 
 namespace PKDSS.MonoApp
 {
     public partial class Form1 : Form
     {
-        Helper.GpsDevice gps;
+        Helper.GpsDevice2 gps;
+        // The coordinate watcher.
+        //private GeoCoordinateWatcher Watcher = null;
+
+        // Create and start the watcher.
+      
         public Form1()
         {
             InitializeComponent();
-            gps = new Helper.GpsDevice("COM12");
+            gps = new Helper.GpsDevice2("COM11");
             gps.StartGPS();
+            // Create the watcher.
+            //Watcher = new GeoCoordinateWatcher();
+
+            // Catch the StatusChanged event.
+            //Watcher.StatusChanged += Watcher_StatusChanged;
+
+            // Start the watcher.
+            //Watcher.Start();
             Setup();
         }
-
+        /*
+        // The watcher's status has change. See if it is ready.
+        private void Watcher_StatusChanged(object sender,
+            GeoPositionStatusChangedEventArgs e)
+        {
+            if (e.Status == GeoPositionStatus.Ready)
+            {
+                // Display the latitude and longitude.
+                if (Watcher.Position.Location.IsUnknown)
+                {
+                    Console.WriteLine("Cannot find location data"); 
+                }
+                else
+                {
+                    GeoCoordinate location = Watcher.Position.Location;
+                    Console.WriteLine($"location : {location.Latitude.ToString()},{location.Longitude.ToString()}"); 
+                }
+            }
+        }*/
         void Setup()
         {
             //this.TopMost = true;
