@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PKDSS.MonoApp.Helper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace PKDSS.MonoApp
             Application.SetCompatibleTextRenderingDefault(false);
             var main_form = new Form1();
             main_form.Show();
+          
             Application.Run();
         }
     }

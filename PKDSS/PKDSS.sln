@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PKDSS.MonoApp", "PKDSS.Mono
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RPC", "RPC", "{43387081-CF01-48D8-B9EC-82F9CB76BDDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageHub", "MessageHub\MessageHub.csproj", "{8E066469-4770-4203-83C4-2C851EE2D38A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageHub", "MessageHub\MessageHub.csproj", "{8E066469-4770-4203-83C4-2C851EE2D38A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

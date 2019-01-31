@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using PKDSS.CoreLibrary.Model;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
@@ -12,6 +14,7 @@ namespace PKDSS.MonoApp.Helper
     public class SoilNutritionModel
     {
         const string BASE_PYTHON = @"C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\python.exe";
+        const string OUTPUT_MODEL_FILE = @"C:\jobs\BalitTanah\PythonScript\PythonNIR\output.json";
         readonly string CMD = ConfigurationManager.AppSettings["PythonSript"];
         public string InferenceModel(string FileCSV)
         {
@@ -42,5 +45,19 @@ namespace PKDSS.MonoApp.Helper
             }
             return "";
         }
+        public ModelOutput GetOutputData(string PathFile =OUTPUT_MODEL_FILE)
+        {
+            if (File.Exists(PathFile))
+            {
+                var strModel = File.ReadAllText(PathFile);
+                var OutputModelData = JsonConvert.DeserializeObject<ModelOutput>(strModel);
+                File.Delete(PathFile);
+                return OutputModelData;
+            }else
+                Console.WriteLine("File output is not found.");
+            return null;
+        }
+
+
     }
 }

@@ -223,11 +223,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\jobs\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj",
+      "projectUniqueName": "C:\\jobs\\BalitTanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj",
       "projectName": "PKDSS.CoreLibrary",
-      "projectPath": "C:\\jobs\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj",
+      "projectPath": "C:\\jobs\\BalitTanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj",
       "packagesPath": "C:\\Users\\gravi\\.nuget\\packages\\",
-      "outputPath": "C:\\jobs\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\obj\\",
+      "outputPath": "C:\\jobs\\BalitTanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
