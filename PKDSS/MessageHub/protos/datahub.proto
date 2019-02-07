@@ -27,6 +27,8 @@ service MessageHub {
   rpc DoScan (DataRequest) returns (DataReply) {}
   // check if device is ready
   rpc IsDeviceReady (DataRequest) returns (DataReply) {}
+  // do background
+  rpc DoBackground (DataRequest) returns (DataReply) {}
 }
 
 // The request method

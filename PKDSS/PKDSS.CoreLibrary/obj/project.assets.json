@@ -217,23 +217,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gravi\\.nuget\\packages\\": {},
+    "C:\\Users\\Janu\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\jobs\\BalitTanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj",
+      "projectUniqueName": "C:\\BalitTanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj",
       "projectName": "PKDSS.CoreLibrary",
-      "projectPath": "C:\\jobs\\BalitTanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj",
-      "packagesPath": "C:\\Users\\gravi\\.nuget\\packages\\",
-      "outputPath": "C:\\jobs\\BalitTanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\obj\\",
+      "projectPath": "C:\\BalitTanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj",
+      "packagesPath": "C:\\Users\\Janu\\.nuget\\packages\\",
+      "outputPath": "C:\\BalitTanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\gravi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Janu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

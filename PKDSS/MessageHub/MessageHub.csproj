@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="protos\datahub.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.6.1" />
     <PackageReference Include="Grpc" Version="1.17.1" />
     <PackageReference Include="Grpc.Core" Version="1.17.1" />
@@ -13,6 +17,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Include="System.Interactive.Async" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProtoBuf Include="protos\datahub.proto" />
   </ItemGroup>
 
 </Project>

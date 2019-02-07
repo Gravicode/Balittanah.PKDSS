@@ -14,25 +14,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Threading;
 
 namespace PKDSS.MonoApp
 {
     public partial class EntryFrm : Form
     {
-        NamedPipesCom comm;
+        Channel channel = new Channel("localhost:50051", ChannelCredentials.Insecure);
+        //NamedPipesCom comm;
         public EntryFrm()
         {
             InitializeComponent();
             Setup();
+
+            //Looping check device is ready
+            Thread LoopCheckDevice = new Thread(RequestIsDeviceReady);
+            LoopCheckDevice.Start();
         }
 
         void Setup()
         {
-            comm = new NamedPipesCom();
-            comm.DataReceived += (string Message)=>
-            {
-                Console.WriteLine("data from named pipes :" + Message);
-            };
+            //comm = new NamedPipesCom();
+            //comm.DataReceived += (string Message)=>
+            //{
+            //    Console.WriteLine("data from named pipes :" + Message);
+            //};
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
             CmbKomoditas.Items.Clear();
@@ -67,34 +73,44 @@ namespace PKDSS.MonoApp
                 CmbPropinsi.Items.Add(item);
             }
 
-            CmbPropinsi.SelectedIndexChanged += CmbPropinsi_SelectionChanged;         
+            CmbPropinsi.SelectedIndexChanged += CmbPropinsi_SelectionChanged;
             CmbPropinsi.SelectedIndex = 0;
 
-            BtnProcess.Click += (a, b) => { MessageBox.Show("Maaf, fungsi belum tersedia"); };
+            //BtnProcess.Click += (a, b) => { MessageBox.Show("Maaf, fungsi belum tersedia"); };
             BtnViewChart.Click += BtnViewChart_Click;
             BtnScan.Click += BtnScan_Click;
-                
+
             TimerFile.Enabled = true;
             TimerFile.Start();
-   
         }
 
-      
+        private async void RequestIsDeviceReady()
+        {
+            try
+            {
+                while (true)
+                {
+                    Thread.Sleep(1500);
+                    var client = new Datahub.MessageHub.MessageHubClient(channel);
+                    var reply = await client.IsDeviceReadyAsync(new Datahub.DataRequest { Parameter = "" });
+                    TxtDeviceStat.Text = reply.Result;
+                    //channel.ShutdownAsync().Wait();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
 
         private async void BtnScan_Click(object sender, EventArgs e)
         {
-            /*
-            Channel channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
-
             var client = new Datahub.MessageHub.MessageHubClient(channel);
-          
             var reply = await client.DoScanAsync(new Datahub.DataRequest { Parameter = "" });
+            TxtDeviceStat.Text = reply.Result;
+            //channel.ShutdownAsync().Wait();
 
-            TxtStatus.Text = reply.Result;
-
-            channel.ShutdownAsync().Wait();
-            */
-            comm.SendMessage("Scan");
+            //comm.SendMessage("Scan");
         }
 
         private void BtnViewChart_Click(object sender, EventArgs e)
@@ -115,18 +131,18 @@ namespace PKDSS.MonoApp
                 chart1.ChartAreas[0].AxisY.Title = "Absorbance";
                 chart1.ChartAreas[0].AxisY.LabelStyle.Format = "";
             }
-                /*
-                var FileSel = LstFiles.SelectedValue.ToString();
-                if (FileSel != null)
-                {
-                    RawChart chart = new RawChart();
-                    chart.LoadFile(FileSel);
-                    var brush = new SolidBrush(Color.Green);
-                    var bmp = chart.DrawChart(PicChart.Size, new Pen(brush));
-                    PicChart.Image = bmp;
-                    PicChart.Refresh();
-                }*/
-            }
+            /*
+            var FileSel = LstFiles.SelectedValue.ToString();
+            if (FileSel != null)
+            {
+                RawChart chart = new RawChart();
+                chart.LoadFile(FileSel);
+                var brush = new SolidBrush(Color.Green);
+                var bmp = chart.DrawChart(PicChart.Size, new Pen(brush));
+                PicChart.Image = bmp;
+                PicChart.Refresh();
+            }*/
+        }
 
         private void CmbPropinsi_SelectionChanged(object sender, EventArgs e)
         {
@@ -143,7 +159,7 @@ namespace PKDSS.MonoApp
             var newFrm = new Form1();
             newFrm.Show();
             TimerFile.Stop();
-            comm.Dispose();
+            //comm.Dispose();
             this.Close();
 
         }
@@ -170,18 +186,34 @@ namespace PKDSS.MonoApp
                 ScannedFiles.Clear();
             if (Directory.Exists(PathScan))
             {
-                var files = Directory.GetFiles(PathScan, "*.json");
-                foreach(var item in files)
+                var files = Directory.GetFiles(PathScan, "*.Spectrum");
+                foreach (var item in files)
                 {
-                    var FileNameNude = Path.GetFileName(item).Replace(Path.GetExtension(item),"");
-                    ScannedFiles.Add(new FileScan() { FullName = item, Name=FileNameNude, CreatedDate = new DateTime(  ) });
+                    var FileNameNude = Path.GetFileName(item).Replace(Path.GetExtension(item), "");
+                    ScannedFiles.Add(new FileScan() { FullName = item, Name = FileNameNude, CreatedDate = new DateTime() });
                 }
                 //LstFiles.Items.Clear();
                 LstFiles.DisplayMember = "Name";
                 LstFiles.ValueMember = "FullName";
                 LstFiles.DataSource = ScannedFiles;
-                
+
             }
+        }
+
+        private async void BtnBg_Click(object sender, EventArgs e)
+        {
+            var client = new Datahub.MessageHub.MessageHubClient(channel);
+            var reply = await client.DoBackgroundAsync(new Datahub.DataRequest { Parameter = "" });
+            TxtDeviceStat.Text = reply.Result;
+            //channel.ShutdownAsync().Wait();
+        }
+
+        private void BtnProcess_Click(object sender, EventArgs e)
+        {
+            String filename = LstFiles.SelectedValue.ToString();
+
+            SoilNutritionModel snm = new SoilNutritionModel();
+            snm.InferenceModel(filename);
         }
     }
     public class DataGelombang

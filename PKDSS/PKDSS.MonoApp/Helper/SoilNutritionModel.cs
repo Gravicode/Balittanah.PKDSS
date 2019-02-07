@@ -13,8 +13,8 @@ namespace PKDSS.MonoApp.Helper
 {
     public class SoilNutritionModel
     {
-        const string BASE_PYTHON = @"C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\python.exe";
-        const string OUTPUT_MODEL_FILE = @"C:\jobs\BalitTanah\PythonScript\PythonNIR\output.json";
+        const string BASE_PYTHON = @"C:\installdir\Python\Python37\python.exe";
+        const string OUTPUT_MODEL_FILE = @"C:\BalitTanah\PythonScript\PythonNIR\output.json";
         readonly string CMD = ConfigurationManager.AppSettings["PythonSript"];
         public string InferenceModel(string FileCSV)
         {
@@ -45,7 +45,7 @@ namespace PKDSS.MonoApp.Helper
             }
             return "";
         }
-        public ModelOutput GetOutputData(string PathFile =OUTPUT_MODEL_FILE)
+        public ModelOutput GetOutputData(string PathFile = OUTPUT_MODEL_FILE)
         {
             if (File.Exists(PathFile))
             {
