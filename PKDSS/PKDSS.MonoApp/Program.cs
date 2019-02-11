@@ -17,7 +17,7 @@ namespace PKDSS.MonoApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var main_form = new Form1();
+            var main_form = new EntryFrm();
             main_form.Show();
           
             Application.Run();

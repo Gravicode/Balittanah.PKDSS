@@ -32,1161 +32,1309 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.TxtNoSample = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.TxtNoHorizon = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.CmbKabupaten = new System.Windows.Forms.ComboBox();
-            this.CmbPropinsi = new System.Windows.Forms.ComboBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.TxtKordinatY = new System.Windows.Forms.TextBox();
-            this.TxtNoBalitTanah = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.TxtKecamatan = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.TxtDesa = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.TxtYear = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.TxtNoObs = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TxtInitial = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TxtKordinatX = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.TxtPengirim = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TxtNoTanah = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TxtMappingUnit = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TxtNoForm = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.TxtKejenuhanBasa = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.TxtAldd = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.TxtP205 = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.TxtPOlsen = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.CmbKomoditas = new System.Windows.Forms.ComboBox();
-            this.CmbTekstur = new System.Windows.Forms.ComboBox();
-            this.TxtMgdd = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.TxtCadd = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.TxtKdd = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.TxtRetensiP = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.TxtK205 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.TxtPBray = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.TxtKTK = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.TxtNTotal = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.TxtCOrganik = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.TxtPh = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.BtnBack = new System.Windows.Forms.Button();
-            this.BtnCalculate = new System.Windows.Forms.Button();
-            this.TxtKCL = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.TxtSP36 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.TxtUrea = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.TimerFile = new System.Windows.Forms.Timer(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.tabScanning = new System.Windows.Forms.TabPage();
+            this.btnBackground = new System.Windows.Forms.Button();
+            this.chartWave = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnProcess = new System.Windows.Forms.Button();
+            this.btnScan = new System.Windows.Forms.Button();
+            this.btnReset = new Bunifu.Framework.UI.BunifuImageButton();
+            this.pnlSetting = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbGuide = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lbResolution = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.cbObticalGian = new System.Windows.Forms.ComboBox();
+            this.cbResolution = new System.Windows.Forms.ComboBox();
+            this.lbOpticalGian = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.TxtDeviceStat = new System.Windows.Forms.ToolStripStatusLabel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.BtnBg = new System.Windows.Forms.Button();
-            this.BtnProcess = new System.Windows.Forms.Button();
-            this.BtnViewChart = new System.Windows.Forms.Button();
-            this.BtnScan = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.LstFiles = new System.Windows.Forms.ListBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.TimerFile = new System.Windows.Forms.Timer(this.components);
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.tabMenu = new System.Windows.Forms.TabControl();
+            this.tabDataUnsur = new System.Windows.Forms.TabPage();
+            this.bunifuCustomLabel23 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtKejenuhanBasa = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbKejenuhanBasa = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtP205 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbP205 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtAIdd = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbAIdd = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtPOlsen = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbPOlsen = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtMgdd = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbMgdd = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtPbray = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbPbray = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtCadd = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbCadd = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtKTK = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbKTK = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtKadd = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbKadd = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtNTotal = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbNTotal = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtRetensi = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtCOrganik = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbCorganik = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtK205 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbK205 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtPH = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbPH = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.cbKomoditas = new System.Windows.Forms.ComboBox();
+            this.lbKomoditas = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.cbTekstur = new System.Windows.Forms.ComboBox();
+            this.lbTekstur = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.tabInfoLokasi = new System.Windows.Forms.TabPage();
+            this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtBalitTanah = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel18 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtSample = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel17 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtHorizon = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel16 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.cbKabupaten = new System.Windows.Forms.ComboBox();
+            this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.cbProvinsi = new System.Windows.Forms.ComboBox();
+            this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtY = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lbInisial = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtX = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtKecamatan = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtPengirim = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtDesa = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtNoTanah = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtTahun = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtMappingUnit = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtNoObs = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtNoForm = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tabRekomendasiPupuk = new System.Windows.Forms.TabPage();
+            this.bunifuCustomLabel24 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnCalc = new System.Windows.Forms.Button();
+            this.txtKCL = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel19 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtSP36 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel20 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtUrea = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.tabScanning.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartWave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReset)).BeginInit();
+            this.pnlSetting.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.tabMenu.SuspendLayout();
+            this.tabDataUnsur.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tabInfoLokasi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabRekomendasiPupuk.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(793, 487);
-            this.tabControl1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.AutoScroll = true;
-            this.tabPage1.Controls.Add(this.TxtNoSample);
-            this.tabPage1.Controls.Add(this.label32);
-            this.tabPage1.Controls.Add(this.TxtNoHorizon);
-            this.tabPage1.Controls.Add(this.label13);
-            this.tabPage1.Controls.Add(this.CmbKabupaten);
-            this.tabPage1.Controls.Add(this.CmbPropinsi);
-            this.tabPage1.Controls.Add(this.label31);
-            this.tabPage1.Controls.Add(this.label30);
-            this.tabPage1.Controls.Add(this.TxtKordinatY);
-            this.tabPage1.Controls.Add(this.TxtNoBalitTanah);
-            this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Controls.Add(this.label12);
-            this.tabPage1.Controls.Add(this.label11);
-            this.tabPage1.Controls.Add(this.TxtKecamatan);
-            this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.TxtDesa);
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.TxtYear);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.TxtNoObs);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.TxtInitial);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.TxtKordinatX);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.TxtPengirim);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.TxtNoTanah);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.TxtMappingUnit);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.TxtNoForm);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(785, 461);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Info Lokasi Observasi";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // TxtNoSample
-            // 
-            this.TxtNoSample.Location = new System.Drawing.Point(185, 375);
-            this.TxtNoSample.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtNoSample.Name = "TxtNoSample";
-            this.TxtNoSample.Size = new System.Drawing.Size(155, 28);
-            this.TxtNoSample.TabIndex = 36;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(182, 349);
-            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(104, 24);
-            this.label32.TabIndex = 35;
-            this.label32.Text = "No Sample";
-            // 
-            // TxtNoHorizon
-            // 
-            this.TxtNoHorizon.Location = new System.Drawing.Point(10, 375);
-            this.TxtNoHorizon.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtNoHorizon.Name = "TxtNoHorizon";
-            this.TxtNoHorizon.Size = new System.Drawing.Size(172, 28);
-            this.TxtNoHorizon.TabIndex = 34;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 349);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(106, 24);
-            this.label13.TabIndex = 33;
-            this.label13.Text = "No Horizon";
-            // 
-            // CmbKabupaten
-            // 
-            this.CmbKabupaten.FormattingEnabled = true;
-            this.CmbKabupaten.Location = new System.Drawing.Point(278, 312);
-            this.CmbKabupaten.Margin = new System.Windows.Forms.Padding(2);
-            this.CmbKabupaten.Name = "CmbKabupaten";
-            this.CmbKabupaten.Size = new System.Drawing.Size(239, 30);
-            this.CmbKabupaten.TabIndex = 32;
-            // 
-            // CmbPropinsi
-            // 
-            this.CmbPropinsi.FormattingEnabled = true;
-            this.CmbPropinsi.Location = new System.Drawing.Point(278, 256);
-            this.CmbPropinsi.Margin = new System.Windows.Forms.Padding(2);
-            this.CmbPropinsi.Name = "CmbPropinsi";
-            this.CmbPropinsi.Size = new System.Drawing.Size(239, 30);
-            this.CmbPropinsi.TabIndex = 31;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(127, 258);
-            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(27, 24);
-            this.label31.TabIndex = 30;
-            this.label31.Text = "Y:";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(6, 259);
-            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(29, 24);
-            this.label30.TabIndex = 29;
-            this.label30.Text = "X:";
-            // 
-            // TxtKordinatY
-            // 
-            this.TxtKordinatY.Location = new System.Drawing.Point(158, 257);
-            this.TxtKordinatY.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtKordinatY.Name = "TxtKordinatY";
-            this.TxtKordinatY.Size = new System.Drawing.Size(81, 28);
-            this.TxtKordinatY.TabIndex = 28;
-            // 
-            // TxtNoBalitTanah
-            // 
-            this.TxtNoBalitTanah.Location = new System.Drawing.Point(344, 375);
-            this.TxtNoBalitTanah.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtNoBalitTanah.Name = "TxtNoBalitTanah";
-            this.TxtNoBalitTanah.Size = new System.Drawing.Size(173, 28);
-            this.TxtNoBalitTanah.TabIndex = 27;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(340, 349);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(133, 24);
-            this.label14.TabIndex = 26;
-            this.label14.Text = "No Balit Tanah";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(274, 288);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(101, 24);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "Kabupaten";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(274, 233);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(78, 24);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Propinsi";
-            // 
-            // TxtKecamatan
-            // 
-            this.TxtKecamatan.Location = new System.Drawing.Point(278, 201);
-            this.TxtKecamatan.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtKecamatan.Name = "TxtKecamatan";
-            this.TxtKecamatan.Size = new System.Drawing.Size(239, 28);
-            this.TxtKecamatan.TabIndex = 19;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(274, 175);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 24);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Kecamatan";
-            // 
-            // TxtDesa
-            // 
-            this.TxtDesa.Location = new System.Drawing.Point(278, 145);
-            this.TxtDesa.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtDesa.Name = "TxtDesa";
-            this.TxtDesa.Size = new System.Drawing.Size(239, 28);
-            this.TxtDesa.TabIndex = 17;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(274, 119);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 24);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Desa";
-            // 
-            // TxtYear
-            // 
-            this.TxtYear.Location = new System.Drawing.Point(278, 85);
-            this.TxtYear.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtYear.Name = "TxtYear";
-            this.TxtYear.Size = new System.Drawing.Size(239, 28);
-            this.TxtYear.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(274, 59);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 24);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Tahun";
-            // 
-            // TxtNoObs
-            // 
-            this.TxtNoObs.Location = new System.Drawing.Point(278, 28);
-            this.TxtNoObs.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtNoObs.Name = "TxtNoObs";
-            this.TxtNoObs.Size = new System.Drawing.Size(239, 28);
-            this.TxtNoObs.TabIndex = 13;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(274, 2);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 24);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "No Obs";
-            // 
-            // TxtInitial
-            // 
-            this.TxtInitial.Location = new System.Drawing.Point(10, 314);
-            this.TxtInitial.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtInitial.Name = "TxtInitial";
-            this.TxtInitial.Size = new System.Drawing.Size(239, 28);
-            this.TxtInitial.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 288);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 24);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Inisial";
-            // 
-            // TxtKordinatX
-            // 
-            this.TxtKordinatX.Location = new System.Drawing.Point(38, 257);
-            this.TxtKordinatX.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtKordinatX.Name = "TxtKordinatX";
-            this.TxtKordinatX.Size = new System.Drawing.Size(81, 28);
-            this.TxtKordinatX.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 233);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 24);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Kordinat";
-            // 
-            // TxtPengirim
-            // 
-            this.TxtPengirim.Location = new System.Drawing.Point(10, 201);
-            this.TxtPengirim.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtPengirim.Name = "TxtPengirim";
-            this.TxtPengirim.Size = new System.Drawing.Size(239, 28);
-            this.TxtPengirim.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 175);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 24);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Pengirim";
-            // 
-            // TxtNoTanah
-            // 
-            this.TxtNoTanah.Location = new System.Drawing.Point(10, 145);
-            this.TxtNoTanah.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtNoTanah.Name = "TxtNoTanah";
-            this.TxtNoTanah.Size = new System.Drawing.Size(239, 28);
-            this.TxtNoTanah.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 119);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 24);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "No Tanah";
-            // 
-            // TxtMappingUnit
-            // 
-            this.TxtMappingUnit.Location = new System.Drawing.Point(10, 85);
-            this.TxtMappingUnit.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtMappingUnit.Name = "TxtMappingUnit";
-            this.TxtMappingUnit.Size = new System.Drawing.Size(239, 28);
-            this.TxtMappingUnit.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 59);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Mapping Unit";
-            // 
-            // TxtNoForm
-            // 
-            this.TxtNoForm.Location = new System.Drawing.Point(10, 28);
-            this.TxtNoForm.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtNoForm.Name = "TxtNoForm";
-            this.TxtNoForm.Size = new System.Drawing.Size(239, 28);
-            this.TxtNoForm.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 2);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "No Form";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.AutoScroll = true;
-            this.tabPage2.Controls.Add(this.TxtKejenuhanBasa);
-            this.tabPage2.Controls.Add(this.label36);
-            this.tabPage2.Controls.Add(this.TxtAldd);
-            this.tabPage2.Controls.Add(this.label35);
-            this.tabPage2.Controls.Add(this.TxtP205);
-            this.tabPage2.Controls.Add(this.label34);
-            this.tabPage2.Controls.Add(this.TxtPOlsen);
-            this.tabPage2.Controls.Add(this.label33);
-            this.tabPage2.Controls.Add(this.CmbKomoditas);
-            this.tabPage2.Controls.Add(this.CmbTekstur);
-            this.tabPage2.Controls.Add(this.TxtMgdd);
-            this.tabPage2.Controls.Add(this.label15);
-            this.tabPage2.Controls.Add(this.TxtCadd);
-            this.tabPage2.Controls.Add(this.label16);
-            this.tabPage2.Controls.Add(this.TxtKdd);
-            this.tabPage2.Controls.Add(this.label17);
-            this.tabPage2.Controls.Add(this.TxtRetensiP);
-            this.tabPage2.Controls.Add(this.label18);
-            this.tabPage2.Controls.Add(this.TxtK205);
-            this.tabPage2.Controls.Add(this.label19);
-            this.tabPage2.Controls.Add(this.label20);
-            this.tabPage2.Controls.Add(this.TxtPBray);
-            this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Controls.Add(this.TxtKTK);
-            this.tabPage2.Controls.Add(this.label22);
-            this.tabPage2.Controls.Add(this.TxtNTotal);
-            this.tabPage2.Controls.Add(this.label23);
-            this.tabPage2.Controls.Add(this.TxtCOrganik);
-            this.tabPage2.Controls.Add(this.label24);
-            this.tabPage2.Controls.Add(this.TxtPh);
-            this.tabPage2.Controls.Add(this.label25);
-            this.tabPage2.Controls.Add(this.label26);
-            this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(785, 461);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Input Data Unsur Tanah";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // TxtKejenuhanBasa
-            // 
-            this.TxtKejenuhanBasa.Location = new System.Drawing.Point(278, 435);
-            this.TxtKejenuhanBasa.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtKejenuhanBasa.Name = "TxtKejenuhanBasa";
-            this.TxtKejenuhanBasa.Size = new System.Drawing.Size(239, 28);
-            this.TxtKejenuhanBasa.TabIndex = 57;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(274, 409);
-            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(148, 24);
-            this.label36.TabIndex = 56;
-            this.label36.Text = "Kejenuhan Basa";
-            // 
-            // TxtAldd
-            // 
-            this.TxtAldd.Location = new System.Drawing.Point(278, 379);
-            this.TxtAldd.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtAldd.Name = "TxtAldd";
-            this.TxtAldd.Size = new System.Drawing.Size(239, 28);
-            this.TxtAldd.TabIndex = 55;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(274, 353);
-            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(138, 24);
-            this.label35.TabIndex = 54;
-            this.label35.Text = "Al-dd (cmol/kg)";
-            // 
-            // TxtP205
-            // 
-            this.TxtP205.Location = new System.Drawing.Point(10, 435);
-            this.TxtP205.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtP205.Name = "TxtP205";
-            this.TxtP205.Size = new System.Drawing.Size(239, 28);
-            this.TxtP205.TabIndex = 53;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(6, 409);
-            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(223, 24);
-            this.label34.TabIndex = 52;
-            this.label34.Text = "P205 Potensial (mg/100g)";
-            // 
-            // TxtPOlsen
-            // 
-            this.TxtPOlsen.Location = new System.Drawing.Point(10, 379);
-            this.TxtPOlsen.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtPOlsen.Name = "TxtPOlsen";
-            this.TxtPOlsen.Size = new System.Drawing.Size(239, 28);
-            this.TxtPOlsen.TabIndex = 51;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(6, 353);
-            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(180, 24);
-            this.label33.TabIndex = 50;
-            this.label33.Text = "P-Olsen (ppm P205)";
-            // 
-            // CmbKomoditas
-            // 
-            this.CmbKomoditas.FormattingEnabled = true;
-            this.CmbKomoditas.Location = new System.Drawing.Point(278, 37);
-            this.CmbKomoditas.Margin = new System.Windows.Forms.Padding(2);
-            this.CmbKomoditas.Name = "CmbKomoditas";
-            this.CmbKomoditas.Size = new System.Drawing.Size(239, 30);
-            this.CmbKomoditas.TabIndex = 49;
-            // 
-            // CmbTekstur
-            // 
-            this.CmbTekstur.FormattingEnabled = true;
-            this.CmbTekstur.Location = new System.Drawing.Point(10, 37);
-            this.CmbTekstur.Margin = new System.Windows.Forms.Padding(2);
-            this.CmbTekstur.Name = "CmbTekstur";
-            this.CmbTekstur.Size = new System.Drawing.Size(239, 30);
-            this.CmbTekstur.TabIndex = 48;
-            // 
-            // TxtMgdd
-            // 
-            this.TxtMgdd.Location = new System.Drawing.Point(278, 323);
-            this.TxtMgdd.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtMgdd.Name = "TxtMgdd";
-            this.TxtMgdd.Size = new System.Drawing.Size(239, 28);
-            this.TxtMgdd.TabIndex = 47;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(274, 297);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(148, 24);
-            this.label15.TabIndex = 46;
-            this.label15.Text = "Mg-dd (cmol/kg)";
-            // 
-            // TxtCadd
-            // 
-            this.TxtCadd.Location = new System.Drawing.Point(278, 267);
-            this.TxtCadd.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtCadd.Name = "TxtCadd";
-            this.TxtCadd.Size = new System.Drawing.Size(239, 28);
-            this.TxtCadd.TabIndex = 45;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(274, 241);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(144, 24);
-            this.label16.TabIndex = 44;
-            this.label16.Text = "Ca-dd (cmol/kg)";
-            // 
-            // TxtKdd
-            // 
-            this.TxtKdd.Location = new System.Drawing.Point(278, 209);
-            this.TxtKdd.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtKdd.Name = "TxtKdd";
-            this.TxtKdd.Size = new System.Drawing.Size(239, 28);
-            this.TxtKdd.TabIndex = 43;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(274, 183);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(133, 24);
-            this.label17.TabIndex = 42;
-            this.label17.Text = "K-dd (cmol/kg)";
-            // 
-            // TxtRetensiP
-            // 
-            this.TxtRetensiP.Location = new System.Drawing.Point(278, 153);
-            this.TxtRetensiP.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtRetensiP.Name = "TxtRetensiP";
-            this.TxtRetensiP.Size = new System.Drawing.Size(239, 28);
-            this.TxtRetensiP.TabIndex = 41;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(274, 127);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(122, 24);
-            this.label18.TabIndex = 40;
-            this.label18.Text = "Retensi P (%)";
-            // 
-            // TxtK205
-            // 
-            this.TxtK205.Location = new System.Drawing.Point(278, 93);
-            this.TxtK205.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtK205.Name = "TxtK205";
-            this.TxtK205.Size = new System.Drawing.Size(239, 28);
-            this.TxtK205.TabIndex = 39;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(274, 67);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(223, 24);
-            this.label19.TabIndex = 38;
-            this.label19.Text = "K205 Potensial (mg/100g)";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(274, 11);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(98, 24);
-            this.label20.TabIndex = 36;
-            this.label20.Text = "Komoditas";
-            // 
-            // TxtPBray
-            // 
-            this.TxtPBray.Location = new System.Drawing.Point(10, 323);
-            this.TxtPBray.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtPBray.Name = "TxtPBray";
-            this.TxtPBray.Size = new System.Drawing.Size(239, 28);
-            this.TxtPBray.TabIndex = 35;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 297);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(182, 24);
-            this.label21.TabIndex = 34;
-            this.label21.Text = "P-Bray 1 (ppm P205)";
-            // 
-            // TxtKTK
-            // 
-            this.TxtKTK.Location = new System.Drawing.Point(10, 267);
-            this.TxtKTK.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtKTK.Name = "TxtKTK";
-            this.TxtKTK.Size = new System.Drawing.Size(239, 28);
-            this.TxtKTK.TabIndex = 33;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(6, 241);
-            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(162, 24);
-            this.label22.TabIndex = 32;
-            this.label22.Text = "KTK Liat (cmol/kg)";
-            // 
-            // TxtNTotal
-            // 
-            this.TxtNTotal.Location = new System.Drawing.Point(10, 209);
-            this.TxtNTotal.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtNTotal.Name = "TxtNTotal";
-            this.TxtNTotal.Size = new System.Drawing.Size(239, 28);
-            this.TxtNTotal.TabIndex = 31;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(6, 183);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(103, 24);
-            this.label23.TabIndex = 30;
-            this.label23.Text = "N-Total (%)";
-            // 
-            // TxtCOrganik
-            // 
-            this.TxtCOrganik.Location = new System.Drawing.Point(10, 153);
-            this.TxtCOrganik.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtCOrganik.Name = "TxtCOrganik";
-            this.TxtCOrganik.Size = new System.Drawing.Size(239, 28);
-            this.TxtCOrganik.TabIndex = 29;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 127);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(127, 24);
-            this.label24.TabIndex = 28;
-            this.label24.Text = "C-Organik (%)";
-            // 
-            // TxtPh
-            // 
-            this.TxtPh.Location = new System.Drawing.Point(10, 93);
-            this.TxtPh.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtPh.Name = "TxtPh";
-            this.TxtPh.Size = new System.Drawing.Size(239, 28);
-            this.TxtPh.TabIndex = 27;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(6, 67);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(35, 24);
-            this.label25.TabIndex = 26;
-            this.label25.Text = "pH";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(6, 11);
-            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(72, 24);
-            this.label26.TabIndex = 24;
-            this.label26.Text = "Tekstur";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.AutoScroll = true;
-            this.tabPage3.Controls.Add(this.BtnBack);
-            this.tabPage3.Controls.Add(this.BtnCalculate);
-            this.tabPage3.Controls.Add(this.TxtKCL);
-            this.tabPage3.Controls.Add(this.label27);
-            this.tabPage3.Controls.Add(this.TxtSP36);
-            this.tabPage3.Controls.Add(this.label28);
-            this.tabPage3.Controls.Add(this.TxtUrea);
-            this.tabPage3.Controls.Add(this.label29);
-            this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Size = new System.Drawing.Size(785, 461);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Rekomendasi Pupuk";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // BtnBack
-            // 
-            this.BtnBack.Location = new System.Drawing.Point(121, 181);
-            this.BtnBack.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnBack.Name = "BtnBack";
-            this.BtnBack.Size = new System.Drawing.Size(123, 41);
-            this.BtnBack.TabIndex = 37;
-            this.BtnBack.Text = "K&embali";
-            this.BtnBack.UseVisualStyleBackColor = true;
-            // 
-            // BtnCalculate
-            // 
-            this.BtnCalculate.Location = new System.Drawing.Point(6, 181);
-            this.BtnCalculate.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnCalculate.Name = "BtnCalculate";
-            this.BtnCalculate.Size = new System.Drawing.Size(110, 41);
-            this.BtnCalculate.TabIndex = 36;
-            this.BtnCalculate.Text = "&Kalkulasi";
-            this.BtnCalculate.UseVisualStyleBackColor = true;
-            // 
-            // TxtKCL
-            // 
-            this.TxtKCL.Location = new System.Drawing.Point(6, 149);
-            this.TxtKCL.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtKCL.Name = "TxtKCL";
-            this.TxtKCL.ReadOnly = true;
-            this.TxtKCL.Size = new System.Drawing.Size(239, 28);
-            this.TxtKCL.TabIndex = 35;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(2, 123);
-            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(45, 24);
-            this.label27.TabIndex = 34;
-            this.label27.Text = "KCL";
-            // 
-            // TxtSP36
-            // 
-            this.TxtSP36.Location = new System.Drawing.Point(6, 89);
-            this.TxtSP36.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtSP36.Name = "TxtSP36";
-            this.TxtSP36.ReadOnly = true;
-            this.TxtSP36.Size = new System.Drawing.Size(239, 28);
-            this.TxtSP36.TabIndex = 33;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(2, 63);
-            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(54, 24);
-            this.label28.TabIndex = 32;
-            this.label28.Text = "SP36";
-            // 
-            // TxtUrea
-            // 
-            this.TxtUrea.Location = new System.Drawing.Point(6, 32);
-            this.TxtUrea.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtUrea.Name = "TxtUrea";
-            this.TxtUrea.ReadOnly = true;
-            this.TxtUrea.Size = new System.Drawing.Size(239, 28);
-            this.TxtUrea.TabIndex = 31;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(2, 6);
-            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(50, 24);
-            this.label29.TabIndex = 30;
-            this.label29.Text = "Urea";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.statusStrip1);
-            this.tabPage4.Controls.Add(this.groupBox3);
-            this.tabPage4.Controls.Add(this.groupBox2);
-            this.tabPage4.Controls.Add(this.groupBox1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(785, 461);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Scanning";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            // TimerFile
+            // 
+            this.TimerFile.Interval = 2000;
+            // 
+            // tabScanning
+            // 
+            this.tabScanning.Controls.Add(this.btnBackground);
+            this.tabScanning.Controls.Add(this.chartWave);
+            this.tabScanning.Controls.Add(this.btnProcess);
+            this.tabScanning.Controls.Add(this.btnScan);
+            this.tabScanning.Controls.Add(this.btnReset);
+            this.tabScanning.Controls.Add(this.pnlSetting);
+            this.tabScanning.Controls.Add(this.statusStrip1);
+            this.tabScanning.Location = new System.Drawing.Point(4, 32);
+            this.tabScanning.Name = "tabScanning";
+            this.tabScanning.Padding = new System.Windows.Forms.Padding(3);
+            this.tabScanning.Size = new System.Drawing.Size(1000, 681);
+            this.tabScanning.TabIndex = 3;
+            this.tabScanning.Text = "Scanning";
+            this.tabScanning.UseVisualStyleBackColor = true;
+            // 
+            // btnBackground
+            // 
+            this.btnBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
+            this.btnBackground.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackground.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackground.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBackground.Location = new System.Drawing.Point(125, 581);
+            this.btnBackground.Name = "btnBackground";
+            this.btnBackground.Size = new System.Drawing.Size(248, 71);
+            this.btnBackground.TabIndex = 13;
+            this.btnBackground.Text = "Background";
+            this.btnBackground.UseVisualStyleBackColor = false;
+            this.btnBackground.Click += new System.EventHandler(this.btnBackground_Click);
+            // 
+            // chartWave
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chartWave.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartWave.Legends.Add(legend2);
+            this.chartWave.Location = new System.Drawing.Point(8, 6);
+            this.chartWave.Name = "chartWave";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartWave.Series.Add(series2);
+            this.chartWave.Size = new System.Drawing.Size(984, 553);
+            this.chartWave.TabIndex = 12;
+            this.chartWave.Text = "chart1";
+            this.chartWave.Visible = false;
+            // 
+            // btnProcess
+            // 
+            this.btnProcess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
+            this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcess.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcess.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnProcess.Location = new System.Drawing.Point(714, 581);
+            this.btnProcess.Name = "btnProcess";
+            this.btnProcess.Size = new System.Drawing.Size(248, 71);
+            this.btnProcess.TabIndex = 11;
+            this.btnProcess.Text = "Process";
+            this.btnProcess.UseVisualStyleBackColor = false;
+            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click_1);
+            // 
+            // btnScan
+            // 
+            this.btnScan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
+            this.btnScan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnScan.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScan.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnScan.Location = new System.Drawing.Point(416, 581);
+            this.btnScan.Name = "btnScan";
+            this.btnScan.Size = new System.Drawing.Size(248, 71);
+            this.btnScan.TabIndex = 10;
+            this.btnScan.Text = "Scan";
+            this.btnScan.UseVisualStyleBackColor = false;
+            this.btnScan.Click += new System.EventHandler(this.btnScan_Click_1);
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
+            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReset.Image = global::PKDSS.MonoApp.Properties.Resources.reset;
+            this.btnReset.ImageActive = null;
+            this.btnReset.Location = new System.Drawing.Point(20, 581);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(85, 71);
+            this.btnReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnReset.TabIndex = 8;
+            this.btnReset.TabStop = false;
+            this.btnReset.Zoom = 10;
+            // 
+            // pnlSetting
+            // 
+            this.pnlSetting.Controls.Add(this.panel2);
+            this.pnlSetting.Controls.Add(this.lbGuide);
+            this.pnlSetting.Controls.Add(this.lbResolution);
+            this.pnlSetting.Controls.Add(this.cbObticalGian);
+            this.pnlSetting.Controls.Add(this.cbResolution);
+            this.pnlSetting.Controls.Add(this.lbOpticalGian);
+            this.pnlSetting.Location = new System.Drawing.Point(20, 209);
+            this.pnlSetting.Name = "pnlSetting";
+            this.pnlSetting.Size = new System.Drawing.Size(950, 350);
+            this.pnlSetting.TabIndex = 7;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(7, 41);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(932, 5);
+            this.panel2.TabIndex = 6;
+            // 
+            // lbGuide
+            // 
+            this.lbGuide.AutoSize = true;
+            this.lbGuide.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGuide.Location = new System.Drawing.Point(67, 15);
+            this.lbGuide.Name = "lbGuide";
+            this.lbGuide.Size = new System.Drawing.Size(245, 23);
+            this.lbGuide.TabIndex = 4;
+            this.lbGuide.Text = "Please chooce your setting";
+            // 
+            // lbResolution
+            // 
+            this.lbResolution.AutoSize = true;
+            this.lbResolution.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbResolution.Location = new System.Drawing.Point(3, 223);
+            this.lbResolution.Name = "lbResolution";
+            this.lbResolution.Size = new System.Drawing.Size(103, 23);
+            this.lbResolution.TabIndex = 1;
+            this.lbResolution.Text = "Resolution";
+            // 
+            // cbObticalGian
+            // 
+            this.cbObticalGian.DisplayMember = "0";
+            this.cbObticalGian.Font = new System.Drawing.Font("Roboto Cn", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbObticalGian.FormattingEnabled = true;
+            this.cbObticalGian.Items.AddRange(new object[] {
+            "Reflection"});
+            this.cbObticalGian.Location = new System.Drawing.Point(7, 309);
+            this.cbObticalGian.Name = "cbObticalGian";
+            this.cbObticalGian.Size = new System.Drawing.Size(212, 31);
+            this.cbObticalGian.TabIndex = 2;
+            // 
+            // cbResolution
+            // 
+            this.cbResolution.DisplayMember = "0";
+            this.cbResolution.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbResolution.FormattingEnabled = true;
+            this.cbResolution.Items.AddRange(new object[] {
+            "16 nm @ 1550 nm",
+            "18 nm @ 1550 nm"});
+            this.cbResolution.Location = new System.Drawing.Point(7, 249);
+            this.cbResolution.Name = "cbResolution";
+            this.cbResolution.Size = new System.Drawing.Size(212, 31);
+            this.cbResolution.TabIndex = 0;
+            // 
+            // lbOpticalGian
+            // 
+            this.lbOpticalGian.AutoSize = true;
+            this.lbOpticalGian.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOpticalGian.Location = new System.Drawing.Point(3, 283);
+            this.lbOpticalGian.Name = "lbOpticalGian";
+            this.lbOpticalGian.Size = new System.Drawing.Size(115, 23);
+            this.lbOpticalGian.TabIndex = 3;
+            this.lbOpticalGian.Text = "Optical Gian";
             // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TxtDeviceStat});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 436);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 654);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(779, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(994, 24);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // TxtDeviceStat
             // 
+            this.TxtDeviceStat.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtDeviceStat.Name = "TxtDeviceStat";
-            this.TxtDeviceStat.Size = new System.Drawing.Size(84, 17);
+            this.TxtDeviceStat.Size = new System.Drawing.Size(106, 19);
             this.TxtDeviceStat.Text = "Request Status";
             // 
-            // groupBox3
+            // tabMenu
             // 
-            this.groupBox3.Controls.Add(this.BtnBg);
-            this.groupBox3.Controls.Add(this.BtnProcess);
-            this.groupBox3.Controls.Add(this.BtnViewChart);
-            this.groupBox3.Controls.Add(this.BtnScan);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(231, 6);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(190, 234);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Actions";
+            this.tabMenu.Controls.Add(this.tabScanning);
+            this.tabMenu.Controls.Add(this.tabDataUnsur);
+            this.tabMenu.Controls.Add(this.tabInfoLokasi);
+            this.tabMenu.Controls.Add(this.tabRekomendasiPupuk);
+            this.tabMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabMenu.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabMenu.Location = new System.Drawing.Point(0, 0);
+            this.tabMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.tabMenu.Name = "tabMenu";
+            this.tabMenu.SelectedIndex = 0;
+            this.tabMenu.Size = new System.Drawing.Size(1008, 717);
+            this.tabMenu.TabIndex = 0;
             // 
-            // BtnBg
+            // tabDataUnsur
             // 
-            this.BtnBg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBg.Location = new System.Drawing.Point(6, 35);
-            this.BtnBg.Name = "BtnBg";
-            this.BtnBg.Size = new System.Drawing.Size(178, 41);
-            this.BtnBg.TabIndex = 5;
-            this.BtnBg.Text = "&Background";
-            this.BtnBg.UseVisualStyleBackColor = true;
-            this.BtnBg.Click += new System.EventHandler(this.BtnBg_Click);
+            this.tabDataUnsur.Controls.Add(this.bunifuCustomLabel23);
+            this.tabDataUnsur.Controls.Add(this.pictureBox2);
+            this.tabDataUnsur.Controls.Add(this.txtKejenuhanBasa);
+            this.tabDataUnsur.Controls.Add(this.lbKejenuhanBasa);
+            this.tabDataUnsur.Controls.Add(this.txtP205);
+            this.tabDataUnsur.Controls.Add(this.lbP205);
+            this.tabDataUnsur.Controls.Add(this.txtAIdd);
+            this.tabDataUnsur.Controls.Add(this.lbAIdd);
+            this.tabDataUnsur.Controls.Add(this.txtPOlsen);
+            this.tabDataUnsur.Controls.Add(this.lbPOlsen);
+            this.tabDataUnsur.Controls.Add(this.txtMgdd);
+            this.tabDataUnsur.Controls.Add(this.lbMgdd);
+            this.tabDataUnsur.Controls.Add(this.txtPbray);
+            this.tabDataUnsur.Controls.Add(this.lbPbray);
+            this.tabDataUnsur.Controls.Add(this.txtCadd);
+            this.tabDataUnsur.Controls.Add(this.lbCadd);
+            this.tabDataUnsur.Controls.Add(this.txtKTK);
+            this.tabDataUnsur.Controls.Add(this.lbKTK);
+            this.tabDataUnsur.Controls.Add(this.txtKadd);
+            this.tabDataUnsur.Controls.Add(this.lbKadd);
+            this.tabDataUnsur.Controls.Add(this.txtNTotal);
+            this.tabDataUnsur.Controls.Add(this.lbNTotal);
+            this.tabDataUnsur.Controls.Add(this.txtRetensi);
+            this.tabDataUnsur.Controls.Add(this.bunifuCustomLabel1);
+            this.tabDataUnsur.Controls.Add(this.txtCOrganik);
+            this.tabDataUnsur.Controls.Add(this.lbCorganik);
+            this.tabDataUnsur.Controls.Add(this.txtK205);
+            this.tabDataUnsur.Controls.Add(this.lbK205);
+            this.tabDataUnsur.Controls.Add(this.txtPH);
+            this.tabDataUnsur.Controls.Add(this.lbPH);
+            this.tabDataUnsur.Controls.Add(this.cbKomoditas);
+            this.tabDataUnsur.Controls.Add(this.lbKomoditas);
+            this.tabDataUnsur.Controls.Add(this.cbTekstur);
+            this.tabDataUnsur.Controls.Add(this.lbTekstur);
+            this.tabDataUnsur.Location = new System.Drawing.Point(4, 32);
+            this.tabDataUnsur.Name = "tabDataUnsur";
+            this.tabDataUnsur.Size = new System.Drawing.Size(1000, 681);
+            this.tabDataUnsur.TabIndex = 4;
+            this.tabDataUnsur.Text = "Data Unsur";
+            this.tabDataUnsur.UseVisualStyleBackColor = true;
             // 
-            // BtnProcess
+            // bunifuCustomLabel23
             // 
-            this.BtnProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnProcess.Location = new System.Drawing.Point(6, 169);
-            this.BtnProcess.Name = "BtnProcess";
-            this.BtnProcess.Size = new System.Drawing.Size(178, 38);
-            this.BtnProcess.TabIndex = 2;
-            this.BtnProcess.Text = "&Process";
-            this.BtnProcess.UseVisualStyleBackColor = true;
-            this.BtnProcess.Click += new System.EventHandler(this.BtnProcess_Click);
+            this.bunifuCustomLabel23.AutoSize = true;
+            this.bunifuCustomLabel23.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel23.Location = new System.Drawing.Point(756, 326);
+            this.bunifuCustomLabel23.Name = "bunifuCustomLabel23";
+            this.bunifuCustomLabel23.Size = new System.Drawing.Size(107, 23);
+            this.bunifuCustomLabel23.TabIndex = 60;
+            this.bunifuCustomLabel23.Text = "Data Unsur";
             // 
-            // BtnViewChart
+            // pictureBox2
             // 
-            this.BtnViewChart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnViewChart.Location = new System.Drawing.Point(6, 129);
-            this.BtnViewChart.Name = "BtnViewChart";
-            this.BtnViewChart.Size = new System.Drawing.Size(178, 34);
-            this.BtnViewChart.TabIndex = 1;
-            this.BtnViewChart.Text = "&View in Chart";
-            this.BtnViewChart.UseVisualStyleBackColor = true;
+            this.pictureBox2.Image = global::PKDSS.MonoApp.Properties.Resources.shovel;
+            this.pictureBox2.Location = new System.Drawing.Point(644, 38);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(316, 275);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 59;
+            this.pictureBox2.TabStop = false;
             // 
-            // BtnScan
+            // txtKejenuhanBasa
             // 
-            this.BtnScan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnScan.Location = new System.Drawing.Point(6, 82);
-            this.BtnScan.Name = "BtnScan";
-            this.BtnScan.Size = new System.Drawing.Size(178, 41);
-            this.BtnScan.TabIndex = 0;
-            this.BtnScan.Text = "&Scan";
-            this.BtnScan.UseVisualStyleBackColor = true;
+            this.txtKejenuhanBasa.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtKejenuhanBasa.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKejenuhanBasa.Location = new System.Drawing.Point(305, 564);
+            this.txtKejenuhanBasa.Name = "txtKejenuhanBasa";
+            this.txtKejenuhanBasa.Size = new System.Drawing.Size(255, 30);
+            this.txtKejenuhanBasa.TabIndex = 31;
             // 
-            // groupBox2
+            // lbKejenuhanBasa
             // 
-            this.groupBox2.Controls.Add(this.LstFiles);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(8, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(217, 234);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Choose Sample File";
+            this.lbKejenuhanBasa.AutoSize = true;
+            this.lbKejenuhanBasa.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKejenuhanBasa.Location = new System.Drawing.Point(301, 538);
+            this.lbKejenuhanBasa.Name = "lbKejenuhanBasa";
+            this.lbKejenuhanBasa.Size = new System.Drawing.Size(148, 23);
+            this.lbKejenuhanBasa.TabIndex = 30;
+            this.lbKejenuhanBasa.Text = "Kejenuhan Basa";
             // 
-            // LstFiles
+            // txtP205
             // 
-            this.LstFiles.FormattingEnabled = true;
-            this.LstFiles.ItemHeight = 20;
-            this.LstFiles.Location = new System.Drawing.Point(6, 19);
-            this.LstFiles.Name = "LstFiles";
-            this.LstFiles.Size = new System.Drawing.Size(205, 184);
-            this.LstFiles.TabIndex = 0;
+            this.txtP205.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtP205.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtP205.Location = new System.Drawing.Point(12, 564);
+            this.txtP205.Name = "txtP205";
+            this.txtP205.Size = new System.Drawing.Size(255, 30);
+            this.txtP205.TabIndex = 29;
             // 
-            // groupBox1
+            // lbP205
             // 
-            this.groupBox1.Controls.Add(this.chart1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(8, 246);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(771, 211);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Chart";
+            this.lbP205.AutoSize = true;
+            this.lbP205.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbP205.Location = new System.Drawing.Point(8, 538);
+            this.lbP205.Name = "lbP205";
+            this.lbP205.Size = new System.Drawing.Size(239, 23);
+            this.lbP205.TabIndex = 28;
+            this.lbP205.Text = "P205 Potensial (mg/100g)";
             // 
-            // chart1
+            // txtAIdd
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(3, 22);
-            this.chart1.Margin = new System.Windows.Forms.Padding(2);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(765, 186);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.txtAIdd.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtAIdd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAIdd.Location = new System.Drawing.Point(305, 490);
+            this.txtAIdd.Name = "txtAIdd";
+            this.txtAIdd.Size = new System.Drawing.Size(255, 30);
+            this.txtAIdd.TabIndex = 27;
             // 
-            // TimerFile
+            // lbAIdd
             // 
-            this.TimerFile.Interval = 2000;
-            this.TimerFile.Tick += new System.EventHandler(this.TimerFile_Tick);
+            this.lbAIdd.AutoSize = true;
+            this.lbAIdd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAIdd.Location = new System.Drawing.Point(301, 464);
+            this.lbAIdd.Name = "lbAIdd";
+            this.lbAIdd.Size = new System.Drawing.Size(152, 23);
+            this.lbAIdd.TabIndex = 26;
+            this.lbAIdd.Text = "AI-dd (Cmol/Kg)";
+            // 
+            // txtPOlsen
+            // 
+            this.txtPOlsen.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtPOlsen.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPOlsen.Location = new System.Drawing.Point(12, 490);
+            this.txtPOlsen.Name = "txtPOlsen";
+            this.txtPOlsen.Size = new System.Drawing.Size(255, 30);
+            this.txtPOlsen.TabIndex = 25;
+            // 
+            // lbPOlsen
+            // 
+            this.lbPOlsen.AutoSize = true;
+            this.lbPOlsen.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPOlsen.Location = new System.Drawing.Point(8, 464);
+            this.lbPOlsen.Name = "lbPOlsen";
+            this.lbPOlsen.Size = new System.Drawing.Size(186, 23);
+            this.lbPOlsen.TabIndex = 24;
+            this.lbPOlsen.Text = "P-Olsen (ppm P205)";
+            // 
+            // txtMgdd
+            // 
+            this.txtMgdd.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtMgdd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMgdd.Location = new System.Drawing.Point(305, 416);
+            this.txtMgdd.Name = "txtMgdd";
+            this.txtMgdd.Size = new System.Drawing.Size(255, 30);
+            this.txtMgdd.TabIndex = 23;
+            // 
+            // lbMgdd
+            // 
+            this.lbMgdd.AutoSize = true;
+            this.lbMgdd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMgdd.Location = new System.Drawing.Point(301, 390);
+            this.lbMgdd.Name = "lbMgdd";
+            this.lbMgdd.Size = new System.Drawing.Size(162, 23);
+            this.lbMgdd.TabIndex = 22;
+            this.lbMgdd.Text = "Mg-dd (Cmol/Kg)";
+            // 
+            // txtPbray
+            // 
+            this.txtPbray.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtPbray.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPbray.Location = new System.Drawing.Point(12, 416);
+            this.txtPbray.Name = "txtPbray";
+            this.txtPbray.Size = new System.Drawing.Size(255, 30);
+            this.txtPbray.TabIndex = 21;
+            // 
+            // lbPbray
+            // 
+            this.lbPbray.AutoSize = true;
+            this.lbPbray.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPbray.Location = new System.Drawing.Point(8, 390);
+            this.lbPbray.Name = "lbPbray";
+            this.lbPbray.Size = new System.Drawing.Size(192, 23);
+            this.lbPbray.TabIndex = 20;
+            this.lbPbray.Text = "P-Bray 1 (ppm P205)";
+            // 
+            // txtCadd
+            // 
+            this.txtCadd.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtCadd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCadd.Location = new System.Drawing.Point(305, 342);
+            this.txtCadd.Name = "txtCadd";
+            this.txtCadd.Size = new System.Drawing.Size(255, 30);
+            this.txtCadd.TabIndex = 19;
+            // 
+            // lbCadd
+            // 
+            this.lbCadd.AutoSize = true;
+            this.lbCadd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCadd.Location = new System.Drawing.Point(301, 316);
+            this.lbCadd.Name = "lbCadd";
+            this.lbCadd.Size = new System.Drawing.Size(156, 23);
+            this.lbCadd.TabIndex = 18;
+            this.lbCadd.Text = "Ca-dd (Cmol/Kg)";
+            // 
+            // txtKTK
+            // 
+            this.txtKTK.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtKTK.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKTK.Location = new System.Drawing.Point(12, 342);
+            this.txtKTK.Name = "txtKTK";
+            this.txtKTK.Size = new System.Drawing.Size(255, 30);
+            this.txtKTK.TabIndex = 17;
+            // 
+            // lbKTK
+            // 
+            this.lbKTK.AutoSize = true;
+            this.lbKTK.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKTK.Location = new System.Drawing.Point(8, 316);
+            this.lbKTK.Name = "lbKTK";
+            this.lbKTK.Size = new System.Drawing.Size(177, 23);
+            this.lbKTK.TabIndex = 16;
+            this.lbKTK.Text = "KTK Liat (Cmol/Kg)";
+            // 
+            // txtKadd
+            // 
+            this.txtKadd.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtKadd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKadd.Location = new System.Drawing.Point(305, 269);
+            this.txtKadd.Name = "txtKadd";
+            this.txtKadd.Size = new System.Drawing.Size(255, 30);
+            this.txtKadd.TabIndex = 15;
+            // 
+            // lbKadd
+            // 
+            this.lbKadd.AutoSize = true;
+            this.lbKadd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKadd.Location = new System.Drawing.Point(301, 243);
+            this.lbKadd.Name = "lbKadd";
+            this.lbKadd.Size = new System.Drawing.Size(156, 23);
+            this.lbKadd.TabIndex = 14;
+            this.lbKadd.Text = "Ka-dd (Cmol/Kg)";
+            // 
+            // txtNTotal
+            // 
+            this.txtNTotal.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtNTotal.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNTotal.Location = new System.Drawing.Point(12, 269);
+            this.txtNTotal.Name = "txtNTotal";
+            this.txtNTotal.Size = new System.Drawing.Size(255, 30);
+            this.txtNTotal.TabIndex = 13;
+            // 
+            // lbNTotal
+            // 
+            this.lbNTotal.AutoSize = true;
+            this.lbNTotal.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNTotal.Location = new System.Drawing.Point(8, 243);
+            this.lbNTotal.Name = "lbNTotal";
+            this.lbNTotal.Size = new System.Drawing.Size(108, 23);
+            this.lbNTotal.TabIndex = 12;
+            this.lbNTotal.Text = "N-Total (%)";
+            // 
+            // txtRetensi
+            // 
+            this.txtRetensi.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtRetensi.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRetensi.Location = new System.Drawing.Point(305, 190);
+            this.txtRetensi.Name = "txtRetensi";
+            this.txtRetensi.Size = new System.Drawing.Size(255, 30);
+            this.txtRetensi.TabIndex = 11;
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(301, 164);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(108, 23);
+            this.bunifuCustomLabel1.TabIndex = 10;
+            this.bunifuCustomLabel1.Text = "Retensi (%)";
+            // 
+            // txtCOrganik
+            // 
+            this.txtCOrganik.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtCOrganik.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCOrganik.Location = new System.Drawing.Point(12, 190);
+            this.txtCOrganik.Name = "txtCOrganik";
+            this.txtCOrganik.Size = new System.Drawing.Size(255, 30);
+            this.txtCOrganik.TabIndex = 9;
+            // 
+            // lbCorganik
+            // 
+            this.lbCorganik.AutoSize = true;
+            this.lbCorganik.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCorganik.Location = new System.Drawing.Point(8, 164);
+            this.lbCorganik.Name = "lbCorganik";
+            this.lbCorganik.Size = new System.Drawing.Size(130, 23);
+            this.lbCorganik.TabIndex = 8;
+            this.lbCorganik.Text = "C-Organik (%)";
+            // 
+            // txtK205
+            // 
+            this.txtK205.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtK205.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtK205.Location = new System.Drawing.Point(305, 114);
+            this.txtK205.Name = "txtK205";
+            this.txtK205.Size = new System.Drawing.Size(255, 30);
+            this.txtK205.TabIndex = 7;
+            // 
+            // lbK205
+            // 
+            this.lbK205.AutoSize = true;
+            this.lbK205.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbK205.Location = new System.Drawing.Point(301, 88);
+            this.lbK205.Name = "lbK205";
+            this.lbK205.Size = new System.Drawing.Size(239, 23);
+            this.lbK205.TabIndex = 6;
+            this.lbK205.Text = "K205 Potensial (mg/100g)";
+            // 
+            // txtPH
+            // 
+            this.txtPH.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtPH.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPH.Location = new System.Drawing.Point(12, 114);
+            this.txtPH.Name = "txtPH";
+            this.txtPH.Size = new System.Drawing.Size(255, 30);
+            this.txtPH.TabIndex = 5;
+            // 
+            // lbPH
+            // 
+            this.lbPH.AutoSize = true;
+            this.lbPH.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPH.Location = new System.Drawing.Point(8, 88);
+            this.lbPH.Name = "lbPH";
+            this.lbPH.Size = new System.Drawing.Size(34, 23);
+            this.lbPH.TabIndex = 4;
+            this.lbPH.Text = "pH";
+            // 
+            // cbKomoditas
+            // 
+            this.cbKomoditas.DisplayMember = "0";
+            this.cbKomoditas.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKomoditas.FormattingEnabled = true;
+            this.cbKomoditas.Location = new System.Drawing.Point(305, 38);
+            this.cbKomoditas.Name = "cbKomoditas";
+            this.cbKomoditas.Size = new System.Drawing.Size(255, 31);
+            this.cbKomoditas.TabIndex = 3;
+            // 
+            // lbKomoditas
+            // 
+            this.lbKomoditas.AutoSize = true;
+            this.lbKomoditas.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKomoditas.Location = new System.Drawing.Point(301, 12);
+            this.lbKomoditas.Name = "lbKomoditas";
+            this.lbKomoditas.Size = new System.Drawing.Size(103, 23);
+            this.lbKomoditas.TabIndex = 2;
+            this.lbKomoditas.Text = "Komoditas";
+            // 
+            // cbTekstur
+            // 
+            this.cbTekstur.DisplayMember = "0";
+            this.cbTekstur.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTekstur.FormattingEnabled = true;
+            this.cbTekstur.Location = new System.Drawing.Point(12, 38);
+            this.cbTekstur.Name = "cbTekstur";
+            this.cbTekstur.Size = new System.Drawing.Size(255, 31);
+            this.cbTekstur.TabIndex = 1;
+            // 
+            // lbTekstur
+            // 
+            this.lbTekstur.AutoSize = true;
+            this.lbTekstur.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTekstur.Location = new System.Drawing.Point(8, 12);
+            this.lbTekstur.Name = "lbTekstur";
+            this.lbTekstur.Size = new System.Drawing.Size(76, 23);
+            this.lbTekstur.TabIndex = 0;
+            this.lbTekstur.Text = "Tekstur";
+            // 
+            // tabInfoLokasi
+            // 
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel22);
+            this.tabInfoLokasi.Controls.Add(this.txtBalitTanah);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel18);
+            this.tabInfoLokasi.Controls.Add(this.txtSample);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel17);
+            this.tabInfoLokasi.Controls.Add(this.txtHorizon);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel16);
+            this.tabInfoLokasi.Controls.Add(this.cbKabupaten);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel15);
+            this.tabInfoLokasi.Controls.Add(this.cbProvinsi);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel14);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel13);
+            this.tabInfoLokasi.Controls.Add(this.txtY);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel12);
+            this.tabInfoLokasi.Controls.Add(this.lbInisial);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel10);
+            this.tabInfoLokasi.Controls.Add(this.txtX);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel11);
+            this.tabInfoLokasi.Controls.Add(this.txtKecamatan);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel6);
+            this.tabInfoLokasi.Controls.Add(this.txtPengirim);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel7);
+            this.tabInfoLokasi.Controls.Add(this.txtDesa);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel8);
+            this.tabInfoLokasi.Controls.Add(this.txtNoTanah);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel9);
+            this.tabInfoLokasi.Controls.Add(this.txtTahun);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel2);
+            this.tabInfoLokasi.Controls.Add(this.txtMappingUnit);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel3);
+            this.tabInfoLokasi.Controls.Add(this.txtNoObs);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel4);
+            this.tabInfoLokasi.Controls.Add(this.txtNoForm);
+            this.tabInfoLokasi.Controls.Add(this.bunifuCustomLabel5);
+            this.tabInfoLokasi.Controls.Add(this.pictureBox1);
+            this.tabInfoLokasi.Location = new System.Drawing.Point(4, 32);
+            this.tabInfoLokasi.Name = "tabInfoLokasi";
+            this.tabInfoLokasi.Size = new System.Drawing.Size(1000, 681);
+            this.tabInfoLokasi.TabIndex = 5;
+            this.tabInfoLokasi.Text = "Info Lokasi Observasi";
+            this.tabInfoLokasi.UseVisualStyleBackColor = true;
+            // 
+            // bunifuCustomLabel22
+            // 
+            this.bunifuCustomLabel22.AutoSize = true;
+            this.bunifuCustomLabel22.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel22.Location = new System.Drawing.Point(757, 326);
+            this.bunifuCustomLabel22.Name = "bunifuCustomLabel22";
+            this.bunifuCustomLabel22.Size = new System.Drawing.Size(107, 23);
+            this.bunifuCustomLabel22.TabIndex = 58;
+            this.bunifuCustomLabel22.Text = "Info Lokasi";
+            // 
+            // txtBalitTanah
+            // 
+            this.txtBalitTanah.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtBalitTanah.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBalitTanah.Location = new System.Drawing.Point(397, 482);
+            this.txtBalitTanah.Name = "txtBalitTanah";
+            this.txtBalitTanah.Size = new System.Drawing.Size(160, 30);
+            this.txtBalitTanah.TabIndex = 56;
+            // 
+            // bunifuCustomLabel18
+            // 
+            this.bunifuCustomLabel18.AutoSize = true;
+            this.bunifuCustomLabel18.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel18.Location = new System.Drawing.Point(393, 456);
+            this.bunifuCustomLabel18.Name = "bunifuCustomLabel18";
+            this.bunifuCustomLabel18.Size = new System.Drawing.Size(136, 23);
+            this.bunifuCustomLabel18.TabIndex = 55;
+            this.bunifuCustomLabel18.Text = "No Balit Tanah";
+            // 
+            // txtSample
+            // 
+            this.txtSample.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtSample.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSample.Location = new System.Drawing.Point(205, 482);
+            this.txtSample.Name = "txtSample";
+            this.txtSample.Size = new System.Drawing.Size(160, 30);
+            this.txtSample.TabIndex = 54;
+            // 
+            // bunifuCustomLabel17
+            // 
+            this.bunifuCustomLabel17.AutoSize = true;
+            this.bunifuCustomLabel17.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel17.Location = new System.Drawing.Point(201, 456);
+            this.bunifuCustomLabel17.Name = "bunifuCustomLabel17";
+            this.bunifuCustomLabel17.Size = new System.Drawing.Size(103, 23);
+            this.bunifuCustomLabel17.TabIndex = 53;
+            this.bunifuCustomLabel17.Text = "No Sample";
+            // 
+            // txtHorizon
+            // 
+            this.txtHorizon.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtHorizon.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHorizon.Location = new System.Drawing.Point(12, 482);
+            this.txtHorizon.Name = "txtHorizon";
+            this.txtHorizon.Size = new System.Drawing.Size(160, 30);
+            this.txtHorizon.TabIndex = 52;
+            // 
+            // bunifuCustomLabel16
+            // 
+            this.bunifuCustomLabel16.AutoSize = true;
+            this.bunifuCustomLabel16.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel16.Location = new System.Drawing.Point(8, 456);
+            this.bunifuCustomLabel16.Name = "bunifuCustomLabel16";
+            this.bunifuCustomLabel16.Size = new System.Drawing.Size(107, 23);
+            this.bunifuCustomLabel16.TabIndex = 51;
+            this.bunifuCustomLabel16.Text = "No Horizon";
+            // 
+            // cbKabupaten
+            // 
+            this.cbKabupaten.DisplayMember = "0";
+            this.cbKabupaten.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKabupaten.FormattingEnabled = true;
+            this.cbKabupaten.Location = new System.Drawing.Point(305, 408);
+            this.cbKabupaten.Name = "cbKabupaten";
+            this.cbKabupaten.Size = new System.Drawing.Size(255, 31);
+            this.cbKabupaten.TabIndex = 50;
+            // 
+            // bunifuCustomLabel15
+            // 
+            this.bunifuCustomLabel15.AutoSize = true;
+            this.bunifuCustomLabel15.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel15.Location = new System.Drawing.Point(301, 382);
+            this.bunifuCustomLabel15.Name = "bunifuCustomLabel15";
+            this.bunifuCustomLabel15.Size = new System.Drawing.Size(103, 23);
+            this.bunifuCustomLabel15.TabIndex = 49;
+            this.bunifuCustomLabel15.Text = "Kabupaten";
+            // 
+            // cbProvinsi
+            // 
+            this.cbProvinsi.DisplayMember = "0";
+            this.cbProvinsi.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbProvinsi.FormattingEnabled = true;
+            this.cbProvinsi.Location = new System.Drawing.Point(305, 337);
+            this.cbProvinsi.Name = "cbProvinsi";
+            this.cbProvinsi.Size = new System.Drawing.Size(255, 31);
+            this.cbProvinsi.TabIndex = 48;
+            // 
+            // bunifuCustomLabel14
+            // 
+            this.bunifuCustomLabel14.AutoSize = true;
+            this.bunifuCustomLabel14.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel14.Location = new System.Drawing.Point(301, 311);
+            this.bunifuCustomLabel14.Name = "bunifuCustomLabel14";
+            this.bunifuCustomLabel14.Size = new System.Drawing.Size(81, 23);
+            this.bunifuCustomLabel14.TabIndex = 47;
+            this.bunifuCustomLabel14.Text = "Provinsi";
+            // 
+            // bunifuCustomLabel13
+            // 
+            this.bunifuCustomLabel13.AutoSize = true;
+            this.bunifuCustomLabel13.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel13.Location = new System.Drawing.Point(140, 340);
+            this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
+            this.bunifuCustomLabel13.Size = new System.Drawing.Size(32, 23);
+            this.bunifuCustomLabel13.TabIndex = 46;
+            this.bunifuCustomLabel13.Text = "Y :";
+            // 
+            // txtY
+            // 
+            this.txtY.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtY.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtY.Location = new System.Drawing.Point(179, 337);
+            this.txtY.Name = "txtY";
+            this.txtY.Size = new System.Drawing.Size(88, 30);
+            this.txtY.TabIndex = 45;
+            // 
+            // bunifuCustomLabel12
+            // 
+            this.bunifuCustomLabel12.AutoSize = true;
+            this.bunifuCustomLabel12.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel12.Location = new System.Drawing.Point(8, 340);
+            this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
+            this.bunifuCustomLabel12.Size = new System.Drawing.Size(32, 23);
+            this.bunifuCustomLabel12.TabIndex = 44;
+            this.bunifuCustomLabel12.Text = "X :";
+            // 
+            // lbInisial
+            // 
+            this.lbInisial.BorderColor = System.Drawing.Color.SeaGreen;
+            this.lbInisial.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInisial.Location = new System.Drawing.Point(12, 408);
+            this.lbInisial.Name = "lbInisial";
+            this.lbInisial.Size = new System.Drawing.Size(255, 30);
+            this.lbInisial.TabIndex = 43;
+            // 
+            // bunifuCustomLabel10
+            // 
+            this.bunifuCustomLabel10.AutoSize = true;
+            this.bunifuCustomLabel10.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(8, 382);
+            this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
+            this.bunifuCustomLabel10.Size = new System.Drawing.Size(62, 23);
+            this.bunifuCustomLabel10.TabIndex = 42;
+            this.bunifuCustomLabel10.Text = "Inisial";
+            // 
+            // txtX
+            // 
+            this.txtX.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtX.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtX.Location = new System.Drawing.Point(47, 337);
+            this.txtX.Name = "txtX";
+            this.txtX.Size = new System.Drawing.Size(88, 30);
+            this.txtX.TabIndex = 41;
+            // 
+            // bunifuCustomLabel11
+            // 
+            this.bunifuCustomLabel11.AutoSize = true;
+            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(8, 311);
+            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
+            this.bunifuCustomLabel11.Size = new System.Drawing.Size(95, 23);
+            this.bunifuCustomLabel11.TabIndex = 40;
+            this.bunifuCustomLabel11.Text = "Koordinat";
+            // 
+            // txtKecamatan
+            // 
+            this.txtKecamatan.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtKecamatan.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKecamatan.Location = new System.Drawing.Point(305, 264);
+            this.txtKecamatan.Name = "txtKecamatan";
+            this.txtKecamatan.Size = new System.Drawing.Size(255, 30);
+            this.txtKecamatan.TabIndex = 39;
+            // 
+            // bunifuCustomLabel6
+            // 
+            this.bunifuCustomLabel6.AutoSize = true;
+            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(301, 238);
+            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(106, 23);
+            this.bunifuCustomLabel6.TabIndex = 38;
+            this.bunifuCustomLabel6.Text = "Kecamatan";
+            // 
+            // txtPengirim
+            // 
+            this.txtPengirim.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtPengirim.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPengirim.Location = new System.Drawing.Point(12, 264);
+            this.txtPengirim.Name = "txtPengirim";
+            this.txtPengirim.Size = new System.Drawing.Size(255, 30);
+            this.txtPengirim.TabIndex = 37;
+            // 
+            // bunifuCustomLabel7
+            // 
+            this.bunifuCustomLabel7.AutoSize = true;
+            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(8, 238);
+            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(87, 23);
+            this.bunifuCustomLabel7.TabIndex = 36;
+            this.bunifuCustomLabel7.Text = "Pengirim";
+            // 
+            // txtDesa
+            // 
+            this.txtDesa.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtDesa.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesa.Location = new System.Drawing.Point(305, 190);
+            this.txtDesa.Name = "txtDesa";
+            this.txtDesa.Size = new System.Drawing.Size(255, 30);
+            this.txtDesa.TabIndex = 35;
+            // 
+            // bunifuCustomLabel8
+            // 
+            this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(301, 164);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(53, 23);
+            this.bunifuCustomLabel8.TabIndex = 34;
+            this.bunifuCustomLabel8.Text = "Desa";
+            // 
+            // txtNoTanah
+            // 
+            this.txtNoTanah.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtNoTanah.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoTanah.Location = new System.Drawing.Point(12, 190);
+            this.txtNoTanah.Name = "txtNoTanah";
+            this.txtNoTanah.Size = new System.Drawing.Size(255, 30);
+            this.txtNoTanah.TabIndex = 33;
+            // 
+            // bunifuCustomLabel9
+            // 
+            this.bunifuCustomLabel9.AutoSize = true;
+            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(8, 164);
+            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(92, 23);
+            this.bunifuCustomLabel9.TabIndex = 32;
+            this.bunifuCustomLabel9.Text = "No Tanah";
+            // 
+            // txtTahun
+            // 
+            this.txtTahun.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtTahun.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTahun.Location = new System.Drawing.Point(305, 112);
+            this.txtTahun.Name = "txtTahun";
+            this.txtTahun.Size = new System.Drawing.Size(255, 30);
+            this.txtTahun.TabIndex = 31;
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(301, 86);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(64, 23);
+            this.bunifuCustomLabel2.TabIndex = 30;
+            this.bunifuCustomLabel2.Text = "Tahun";
+            // 
+            // txtMappingUnit
+            // 
+            this.txtMappingUnit.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtMappingUnit.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMappingUnit.Location = new System.Drawing.Point(12, 112);
+            this.txtMappingUnit.Name = "txtMappingUnit";
+            this.txtMappingUnit.Size = new System.Drawing.Size(255, 30);
+            this.txtMappingUnit.TabIndex = 29;
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(8, 86);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(127, 23);
+            this.bunifuCustomLabel3.TabIndex = 28;
+            this.bunifuCustomLabel3.Text = "Mapping Unit";
+            // 
+            // txtNoObs
+            // 
+            this.txtNoObs.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtNoObs.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoObs.Location = new System.Drawing.Point(305, 38);
+            this.txtNoObs.Name = "txtNoObs";
+            this.txtNoObs.Size = new System.Drawing.Size(255, 30);
+            this.txtNoObs.TabIndex = 27;
+            // 
+            // bunifuCustomLabel4
+            // 
+            this.bunifuCustomLabel4.AutoSize = true;
+            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(301, 12);
+            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(73, 23);
+            this.bunifuCustomLabel4.TabIndex = 26;
+            this.bunifuCustomLabel4.Text = "No Obs";
+            // 
+            // txtNoForm
+            // 
+            this.txtNoForm.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtNoForm.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoForm.Location = new System.Drawing.Point(12, 38);
+            this.txtNoForm.Name = "txtNoForm";
+            this.txtNoForm.Size = new System.Drawing.Size(255, 30);
+            this.txtNoForm.TabIndex = 25;
+            // 
+            // bunifuCustomLabel5
+            // 
+            this.bunifuCustomLabel5.AutoSize = true;
+            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(8, 12);
+            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(84, 23);
+            this.bunifuCustomLabel5.TabIndex = 24;
+            this.bunifuCustomLabel5.Text = "No Form";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PKDSS.MonoApp.Properties.Resources.maps_and_flags_01;
+            this.pictureBox1.Location = new System.Drawing.Point(645, 38);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(316, 275);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 57;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tabRekomendasiPupuk
+            // 
+            this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel24);
+            this.tabRekomendasiPupuk.Controls.Add(this.pictureBox3);
+            this.tabRekomendasiPupuk.Controls.Add(this.btnCalc);
+            this.tabRekomendasiPupuk.Controls.Add(this.txtKCL);
+            this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel19);
+            this.tabRekomendasiPupuk.Controls.Add(this.txtSP36);
+            this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel20);
+            this.tabRekomendasiPupuk.Controls.Add(this.txtUrea);
+            this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel21);
+            this.tabRekomendasiPupuk.Location = new System.Drawing.Point(4, 32);
+            this.tabRekomendasiPupuk.Name = "tabRekomendasiPupuk";
+            this.tabRekomendasiPupuk.Size = new System.Drawing.Size(1000, 681);
+            this.tabRekomendasiPupuk.TabIndex = 6;
+            this.tabRekomendasiPupuk.Text = "Rekomendasi Pupuk";
+            this.tabRekomendasiPupuk.UseVisualStyleBackColor = true;
+            // 
+            // bunifuCustomLabel24
+            // 
+            this.bunifuCustomLabel24.AutoSize = true;
+            this.bunifuCustomLabel24.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel24.Location = new System.Drawing.Point(564, 326);
+            this.bunifuCustomLabel24.Name = "bunifuCustomLabel24";
+            this.bunifuCustomLabel24.Size = new System.Drawing.Size(186, 23);
+            this.bunifuCustomLabel24.TabIndex = 60;
+            this.bunifuCustomLabel24.Text = "Rekomendasi Pupuk";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::PKDSS.MonoApp.Properties.Resources.seed_bag;
+            this.pictureBox3.Location = new System.Drawing.Point(492, 35);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(316, 275);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 59;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btnCalc
+            // 
+            this.btnCalc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
+            this.btnCalc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalc.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalc.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCalc.Location = new System.Drawing.Point(12, 243);
+            this.btnCalc.Name = "btnCalc";
+            this.btnCalc.Size = new System.Drawing.Size(255, 56);
+            this.btnCalc.TabIndex = 40;
+            this.btnCalc.Text = "Kalkulasi";
+            this.btnCalc.UseVisualStyleBackColor = false;
+            // 
+            // txtKCL
+            // 
+            this.txtKCL.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtKCL.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKCL.Location = new System.Drawing.Point(12, 187);
+            this.txtKCL.Name = "txtKCL";
+            this.txtKCL.Size = new System.Drawing.Size(255, 30);
+            this.txtKCL.TabIndex = 39;
+            // 
+            // bunifuCustomLabel19
+            // 
+            this.bunifuCustomLabel19.AutoSize = true;
+            this.bunifuCustomLabel19.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel19.Location = new System.Drawing.Point(8, 161);
+            this.bunifuCustomLabel19.Name = "bunifuCustomLabel19";
+            this.bunifuCustomLabel19.Size = new System.Drawing.Size(45, 23);
+            this.bunifuCustomLabel19.TabIndex = 38;
+            this.bunifuCustomLabel19.Text = "KCL";
+            // 
+            // txtSP36
+            // 
+            this.txtSP36.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtSP36.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSP36.Location = new System.Drawing.Point(12, 109);
+            this.txtSP36.Name = "txtSP36";
+            this.txtSP36.Size = new System.Drawing.Size(255, 30);
+            this.txtSP36.TabIndex = 37;
+            // 
+            // bunifuCustomLabel20
+            // 
+            this.bunifuCustomLabel20.AutoSize = true;
+            this.bunifuCustomLabel20.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel20.Location = new System.Drawing.Point(8, 83);
+            this.bunifuCustomLabel20.Name = "bunifuCustomLabel20";
+            this.bunifuCustomLabel20.Size = new System.Drawing.Size(56, 23);
+            this.bunifuCustomLabel20.TabIndex = 36;
+            this.bunifuCustomLabel20.Text = "SP36";
+            // 
+            // txtUrea
+            // 
+            this.txtUrea.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtUrea.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUrea.Location = new System.Drawing.Point(12, 35);
+            this.txtUrea.Name = "txtUrea";
+            this.txtUrea.Size = new System.Drawing.Size(255, 30);
+            this.txtUrea.TabIndex = 35;
+            // 
+            // bunifuCustomLabel21
+            // 
+            this.bunifuCustomLabel21.AutoSize = true;
+            this.bunifuCustomLabel21.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel21.Location = new System.Drawing.Point(8, 9);
+            this.bunifuCustomLabel21.Name = "bunifuCustomLabel21";
+            this.bunifuCustomLabel21.Size = new System.Drawing.Size(50, 23);
+            this.bunifuCustomLabel21.TabIndex = 34;
+            this.bunifuCustomLabel21.Text = "Urea";
             // 
             // EntryFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 487);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(1008, 717);
+            this.Controls.Add(this.tabMenu);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EntryFrm";
             this.Text = "Soil Sensing v0.1";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.tabScanning.ResumeLayout(false);
+            this.tabScanning.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartWave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReset)).EndInit();
+            this.pnlSetting.ResumeLayout(false);
+            this.pnlSetting.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.tabMenu.ResumeLayout(false);
+            this.tabDataUnsur.ResumeLayout(false);
+            this.tabDataUnsur.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tabInfoLokasi.ResumeLayout(false);
+            this.tabInfoLokasi.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabRekomendasiPupuk.ResumeLayout(false);
+            this.tabRekomendasiPupuk.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox TxtNoSample;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox TxtNoHorizon;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox CmbKabupaten;
-        private System.Windows.Forms.ComboBox CmbPropinsi;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox TxtKordinatY;
-        private System.Windows.Forms.TextBox TxtNoBalitTanah;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox TxtKecamatan;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox TxtDesa;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox TxtYear;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox TxtNoObs;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox TxtInitial;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TxtKordinatX;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox TxtPengirim;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TxtNoTanah;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TxtMappingUnit;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxtNoForm;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TxtMgdd;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox TxtCadd;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox TxtKdd;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox TxtRetensiP;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox TxtK205;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox TxtPBray;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox TxtKTK;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox TxtNTotal;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox TxtCOrganik;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox TxtPh;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button BtnBack;
-        private System.Windows.Forms.Button BtnCalculate;
-        private System.Windows.Forms.TextBox TxtKCL;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox TxtSP36;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox TxtUrea;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.ComboBox CmbKomoditas;
-        private System.Windows.Forms.ComboBox CmbTekstur;
-        private System.Windows.Forms.TextBox TxtKejenuhanBasa;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox TxtAldd;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox TxtP205;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox TxtPOlsen;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button BtnProcess;
-        private System.Windows.Forms.Button BtnViewChart;
-        private System.Windows.Forms.Button BtnScan;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListBox LstFiles;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Timer TimerFile;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.TabPage tabScanning;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartWave;
+        private System.Windows.Forms.Button btnProcess;
+        private System.Windows.Forms.Button btnScan;
+        private Bunifu.Framework.UI.BunifuImageButton btnReset;
+        private System.Windows.Forms.Panel pnlSetting;
+        private System.Windows.Forms.Panel panel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbGuide;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbResolution;
+        private System.Windows.Forms.ComboBox cbObticalGian;
+        private System.Windows.Forms.ComboBox cbResolution;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbOpticalGian;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel TxtDeviceStat;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Button BtnBg;
+        private System.Windows.Forms.TabControl tabMenu;
+        private System.Windows.Forms.TabPage tabDataUnsur;
+        private System.Windows.Forms.TabPage tabInfoLokasi;
+        private System.Windows.Forms.TabPage tabRekomendasiPupuk;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbTekstur;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtPH;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbPH;
+        private System.Windows.Forms.ComboBox cbKomoditas;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbKomoditas;
+        private System.Windows.Forms.ComboBox cbTekstur;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtK205;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbK205;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtRetensi;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtCOrganik;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbCorganik;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtKadd;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbKadd;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtNTotal;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbNTotal;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtCadd;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbCadd;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtKTK;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbKTK;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtKejenuhanBasa;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbKejenuhanBasa;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtP205;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbP205;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtAIdd;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbAIdd;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtPOlsen;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbPOlsen;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtMgdd;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbMgdd;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtPbray;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbPbray;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtY;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox lbInisial;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtX;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtKecamatan;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtPengirim;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtDesa;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtNoTanah;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtTahun;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtMappingUnit;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtNoObs;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtNoForm;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtBalitTanah;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel18;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtSample;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel17;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtHorizon;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel16;
+        private System.Windows.Forms.ComboBox cbKabupaten;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel15;
+        private System.Windows.Forms.ComboBox cbProvinsi;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel14;
+        private System.Windows.Forms.Button btnBackground;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtKCL;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel19;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtSP36;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel20;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtUrea;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel21;
+        private System.Windows.Forms.Button btnCalc;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel23;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel22;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel24;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

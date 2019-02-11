@@ -524,3 +524,10 @@ C:\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.cspro
 C:\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.csproj.CopyComplete
 C:\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.exe
 C:\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.pdb
+C:\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\grpc_csharp_ext.x86.dll
+C:\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\grpc_csharp_ext.x64.dll
+C:\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\libgrpc_csharp_ext.x86.so
+C:\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\libgrpc_csharp_ext.x64.so
+C:\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\libgrpc_csharp_ext.x86.dylib
+C:\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\libgrpc_csharp_ext.x64.dylib
+C:\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\Bunifu_UI_v1.5.3.dll

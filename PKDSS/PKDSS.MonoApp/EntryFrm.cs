@@ -41,44 +41,42 @@ namespace PKDSS.MonoApp
             //};
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
-            CmbKomoditas.Items.Clear();
-            CmbTekstur.Items.Clear();
-            CmbKomoditas.Items.Add("Padi");
-            CmbKomoditas.Items.Add("Jagung");
-            CmbKomoditas.Items.Add("Kedelai");
-            CmbTekstur.Items.Add("Sand");
-            CmbTekstur.Items.Add("Loamy Sand");
-            CmbTekstur.Items.Add("Sandy Loam");
-            CmbTekstur.Items.Add("Loam");
-            CmbTekstur.Items.Add("Loamy Silt");
-            CmbTekstur.Items.Add("Silt");
-            CmbTekstur.Items.Add("Silty Loam");
-            CmbTekstur.Items.Add("Sandy Clay Loam");
-            CmbTekstur.Items.Add("Silty Clay Loam");
-            CmbTekstur.Items.Add("Sandy Clay");
-            CmbTekstur.Items.Add("Silty Clay");
-            CmbTekstur.Items.Add("Clay");
-            BtnCalculate.Click += BtnCalculate_Click;
-            BtnBack.Click += BtnBack_Click;
+            cbKomoditas.Items.Clear();
+            cbTekstur.Items.Clear();
+            cbKomoditas.Items.Add("Padi");
+            cbKomoditas.Items.Add("Jagung");
+            cbKomoditas.Items.Add("Kedelai");
+            cbTekstur.Items.Add("Sand");
+            cbTekstur.Items.Add("Loamy Sand");
+            cbTekstur.Items.Add("Sandy Loam");
+            cbTekstur.Items.Add("Loam");
+            cbTekstur.Items.Add("Loamy Silt");
+            cbTekstur.Items.Add("Silt");
+            cbTekstur.Items.Add("Silty Loam");
+            cbTekstur.Items.Add("Sandy Clay Loam");
+            cbTekstur.Items.Add("Silty Clay Loam");
+            cbTekstur.Items.Add("Sandy Clay");
+            cbTekstur.Items.Add("Silty Clay");
+            cbTekstur.Items.Add("Clay");
+            btnCalc.Click += BtnCalculate_Click;
             //just for demo
-            TxtNTotal.Text = "0.01";
-            TxtP205.Text = "2";
-            TxtK205.Text = "2";
-            CmbKomoditas.SelectedIndex = 0;
-            CmbTekstur.SelectedIndex = 0;
+            txtNTotal.Text = "0.01";
+            txtP205.Text = "2";
+            txtK205.Text = "2";
+            cbKomoditas.SelectedIndex = 0;
+            cbTekstur.SelectedIndex = 0;
             //populate propinsi
-            CmbPropinsi.Items.Clear();
+            cbProvinsi.Items.Clear();
             foreach (var item in LocationHelper.GetPropinsi())
             {
-                CmbPropinsi.Items.Add(item);
+                cbProvinsi.Items.Add(item);
             }
 
-            CmbPropinsi.SelectedIndexChanged += CmbPropinsi_SelectionChanged;
-            CmbPropinsi.SelectedIndex = 0;
+            cbProvinsi.SelectedIndexChanged += cbProvinsi_SelectionChanged;
+            cbProvinsi.SelectedIndex = 0;
 
             //BtnProcess.Click += (a, b) => { MessageBox.Show("Maaf, fungsi belum tersedia"); };
-            BtnViewChart.Click += BtnViewChart_Click;
-            BtnScan.Click += BtnScan_Click;
+            //BtnViewChart.Click += BtnViewChart_Click;
 
             TimerFile.Enabled = true;
             TimerFile.Start();
@@ -90,10 +88,21 @@ namespace PKDSS.MonoApp
             {
                 while (true)
                 {
-                    Thread.Sleep(1500);
+                    Thread.Sleep(1000);
                     var client = new Datahub.MessageHub.MessageHubClient(channel);
                     var reply = await client.IsDeviceReadyAsync(new Datahub.DataRequest { Parameter = "" });
+
+                    //if (reply.Result == "Background measurement completed successfully.")
+                    //{
+                    //    MessageBox.Show("Background success..");
+                    //}
+                    //else if (reply.Result == "Measurement completed successfully.")
+                    //{
+                    //    MessageBox.Show("Run success..");
+                    //}
+
                     TxtDeviceStat.Text = reply.Result;
+
                     //channel.ShutdownAsync().Wait();
                 }
             }
@@ -103,54 +112,44 @@ namespace PKDSS.MonoApp
             }
         }
 
-        private async void BtnScan_Click(object sender, EventArgs e)
+        //private void BtnViewChart_Click(object sender, EventArgs e)
+        //{
+        //    var FileSel = LstFiles.SelectedValue.ToString();
+        //    if (FileSel != null)
+        //    {
+        //        RawChart chart = new RawChart();
+        //        chart.LoadFile(FileSel);
+        //        var dt = chart.GetDataGelombangInXY();
+        //        chartWave.DataSource = dt;
+        //        chartWave.Series["Series1"].XValueMember = "X";
+        //        chartWave.Series["Series1"].YValueMembers = "Y";
+        //        chartWave.Series["Series1"].ChartType = SeriesChartType.Line;
+        //        chartWave.Series["Series1"].IsVisibleInLegend = false;
+
+        //        chartWave.ChartAreas[0].AxisX.Title = "Wave Number";
+        //        chartWave.ChartAreas[0].AxisY.Title = "Absorbance";
+        //        chartWave.ChartAreas[0].AxisY.LabelStyle.Format = "";
+        //    }
+        //    /*
+        //    var FileSel = LstFiles.SelectedValue.ToString();
+        //    if (FileSel != null)
+        //    {
+        //        RawChart chart = new RawChart();
+        //        chart.LoadFile(FileSel);
+        //        var brush = new SolidBrush(Color.Green);
+        //        var bmp = chart.DrawChart(PicChart.Size, new Pen(brush));
+        //        PicChart.Image = bmp;
+        //        PicChart.Refresh();
+        //    }*/
+        //}
+
+        private void cbProvinsi_SelectionChanged(object sender, EventArgs e)
         {
-            var client = new Datahub.MessageHub.MessageHubClient(channel);
-            var reply = await client.DoScanAsync(new Datahub.DataRequest { Parameter = "" });
-            TxtDeviceStat.Text = reply.Result;
-            //channel.ShutdownAsync().Wait();
-
-            //comm.SendMessage("Scan");
-        }
-
-        private void BtnViewChart_Click(object sender, EventArgs e)
-        {
-            var FileSel = LstFiles.SelectedValue.ToString();
-            if (FileSel != null)
-            {
-                RawChart chart = new RawChart();
-                chart.LoadFile(FileSel);
-                var dt = chart.GetDataGelombangInXY();
-                chart1.DataSource = dt;
-                chart1.Series["Series1"].XValueMember = "X";
-                chart1.Series["Series1"].YValueMembers = "Y";
-                chart1.Series["Series1"].ChartType = SeriesChartType.Line;
-                chart1.Series["Series1"].IsVisibleInLegend = false;
-
-                chart1.ChartAreas[0].AxisX.Title = "Wave Number";
-                chart1.ChartAreas[0].AxisY.Title = "Absorbance";
-                chart1.ChartAreas[0].AxisY.LabelStyle.Format = "";
-            }
-            /*
-            var FileSel = LstFiles.SelectedValue.ToString();
-            if (FileSel != null)
-            {
-                RawChart chart = new RawChart();
-                chart.LoadFile(FileSel);
-                var brush = new SolidBrush(Color.Green);
-                var bmp = chart.DrawChart(PicChart.Size, new Pen(brush));
-                PicChart.Image = bmp;
-                PicChart.Refresh();
-            }*/
-        }
-
-        private void CmbPropinsi_SelectionChanged(object sender, EventArgs e)
-        {
-            CmbKabupaten.Items.Clear();
-            var selProp = CmbPropinsi.SelectedItem.ToString();
+            cbKabupaten.Items.Clear();
+            var selProp = cbProvinsi.SelectedItem.ToString();
             foreach (var item in LocationHelper.GetKabupaten(selProp))
             {
-                CmbKabupaten.Items.Add(item);
+                cbKabupaten.Items.Add(item);
             }
         }
 
@@ -169,53 +168,59 @@ namespace PKDSS.MonoApp
             try
             {
                 var calc = new FertilizerCalculator();
-                TxtUrea.Text = calc.GetFertilizerDoze(double.Parse(TxtNTotal.Text), CmbKomoditas.SelectedItem.ToString(), "Urea").ToString();
-                TxtSP36.Text = calc.GetFertilizerDoze(double.Parse(TxtP205.Text), CmbKomoditas.SelectedItem.ToString(), "SP36").ToString();
-                TxtKCL.Text = calc.GetFertilizerDoze(double.Parse(TxtK205.Text), CmbKomoditas.SelectedItem.ToString(), "KCL").ToString();
+                txtUrea.Text = calc.GetFertilizerDoze(double.Parse(txtNTotal.Text), cbKomoditas.SelectedItem.ToString(), "Urea").ToString();
+                txtSP36.Text = calc.GetFertilizerDoze(double.Parse(txtP205.Text), cbKomoditas.SelectedItem.ToString(), "SP36").ToString();
+                txtKCL.Text = calc.GetFertilizerDoze(double.Parse(txtK205.Text), cbKomoditas.SelectedItem.ToString(), "KCL").ToString();
             }
             catch { }
         }
 
-        static List<FileScan> ScannedFiles;
-        private void TimerFile_Tick(object sender, EventArgs e)
-        {
-            var PathScan = ConfigurationManager.AppSettings["ScanFolder"];
-            if (ScannedFiles == null)
-                ScannedFiles = new List<FileScan>();
-            else
-                ScannedFiles.Clear();
-            if (Directory.Exists(PathScan))
-            {
-                var files = Directory.GetFiles(PathScan, "*.Spectrum");
-                foreach (var item in files)
-                {
-                    var FileNameNude = Path.GetFileName(item).Replace(Path.GetExtension(item), "");
-                    ScannedFiles.Add(new FileScan() { FullName = item, Name = FileNameNude, CreatedDate = new DateTime() });
-                }
-                //LstFiles.Items.Clear();
-                LstFiles.DisplayMember = "Name";
-                LstFiles.ValueMember = "FullName";
-                LstFiles.DataSource = ScannedFiles;
+        //static List<FileScan> ScannedFiles;
+        //private void TimerFile_Tick(object sender, EventArgs e)
+        //{
+        //    var PathScan = ConfigurationManager.AppSettings["ScanFolder"];
+        //    if (ScannedFiles == null)
+        //        ScannedFiles = new List<FileScan>();
+        //    else
+        //        ScannedFiles.Clear();
+        //    if (Directory.Exists(PathScan))
+        //    {
+        //        var files = Directory.GetFiles(PathScan, "*.Spectrum");
+        //        foreach (var item in files)
+        //        {
+        //            var FileNameNude = Path.GetFileName(item).Replace(Path.GetExtension(item), "");
+        //            ScannedFiles.Add(new FileScan() { FullName = item, Name = FileNameNude, CreatedDate = new DateTime() });
+        //        }
+        //        //LstFiles.Items.Clear();
+        //        LstFiles.DisplayMember = "Name";
+        //        LstFiles.ValueMember = "FullName";
+        //        LstFiles.DataSource = ScannedFiles;
 
-            }
-        }
+        //    }
+        //}
 
-        private async void BtnBg_Click(object sender, EventArgs e)
+        private async void btnBackground_Click(object sender, EventArgs e)
         {
             var client = new Datahub.MessageHub.MessageHubClient(channel);
             var reply = await client.DoBackgroundAsync(new Datahub.DataRequest { Parameter = "" });
-            TxtDeviceStat.Text = reply.Result;
             //channel.ShutdownAsync().Wait();
         }
 
-        private void BtnProcess_Click(object sender, EventArgs e)
+        private async void btnScan_Click_1(object sender, EventArgs e)
         {
-            String filename = LstFiles.SelectedValue.ToString();
+            var client = new Datahub.MessageHub.MessageHubClient(channel);
+            var reply = await client.DoScanAsync(new Datahub.DataRequest { Parameter = "" });
 
-            SoilNutritionModel snm = new SoilNutritionModel();
-            snm.InferenceModel(filename);
+            //channel.ShutdownAsync().Wait();
+            //comm.SendMessage("Scan");
+        }
+
+        private void btnProcess_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
+
     public class DataGelombang
     {
         public List<double> wavenumber { get; set; }
