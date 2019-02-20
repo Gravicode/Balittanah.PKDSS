@@ -23,7 +23,7 @@ namespace PKDSS.CoreLibrary
         List<string> ListCmd;
         string Arg;
         string WorkingDir;
-        public ModelRunner(string WorkingDirectory = "C:\\Users\\LattePanda\\Documents\\BalitTanah\\PythonScript\\PythonNIR", string ModelScript = "PLSRmodelv2a.py", string SensorData = "Measurement_Perc_1.Spectrum", string AnacondaFolder = "C:\\ProgramData\\Anaconda3")
+        public ModelRunner(string WorkingDirectory, string ModelScript, string SensorData, string AnacondaFolder)
         {
             try
             {
@@ -82,7 +82,7 @@ namespace PKDSS.CoreLibrary
             {
                 Console.WriteLine("output tidak ditemukan, kegagalan eksekusi model");
             }
-            //Console.WriteLine("end program...");
+            Console.WriteLine("end program...");
             return (false, null);
         }
         void RunCommands(List<string> cmds, string CmdArg = "", string workingDirectory = "")
@@ -92,6 +92,7 @@ namespace PKDSS.CoreLibrary
             psi.FileName = "cmd.exe";
             psi.RedirectStandardInput = true;
             psi.RedirectStandardOutput = true;
+            psi.CreateNoWindow = true;
             psi.RedirectStandardError = true;
             psi.UseShellExecute = false;
             psi.WorkingDirectory = workingDirectory;

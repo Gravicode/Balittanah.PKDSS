@@ -14,40 +14,7 @@ namespace PKDSS.MonoApp.Helper
 {
     public class SoilNutritionModel
     {
-        //const string BASE_PYTHON = @"C:\installdir\Python\Python37\python.exe";
-        //const string OUTPUT_MODEL_FILE = @"C:\BalitTanah\PythonScript\PythonNIR\output.json";
-        //readonly string CMD = ConfigurationManager.AppSettings["PythonSript"];
-        //public string InferenceModel(string FileCSV)
-        //{
-        //    try
-        //    {
-        //        var args = $"{FileCSV}";
-        //        Console.WriteLine(args);
-        //        ProcessStartInfo start = new ProcessStartInfo();
-        //        start.FileName = BASE_PYTHON;//"python";
-        //        start.Arguments = string.Format("{0} {1}", CMD, args);
-        //        start.UseShellExecute = false;
-        //        start.CreateNoWindow = true;
-        //        start.RedirectStandardOutput = true;
-        //        start.RedirectStandardError = true;
-        //        using (Process process = Process.Start(start))
-        //        {
-        //            using (StreamReader reader = process.StandardOutput)
-        //            {
-        //                string result = reader.ReadToEnd();
-        //                Console.Write(result);
-        //                return result;
-        //            }
-        //        }
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        Console.WriteLine("Execute python failed:"+ex.Message);
-        //    }
-        //    return "";
-        //}
-
-        public void InferenceModel()
+        public ModelOutput InferenceModel()
         {
             var DataRekomendasi = ConfigurationManager.AppSettings["DataRekomendasi"];
             var WorkingDirectory = ConfigurationManager.AppSettings["WorkingDirectory"];
@@ -62,34 +29,19 @@ namespace PKDSS.MonoApp.Helper
             {
                 try
                 {
-
                     Console.WriteLine("start recommendation procecss");
                     var calc = new FertilizerCalculator(DataRekomendasi);
-                    var TxtUrea = calc.GetFertilizerDoze(hasil.Result.C_N, "Padi", "Urea").ToString();
-                    var TxtSP36 = calc.GetFertilizerDoze(hasil.Result.HCl25_P2O5, "Padi", "SP36").ToString();
-                    var TxtKCL = calc.GetFertilizerDoze(hasil.Result.HCl25_K2O, "Padi", "KCL").ToString();
-                    Console.WriteLine($"Rekomendasi KCL : {TxtKCL}, SP36 : {TxtSP36}, Urea : {TxtUrea}");
-
-
+                    var Urea = calc.GetFertilizerDoze(hasil.Result.C_N, "Padi", "Urea").ToString();
+                    var SP36 = calc.GetFertilizerDoze(hasil.Result.HCl25_P2O5, "Padi", "SP36").ToString();
+                    var KCL = calc.GetFertilizerDoze(hasil.Result.HCl25_K2O, "Padi", "KCL").ToString();
+                    Console.WriteLine($"Rekomendasi KCL : {KCL}, SP36 : {SP36}, Urea : {Urea}");
 
                 }
                 catch (Exception ex) { Console.WriteLine(ex); }
             }
-            Console.ReadLine();
+            return hasil.Result;
+            //Console.ReadLine();
         }
-
-        //public ModelOutput GetOutputData(string PathFile = OUTPUT_MODEL_FILE)
-        //{
-        //    if (File.Exists(PathFile))
-        //    {
-        //        var strModel = File.ReadAllText(PathFile);
-        //        var OutputModelData = JsonConvert.DeserializeObject<ModelOutput>(strModel);
-        //        File.Delete(PathFile);
-        //        return OutputModelData;
-        //    }else
-        //        Console.WriteLine("File output is not found.");
-        //    return null;
-        //}
 
 
     }

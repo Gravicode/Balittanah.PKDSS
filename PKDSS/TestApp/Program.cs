@@ -24,7 +24,7 @@ namespace TestApp
 
             ModelRunner ml = new ModelRunner(WorkingDirectory, ModelScript, SensorData, AnacondaFolder);
           
-            var hasil = ml.InferenceModel(false,true);
+            var hasil = ml.InferenceModel();
             if (hasil.IsSucceed)
             {
                 try

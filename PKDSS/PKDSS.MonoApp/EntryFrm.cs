@@ -1,5 +1,6 @@
 ﻿using Grpc.Core;
 using PKDSS.CoreLibrary;
+using PKDSS.CoreLibrary.Model;
 using PKDSS.MonoApp.Helper;
 using PKDSS.MonoApp.Helpers;
 using System;
@@ -21,6 +22,7 @@ namespace PKDSS.MonoApp
     public partial class EntryFrm : Form
     {
         Channel channel = new Channel("localhost:50051", ChannelCredentials.Insecure);
+        string ComPort = ConfigurationManager.AppSettings["ComPort"];
         //NamedPipesCom comm;
         public EntryFrm()
         {
@@ -30,6 +32,9 @@ namespace PKDSS.MonoApp
             //Looping check device is ready
             Thread LoopCheckDevice = new Thread(RequestIsDeviceReady);
             LoopCheckDevice.Start();
+
+            var gps = new GpsDevice2(ComPort);
+            gps.StartGPS();
         }
 
         void Setup()
@@ -42,29 +47,20 @@ namespace PKDSS.MonoApp
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
             cbKomoditas.Items.Clear();
-            cbTekstur.Items.Clear();
             cbKomoditas.Items.Add("Padi");
             cbKomoditas.Items.Add("Jagung");
             cbKomoditas.Items.Add("Kedelai");
-            cbTekstur.Items.Add("Sand");
-            cbTekstur.Items.Add("Loamy Sand");
-            cbTekstur.Items.Add("Sandy Loam");
-            cbTekstur.Items.Add("Loam");
-            cbTekstur.Items.Add("Loamy Silt");
-            cbTekstur.Items.Add("Silt");
-            cbTekstur.Items.Add("Silty Loam");
-            cbTekstur.Items.Add("Sandy Clay Loam");
-            cbTekstur.Items.Add("Silty Clay Loam");
-            cbTekstur.Items.Add("Sandy Clay");
-            cbTekstur.Items.Add("Silty Clay");
-            cbTekstur.Items.Add("Clay");
-            btnCalc.Click += BtnCalculate_Click;
-            //just for demo
-            txtNTotal.Text = "0.01";
-            txtP205.Text = "2";
-            txtK205.Text = "2";
             cbKomoditas.SelectedIndex = 0;
-            cbTekstur.SelectedIndex = 0;
+            cbResolution.SelectedIndex = 0;
+            cbObticalGian.SelectedIndex = 0;
+
+
+            GpsPoint CurrentLocation = new GpsPoint();
+            txtX.Text = CurrentLocation.Longitude.ToString();
+            txtY.Text = CurrentLocation.Latitude.ToString();
+
+            resetAction();
+
             //populate propinsi
             cbProvinsi.Items.Clear();
             foreach (var item in LocationHelper.GetPropinsi())
@@ -80,6 +76,51 @@ namespace PKDSS.MonoApp
 
             TimerFile.Enabled = true;
             TimerFile.Start();
+
+        }
+
+        private void resetAction()
+        {
+            btnBackground.Enabled = true;
+            btnBackground.BackColor = Color.FromArgb(29, 134, 255);
+            btnScan.Enabled = false;
+            btnScan.BackColor = Color.FromArgb(196, 223, 255);
+            btnProcess.Enabled = false;
+            btnProcess.BackColor = Color.FromArgb(196, 223, 255);
+
+            txtPH.Text = "";
+            txtK205.Text = "";
+            txtCOrganik.Text = "";
+            txtRetensi.Text = "";
+            txtNTotal.Text = "";
+            txtKadd.Text = "";
+            txtKTK.Text = "";
+            txtCadd.Text = "";
+            txtPbray.Text = "";
+            txtMgdd.Text = "";
+            txtPOlsen.Text = "";
+            txtAIdd.Text = "";
+            txtP205.Text = "";
+            txtKejenuhanBasa.Text = "";
+            
+            txtUrea.Text = "";
+            txtSP36.Text = "";
+            txtKCL.Text = "";
+
+            foreach (var series in chartWave.Series)
+            {
+                series.Points.Clear();
+            }
+            chartWave.DataSource = null;
+
+        }
+
+        public void waiteffect(int loop, int time)
+        {
+            for (int i = 0; i < loop; i++)
+            {
+                Thread.Sleep(time);
+            }
         }
 
         private async void RequestIsDeviceReady()
@@ -109,6 +150,42 @@ namespace PKDSS.MonoApp
             catch (Exception e)
             {
                 Console.WriteLine(e);
+            }
+        }
+
+        private void ViewChart()
+        {
+            var WorkingDirectory = ConfigurationManager.AppSettings["WorkingDirectory"];
+            var SensorData = ConfigurationManager.AppSettings["SensorData"];
+            try
+            {
+                string filepath = WorkingDirectory + "\\" + SensorData;
+                if (!File.Exists(filepath)) throw new Exception("Data is not exists");
+                var FileSel = filepath;
+                if (FileSel != null)
+                {
+                    foreach(var series in chartWave.Series)
+                    {
+                        series.Points.Clear();
+                    }
+
+                    RawChart chart = new RawChart();
+                    chart.LoadFile(FileSel);
+                    var dt = chart.GetDataGelombangInXY();
+                    chartWave.DataSource = dt;
+                    chartWave.Series["Series1"].XValueMember = "X";
+                    chartWave.Series["Series1"].YValueMembers = "Y";
+                    chartWave.Series["Series1"].ChartType = SeriesChartType.Line;
+                    chartWave.Series["Series1"].IsVisibleInLegend = false;
+
+                    chartWave.ChartAreas[0].AxisX.Title = "Wave Number";
+                    chartWave.ChartAreas[0].AxisY.Title = "Absorbance";
+                    chartWave.ChartAreas[0].AxisY.LabelStyle.Format = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -163,18 +240,6 @@ namespace PKDSS.MonoApp
 
         }
 
-        private void BtnCalculate_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var calc = new FertilizerCalculator();
-                txtUrea.Text = calc.GetFertilizerDoze(double.Parse(txtNTotal.Text), cbKomoditas.SelectedItem.ToString(), "Urea").ToString();
-                txtSP36.Text = calc.GetFertilizerDoze(double.Parse(txtP205.Text), cbKomoditas.SelectedItem.ToString(), "SP36").ToString();
-                txtKCL.Text = calc.GetFertilizerDoze(double.Parse(txtK205.Text), cbKomoditas.SelectedItem.ToString(), "KCL").ToString();
-            }
-            catch { }
-        }
-
         //static List<FileScan> ScannedFiles;
         //private void TimerFile_Tick(object sender, EventArgs e)
         //{
@@ -204,29 +269,87 @@ namespace PKDSS.MonoApp
             var client = new Datahub.MessageHub.MessageHubClient(channel);
             var reply = await client.DoBackgroundAsync(new Datahub.DataRequest { Parameter = "" });
             //channel.ShutdownAsync().Wait();
+
+            btnBackground.Enabled = false;
+            btnBackground.BackColor = Color.FromArgb(65, 88, 114);
+            btnScan.Enabled = true;
+            btnScan.BackColor = Color.FromArgb(29, 134, 255);
+
+            waiteffect(4, 2000);
         }
 
-        private async void btnScan_Click_1(object sender, EventArgs e)
+        private async void btnScan_Click(object sender, EventArgs e)
         {
             var client = new Datahub.MessageHub.MessageHubClient(channel);
             var reply = await client.DoScanAsync(new Datahub.DataRequest { Parameter = "" });
 
             //channel.ShutdownAsync().Wait();
             //comm.SendMessage("Scan");
+
+            btnScan.Enabled = true;
+            btnScan.BackColor = Color.FromArgb(65, 88, 114);
+            btnProcess.Enabled = true;
+            btnProcess.BackColor = Color.FromArgb(29, 134, 255);
+
+            waiteffect(4, 2000);
+
+            ViewChart();
         }
 
-        private void btnProcess_Click_1(object sender, EventArgs e)
+        private void btnProcess_Click(object sender, EventArgs e)
         {
+            var DataRekomendasi = ConfigurationManager.AppSettings["DataRekomendasi"];
+            try
+            {
+                SoilNutritionModel snm = new SoilNutritionModel();
+                var Data = snm.InferenceModel();
 
+                if (Data != null)
+                {
+                    // textbox unsur tanah
+                    txtPH.Text = Data.PH_H2O.ToString();
+                    txtK205.Text = Data.HCl25_K2O.ToString();
+                    txtCOrganik.Text = (Data.KJELDAHL_N / Data.C_N).ToString();
+                    txtRetensi.Text = Data.RetensiP.ToString();
+                    txtNTotal.Text = Data.KJELDAHL_N.ToString();
+                    txtKadd.Text = Data.K.ToString();
+                    txtKTK.Text = Data.KTK.ToString();
+                    txtCadd.Text = Data.Ca.ToString();
+                    txtPbray.Text = Data.Bray1_P2O5.ToString();
+                    txtMgdd.Text = Data.Mg.ToString();
+                    txtPOlsen.Text = Data.Olsen_P2O5.ToString();
+                    txtAIdd.Text = "";
+                    txtP205.Text = Data.HCl25_P2O5.ToString();
+                    txtKejenuhanBasa.Text = "";
+                    txtSAND.Text = Data.SAND.ToString();
+                    txtSILT.Text = Data.SILT.ToString();
+                    txtClay.Text = Data.CLAY.ToString();
+
+                    // textbox rekomendasi
+                    var calc = new FertilizerCalculator(DataRekomendasi);
+                    txtUrea.Text = calc.GetFertilizerDoze(Data.C_N, "Padi", "Urea").ToString();
+                    txtSP36.Text = calc.GetFertilizerDoze(Data.HCl25_P2O5, "Padi", "SP36").ToString();
+                    txtKCL.Text = calc.GetFertilizerDoze(Data.HCl25_K2O, "Padi", "KCL").ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            resetAction();
         }
     }
 
-    public class DataGelombang
-    {
-        public List<double> wavenumber { get; set; }
-        public List<double> absorbance { get; set; }
+    //public class DataGelombang
+    //{
+    //    public List<double> xList { get; set; }
+    //    public List<double> yList { get; set; }
 
-    }
+    //}
     public class FileScan
     {
         public DateTime CreatedDate { get; set; }

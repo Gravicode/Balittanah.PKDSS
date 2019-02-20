@@ -29,18 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.TimerFile = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabScanning = new System.Windows.Forms.TabPage();
-            this.btnBackground = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.chartWave = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.btnProcess = new System.Windows.Forms.Button();
-            this.btnScan = new System.Windows.Forms.Button();
+            this.panelButton = new System.Windows.Forms.Panel();
             this.btnReset = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnBackground = new System.Windows.Forms.Button();
+            this.btnScan = new System.Windows.Forms.Button();
+            this.btnProcess = new System.Windows.Forms.Button();
             this.pnlSetting = new System.Windows.Forms.Panel();
+            this.imgOptical = new System.Windows.Forms.PictureBox();
+            this.imgResolution = new System.Windows.Forms.PictureBox();
+            this.txtLog = new System.Windows.Forms.RichTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbGuide = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lbResolution = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -52,7 +57,6 @@
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.tabDataUnsur = new System.Windows.Forms.TabPage();
             this.bunifuCustomLabel23 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtKejenuhanBasa = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.lbKejenuhanBasa = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtP205 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
@@ -83,8 +87,7 @@
             this.lbPH = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cbKomoditas = new System.Windows.Forms.ComboBox();
             this.lbKomoditas = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.cbTekstur = new System.Windows.Forms.ComboBox();
-            this.lbTekstur = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabInfoLokasi = new System.Windows.Forms.TabPage();
             this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtBalitTanah = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
@@ -123,18 +126,27 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabRekomendasiPupuk = new System.Windows.Forms.TabPage();
             this.bunifuCustomLabel24 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnCalc = new System.Windows.Forms.Button();
             this.txtKCL = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.bunifuCustomLabel19 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtSP36 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.bunifuCustomLabel20 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtUrea = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.txtSAND = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbSand = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtClay = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbClay = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtSILT = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbSilt = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tabScanning.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWave)).BeginInit();
+            this.panelButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnReset)).BeginInit();
             this.pnlSetting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgOptical)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgResolution)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabDataUnsur.SuspendLayout();
@@ -151,28 +163,77 @@
             // 
             // tabScanning
             // 
-            this.tabScanning.Controls.Add(this.btnBackground);
-            this.tabScanning.Controls.Add(this.chartWave);
-            this.tabScanning.Controls.Add(this.btnProcess);
-            this.tabScanning.Controls.Add(this.btnScan);
-            this.tabScanning.Controls.Add(this.btnReset);
+            this.tabScanning.BackColor = System.Drawing.Color.Transparent;
+            this.tabScanning.Controls.Add(this.panel1);
+            this.tabScanning.Controls.Add(this.panelButton);
             this.tabScanning.Controls.Add(this.pnlSetting);
             this.tabScanning.Controls.Add(this.statusStrip1);
             this.tabScanning.Location = new System.Drawing.Point(4, 32);
             this.tabScanning.Name = "tabScanning";
             this.tabScanning.Padding = new System.Windows.Forms.Padding(3);
-            this.tabScanning.Size = new System.Drawing.Size(1000, 681);
+            this.tabScanning.Size = new System.Drawing.Size(1000, 525);
             this.tabScanning.TabIndex = 3;
             this.tabScanning.Text = "Scanning";
-            this.tabScanning.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.chartWave);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(994, 215);
+            this.panel1.TabIndex = 15;
+            // 
+            // chartWave
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartWave.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartWave.Legends.Add(legend1);
+            this.chartWave.Location = new System.Drawing.Point(0, 0);
+            this.chartWave.Name = "chartWave";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartWave.Series.Add(series1);
+            this.chartWave.Size = new System.Drawing.Size(994, 215);
+            this.chartWave.TabIndex = 0;
+            this.chartWave.Text = "chart1";
+            // 
+            // panelButton
+            // 
+            this.panelButton.Controls.Add(this.btnReset);
+            this.panelButton.Controls.Add(this.btnBackground);
+            this.panelButton.Controls.Add(this.btnScan);
+            this.panelButton.Controls.Add(this.btnProcess);
+            this.panelButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelButton.Location = new System.Drawing.Point(3, 415);
+            this.panelButton.Name = "panelButton";
+            this.panelButton.Size = new System.Drawing.Size(994, 83);
+            this.panelButton.TabIndex = 14;
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
+            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReset.Image = global::PKDSS.MonoApp.Properties.Resources.reset;
+            this.btnReset.ImageActive = null;
+            this.btnReset.Location = new System.Drawing.Point(18, 3);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(85, 71);
+            this.btnReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnReset.TabIndex = 8;
+            this.btnReset.TabStop = false;
+            this.btnReset.Zoom = 10;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnBackground
             // 
-            this.btnBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
+            this.btnBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(134)))), ((int)(((byte)(255)))));
             this.btnBackground.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackground.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackground.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBackground.Location = new System.Drawing.Point(125, 581);
+            this.btnBackground.Location = new System.Drawing.Point(123, 3);
             this.btnBackground.Name = "btnBackground";
             this.btnBackground.Size = new System.Drawing.Size(248, 71);
             this.btnBackground.TabIndex = 13;
@@ -180,82 +241,83 @@
             this.btnBackground.UseVisualStyleBackColor = false;
             this.btnBackground.Click += new System.EventHandler(this.btnBackground_Click);
             // 
-            // chartWave
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chartWave.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartWave.Legends.Add(legend2);
-            this.chartWave.Location = new System.Drawing.Point(8, 6);
-            this.chartWave.Name = "chartWave";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartWave.Series.Add(series2);
-            this.chartWave.Size = new System.Drawing.Size(984, 553);
-            this.chartWave.TabIndex = 12;
-            this.chartWave.Text = "chart1";
-            this.chartWave.Visible = false;
-            // 
-            // btnProcess
-            // 
-            this.btnProcess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
-            this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcess.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcess.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnProcess.Location = new System.Drawing.Point(714, 581);
-            this.btnProcess.Name = "btnProcess";
-            this.btnProcess.Size = new System.Drawing.Size(248, 71);
-            this.btnProcess.TabIndex = 11;
-            this.btnProcess.Text = "Process";
-            this.btnProcess.UseVisualStyleBackColor = false;
-            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click_1);
-            // 
             // btnScan
             // 
-            this.btnScan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
+            this.btnScan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
             this.btnScan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnScan.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnScan.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnScan.Location = new System.Drawing.Point(416, 581);
+            this.btnScan.Location = new System.Drawing.Point(414, 3);
             this.btnScan.Name = "btnScan";
             this.btnScan.Size = new System.Drawing.Size(248, 71);
             this.btnScan.TabIndex = 10;
             this.btnScan.Text = "Scan";
             this.btnScan.UseVisualStyleBackColor = false;
-            this.btnScan.Click += new System.EventHandler(this.btnScan_Click_1);
+            this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
             // 
-            // btnReset
+            // btnProcess
             // 
-            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
-            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnReset.Image = global::PKDSS.MonoApp.Properties.Resources.reset;
-            this.btnReset.ImageActive = null;
-            this.btnReset.Location = new System.Drawing.Point(20, 581);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(85, 71);
-            this.btnReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnReset.TabIndex = 8;
-            this.btnReset.TabStop = false;
-            this.btnReset.Zoom = 10;
+            this.btnProcess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcess.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcess.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnProcess.Location = new System.Drawing.Point(712, 3);
+            this.btnProcess.Name = "btnProcess";
+            this.btnProcess.Size = new System.Drawing.Size(248, 71);
+            this.btnProcess.TabIndex = 11;
+            this.btnProcess.Text = "Process";
+            this.btnProcess.UseVisualStyleBackColor = false;
+            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 
             // pnlSetting
             // 
+            this.pnlSetting.Controls.Add(this.imgOptical);
+            this.pnlSetting.Controls.Add(this.imgResolution);
+            this.pnlSetting.Controls.Add(this.txtLog);
             this.pnlSetting.Controls.Add(this.panel2);
             this.pnlSetting.Controls.Add(this.lbGuide);
             this.pnlSetting.Controls.Add(this.lbResolution);
             this.pnlSetting.Controls.Add(this.cbObticalGian);
             this.pnlSetting.Controls.Add(this.cbResolution);
             this.pnlSetting.Controls.Add(this.lbOpticalGian);
-            this.pnlSetting.Location = new System.Drawing.Point(20, 209);
+            this.pnlSetting.Location = new System.Drawing.Point(3, 224);
             this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(950, 350);
+            this.pnlSetting.Size = new System.Drawing.Size(994, 182);
             this.pnlSetting.TabIndex = 7;
+            // 
+            // imgOptical
+            // 
+            this.imgOptical.Image = global::PKDSS.MonoApp.Properties.Resources._checked;
+            this.imgOptical.Location = new System.Drawing.Point(246, 135);
+            this.imgOptical.Name = "imgOptical";
+            this.imgOptical.Size = new System.Drawing.Size(31, 31);
+            this.imgOptical.TabIndex = 9;
+            this.imgOptical.TabStop = false;
+            // 
+            // imgResolution
+            // 
+            this.imgResolution.Image = global::PKDSS.MonoApp.Properties.Resources._checked;
+            this.imgResolution.Location = new System.Drawing.Point(246, 75);
+            this.imgResolution.Name = "imgResolution";
+            this.imgResolution.Size = new System.Drawing.Size(31, 31);
+            this.imgResolution.TabIndex = 8;
+            this.imgResolution.TabStop = false;
+            // 
+            // txtLog
+            // 
+            this.txtLog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLog.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLog.Location = new System.Drawing.Point(731, 61);
+            this.txtLog.Name = "txtLog";
+            this.txtLog.ReadOnly = true;
+            this.txtLog.Size = new System.Drawing.Size(208, 105);
+            this.txtLog.TabIndex = 7;
+            this.txtLog.Text = "";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(7, 41);
+            this.panel2.Location = new System.Drawing.Point(7, 35);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(932, 5);
             this.panel2.TabIndex = 6;
@@ -264,17 +326,17 @@
             // 
             this.lbGuide.AutoSize = true;
             this.lbGuide.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGuide.Location = new System.Drawing.Point(67, 15);
+            this.lbGuide.Location = new System.Drawing.Point(67, 9);
             this.lbGuide.Name = "lbGuide";
             this.lbGuide.Size = new System.Drawing.Size(245, 23);
             this.lbGuide.TabIndex = 4;
-            this.lbGuide.Text = "Please chooce your setting";
+            this.lbGuide.Text = "Please choose your setting";
             // 
             // lbResolution
             // 
             this.lbResolution.AutoSize = true;
             this.lbResolution.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbResolution.Location = new System.Drawing.Point(3, 223);
+            this.lbResolution.Location = new System.Drawing.Point(5, 49);
             this.lbResolution.Name = "lbResolution";
             this.lbResolution.Size = new System.Drawing.Size(103, 23);
             this.lbResolution.TabIndex = 1;
@@ -287,7 +349,7 @@
             this.cbObticalGian.FormattingEnabled = true;
             this.cbObticalGian.Items.AddRange(new object[] {
             "Reflection"});
-            this.cbObticalGian.Location = new System.Drawing.Point(7, 309);
+            this.cbObticalGian.Location = new System.Drawing.Point(9, 135);
             this.cbObticalGian.Name = "cbObticalGian";
             this.cbObticalGian.Size = new System.Drawing.Size(212, 31);
             this.cbObticalGian.TabIndex = 2;
@@ -295,12 +357,12 @@
             // cbResolution
             // 
             this.cbResolution.DisplayMember = "0";
-            this.cbResolution.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbResolution.Font = new System.Drawing.Font("Roboto Cn", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbResolution.FormattingEnabled = true;
             this.cbResolution.Items.AddRange(new object[] {
             "16 nm @ 1550 nm",
             "18 nm @ 1550 nm"});
-            this.cbResolution.Location = new System.Drawing.Point(7, 249);
+            this.cbResolution.Location = new System.Drawing.Point(9, 75);
             this.cbResolution.Name = "cbResolution";
             this.cbResolution.Size = new System.Drawing.Size(212, 31);
             this.cbResolution.TabIndex = 0;
@@ -309,7 +371,7 @@
             // 
             this.lbOpticalGian.AutoSize = true;
             this.lbOpticalGian.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOpticalGian.Location = new System.Drawing.Point(3, 283);
+            this.lbOpticalGian.Location = new System.Drawing.Point(5, 109);
             this.lbOpticalGian.Name = "lbOpticalGian";
             this.lbOpticalGian.Size = new System.Drawing.Size(115, 23);
             this.lbOpticalGian.TabIndex = 3;
@@ -320,7 +382,7 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TxtDeviceStat});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 654);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 498);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(994, 24);
             this.statusStrip1.TabIndex = 4;
@@ -345,13 +407,18 @@
             this.tabMenu.Margin = new System.Windows.Forms.Padding(2);
             this.tabMenu.Name = "tabMenu";
             this.tabMenu.SelectedIndex = 0;
-            this.tabMenu.Size = new System.Drawing.Size(1008, 717);
+            this.tabMenu.Size = new System.Drawing.Size(1008, 561);
             this.tabMenu.TabIndex = 0;
             // 
             // tabDataUnsur
             // 
+            this.tabDataUnsur.Controls.Add(this.txtSILT);
+            this.tabDataUnsur.Controls.Add(this.lbSilt);
+            this.tabDataUnsur.Controls.Add(this.txtClay);
+            this.tabDataUnsur.Controls.Add(this.lbClay);
+            this.tabDataUnsur.Controls.Add(this.txtSAND);
+            this.tabDataUnsur.Controls.Add(this.lbSand);
             this.tabDataUnsur.Controls.Add(this.bunifuCustomLabel23);
-            this.tabDataUnsur.Controls.Add(this.pictureBox2);
             this.tabDataUnsur.Controls.Add(this.txtKejenuhanBasa);
             this.tabDataUnsur.Controls.Add(this.lbKejenuhanBasa);
             this.tabDataUnsur.Controls.Add(this.txtP205);
@@ -382,11 +449,10 @@
             this.tabDataUnsur.Controls.Add(this.lbPH);
             this.tabDataUnsur.Controls.Add(this.cbKomoditas);
             this.tabDataUnsur.Controls.Add(this.lbKomoditas);
-            this.tabDataUnsur.Controls.Add(this.cbTekstur);
-            this.tabDataUnsur.Controls.Add(this.lbTekstur);
+            this.tabDataUnsur.Controls.Add(this.pictureBox2);
             this.tabDataUnsur.Location = new System.Drawing.Point(4, 32);
             this.tabDataUnsur.Name = "tabDataUnsur";
-            this.tabDataUnsur.Size = new System.Drawing.Size(1000, 681);
+            this.tabDataUnsur.Size = new System.Drawing.Size(1000, 525);
             this.tabDataUnsur.TabIndex = 4;
             this.tabDataUnsur.Text = "Data Unsur";
             this.tabDataUnsur.UseVisualStyleBackColor = true;
@@ -401,21 +467,11 @@
             this.bunifuCustomLabel23.TabIndex = 60;
             this.bunifuCustomLabel23.Text = "Data Unsur";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::PKDSS.MonoApp.Properties.Resources.shovel;
-            this.pictureBox2.Location = new System.Drawing.Point(644, 38);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(316, 275);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 59;
-            this.pictureBox2.TabStop = false;
-            // 
             // txtKejenuhanBasa
             // 
             this.txtKejenuhanBasa.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtKejenuhanBasa.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKejenuhanBasa.Location = new System.Drawing.Point(305, 564);
+            this.txtKejenuhanBasa.Location = new System.Drawing.Point(305, 378);
             this.txtKejenuhanBasa.Name = "txtKejenuhanBasa";
             this.txtKejenuhanBasa.Size = new System.Drawing.Size(255, 30);
             this.txtKejenuhanBasa.TabIndex = 31;
@@ -424,7 +480,7 @@
             // 
             this.lbKejenuhanBasa.AutoSize = true;
             this.lbKejenuhanBasa.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbKejenuhanBasa.Location = new System.Drawing.Point(301, 538);
+            this.lbKejenuhanBasa.Location = new System.Drawing.Point(301, 352);
             this.lbKejenuhanBasa.Name = "lbKejenuhanBasa";
             this.lbKejenuhanBasa.Size = new System.Drawing.Size(148, 23);
             this.lbKejenuhanBasa.TabIndex = 30;
@@ -434,7 +490,7 @@
             // 
             this.txtP205.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtP205.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtP205.Location = new System.Drawing.Point(12, 564);
+            this.txtP205.Location = new System.Drawing.Point(20, 436);
             this.txtP205.Name = "txtP205";
             this.txtP205.Size = new System.Drawing.Size(255, 30);
             this.txtP205.TabIndex = 29;
@@ -443,7 +499,7 @@
             // 
             this.lbP205.AutoSize = true;
             this.lbP205.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbP205.Location = new System.Drawing.Point(8, 538);
+            this.lbP205.Location = new System.Drawing.Point(16, 410);
             this.lbP205.Name = "lbP205";
             this.lbP205.Size = new System.Drawing.Size(239, 23);
             this.lbP205.TabIndex = 28;
@@ -453,7 +509,7 @@
             // 
             this.txtAIdd.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtAIdd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAIdd.Location = new System.Drawing.Point(305, 490);
+            this.txtAIdd.Location = new System.Drawing.Point(305, 322);
             this.txtAIdd.Name = "txtAIdd";
             this.txtAIdd.Size = new System.Drawing.Size(255, 30);
             this.txtAIdd.TabIndex = 27;
@@ -462,17 +518,17 @@
             // 
             this.lbAIdd.AutoSize = true;
             this.lbAIdd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAIdd.Location = new System.Drawing.Point(301, 464);
+            this.lbAIdd.Location = new System.Drawing.Point(301, 296);
             this.lbAIdd.Name = "lbAIdd";
-            this.lbAIdd.Size = new System.Drawing.Size(152, 23);
+            this.lbAIdd.Size = new System.Drawing.Size(150, 23);
             this.lbAIdd.TabIndex = 26;
-            this.lbAIdd.Text = "AI-dd (Cmol/Kg)";
+            this.lbAIdd.Text = "AI-dd (cmol/Kg)";
             // 
             // txtPOlsen
             // 
             this.txtPOlsen.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtPOlsen.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPOlsen.Location = new System.Drawing.Point(12, 490);
+            this.txtPOlsen.Location = new System.Drawing.Point(20, 380);
             this.txtPOlsen.Name = "txtPOlsen";
             this.txtPOlsen.Size = new System.Drawing.Size(255, 30);
             this.txtPOlsen.TabIndex = 25;
@@ -481,7 +537,7 @@
             // 
             this.lbPOlsen.AutoSize = true;
             this.lbPOlsen.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPOlsen.Location = new System.Drawing.Point(8, 464);
+            this.lbPOlsen.Location = new System.Drawing.Point(16, 354);
             this.lbPOlsen.Name = "lbPOlsen";
             this.lbPOlsen.Size = new System.Drawing.Size(186, 23);
             this.lbPOlsen.TabIndex = 24;
@@ -491,7 +547,7 @@
             // 
             this.txtMgdd.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtMgdd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMgdd.Location = new System.Drawing.Point(305, 416);
+            this.txtMgdd.Location = new System.Drawing.Point(305, 264);
             this.txtMgdd.Name = "txtMgdd";
             this.txtMgdd.Size = new System.Drawing.Size(255, 30);
             this.txtMgdd.TabIndex = 23;
@@ -500,17 +556,17 @@
             // 
             this.lbMgdd.AutoSize = true;
             this.lbMgdd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMgdd.Location = new System.Drawing.Point(301, 390);
+            this.lbMgdd.Location = new System.Drawing.Point(301, 238);
             this.lbMgdd.Name = "lbMgdd";
-            this.lbMgdd.Size = new System.Drawing.Size(162, 23);
+            this.lbMgdd.Size = new System.Drawing.Size(160, 23);
             this.lbMgdd.TabIndex = 22;
-            this.lbMgdd.Text = "Mg-dd (Cmol/Kg)";
+            this.lbMgdd.Text = "Mg-dd (cmol/Kg)";
             // 
             // txtPbray
             // 
             this.txtPbray.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtPbray.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPbray.Location = new System.Drawing.Point(12, 416);
+            this.txtPbray.Location = new System.Drawing.Point(20, 324);
             this.txtPbray.Name = "txtPbray";
             this.txtPbray.Size = new System.Drawing.Size(255, 30);
             this.txtPbray.TabIndex = 21;
@@ -519,7 +575,7 @@
             // 
             this.lbPbray.AutoSize = true;
             this.lbPbray.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPbray.Location = new System.Drawing.Point(8, 390);
+            this.lbPbray.Location = new System.Drawing.Point(16, 298);
             this.lbPbray.Name = "lbPbray";
             this.lbPbray.Size = new System.Drawing.Size(192, 23);
             this.lbPbray.TabIndex = 20;
@@ -529,7 +585,7 @@
             // 
             this.txtCadd.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtCadd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCadd.Location = new System.Drawing.Point(305, 342);
+            this.txtCadd.Location = new System.Drawing.Point(305, 206);
             this.txtCadd.Name = "txtCadd";
             this.txtCadd.Size = new System.Drawing.Size(255, 30);
             this.txtCadd.TabIndex = 19;
@@ -538,17 +594,17 @@
             // 
             this.lbCadd.AutoSize = true;
             this.lbCadd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCadd.Location = new System.Drawing.Point(301, 316);
+            this.lbCadd.Location = new System.Drawing.Point(301, 180);
             this.lbCadd.Name = "lbCadd";
-            this.lbCadd.Size = new System.Drawing.Size(156, 23);
+            this.lbCadd.Size = new System.Drawing.Size(154, 23);
             this.lbCadd.TabIndex = 18;
-            this.lbCadd.Text = "Ca-dd (Cmol/Kg)";
+            this.lbCadd.Text = "Ca-dd (cmol/Kg)";
             // 
             // txtKTK
             // 
             this.txtKTK.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtKTK.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKTK.Location = new System.Drawing.Point(12, 342);
+            this.txtKTK.Location = new System.Drawing.Point(20, 266);
             this.txtKTK.Name = "txtKTK";
             this.txtKTK.Size = new System.Drawing.Size(255, 30);
             this.txtKTK.TabIndex = 17;
@@ -557,7 +613,7 @@
             // 
             this.lbKTK.AutoSize = true;
             this.lbKTK.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbKTK.Location = new System.Drawing.Point(8, 316);
+            this.lbKTK.Location = new System.Drawing.Point(16, 240);
             this.lbKTK.Name = "lbKTK";
             this.lbKTK.Size = new System.Drawing.Size(177, 23);
             this.lbKTK.TabIndex = 16;
@@ -567,7 +623,7 @@
             // 
             this.txtKadd.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtKadd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKadd.Location = new System.Drawing.Point(305, 269);
+            this.txtKadd.Location = new System.Drawing.Point(305, 148);
             this.txtKadd.Name = "txtKadd";
             this.txtKadd.Size = new System.Drawing.Size(255, 30);
             this.txtKadd.TabIndex = 15;
@@ -576,17 +632,17 @@
             // 
             this.lbKadd.AutoSize = true;
             this.lbKadd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbKadd.Location = new System.Drawing.Point(301, 243);
+            this.lbKadd.Location = new System.Drawing.Point(301, 122);
             this.lbKadd.Name = "lbKadd";
-            this.lbKadd.Size = new System.Drawing.Size(156, 23);
+            this.lbKadd.Size = new System.Drawing.Size(144, 23);
             this.lbKadd.TabIndex = 14;
-            this.lbKadd.Text = "Ka-dd (Cmol/Kg)";
+            this.lbKadd.Text = "K-dd (cmol/Kg)";
             // 
             // txtNTotal
             // 
             this.txtNTotal.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtNTotal.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNTotal.Location = new System.Drawing.Point(12, 269);
+            this.txtNTotal.Location = new System.Drawing.Point(20, 208);
             this.txtNTotal.Name = "txtNTotal";
             this.txtNTotal.Size = new System.Drawing.Size(255, 30);
             this.txtNTotal.TabIndex = 13;
@@ -595,7 +651,7 @@
             // 
             this.lbNTotal.AutoSize = true;
             this.lbNTotal.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNTotal.Location = new System.Drawing.Point(8, 243);
+            this.lbNTotal.Location = new System.Drawing.Point(16, 182);
             this.lbNTotal.Name = "lbNTotal";
             this.lbNTotal.Size = new System.Drawing.Size(108, 23);
             this.lbNTotal.TabIndex = 12;
@@ -605,7 +661,7 @@
             // 
             this.txtRetensi.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtRetensi.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRetensi.Location = new System.Drawing.Point(305, 190);
+            this.txtRetensi.Location = new System.Drawing.Point(305, 92);
             this.txtRetensi.Name = "txtRetensi";
             this.txtRetensi.Size = new System.Drawing.Size(255, 30);
             this.txtRetensi.TabIndex = 11;
@@ -614,7 +670,7 @@
             // 
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(301, 164);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(301, 66);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(108, 23);
             this.bunifuCustomLabel1.TabIndex = 10;
@@ -624,7 +680,7 @@
             // 
             this.txtCOrganik.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtCOrganik.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCOrganik.Location = new System.Drawing.Point(12, 190);
+            this.txtCOrganik.Location = new System.Drawing.Point(20, 149);
             this.txtCOrganik.Name = "txtCOrganik";
             this.txtCOrganik.Size = new System.Drawing.Size(255, 30);
             this.txtCOrganik.TabIndex = 9;
@@ -633,7 +689,7 @@
             // 
             this.lbCorganik.AutoSize = true;
             this.lbCorganik.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCorganik.Location = new System.Drawing.Point(8, 164);
+            this.lbCorganik.Location = new System.Drawing.Point(16, 123);
             this.lbCorganik.Name = "lbCorganik";
             this.lbCorganik.Size = new System.Drawing.Size(130, 23);
             this.lbCorganik.TabIndex = 8;
@@ -643,7 +699,7 @@
             // 
             this.txtK205.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtK205.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtK205.Location = new System.Drawing.Point(305, 114);
+            this.txtK205.Location = new System.Drawing.Point(305, 32);
             this.txtK205.Name = "txtK205";
             this.txtK205.Size = new System.Drawing.Size(255, 30);
             this.txtK205.TabIndex = 7;
@@ -652,7 +708,7 @@
             // 
             this.lbK205.AutoSize = true;
             this.lbK205.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbK205.Location = new System.Drawing.Point(301, 88);
+            this.lbK205.Location = new System.Drawing.Point(301, 6);
             this.lbK205.Name = "lbK205";
             this.lbK205.Size = new System.Drawing.Size(239, 23);
             this.lbK205.TabIndex = 6;
@@ -662,7 +718,7 @@
             // 
             this.txtPH.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtPH.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPH.Location = new System.Drawing.Point(12, 114);
+            this.txtPH.Location = new System.Drawing.Point(20, 90);
             this.txtPH.Name = "txtPH";
             this.txtPH.Size = new System.Drawing.Size(255, 30);
             this.txtPH.TabIndex = 5;
@@ -671,7 +727,7 @@
             // 
             this.lbPH.AutoSize = true;
             this.lbPH.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPH.Location = new System.Drawing.Point(8, 88);
+            this.lbPH.Location = new System.Drawing.Point(16, 64);
             this.lbPH.Name = "lbPH";
             this.lbPH.Size = new System.Drawing.Size(34, 23);
             this.lbPH.TabIndex = 4;
@@ -682,7 +738,7 @@
             this.cbKomoditas.DisplayMember = "0";
             this.cbKomoditas.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKomoditas.FormattingEnabled = true;
-            this.cbKomoditas.Location = new System.Drawing.Point(305, 38);
+            this.cbKomoditas.Location = new System.Drawing.Point(20, 32);
             this.cbKomoditas.Name = "cbKomoditas";
             this.cbKomoditas.Size = new System.Drawing.Size(255, 31);
             this.cbKomoditas.TabIndex = 3;
@@ -691,31 +747,21 @@
             // 
             this.lbKomoditas.AutoSize = true;
             this.lbKomoditas.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbKomoditas.Location = new System.Drawing.Point(301, 12);
+            this.lbKomoditas.Location = new System.Drawing.Point(16, 6);
             this.lbKomoditas.Name = "lbKomoditas";
             this.lbKomoditas.Size = new System.Drawing.Size(103, 23);
             this.lbKomoditas.TabIndex = 2;
             this.lbKomoditas.Text = "Komoditas";
             // 
-            // cbTekstur
+            // pictureBox2
             // 
-            this.cbTekstur.DisplayMember = "0";
-            this.cbTekstur.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTekstur.FormattingEnabled = true;
-            this.cbTekstur.Location = new System.Drawing.Point(12, 38);
-            this.cbTekstur.Name = "cbTekstur";
-            this.cbTekstur.Size = new System.Drawing.Size(255, 31);
-            this.cbTekstur.TabIndex = 1;
-            // 
-            // lbTekstur
-            // 
-            this.lbTekstur.AutoSize = true;
-            this.lbTekstur.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTekstur.Location = new System.Drawing.Point(8, 12);
-            this.lbTekstur.Name = "lbTekstur";
-            this.lbTekstur.Size = new System.Drawing.Size(76, 23);
-            this.lbTekstur.TabIndex = 0;
-            this.lbTekstur.Text = "Tekstur";
+            this.pictureBox2.Image = global::PKDSS.MonoApp.Properties.Resources.shovel;
+            this.pictureBox2.Location = new System.Drawing.Point(644, 38);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(316, 275);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 59;
+            this.pictureBox2.TabStop = false;
             // 
             // tabInfoLokasi
             // 
@@ -756,7 +802,7 @@
             this.tabInfoLokasi.Controls.Add(this.pictureBox1);
             this.tabInfoLokasi.Location = new System.Drawing.Point(4, 32);
             this.tabInfoLokasi.Name = "tabInfoLokasi";
-            this.tabInfoLokasi.Size = new System.Drawing.Size(1000, 681);
+            this.tabInfoLokasi.Size = new System.Drawing.Size(1000, 525);
             this.tabInfoLokasi.TabIndex = 5;
             this.tabInfoLokasi.Text = "Info Lokasi Observasi";
             this.tabInfoLokasi.UseVisualStyleBackColor = true;
@@ -1100,17 +1146,16 @@
             // tabRekomendasiPupuk
             // 
             this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel24);
-            this.tabRekomendasiPupuk.Controls.Add(this.pictureBox3);
-            this.tabRekomendasiPupuk.Controls.Add(this.btnCalc);
             this.tabRekomendasiPupuk.Controls.Add(this.txtKCL);
             this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel19);
             this.tabRekomendasiPupuk.Controls.Add(this.txtSP36);
             this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel20);
             this.tabRekomendasiPupuk.Controls.Add(this.txtUrea);
             this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel21);
+            this.tabRekomendasiPupuk.Controls.Add(this.pictureBox3);
             this.tabRekomendasiPupuk.Location = new System.Drawing.Point(4, 32);
             this.tabRekomendasiPupuk.Name = "tabRekomendasiPupuk";
-            this.tabRekomendasiPupuk.Size = new System.Drawing.Size(1000, 681);
+            this.tabRekomendasiPupuk.Size = new System.Drawing.Size(1000, 525);
             this.tabRekomendasiPupuk.TabIndex = 6;
             this.tabRekomendasiPupuk.Text = "Rekomendasi Pupuk";
             this.tabRekomendasiPupuk.UseVisualStyleBackColor = true;
@@ -1124,29 +1169,6 @@
             this.bunifuCustomLabel24.Size = new System.Drawing.Size(186, 23);
             this.bunifuCustomLabel24.TabIndex = 60;
             this.bunifuCustomLabel24.Text = "Rekomendasi Pupuk";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::PKDSS.MonoApp.Properties.Resources.seed_bag;
-            this.pictureBox3.Location = new System.Drawing.Point(492, 35);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(316, 275);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 59;
-            this.pictureBox3.TabStop = false;
-            // 
-            // btnCalc
-            // 
-            this.btnCalc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
-            this.btnCalc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalc.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalc.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCalc.Location = new System.Drawing.Point(12, 243);
-            this.btnCalc.Name = "btnCalc";
-            this.btnCalc.Size = new System.Drawing.Size(255, 56);
-            this.btnCalc.TabIndex = 40;
-            this.btnCalc.Text = "Kalkulasi";
-            this.btnCalc.UseVisualStyleBackColor = false;
             // 
             // txtKCL
             // 
@@ -1205,21 +1227,92 @@
             this.bunifuCustomLabel21.TabIndex = 34;
             this.bunifuCustomLabel21.Text = "Urea";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::PKDSS.MonoApp.Properties.Resources.seed_bag;
+            this.pictureBox3.Location = new System.Drawing.Point(492, 35);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(316, 275);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 59;
+            this.pictureBox3.TabStop = false;
+            // 
+            // txtSAND
+            // 
+            this.txtSAND.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtSAND.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSAND.Location = new System.Drawing.Point(305, 436);
+            this.txtSAND.Name = "txtSAND";
+            this.txtSAND.Size = new System.Drawing.Size(255, 30);
+            this.txtSAND.TabIndex = 62;
+            // 
+            // lbSand
+            // 
+            this.lbSand.AutoSize = true;
+            this.lbSand.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSand.Location = new System.Drawing.Point(301, 410);
+            this.lbSand.Name = "lbSand";
+            this.lbSand.Size = new System.Drawing.Size(60, 23);
+            this.lbSand.TabIndex = 61;
+            this.lbSand.Text = "SAND";
+            // 
+            // txtClay
+            // 
+            this.txtClay.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtClay.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClay.Location = new System.Drawing.Point(20, 492);
+            this.txtClay.Name = "txtClay";
+            this.txtClay.Size = new System.Drawing.Size(255, 30);
+            this.txtClay.TabIndex = 64;
+            // 
+            // lbClay
+            // 
+            this.lbClay.AutoSize = true;
+            this.lbClay.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbClay.Location = new System.Drawing.Point(16, 466);
+            this.lbClay.Name = "lbClay";
+            this.lbClay.Size = new System.Drawing.Size(57, 23);
+            this.lbClay.TabIndex = 63;
+            this.lbClay.Text = "CLAY";
+            // 
+            // txtSILT
+            // 
+            this.txtSILT.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtSILT.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSILT.Location = new System.Drawing.Point(305, 492);
+            this.txtSILT.Name = "txtSILT";
+            this.txtSILT.Size = new System.Drawing.Size(255, 30);
+            this.txtSILT.TabIndex = 66;
+            // 
+            // lbSilt
+            // 
+            this.lbSilt.AutoSize = true;
+            this.lbSilt.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSilt.Location = new System.Drawing.Point(301, 466);
+            this.lbSilt.Name = "lbSilt";
+            this.lbSilt.Size = new System.Drawing.Size(50, 23);
+            this.lbSilt.TabIndex = 65;
+            this.lbSilt.Text = "SILT";
+            // 
             // EntryFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 717);
+            this.ClientSize = new System.Drawing.Size(1008, 561);
             this.Controls.Add(this.tabMenu);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EntryFrm";
             this.Text = "Soil Sensing v0.1";
             this.tabScanning.ResumeLayout(false);
             this.tabScanning.PerformLayout();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartWave)).EndInit();
+            this.panelButton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnReset)).EndInit();
             this.pnlSetting.ResumeLayout(false);
             this.pnlSetting.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgOptical)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgResolution)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.tabMenu.ResumeLayout(false);
@@ -1240,7 +1333,6 @@
         private System.Windows.Forms.Timer TimerFile;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TabPage tabScanning;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartWave;
         private System.Windows.Forms.Button btnProcess;
         private System.Windows.Forms.Button btnScan;
         private Bunifu.Framework.UI.BunifuImageButton btnReset;
@@ -1257,12 +1349,10 @@
         private System.Windows.Forms.TabPage tabDataUnsur;
         private System.Windows.Forms.TabPage tabInfoLokasi;
         private System.Windows.Forms.TabPage tabRekomendasiPupuk;
-        private Bunifu.Framework.UI.BunifuCustomLabel lbTekstur;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtPH;
         private Bunifu.Framework.UI.BunifuCustomLabel lbPH;
         private System.Windows.Forms.ComboBox cbKomoditas;
         private Bunifu.Framework.UI.BunifuCustomLabel lbKomoditas;
-        private System.Windows.Forms.ComboBox cbTekstur;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtK205;
         private Bunifu.Framework.UI.BunifuCustomLabel lbK205;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtRetensi;
@@ -1329,12 +1419,23 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel20;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtUrea;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel21;
-        private System.Windows.Forms.Button btnCalc;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel23;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel22;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel24;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox imgResolution;
+        private System.Windows.Forms.PictureBox imgOptical;
+        private System.Windows.Forms.Panel panelButton;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartWave;
+        public System.Windows.Forms.RichTextBox txtLog;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtSILT;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbSilt;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtClay;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbClay;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtSAND;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbSand;
     }
 }

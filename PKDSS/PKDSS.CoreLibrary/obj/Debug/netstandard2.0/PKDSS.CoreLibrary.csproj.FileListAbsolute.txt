@@ -64,3 +64,13 @@ C:\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\
 C:\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.AssemblyInfo.cs
 C:\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.dll
 C:\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.pdb
+E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\bin\Debug\netstandard2.0\PKDSS.CoreLibrary.deps.json
+E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\bin\Debug\netstandard2.0\PKDSS.CoreLibrary.dll
+E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\bin\Debug\netstandard2.0\PKDSS.CoreLibrary.pdb
+E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.Properties.Resources.resources
+E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.csproj.GenerateResource.cache
+E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.csproj.CoreCompileInputs.cache
+E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.AssemblyInfoInputs.cache
+E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.AssemblyInfo.cs
+E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.dll
+E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.pdb

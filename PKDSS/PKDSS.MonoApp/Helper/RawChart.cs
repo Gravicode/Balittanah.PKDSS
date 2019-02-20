@@ -14,13 +14,14 @@ namespace PKDSS.MonoApp.Helpers
 {
     public class RawChart
     {
-
-        public DataGelombang data { get; set; }
+        public List<double> xList = new List<double>();
+        public List<double> yList = new List<double>();
+        //public DataGelombang data { get; set; }
         string CurrentFileName;
         public Bitmap DrawChart(Size size, Pen PenColor, int AmplitudeScale=120)
         {
-            if (data == null) return null;
-            int nSamples = data.wavenumber.Count;
+            if (xList == null) return null;
+            int nSamples = xList.Count;
             //Stopwatch sw = new Stopwatch();
             //sw.Start();
 
@@ -34,8 +35,8 @@ namespace PKDSS.MonoApp.Helpers
             for (int i = 0; i < nSamples - 1; i++)//i = timeslice
             {
                 datas[i] = new DrawPoint();
-                datas[i].X = data.wavenumber[i];
-                datas[i].Y = data.absorbance[i];
+                datas[i].X = xList[i];
+                datas[i].Y = yList[i];
 
             }
             MaxVal = AmplitudeScale;
@@ -111,7 +112,25 @@ namespace PKDSS.MonoApp.Helpers
             try
             {
                 if (!File.Exists(FileName)) return false;
-                data = JsonConvert.DeserializeObject<DataGelombang>(File.ReadAllText(FileName));
+                //data = JsonConvert.DeserializeObject<DataGelombang>(File.ReadAllText(FileName));
+
+                xList.Clear();
+                yList.Clear();
+
+                string[] rawdata = File.ReadAllLines(FileName);
+
+                var xData = rawdata[0].Split(',');
+                var yData = rawdata[1].Split(',');
+
+                if (xData.Length == yData.Length)
+                {
+                    for (int i = 0; i < xData.Length; i++)
+                    {
+                        xList.Add(double.Parse(xData[i]));
+                        yList.Add(double.Parse(yData[i]));
+                    }
+                }
+
                 CurrentFileName = FileName;
                
                 return true;
@@ -124,20 +143,17 @@ namespace PKDSS.MonoApp.Helpers
         public List<DrawPoint> GetDataGelombangInXY()
         {
             var dataPoints = new List<DrawPoint>();
-            if (data!=null)
+            if (xList!=null && yList!=null)
             {
-                for(int i=0;i<data.wavenumber.Count;i++)
+                for(int i=0;i<xList.Count;i++)
                 {
-                    dataPoints.Add(new DrawPoint() { X= data.wavenumber[i], Y = data.absorbance[i] });
+                    dataPoints.Add(new DrawPoint() { X= xList[i], Y = yList[i] });
                 }
             }
 
             return dataPoints;
         }
-
-
     }
-
     
     public class DrawPoint
     {
