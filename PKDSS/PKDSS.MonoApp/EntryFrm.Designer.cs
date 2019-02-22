@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.TimerFile = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabScanning = new System.Windows.Forms.TabPage();
@@ -56,6 +56,12 @@
             this.TxtDeviceStat = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.tabDataUnsur = new System.Windows.Forms.TabPage();
+            this.txtSILT = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbSilt = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtClay = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbClay = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtSAND = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbSand = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel23 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtKejenuhanBasa = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.lbKejenuhanBasa = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -133,12 +139,6 @@
             this.txtUrea = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.txtSAND = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.lbSand = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtClay = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.lbClay = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtSILT = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.lbSilt = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tabScanning.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWave)).BeginInit();
@@ -186,16 +186,16 @@
             // 
             // chartWave
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartWave.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartWave.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chartWave.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartWave.Legends.Add(legend3);
             this.chartWave.Location = new System.Drawing.Point(0, 0);
             this.chartWave.Name = "chartWave";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartWave.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartWave.Series.Add(series3);
             this.chartWave.Size = new System.Drawing.Size(994, 215);
             this.chartWave.TabIndex = 0;
             this.chartWave.Text = "chart1";
@@ -293,6 +293,7 @@
             this.imgOptical.Size = new System.Drawing.Size(31, 31);
             this.imgOptical.TabIndex = 9;
             this.imgOptical.TabStop = false;
+            this.imgOptical.Visible = false;
             // 
             // imgResolution
             // 
@@ -302,15 +303,16 @@
             this.imgResolution.Size = new System.Drawing.Size(31, 31);
             this.imgResolution.TabIndex = 8;
             this.imgResolution.TabStop = false;
+            this.imgResolution.Visible = false;
             // 
             // txtLog
             // 
             this.txtLog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLog.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLog.Location = new System.Drawing.Point(731, 61);
+            this.txtLog.Location = new System.Drawing.Point(613, 61);
             this.txtLog.Name = "txtLog";
             this.txtLog.ReadOnly = true;
-            this.txtLog.Size = new System.Drawing.Size(208, 105);
+            this.txtLog.Size = new System.Drawing.Size(326, 105);
             this.txtLog.TabIndex = 7;
             this.txtLog.Text = "";
             // 
@@ -456,6 +458,63 @@
             this.tabDataUnsur.TabIndex = 4;
             this.tabDataUnsur.Text = "Data Unsur";
             this.tabDataUnsur.UseVisualStyleBackColor = true;
+            // 
+            // txtSILT
+            // 
+            this.txtSILT.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtSILT.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSILT.Location = new System.Drawing.Point(305, 492);
+            this.txtSILT.Name = "txtSILT";
+            this.txtSILT.Size = new System.Drawing.Size(255, 30);
+            this.txtSILT.TabIndex = 66;
+            // 
+            // lbSilt
+            // 
+            this.lbSilt.AutoSize = true;
+            this.lbSilt.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSilt.Location = new System.Drawing.Point(301, 466);
+            this.lbSilt.Name = "lbSilt";
+            this.lbSilt.Size = new System.Drawing.Size(50, 23);
+            this.lbSilt.TabIndex = 65;
+            this.lbSilt.Text = "SILT";
+            // 
+            // txtClay
+            // 
+            this.txtClay.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtClay.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClay.Location = new System.Drawing.Point(20, 492);
+            this.txtClay.Name = "txtClay";
+            this.txtClay.Size = new System.Drawing.Size(255, 30);
+            this.txtClay.TabIndex = 64;
+            // 
+            // lbClay
+            // 
+            this.lbClay.AutoSize = true;
+            this.lbClay.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbClay.Location = new System.Drawing.Point(16, 466);
+            this.lbClay.Name = "lbClay";
+            this.lbClay.Size = new System.Drawing.Size(57, 23);
+            this.lbClay.TabIndex = 63;
+            this.lbClay.Text = "CLAY";
+            // 
+            // txtSAND
+            // 
+            this.txtSAND.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtSAND.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSAND.Location = new System.Drawing.Point(305, 436);
+            this.txtSAND.Name = "txtSAND";
+            this.txtSAND.Size = new System.Drawing.Size(255, 30);
+            this.txtSAND.TabIndex = 62;
+            // 
+            // lbSand
+            // 
+            this.lbSand.AutoSize = true;
+            this.lbSand.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSand.Location = new System.Drawing.Point(301, 410);
+            this.lbSand.Name = "lbSand";
+            this.lbSand.Size = new System.Drawing.Size(60, 23);
+            this.lbSand.TabIndex = 61;
+            this.lbSand.Text = "SAND";
             // 
             // bunifuCustomLabel23
             // 
@@ -615,9 +674,9 @@
             this.lbKTK.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbKTK.Location = new System.Drawing.Point(16, 240);
             this.lbKTK.Name = "lbKTK";
-            this.lbKTK.Size = new System.Drawing.Size(177, 23);
+            this.lbKTK.Size = new System.Drawing.Size(175, 23);
             this.lbKTK.TabIndex = 16;
-            this.lbKTK.Text = "KTK Liat (Cmol/Kg)";
+            this.lbKTK.Text = "KTK Liat (cmol/Kg)";
             // 
             // txtKadd
             // 
@@ -1237,63 +1296,6 @@
             this.pictureBox3.TabIndex = 59;
             this.pictureBox3.TabStop = false;
             // 
-            // txtSAND
-            // 
-            this.txtSAND.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtSAND.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSAND.Location = new System.Drawing.Point(305, 436);
-            this.txtSAND.Name = "txtSAND";
-            this.txtSAND.Size = new System.Drawing.Size(255, 30);
-            this.txtSAND.TabIndex = 62;
-            // 
-            // lbSand
-            // 
-            this.lbSand.AutoSize = true;
-            this.lbSand.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSand.Location = new System.Drawing.Point(301, 410);
-            this.lbSand.Name = "lbSand";
-            this.lbSand.Size = new System.Drawing.Size(60, 23);
-            this.lbSand.TabIndex = 61;
-            this.lbSand.Text = "SAND";
-            // 
-            // txtClay
-            // 
-            this.txtClay.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtClay.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClay.Location = new System.Drawing.Point(20, 492);
-            this.txtClay.Name = "txtClay";
-            this.txtClay.Size = new System.Drawing.Size(255, 30);
-            this.txtClay.TabIndex = 64;
-            // 
-            // lbClay
-            // 
-            this.lbClay.AutoSize = true;
-            this.lbClay.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbClay.Location = new System.Drawing.Point(16, 466);
-            this.lbClay.Name = "lbClay";
-            this.lbClay.Size = new System.Drawing.Size(57, 23);
-            this.lbClay.TabIndex = 63;
-            this.lbClay.Text = "CLAY";
-            // 
-            // txtSILT
-            // 
-            this.txtSILT.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtSILT.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSILT.Location = new System.Drawing.Point(305, 492);
-            this.txtSILT.Name = "txtSILT";
-            this.txtSILT.Size = new System.Drawing.Size(255, 30);
-            this.txtSILT.TabIndex = 66;
-            // 
-            // lbSilt
-            // 
-            this.lbSilt.AutoSize = true;
-            this.lbSilt.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSilt.Location = new System.Drawing.Point(301, 466);
-            this.lbSilt.Name = "lbSilt";
-            this.lbSilt.Size = new System.Drawing.Size(50, 23);
-            this.lbSilt.TabIndex = 65;
-            this.lbSilt.Text = "SILT";
-            // 
             // EntryFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1303,6 +1305,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EntryFrm";
             this.Text = "Soil Sensing v0.1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EntryFrm_FormClosed);
             this.tabScanning.ResumeLayout(false);
             this.tabScanning.PerformLayout();
             this.panel1.ResumeLayout(false);

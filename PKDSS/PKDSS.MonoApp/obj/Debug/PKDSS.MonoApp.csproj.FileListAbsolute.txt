@@ -662,3 +662,5 @@ E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\P
 E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.csproj.CopyComplete
 E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.exe
 E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.pdb
+E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\PKDSS.Tools.dll
+E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\PKDSS.Tools.pdb

@@ -74,3 +74,4 @@ E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Deb
 E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.AssemblyInfo.cs
 E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.dll
 E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.pdb
+E:\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.csprojAssemblyReference.cache

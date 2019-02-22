@@ -84,7 +84,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\GpsDevice2.cs" />
-    <Compile Include="Helper\LogHelper.cs" />
     <Compile Include="Helper\NamedPipesCom.cs" />
     <Compile Include="Helper\RawChart.cs" />
     <Compile Include="Helper\SoilNutritionModel.cs" />
@@ -130,6 +129,10 @@
     <ProjectReference Include="..\PKDSS.CoreLibrary\PKDSS.CoreLibrary.csproj">
       <Project>{847e8604-2400-49e8-b776-037b07871f53}</Project>
       <Name>PKDSS.CoreLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PKDSS.Tools\PKDSS.Tools.csproj">
+      <Project>{e7f549ee-39c5-4518-9a9e-1883218973bd}</Project>
+      <Name>PKDSS.Tools</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

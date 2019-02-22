@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Threading;
+using PKDSS.Tools;
 
 namespace PKDSS.MonoApp
 {
@@ -23,6 +24,8 @@ namespace PKDSS.MonoApp
     {
         Channel channel = new Channel("localhost:50051", ChannelCredentials.Insecure);
         string ComPort = ConfigurationManager.AppSettings["ComPort"];
+        Thread LoopCheckDevice;
+        int statusProcess = 0;
         //NamedPipesCom comm;
         public EntryFrm()
         {
@@ -30,9 +33,14 @@ namespace PKDSS.MonoApp
             Setup();
 
             //Looping check device is ready
-            Thread LoopCheckDevice = new Thread(RequestIsDeviceReady);
+            LoopCheckDevice = new Thread(RequestIsDeviceReady);
             LoopCheckDevice.Start();
 
+            Logs.WriteAppLog("Application run....\n");
+            statusProcess = 1;
+            CheckRefences();
+            ReadLog();
+            
             var gps = new GpsDevice2(ComPort);
             gps.StartGPS();
         }
@@ -79,8 +87,22 @@ namespace PKDSS.MonoApp
 
         }
 
+        void CheckRefences()
+        {
+            if(cbResolution.SelectedIndex > -1)
+            {
+                imgResolution.Visible = true;
+            }
+            
+            if(cbObticalGian.SelectedIndex > -1)
+            {
+                imgOptical.Visible = true;
+            }
+        }
+
         private void resetAction()
         {
+            statusProcess = 1;
             btnBackground.Enabled = true;
             btnBackground.BackColor = Color.FromArgb(29, 134, 255);
             btnScan.Enabled = false;
@@ -115,14 +137,6 @@ namespace PKDSS.MonoApp
 
         }
 
-        public void waiteffect(int loop, int time)
-        {
-            for (int i = 0; i < loop; i++)
-            {
-                Thread.Sleep(time);
-            }
-        }
-
         private async void RequestIsDeviceReady()
         {
             try
@@ -132,15 +146,73 @@ namespace PKDSS.MonoApp
                     Thread.Sleep(1000);
                     var client = new Datahub.MessageHub.MessageHubClient(channel);
                     var reply = await client.IsDeviceReadyAsync(new Datahub.DataRequest { Parameter = "" });
-
-                    //if (reply.Result == "Background measurement completed successfully.")
-                    //{
-                    //    MessageBox.Show("Background success..");
-                    //}
-                    //else if (reply.Result == "Measurement completed successfully.")
-                    //{
-                    //    MessageBox.Show("Run success..");
-                    //}
+                    
+                    //check neospectra device
+                    if (statusProcess == 1)
+                    {
+                        if (!reply.Status)
+                        {
+                            MethodInvoker methodInvokerDelegate = delegate ()
+                            {
+                                setButtonEnable(false);
+                            };
+                            if (this.InvokeRequired)
+                            { this.Invoke(methodInvokerDelegate); }
+                            else
+                            { setButtonEnable(false); }
+                        }
+                        else
+                        {
+                            MethodInvoker methodInvokerDelegate = delegate ()
+                            {
+                                setButtonEnable(true);
+                            };
+                            if (this.InvokeRequired)
+                            { this.Invoke(methodInvokerDelegate); }
+                            else
+                            { setButtonEnable(true); }
+                        }
+                    }
+                    //check background
+                    else if (statusProcess == 2)
+                    {
+                        if (reply.Status)
+                        {
+                            MethodInvoker methodInvokerDelegate = delegate ()
+                            {
+                                Writelog("Get Background Done....");
+                                statusProcess = 0;
+                            };
+                            if (this.InvokeRequired)
+                            { this.Invoke(methodInvokerDelegate); }
+                            else
+                            {
+                                Writelog("Get Background Done....");
+                                statusProcess = 0;
+                            }
+                        }
+                    }
+                    //check scan
+                    else if (statusProcess == 3)
+                    {
+                        if (reply.Status)
+                        {
+                            MethodInvoker methodInvokerDelegate = delegate ()
+                            {
+                                Writelog("Scan Finish....");
+                                statusProcess = 0;
+                                ViewChart();
+                            };
+                            if (this.InvokeRequired)
+                            { this.Invoke(methodInvokerDelegate); }
+                            else
+                            {
+                                Writelog("Scan Finish....");
+                                statusProcess = 0;
+                                ViewChart();
+                            }
+                        }
+                    }
 
                     TxtDeviceStat.Text = reply.Result;
 
@@ -150,6 +222,21 @@ namespace PKDSS.MonoApp
             catch (Exception e)
             {
                 Console.WriteLine(e);
+            }
+        }
+
+        private void setButtonEnable(bool param)
+        {
+            if (statusProcess == 1)
+            {
+                if (statusProcess == 1 && param)
+                {
+                    this.btnBackground.Enabled = true;
+                }
+                else
+                {
+                    this.btnBackground.Enabled = false;
+                }
             }
         }
 
@@ -269,38 +356,44 @@ namespace PKDSS.MonoApp
             var client = new Datahub.MessageHub.MessageHubClient(channel);
             var reply = await client.DoBackgroundAsync(new Datahub.DataRequest { Parameter = "" });
             //channel.ShutdownAsync().Wait();
-
+            
+            Writelog("Run Background....");
+            statusProcess = 2;
             btnBackground.Enabled = false;
             btnBackground.BackColor = Color.FromArgb(65, 88, 114);
             btnScan.Enabled = true;
             btnScan.BackColor = Color.FromArgb(29, 134, 255);
 
-            waiteffect(4, 2000);
         }
 
         private async void btnScan_Click(object sender, EventArgs e)
         {
             var client = new Datahub.MessageHub.MessageHubClient(channel);
             var reply = await client.DoScanAsync(new Datahub.DataRequest { Parameter = "" });
-
+            
             //channel.ShutdownAsync().Wait();
             //comm.SendMessage("Scan");
 
+            Writelog("Run Scanning....");
+            statusProcess = 3;
             btnScan.Enabled = true;
-            btnScan.BackColor = Color.FromArgb(65, 88, 114);
+            btnScan.BackColor = Color.FromArgb(29, 134, 255);
             btnProcess.Enabled = true;
             btnProcess.BackColor = Color.FromArgb(29, 134, 255);
-
-            waiteffect(4, 2000);
-
-            ViewChart();
         }
 
         private void btnProcess_Click(object sender, EventArgs e)
         {
+            doProcess();
+        }
+
+        private void doProcess()
+        {
             var DataRekomendasi = ConfigurationManager.AppSettings["DataRekomendasi"];
             try
             {
+                Writelog("Do Calculating Elements.... Please wait for a while....");
+                statusProcess = 4;
                 SoilNutritionModel snm = new SoilNutritionModel();
                 var Data = snm.InferenceModel();
 
@@ -330,6 +423,9 @@ namespace PKDSS.MonoApp
                     txtUrea.Text = calc.GetFertilizerDoze(Data.C_N, "Padi", "Urea").ToString();
                     txtSP36.Text = calc.GetFertilizerDoze(Data.HCl25_P2O5, "Padi", "SP36").ToString();
                     txtKCL.Text = calc.GetFertilizerDoze(Data.HCl25_K2O, "Padi", "KCL").ToString();
+
+                    Writelog("Process Finish....");
+                    statusProcess = 0;
                 }
             }
             catch (Exception ex)
@@ -342,14 +438,30 @@ namespace PKDSS.MonoApp
         {
             resetAction();
         }
+
+        private void EntryFrm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            LoopCheckDevice.Abort();
+        }
+
+        private void Writelog(string message)
+        {
+            Logs.WriteAppLog(message);
+            ReadLog();
+        }
+
+        private void ReadLog()
+        {
+            string message = Logs.ReadLastLog();
+            if (!string.IsNullOrEmpty(message))
+            {
+                txtLog.Text += message + "\n";
+                txtLog.SelectionStart = txtLog.Text.Length;
+                txtLog.ScrollToCaret();
+            }
+        }
     }
 
-    //public class DataGelombang
-    //{
-    //    public List<double> xList { get; set; }
-    //    public List<double> yList { get; set; }
-
-    //}
     public class FileScan
     {
         public DateTime CreatedDate { get; set; }

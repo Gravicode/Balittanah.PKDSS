@@ -5,7 +5,7 @@ using System.IO;
 
 namespace PKDSS.Tools
 {
-    class Logs
+    public static class Logs
     {
         #region Path
         public static string getPath()
@@ -48,26 +48,44 @@ namespace PKDSS.Tools
             string path = getPath();
 
             Filename = "APPLOG-" + DateTime.Now.ToString("dd-MMM-yyyy") + ".log";
-            Dirs = "\\Logs\\";
+            Dirs = @"\Logs\";
 
+            DirectoryInfo drInfo = new DirectoryInfo(path + Dirs);
+            if (drInfo.Exists)
+            {
+                File.Delete(Filename = path + Dirs + Filename);
+            }
+            drInfo.Refresh();
+        }
+        public static string ReadLastLog()
+        {
+            string Filename = null;
+            string Dirs = null;
+            string path = getPath();
+            string lastline;
+            Filename = "APPLOG-" + DateTime.Now.ToString("dd-MMM-yyyy") + ".log";
+            Dirs = @"\Logs\";
             DirectoryInfo drInfo = new DirectoryInfo(path + Dirs);
             if (!drInfo.Exists)
             {
-                return;
+                drInfo.Create();
             }
-            FileInfo[] AllFiles = drInfo.GetFiles();
             Filename = path + Dirs + Filename;
-            foreach (FileInfo MyLogFile in AllFiles)
+            if (File.Exists(Filename))
             {
-                if (MyLogFile.FullName.ToLower() != Filename.ToLower())
-                {
-                    MyLogFile.Delete();
-                }
+                var allstr = File.ReadAllLines(Filename);
+                int length = allstr.Length;
+                lastline = allstr[length - 1].ToString();
+
+                drInfo.Refresh();
+                return lastline;
             }
+            drInfo.Refresh();
+            return "";
         }
         #endregion
 
-        #region App Logs
+        #region Logs
         public static void WriteLog(string StrMessage)
         {
             string Filename = null;

@@ -39,4 +39,5 @@ message DataRequest {
 // The response from method
 message DataReply {
   string result = 1;
+  bool status = 2;
 }

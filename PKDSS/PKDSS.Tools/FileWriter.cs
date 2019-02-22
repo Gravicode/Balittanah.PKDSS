@@ -5,7 +5,7 @@ using System.IO;
 
 namespace PKDSS.Tools
 {
-    class FileWriter
+    public static class FileWriter
     {
         public static bool DeleteFile(String FileName)
         {

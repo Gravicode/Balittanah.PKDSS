@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PKDSS.Tools;
 
 namespace PKDSS.MonoApp
 {
@@ -17,9 +18,12 @@ namespace PKDSS.MonoApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            Logs.RemoveAppLog();
+
             var main_form = new EntryFrm();
             main_form.Show();
-          
+
             Application.Run();
         }
     }
