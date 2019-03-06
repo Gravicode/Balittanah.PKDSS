@@ -8,13 +8,14 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using PKDSS.Tools;
 using System.Threading.Tasks;
 
 namespace PKDSS.MonoApp.Helper
 {
     public class SoilNutritionModel
     {
-        public ModelOutput InferenceModel()
+        public void InferenceModel()
         {
             var DataRekomendasi = ConfigurationManager.AppSettings["DataRekomendasi"];
             var WorkingDirectory = ConfigurationManager.AppSettings["WorkingDirectory"];
@@ -37,11 +38,48 @@ namespace PKDSS.MonoApp.Helper
                     Console.WriteLine($"Rekomendasi KCL : {KCL}, SP36 : {SP36}, Urea : {Urea}");
 
                 }
-                catch (Exception ex) { Console.WriteLine(ex); }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    Logs.WriteAppLog(ex.ToString());
+                }
             }
-            return hasil.Result;
+            EntryFrm.Data = hasil.Result;
             //Console.ReadLine();
         }
+
+        //public async Task<ModelOutput> InferenceModel()
+        //{
+        //    var DataRekomendasi = ConfigurationManager.AppSettings["DataRekomendasi"];
+        //    var WorkingDirectory = ConfigurationManager.AppSettings["WorkingDirectory"];
+        //    var ModelScript = ConfigurationManager.AppSettings["ModelScript"];
+        //    var SensorData = ConfigurationManager.AppSettings["SensorData"];
+        //    var AnacondaFolder = ConfigurationManager.AppSettings["AnacondaFolder"];
+
+        //    ModelRunner ml = new ModelRunner(WorkingDirectory, ModelScript, SensorData, AnacondaFolder);
+
+        //    var hasil = ml.InferenceModel(false, true);
+        //    if (hasil.IsSucceed)
+        //    {
+        //        try
+        //        {
+        //            Console.WriteLine("start recommendation procecss");
+        //            var calc = new FertilizerCalculator(DataRekomendasi);
+        //            var Urea = calc.GetFertilizerDoze(hasil.Result.C_N, "Padi", "Urea").ToString();
+        //            var SP36 = calc.GetFertilizerDoze(hasil.Result.HCl25_P2O5, "Padi", "SP36").ToString();
+        //            var KCL = calc.GetFertilizerDoze(hasil.Result.HCl25_K2O, "Padi", "KCL").ToString();
+        //            Console.WriteLine($"Rekomendasi KCL : {KCL}, SP36 : {SP36}, Urea : {Urea}");
+
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Console.WriteLine(ex);
+        //            Logs.WriteAppLog(ex.ToString());
+        //        }
+        //    }
+        //    return hasil.Result;
+        //    //Console.ReadLine();
+        //}
 
 
     }

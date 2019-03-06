@@ -19,8 +19,7 @@ namespace PKDSS.MonoApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Logs.RemoveAppLog();
-
+            Logs.WriteAppLog("Application run....");
             var main_form = new EntryFrm();
             main_form.Show();
 

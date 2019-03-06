@@ -16,6 +16,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Threading;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 using PKDSS.Tools;
 
 namespace PKDSS.MonoApp
@@ -26,6 +28,8 @@ namespace PKDSS.MonoApp
         string ComPort = ConfigurationManager.AppSettings["ComPort"];
         Thread LoopCheckDevice;
         int statusProcess = 0;
+        public static ModelOutput Data = new ModelOutput();
+
         //NamedPipesCom comm;
         public EntryFrm()
         {
@@ -36,10 +40,12 @@ namespace PKDSS.MonoApp
             LoopCheckDevice = new Thread(RequestIsDeviceReady);
             LoopCheckDevice.Start();
 
-            Logs.WriteAppLog("Application run....\n");
+            Data = null;
             statusProcess = 1;
             CheckRefences();
             ReadLog();
+            pnlAdvance.Hide();
+            pnlUser.Show();
             
             var gps = new GpsDevice2(ComPort);
             gps.StartGPS();
@@ -52,7 +58,7 @@ namespace PKDSS.MonoApp
             //{
             //    Console.WriteLine("data from named pipes :" + Message);
             //};
-            this.FormBorderStyle = FormBorderStyle.None;
+            //this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
             cbKomoditas.Items.Clear();
             cbKomoditas.Items.Add("Padi");
@@ -62,12 +68,11 @@ namespace PKDSS.MonoApp
             cbResolution.SelectedIndex = 0;
             cbObticalGian.SelectedIndex = 0;
 
-
             GpsPoint CurrentLocation = new GpsPoint();
             txtX.Text = CurrentLocation.Longitude.ToString();
             txtY.Text = CurrentLocation.Latitude.ToString();
 
-            resetAction();
+            chkAdvance.Checked = false;
 
             //populate propinsi
             cbProvinsi.Items.Clear();
@@ -85,6 +90,8 @@ namespace PKDSS.MonoApp
             TimerFile.Enabled = true;
             TimerFile.Start();
 
+            btnProcess.Enabled = false;
+            btnScan.Enabled = false;
         }
 
         void CheckRefences()
@@ -102,7 +109,9 @@ namespace PKDSS.MonoApp
 
         private void resetAction()
         {
+            Data = null;
             statusProcess = 1;
+            Writelog("Reset Config....");
             btnBackground.Enabled = true;
             btnBackground.BackColor = Color.FromArgb(29, 134, 255);
             btnScan.Enabled = false;
@@ -110,31 +119,60 @@ namespace PKDSS.MonoApp
             btnProcess.Enabled = false;
             btnProcess.BackColor = Color.FromArgb(196, 223, 255);
 
-            txtPH.Text = "";
-            txtK205.Text = "";
-            txtCOrganik.Text = "";
-            txtRetensi.Text = "";
-            txtNTotal.Text = "";
-            txtKadd.Text = "";
-            txtKTK.Text = "";
-            txtCadd.Text = "";
-            txtPbray.Text = "";
-            txtMgdd.Text = "";
-            txtPOlsen.Text = "";
-            txtAIdd.Text = "";
-            txtP205.Text = "";
-            txtKejenuhanBasa.Text = "";
-            
-            txtUrea.Text = "";
-            txtSP36.Text = "";
-            txtKCL.Text = "";
+            chkAdvance.Checked = false;
+            pnlAdvance.Hide();
+            pnlUser.Show();
 
+            ClearChart();
+            ClearText();
+        }
+
+        private void ClearChart()
+        {
             foreach (var series in chartWave.Series)
             {
                 series.Points.Clear();
             }
             chartWave.DataSource = null;
+        }
 
+        private void ClearText()
+        {
+            txtCadd.Text = "";
+            txtClay.Text = "";
+            txtCOrganik.Text = "";
+            txtJumlah.Text = "";
+            txtK205.Text = "";
+            txtKadd.Text = "";
+            txtKTK.Text = "";
+            txtMgdd.Text = "";
+            txtMorgan.Text = "";
+            txtNa.Text = "";
+            txtNTotal.Text = "";
+            txtP205.Text = "";
+            txtPbray.Text = "";
+            txtPH.Text = "";
+            txtPhKcl.Text = "";
+            txtPOlsen.Text = "";
+            txtRetensi.Text = "";
+            txtSAND.Text = "";
+            txtSILT.Text = "";
+            txtWbc.Text = "";
+            txtKbAjusted.Text = "";
+
+            txtKtkuser.Text = "";
+            txtK205user.Text = "";
+            txtKdduser.Text = "";
+            txtNtotaluser.Text = "";
+            txtP205user.Text = "";
+            txtPbrayuser.Text = "";
+            txtPhuser.Text = "";
+            txtRetensiuser.Text = "";
+            txtCOrganikuser.Text = "";
+
+            txtSP36.Text = "";
+            txtUrea.Text = "";
+            txtKCL.Text = "";
         }
 
         private async void RequestIsDeviceReady()
@@ -181,6 +219,7 @@ namespace PKDSS.MonoApp
                             MethodInvoker methodInvokerDelegate = delegate ()
                             {
                                 Writelog("Get Background Done....");
+                                setButtonEnable(true);
                                 statusProcess = 0;
                             };
                             if (this.InvokeRequired)
@@ -188,6 +227,7 @@ namespace PKDSS.MonoApp
                             else
                             {
                                 Writelog("Get Background Done....");
+                                setButtonEnable(true);
                                 statusProcess = 0;
                             }
                         }
@@ -200,6 +240,7 @@ namespace PKDSS.MonoApp
                             MethodInvoker methodInvokerDelegate = delegate ()
                             {
                                 Writelog("Scan Finish....");
+                                setButtonEnable(true);
                                 statusProcess = 0;
                                 ViewChart();
                             };
@@ -208,13 +249,139 @@ namespace PKDSS.MonoApp
                             else
                             {
                                 Writelog("Scan Finish....");
+                                setButtonEnable(true);
                                 statusProcess = 0;
                                 ViewChart();
                             }
                         }
                     }
+                    //check data
+                    else if (statusProcess == 4)
+                    {
+                        if (Data != null)
+                        {
+                            var DataRekomendasi = ConfigurationManager.AppSettings["DataRekomendasi"];
+                            try
+                            {
+                                MethodInvoker doProcessInvoker = delegate ()
+                                {
+                                    if (Data != null)
+                                    {
+                                            // textbox unsur tanah
+                                        txtPH.Text = Data.PH_H2O.ToString();
+                                        txtK205.Text = Data.HCl25_K2O.ToString();
+                                        txtCOrganik.Text = Data.C_N.ToString();
+                                        txtRetensi.Text = Data.RetensiP.ToString();
+                                        txtNTotal.Text = Data.KJELDAHL_N.ToString();
+                                        txtKadd.Text = Data.K.ToString();
+                                        txtKTK.Text = Data.KTK.ToString();
+                                        txtCadd.Text = Data.Ca.ToString();
+                                        txtPbray.Text = Data.Bray1_P2O5.ToString();
+                                        txtMgdd.Text = Data.Mg.ToString();
+                                        txtPOlsen.Text = Data.Olsen_P2O5.ToString();
+                                        txtP205.Text = Data.HCl25_P2O5.ToString();
+                                        txtSAND.Text = Data.SAND.ToString();
+                                        txtSILT.Text = Data.SILT.ToString();
+                                        txtClay.Text = Data.CLAY.ToString();
+                                        txtJumlah.Text = Data.Jumlah.ToString();
+                                        txtKbAjusted.Text = Data.KB_adjusted.ToString();
+                                        txtMorgan.Text = Data.Morgan_K2O.ToString();
+                                        txtNa.Text = Data.Na.ToString();
+                                        txtPhKcl.Text = Data.PH_KCL.ToString();
+                                        txtWbc.Text = Data.WBC.ToString();
 
-                    TxtDeviceStat.Text = reply.Result;
+                                        txtK205user.Text = Data.HCl25_K2O.ToString();
+                                        txtCOrganikuser.Text = Data.C_N.ToString();
+                                        txtKdduser.Text = Data.K.ToString();
+                                        txtKtkuser.Text = Data.KTK.ToString();
+                                        txtNtotaluser.Text = Data.KJELDAHL_N.ToString();
+                                        txtP205user.Text = Data.Olsen_P2O5.ToString();
+                                        txtPbrayuser.Text = Data.Bray1_P2O5.ToString();
+                                        txtPhuser.Text = Data.PH_H2O.ToString();
+                                        txtRetensiuser.Text = Data.RetensiP.ToString();
+
+                                            // textbox rekomendasi
+                                            var calc = new FertilizerCalculator(DataRekomendasi);
+                                        txtUrea.Text = calc.GetFertilizerDoze(Data.C_N, "Padi", "Urea").ToString();
+                                        txtSP36.Text = calc.GetFertilizerDoze(Data.HCl25_P2O5, "Padi", "SP36").ToString();
+                                        txtKCL.Text = calc.GetFertilizerDoze(Data.HCl25_K2O, "Padi", "KCL").ToString();
+
+                                        Writelog("Process Finish....");
+                                        setButtonEnable(true);
+                                        Data = null;
+                                        statusProcess = 0;
+                                    }
+                                };
+                                if (this.InvokeRequired)
+                                { this.Invoke(doProcessInvoker); }
+                                else
+                                {
+                                    if (Data != null)
+                                    {
+                                        // textbox unsur tanah
+                                        txtPH.Text = Data.PH_H2O.ToString();
+                                        txtK205.Text = Data.HCl25_K2O.ToString();
+                                        txtCOrganik.Text = Data.C_N.ToString();
+                                        txtRetensi.Text = Data.RetensiP.ToString();
+                                        txtNTotal.Text = Data.KJELDAHL_N.ToString();
+                                        txtKadd.Text = Data.K.ToString();
+                                        txtKTK.Text = Data.KTK.ToString();
+                                        txtCadd.Text = Data.Ca.ToString();
+                                        txtPbray.Text = Data.Bray1_P2O5.ToString();
+                                        txtMgdd.Text = Data.Mg.ToString();
+                                        txtPOlsen.Text = Data.Olsen_P2O5.ToString();
+                                        txtP205.Text = Data.HCl25_P2O5.ToString();
+                                        txtSAND.Text = Data.SAND.ToString();
+                                        txtSILT.Text = Data.SILT.ToString();
+                                        txtClay.Text = Data.CLAY.ToString();
+                                        txtJumlah.Text = Data.Jumlah.ToString();
+                                        txtKbAjusted.Text = Data.KB_adjusted.ToString();
+                                        txtMorgan.Text = Data.Morgan_K2O.ToString();
+                                        txtNa.Text = Data.Na.ToString();
+                                        txtPhKcl.Text = Data.PH_KCL.ToString();
+                                        txtWbc.Text = Data.WBC.ToString();
+
+                                        txtK205user.Text = Data.HCl25_K2O.ToString();
+                                        txtCOrganikuser.Text = Data.C_N.ToString();
+                                        txtKdduser.Text = Data.K.ToString();
+                                        txtKtkuser.Text = Data.KTK.ToString();
+                                        txtNtotaluser.Text = Data.KJELDAHL_N.ToString();
+                                        txtP205user.Text = Data.Olsen_P2O5.ToString();
+                                        txtPbrayuser.Text = Data.Bray1_P2O5.ToString();
+                                        txtPhuser.Text = Data.PH_H2O.ToString();
+                                        txtRetensiuser.Text = Data.RetensiP.ToString();
+
+                                        // textbox rekomendasi
+                                        var calc = new FertilizerCalculator(DataRekomendasi);
+                                        txtUrea.Text = calc.GetFertilizerDoze(Data.C_N, "Padi", "Urea").ToString();
+                                        txtSP36.Text = calc.GetFertilizerDoze(Data.HCl25_P2O5, "Padi", "SP36").ToString();
+                                        txtKCL.Text = calc.GetFertilizerDoze(Data.HCl25_K2O, "Padi", "KCL").ToString();
+
+                                        Writelog("Process Finish....");
+                                        setButtonEnable(true);
+                                        statusProcess = 0;
+                                    }
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex);
+                                Logs.WriteAppLog(ex.ToString());
+                            }
+                        }
+                    }
+
+                    MethodInvoker methodInvokerWrite = delegate ()
+                    {
+                        TxtDeviceStat.Text = reply.Result;
+                    };
+                    if (this.InvokeRequired)
+                    { this.Invoke(methodInvokerWrite); }
+                    else
+                    {
+
+                        TxtDeviceStat.Text = reply.Result;
+                    }
 
                     //channel.ShutdownAsync().Wait();
                 }
@@ -229,13 +396,70 @@ namespace PKDSS.MonoApp
         {
             if (statusProcess == 1)
             {
-                if (statusProcess == 1 && param)
+                if (param)
                 {
                     this.btnBackground.Enabled = true;
+                    this.btnScan.Enabled = false;
+                    this.btnProcess.Enabled = false;
+                    this.btnReset.Enabled = true;
                 }
                 else
                 {
                     this.btnBackground.Enabled = false;
+                    this.btnScan.Enabled = false;
+                    this.btnProcess.Enabled = false;
+                    this.btnReset.Enabled = false;
+                }
+            }
+            else if (statusProcess == 2)
+            {
+                if (param)
+                {
+                    this.btnBackground.Enabled = false;
+                    this.btnScan.Enabled = true;
+                    this.btnProcess.Enabled = false;
+                    this.btnReset.Enabled = true;
+                }
+                else
+                {
+                    this.btnBackground.Enabled = false;
+                    this.btnScan.Enabled = false;
+                    this.btnProcess.Enabled = false;
+                    this.btnReset.Enabled = false;
+                }
+            }
+            if (statusProcess == 3)
+            {
+                if (param)
+                {
+                    this.btnBackground.Enabled = false;
+                    this.btnScan.Enabled = true;
+                    this.btnProcess.Enabled = true;
+                    this.btnReset.Enabled = true;
+                }
+                else
+                {
+                    this.btnBackground.Enabled = false;
+                    this.btnScan.Enabled = false;
+                    this.btnProcess.Enabled = false;
+                    this.btnReset.Enabled = false;
+                }
+            }
+            if (statusProcess == 4)
+            {
+                if (param)
+                {
+                    this.btnBackground.Enabled = false;
+                    this.btnScan.Enabled = true;
+                    this.btnProcess.Enabled = true;
+                    this.btnReset.Enabled = true;
+                }
+                else
+                {
+                    this.btnBackground.Enabled = false;
+                    this.btnScan.Enabled = false;
+                    this.btnProcess.Enabled = false;
+                    this.btnReset.Enabled = false;
                 }
             }
         }
@@ -275,37 +499,6 @@ namespace PKDSS.MonoApp
                 Console.WriteLine(ex.Message);
             }
         }
-
-        //private void BtnViewChart_Click(object sender, EventArgs e)
-        //{
-        //    var FileSel = LstFiles.SelectedValue.ToString();
-        //    if (FileSel != null)
-        //    {
-        //        RawChart chart = new RawChart();
-        //        chart.LoadFile(FileSel);
-        //        var dt = chart.GetDataGelombangInXY();
-        //        chartWave.DataSource = dt;
-        //        chartWave.Series["Series1"].XValueMember = "X";
-        //        chartWave.Series["Series1"].YValueMembers = "Y";
-        //        chartWave.Series["Series1"].ChartType = SeriesChartType.Line;
-        //        chartWave.Series["Series1"].IsVisibleInLegend = false;
-
-        //        chartWave.ChartAreas[0].AxisX.Title = "Wave Number";
-        //        chartWave.ChartAreas[0].AxisY.Title = "Absorbance";
-        //        chartWave.ChartAreas[0].AxisY.LabelStyle.Format = "";
-        //    }
-        //    /*
-        //    var FileSel = LstFiles.SelectedValue.ToString();
-        //    if (FileSel != null)
-        //    {
-        //        RawChart chart = new RawChart();
-        //        chart.LoadFile(FileSel);
-        //        var brush = new SolidBrush(Color.Green);
-        //        var bmp = chart.DrawChart(PicChart.Size, new Pen(brush));
-        //        PicChart.Image = bmp;
-        //        PicChart.Refresh();
-        //    }*/
-        //}
 
         private void cbProvinsi_SelectionChanged(object sender, EventArgs e)
         {
@@ -359,9 +552,8 @@ namespace PKDSS.MonoApp
             
             Writelog("Run Background....");
             statusProcess = 2;
-            btnBackground.Enabled = false;
+            setButtonEnable(false);
             btnBackground.BackColor = Color.FromArgb(65, 88, 114);
-            btnScan.Enabled = true;
             btnScan.BackColor = Color.FromArgb(29, 134, 255);
 
         }
@@ -376,72 +568,150 @@ namespace PKDSS.MonoApp
 
             Writelog("Run Scanning....");
             statusProcess = 3;
-            btnScan.Enabled = true;
+            setButtonEnable(false);
+            ClearChart();
+            ClearText();
             btnScan.BackColor = Color.FromArgb(29, 134, 255);
-            btnProcess.Enabled = true;
             btnProcess.BackColor = Color.FromArgb(29, 134, 255);
         }
 
         private void btnProcess_Click(object sender, EventArgs e)
         {
-            doProcess();
+            SoilNutritionModel snm = new SoilNutritionModel();
+            var doit = Task.Run(() => snm.InferenceModel());
+            doit.GetAwaiter();
+
+            Writelog("Do Calculating Elements.... Please wait for a while....");
+            statusProcess = 4;
+            setButtonEnable(false);
         }
 
-        private void doProcess()
-        {
-            var DataRekomendasi = ConfigurationManager.AppSettings["DataRekomendasi"];
-            try
-            {
-                Writelog("Do Calculating Elements.... Please wait for a while....");
-                statusProcess = 4;
-                SoilNutritionModel snm = new SoilNutritionModel();
-                var Data = snm.InferenceModel();
+        //private async Task CalcProcess_DoWork()
+        //{
+        //    var DataRekomendasi = ConfigurationManager.AppSettings["DataRekomendasi"];
+        //    try
+        //    {
+        //        MethodInvoker doProcessInvoker = delegate ()
+        //        {
+        //            Writelog("Do Calculating Elements.... Please wait for a while....");
+        //            statusProcess = 4;
+        //            setButtonEnable(false);
+        //            SoilNutritionModel snm = new SoilNutritionModel();
+        //            var Data = snm.InferenceModel();
 
-                if (Data != null)
-                {
-                    // textbox unsur tanah
-                    txtPH.Text = Data.PH_H2O.ToString();
-                    txtK205.Text = Data.HCl25_K2O.ToString();
-                    txtCOrganik.Text = (Data.KJELDAHL_N / Data.C_N).ToString();
-                    txtRetensi.Text = Data.RetensiP.ToString();
-                    txtNTotal.Text = Data.KJELDAHL_N.ToString();
-                    txtKadd.Text = Data.K.ToString();
-                    txtKTK.Text = Data.KTK.ToString();
-                    txtCadd.Text = Data.Ca.ToString();
-                    txtPbray.Text = Data.Bray1_P2O5.ToString();
-                    txtMgdd.Text = Data.Mg.ToString();
-                    txtPOlsen.Text = Data.Olsen_P2O5.ToString();
-                    txtAIdd.Text = "";
-                    txtP205.Text = Data.HCl25_P2O5.ToString();
-                    txtKejenuhanBasa.Text = "";
-                    txtSAND.Text = Data.SAND.ToString();
-                    txtSILT.Text = Data.SILT.ToString();
-                    txtClay.Text = Data.CLAY.ToString();
+        //            if (Data != null)
+        //            {
+        //                // textbox unsur tanah
+        //                txtPH.Text = Data.PH_H2O.ToString();
+        //                txtK205.Text = Data.HCl25_K2O.ToString();
+        //                txtCOrganik.Text = Data.C_N.ToString();
+        //                txtRetensi.Text = Data.RetensiP.ToString();
+        //                txtNTotal.Text = Data.KJELDAHL_N.ToString();
+        //                txtKadd.Text = Data.K.ToString();
+        //                txtKTK.Text = Data.KTK.ToString();
+        //                txtCadd.Text = Data.Ca.ToString();
+        //                txtPbray.Text = Data.Bray1_P2O5.ToString();
+        //                txtMgdd.Text = Data.Mg.ToString();
+        //                txtPOlsen.Text = Data.Olsen_P2O5.ToString();
+        //                txtP205.Text = Data.HCl25_P2O5.ToString();
+        //                txtSAND.Text = Data.SAND.ToString();
+        //                txtSILT.Text = Data.SILT.ToString();
+        //                txtClay.Text = Data.CLAY.ToString();
+        //                txtJumlah.Text = Data.Jumlah.ToString();
+        //                txtxKbAjusted.Text = Data.KB_adjusted.ToString();
+        //                txtMorgan.Text = Data.Morgan_K2O.ToString();
+        //                txtNa.Text = Data.Na.ToString();
+        //                txtPhKcl.Text = Data.PH_KCL.ToString();
+        //                txtWbc.Text = Data.WBC.ToString();
 
-                    // textbox rekomendasi
-                    var calc = new FertilizerCalculator(DataRekomendasi);
-                    txtUrea.Text = calc.GetFertilizerDoze(Data.C_N, "Padi", "Urea").ToString();
-                    txtSP36.Text = calc.GetFertilizerDoze(Data.HCl25_P2O5, "Padi", "SP36").ToString();
-                    txtKCL.Text = calc.GetFertilizerDoze(Data.HCl25_K2O, "Padi", "KCL").ToString();
+        //                txtK205user.Text = Data.HCl25_K2O.ToString();
+        //                txtCOrganikuser.Text = Data.C_N.ToString();
+        //                txtKdduser.Text = Data.K.ToString();
+        //                txtKtkuser.Text = Data.KTK.ToString();
+        //                txtNtotaluser.Text = Data.KJELDAHL_N.ToString();
+        //                txtP205user.Text = Data.Olsen_P2O5.ToString();
+        //                txtPbrayuser.Text = Data.Bray1_P2O5.ToString();
+        //                txtPhuser.Text = Data.PH_H2O.ToString();
+        //                txtRetensiuser.Text = Data.RetensiP.ToString();
 
-                    Writelog("Process Finish....");
-                    statusProcess = 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
+        //                // textbox rekomendasi
+        //                var calc = new FertilizerCalculator(DataRekomendasi);
+        //                txtUrea.Text = calc.GetFertilizerDoze(Data.C_N, "Padi", "Urea").ToString();
+        //                txtSP36.Text = calc.GetFertilizerDoze(Data.HCl25_P2O5, "Padi", "SP36").ToString();
+        //                txtKCL.Text = calc.GetFertilizerDoze(Data.HCl25_K2O, "Padi", "KCL").ToString();
+
+        //                Writelog("Process Finish....");
+        //                setButtonEnable(true);
+        //                statusProcess = 0;
+        //            }
+        //        };
+        //        if (this.InvokeRequired)
+        //        { this.Invoke(doProcessInvoker); }
+        //        //else
+        //        //{
+        //        //    Writelog("Do Calculating Elements.... Please wait for a while....");
+        //        //    statusProcess = 4;
+        //        //    setButtonEnable(false);
+        //        //    SoilNutritionModel snm = new SoilNutritionModel();
+        //        //    var Data = snm.InferenceModel();
+
+        //        //    if (Data != null)
+        //        //    {
+        //        //        // textbox unsur tanah
+        //        //        txtPH.Text = Data.PH_H2O.ToString();
+        //        //        txtK205.Text = Data.HCl25_K2O.ToString();
+        //        //        txtCOrganik.Text = Data.C_N.ToString();
+        //        //        txtRetensi.Text = Data.RetensiP.ToString();
+        //        //        txtNTotal.Text = Data.KJELDAHL_N.ToString();
+        //        //        txtKadd.Text = Data.K.ToString();
+        //        //        txtKTK.Text = Data.KTK.ToString();
+        //        //        txtCadd.Text = Data.Ca.ToString();
+        //        //        txtPbray.Text = Data.Bray1_P2O5.ToString();
+        //        //        txtMgdd.Text = Data.Mg.ToString();
+        //        //        txtPOlsen.Text = Data.Olsen_P2O5.ToString();
+        //        //        txtP205.Text = Data.HCl25_P2O5.ToString();
+        //        //        txtSAND.Text = Data.SAND.ToString();
+        //        //        txtSILT.Text = Data.SILT.ToString();
+        //        //        txtClay.Text = Data.CLAY.ToString();
+        //        //        txtJumlah.Text = Data.Jumlah.ToString();
+        //        //        txtxKbAjusted.Text = Data.KB_adjusted.ToString();
+        //        //        txtMorgan.Text = Data.Morgan_K2O.ToString();
+        //        //        txtNa.Text = Data.Na.ToString();
+        //        //        txtPhKcl.Text = Data.PH_KCL.ToString();
+        //        //        txtWbc.Text = Data.WBC.ToString();
+
+        //        //        txtK205user.Text = Data.HCl25_K2O.ToString();
+        //        //        txtCOrganikuser.Text = Data.C_N.ToString();
+        //        //        txtKdduser.Text = Data.K.ToString();
+        //        //        txtKtkuser.Text = Data.KTK.ToString();
+        //        //        txtNtotaluser.Text = Data.KJELDAHL_N.ToString();
+        //        //        txtP205user.Text = Data.Olsen_P2O5.ToString();
+        //        //        txtPbrayuser.Text = Data.Bray1_P2O5.ToString();
+        //        //        txtPhuser.Text = Data.PH_H2O.ToString();
+        //        //        txtRetensiuser.Text = Data.RetensiP.ToString();
+
+        //        //        // textbox rekomendasi
+        //        //        var calc = new FertilizerCalculator(DataRekomendasi);
+        //        //        txtUrea.Text = calc.GetFertilizerDoze(Data.C_N, "Padi", "Urea").ToString();
+        //        //        txtSP36.Text = calc.GetFertilizerDoze(Data.HCl25_P2O5, "Padi", "SP36").ToString();
+        //        //        txtKCL.Text = calc.GetFertilizerDoze(Data.HCl25_K2O, "Padi", "KCL").ToString();
+
+        //        //        Writelog("Process Finish....");
+        //        //        setButtonEnable(true);
+        //        //        statusProcess = 0;
+        //        //    }
+        //        //}
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex);
+        //        Logs.WriteAppLog(ex.ToString());
+        //    }
+        //}
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             resetAction();
-        }
-
-        private void EntryFrm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            LoopCheckDevice.Abort();
         }
 
         private void Writelog(string message)
@@ -458,6 +728,27 @@ namespace PKDSS.MonoApp
                 txtLog.Text += message + "\n";
                 txtLog.SelectionStart = txtLog.Text.Length;
                 txtLog.ScrollToCaret();
+            }
+        }
+
+        private void EntryFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            LoopCheckDevice.Abort();
+            //Process.Start("shutdown", "/s /t 5");
+            Environment.Exit(0);
+        }
+
+        private void chkAdvance_OnChange(object sender, EventArgs e)
+        {
+            if (chkAdvance.Checked == true)
+            {
+                pnlAdvance.Show();
+                pnlUser.Hide();
+            }
+            else if (chkAdvance.Checked == false)
+            {
+                pnlUser.Show();
+                pnlAdvance.Hide();
             }
         }
     }
