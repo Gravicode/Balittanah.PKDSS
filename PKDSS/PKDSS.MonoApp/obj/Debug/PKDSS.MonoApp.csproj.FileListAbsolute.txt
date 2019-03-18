@@ -769,7 +769,6 @@ C:\Jobs\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\De
 C:\Jobs\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\System.Xml.XmlSerializer.dll
 C:\Jobs\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\System.Xml.XPath.dll
 C:\Jobs\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\System.Xml.XPath.XDocument.dll
-C:\Jobs\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\Bunifu_UI_v1.5.3.dll
 C:\Jobs\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\Google.Protobuf.dll
 C:\Jobs\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\Grpc.Core.dll
 C:\Jobs\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\MessageHub.dll
@@ -797,3 +796,4 @@ C:\Jobs\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\De
 C:\Jobs\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.csproj.CopyComplete
 C:\Jobs\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.exe
 C:\Jobs\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.pdb
+C:\Jobs\PROJECT\GRAVICODE\BalitTanah\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.OutputConfigFrm.resources

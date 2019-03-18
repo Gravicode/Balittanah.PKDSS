@@ -19,6 +19,7 @@ using System.Threading;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using PKDSS.Tools;
+using Newtonsoft.Json;
 
 namespace PKDSS.MonoApp
 {
@@ -29,8 +30,8 @@ namespace PKDSS.MonoApp
         Thread LoopCheckDevice;
         int statusProcess = 0;
         public static ModelOutput Data = new ModelOutput();
-
-        //NamedPipesCom comm;
+        HashSet<string> listOfControls;
+        
         public EntryFrm()
         {
             InitializeComponent();
@@ -40,26 +41,27 @@ namespace PKDSS.MonoApp
             LoopCheckDevice = new Thread(RequestIsDeviceReady);
             LoopCheckDevice.Start();
 
+            ReadConfig();
             Data = null;
             statusProcess = 1;
             CheckRefences();
             ReadLog();
-            pnlAdvance.Hide();
+            //pnlAdvance.Hide();
             pnlUser.Show();
-            
+
+            btnBackground.Enabled = false;
+            btnProcess.Enabled = false;
+            btnReset.Enabled = false;
+            btnScan.Enabled = false;
+
             var gps = new GpsDevice2(ComPort);
             gps.StartGPS();
         }
 
         void Setup()
         {
-            //comm = new NamedPipesCom();
-            //comm.DataReceived += (string Message)=>
-            //{
-            //    Console.WriteLine("data from named pipes :" + Message);
-            //};
             //this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
             cbKomoditas.Items.Clear();
             cbKomoditas.Items.Add("Padi");
             cbKomoditas.Items.Add("Jagung");
@@ -72,8 +74,6 @@ namespace PKDSS.MonoApp
             txtX.Text = CurrentLocation.Longitude.ToString();
             txtY.Text = CurrentLocation.Latitude.ToString();
 
-            chkAdvance.Checked = false;
-
             //populate propinsi
             cbProvinsi.Items.Clear();
             foreach (var item in LocationHelper.GetPropinsi())
@@ -84,9 +84,6 @@ namespace PKDSS.MonoApp
             cbProvinsi.SelectedIndexChanged += cbProvinsi_SelectionChanged;
             cbProvinsi.SelectedIndex = 0;
 
-            //BtnProcess.Click += (a, b) => { MessageBox.Show("Maaf, fungsi belum tersedia"); };
-            //BtnViewChart.Click += BtnViewChart_Click;
-
             TimerFile.Enabled = true;
             TimerFile.Start();
 
@@ -96,12 +93,12 @@ namespace PKDSS.MonoApp
 
         void CheckRefences()
         {
-            if(cbResolution.SelectedIndex > -1)
+            if (cbResolution.SelectedIndex > -1)
             {
                 imgResolution.Visible = true;
             }
-            
-            if(cbObticalGian.SelectedIndex > -1)
+
+            if (cbObticalGian.SelectedIndex > -1)
             {
                 imgOptical.Visible = true;
             }
@@ -119,8 +116,6 @@ namespace PKDSS.MonoApp
             btnProcess.Enabled = false;
             btnProcess.BackColor = Color.FromArgb(196, 223, 255);
 
-            chkAdvance.Checked = false;
-            pnlAdvance.Hide();
             pnlUser.Show();
 
             ClearChart();
@@ -138,37 +133,13 @@ namespace PKDSS.MonoApp
 
         private void ClearText()
         {
-            txtCadd.Text = "";
-            txtClay.Text = "";
-            txtCOrganik.Text = "";
-            txtJumlah.Text = "";
-            txtK205.Text = "";
-            txtKadd.Text = "";
-            txtKTK.Text = "";
-            txtMgdd.Text = "";
-            txtMorgan.Text = "";
-            txtNa.Text = "";
-            txtNTotal.Text = "";
-            txtP205.Text = "";
-            txtPbray.Text = "";
-            txtPH.Text = "";
-            txtPhKcl.Text = "";
-            txtPOlsen.Text = "";
-            txtRetensi.Text = "";
-            txtSAND.Text = "";
-            txtSILT.Text = "";
-            txtWbc.Text = "";
-            txtKbAjusted.Text = "";
-
-            txtKtkuser.Text = "";
-            txtK205user.Text = "";
-            txtKdduser.Text = "";
-            txtNtotaluser.Text = "";
-            txtP205user.Text = "";
-            txtPbrayuser.Text = "";
-            txtPhuser.Text = "";
-            txtRetensiuser.Text = "";
-            txtCOrganikuser.Text = "";
+            foreach (Control item in pnlUser.Controls)
+            {
+                if (item is TextBox)
+                {
+                    item.Text = "";
+                }
+            }
 
             txtSP36.Text = "";
             txtUrea.Text = "";
@@ -184,7 +155,7 @@ namespace PKDSS.MonoApp
                     Thread.Sleep(1000);
                     var client = new Datahub.MessageHub.MessageHubClient(channel);
                     var reply = await client.IsDeviceReadyAsync(new Datahub.DataRequest { Parameter = "" });
-                    
+
                     //check neospectra device
                     if (statusProcess == 1)
                     {
@@ -267,41 +238,31 @@ namespace PKDSS.MonoApp
                                 {
                                     if (Data != null)
                                     {
-                                            // textbox unsur tanah
-                                        txtPH.Text = Data.PH_H2O.ToString();
-                                        txtK205.Text = Data.HCl25_K2O.ToString();
-                                        txtCOrganik.Text = Data.C_N.ToString();
-                                        txtRetensi.Text = Data.RetensiP.ToString();
-                                        txtNTotal.Text = Data.KJELDAHL_N.ToString();
-                                        txtKadd.Text = Data.K.ToString();
-                                        txtKTK.Text = Data.KTK.ToString();
-                                        txtCadd.Text = Data.Ca.ToString();
-                                        txtPbray.Text = Data.Bray1_P2O5.ToString();
-                                        txtMgdd.Text = Data.Mg.ToString();
-                                        txtPOlsen.Text = Data.Olsen_P2O5.ToString();
-                                        txtP205.Text = Data.HCl25_P2O5.ToString();
-                                        txtSAND.Text = Data.SAND.ToString();
-                                        txtSILT.Text = Data.SILT.ToString();
-                                        txtClay.Text = Data.CLAY.ToString();
-                                        txtJumlah.Text = Data.Jumlah.ToString();
-                                        txtKbAjusted.Text = Data.KB_adjusted.ToString();
-                                        txtMorgan.Text = Data.Morgan_K2O.ToString();
-                                        txtNa.Text = Data.Na.ToString();
-                                        txtPhKcl.Text = Data.PH_KCL.ToString();
-                                        txtWbc.Text = Data.WBC.ToString();
+                                        // textbox unsur tanah
+                                        Bray1_P2O5.Text = Data.Bray1_P2O5.ToString();
+                                        Ca.Text = Data.Ca.ToString();
+                                        CLAY.Text = Data.CLAY.ToString();
+                                        C_N.Text = Data.C_N.ToString();
+                                        HCl25_K2O.Text = Data.HCl25_K2O.ToString();
+                                        HCl25_P2O5.Text = Data.HCl25_P2O5.ToString();
+                                        Jumlah.Text = Data.Jumlah.ToString();
+                                        K.Text = Data.K.ToString();
+                                        KB_adjusted.Text = Data.KB_adjusted.ToString();
+                                        KJELDAHL_N.Text = Data.KJELDAHL_N.ToString();
+                                        KTK.Text = Data.KTK.ToString();
+                                        Mg.Text = Data.Mg.ToString();
+                                        Morgan_K2O.Text = Data.Morgan_K2O.ToString();
+                                        Na.Text = Data.Na.ToString();
+                                        Olsen_P2O5.Text = Data.Olsen_P2O5.ToString();
+                                        PH_H2O.Text = Data.PH_H2O.ToString();
+                                        PH_KCL.Text = Data.PH_KCL.ToString();
+                                        RetensiP.Text = Data.RetensiP.ToString();
+                                        SAND.Text = Data.SAND.ToString();
+                                        SILT.Text = Data.SILT.ToString();
+                                        WBC.Text = Data.WBC.ToString();
 
-                                        txtK205user.Text = Data.HCl25_K2O.ToString();
-                                        txtCOrganikuser.Text = Data.C_N.ToString();
-                                        txtKdduser.Text = Data.K.ToString();
-                                        txtKtkuser.Text = Data.KTK.ToString();
-                                        txtNtotaluser.Text = Data.KJELDAHL_N.ToString();
-                                        txtP205user.Text = Data.Olsen_P2O5.ToString();
-                                        txtPbrayuser.Text = Data.Bray1_P2O5.ToString();
-                                        txtPhuser.Text = Data.PH_H2O.ToString();
-                                        txtRetensiuser.Text = Data.RetensiP.ToString();
-
-                                            // textbox rekomendasi
-                                            var calc = new FertilizerCalculator(DataRekomendasi);
+                                        // textbox rekomendasi
+                                        var calc = new FertilizerCalculator(DataRekomendasi);
                                         txtUrea.Text = calc.GetFertilizerDoze(Data.C_N, "Padi", "Urea").ToString();
                                         txtSP36.Text = calc.GetFertilizerDoze(Data.HCl25_P2O5, "Padi", "SP36").ToString();
                                         txtKCL.Text = calc.GetFertilizerDoze(Data.HCl25_K2O, "Padi", "KCL").ToString();
@@ -319,37 +280,27 @@ namespace PKDSS.MonoApp
                                     if (Data != null)
                                     {
                                         // textbox unsur tanah
-                                        txtPH.Text = Data.PH_H2O.ToString();
-                                        txtK205.Text = Data.HCl25_K2O.ToString();
-                                        txtCOrganik.Text = Data.C_N.ToString();
-                                        txtRetensi.Text = Data.RetensiP.ToString();
-                                        txtNTotal.Text = Data.KJELDAHL_N.ToString();
-                                        txtKadd.Text = Data.K.ToString();
-                                        txtKTK.Text = Data.KTK.ToString();
-                                        txtCadd.Text = Data.Ca.ToString();
-                                        txtPbray.Text = Data.Bray1_P2O5.ToString();
-                                        txtMgdd.Text = Data.Mg.ToString();
-                                        txtPOlsen.Text = Data.Olsen_P2O5.ToString();
-                                        txtP205.Text = Data.HCl25_P2O5.ToString();
-                                        txtSAND.Text = Data.SAND.ToString();
-                                        txtSILT.Text = Data.SILT.ToString();
-                                        txtClay.Text = Data.CLAY.ToString();
-                                        txtJumlah.Text = Data.Jumlah.ToString();
-                                        txtKbAjusted.Text = Data.KB_adjusted.ToString();
-                                        txtMorgan.Text = Data.Morgan_K2O.ToString();
-                                        txtNa.Text = Data.Na.ToString();
-                                        txtPhKcl.Text = Data.PH_KCL.ToString();
-                                        txtWbc.Text = Data.WBC.ToString();
-
-                                        txtK205user.Text = Data.HCl25_K2O.ToString();
-                                        txtCOrganikuser.Text = Data.C_N.ToString();
-                                        txtKdduser.Text = Data.K.ToString();
-                                        txtKtkuser.Text = Data.KTK.ToString();
-                                        txtNtotaluser.Text = Data.KJELDAHL_N.ToString();
-                                        txtP205user.Text = Data.Olsen_P2O5.ToString();
-                                        txtPbrayuser.Text = Data.Bray1_P2O5.ToString();
-                                        txtPhuser.Text = Data.PH_H2O.ToString();
-                                        txtRetensiuser.Text = Data.RetensiP.ToString();
+                                        Bray1_P2O5.Text = Data.Bray1_P2O5.ToString();
+                                        Ca.Text = Data.Ca.ToString();
+                                        CLAY.Text = Data.CLAY.ToString();
+                                        C_N.Text = Data.C_N.ToString();
+                                        HCl25_K2O.Text = Data.HCl25_K2O.ToString();
+                                        HCl25_P2O5.Text = Data.HCl25_P2O5.ToString();
+                                        Jumlah.Text = Data.Jumlah.ToString();
+                                        K.Text = Data.K.ToString();
+                                        KB_adjusted.Text = Data.KB_adjusted.ToString();
+                                        KJELDAHL_N.Text = Data.KJELDAHL_N.ToString();
+                                        KTK.Text = Data.KTK.ToString();
+                                        Mg.Text = Data.Mg.ToString();
+                                        Morgan_K2O.Text = Data.Morgan_K2O.ToString();
+                                        Na.Text = Data.Na.ToString();
+                                        Olsen_P2O5.Text = Data.Olsen_P2O5.ToString();
+                                        PH_H2O.Text = Data.PH_H2O.ToString();
+                                        PH_KCL.Text = Data.PH_KCL.ToString();
+                                        RetensiP.Text = Data.RetensiP.ToString();
+                                        SAND.Text = Data.SAND.ToString();
+                                        SILT.Text = Data.SILT.ToString();
+                                        WBC.Text = Data.WBC.ToString();
 
                                         // textbox rekomendasi
                                         var calc = new FertilizerCalculator(DataRekomendasi);
@@ -475,7 +426,7 @@ namespace PKDSS.MonoApp
                 var FileSel = filepath;
                 if (FileSel != null)
                 {
-                    foreach(var series in chartWave.Series)
+                    foreach (var series in chartWave.Series)
                     {
                         series.Points.Clear();
                     }
@@ -520,6 +471,7 @@ namespace PKDSS.MonoApp
 
         }
 
+        # region FileScan
         //static List<FileScan> ScannedFiles;
         //private void TimerFile_Tick(object sender, EventArgs e)
         //{
@@ -543,13 +495,14 @@ namespace PKDSS.MonoApp
 
         //    }
         //}
+        #endregion FileScan
 
         private async void btnBackground_Click(object sender, EventArgs e)
         {
             var client = new Datahub.MessageHub.MessageHubClient(channel);
             var reply = await client.DoBackgroundAsync(new Datahub.DataRequest { Parameter = "" });
             //channel.ShutdownAsync().Wait();
-            
+
             Writelog("Run Background....");
             statusProcess = 2;
             setButtonEnable(false);
@@ -562,7 +515,7 @@ namespace PKDSS.MonoApp
         {
             var client = new Datahub.MessageHub.MessageHubClient(channel);
             var reply = await client.DoScanAsync(new Datahub.DataRequest { Parameter = "" });
-            
+
             //channel.ShutdownAsync().Wait();
             //comm.SendMessage("Scan");
 
@@ -586,6 +539,7 @@ namespace PKDSS.MonoApp
             setButtonEnable(false);
         }
 
+        #region Process
         //private async Task CalcProcess_DoWork()
         //{
         //    var DataRekomendasi = ConfigurationManager.AppSettings["DataRekomendasi"];
@@ -708,6 +662,7 @@ namespace PKDSS.MonoApp
         //        Logs.WriteAppLog(ex.ToString());
         //    }
         //}
+        #endregion Process
 
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -731,24 +686,81 @@ namespace PKDSS.MonoApp
             }
         }
 
-        private void EntryFrm_FormClosing(object sender, FormClosingEventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             LoopCheckDevice.Abort();
             //Process.Start("shutdown", "/s /t 5");
             Environment.Exit(0);
         }
 
-        private void chkAdvance_OnChange(object sender, EventArgs e)
+        private void btnConfigUser_Click(object sender, EventArgs e)
         {
-            if (chkAdvance.Checked == true)
+            var opendialog = new OutputConfigFrm();
+            opendialog.ShowDialog();
+        }
+
+        public void ReadConfig()
+        {
+            if (listOfControls == null)
+            { listOfControls = new HashSet<string>(); }
+            else
+            { listOfControls.Clear(); }
+            string AppPath = Application.StartupPath + "\\outputconfig.json";
+            List<OutputData> ReadData = JsonConvert.DeserializeObject<List<OutputData>>(File.ReadAllText(AppPath));
+
+            //add textbox
+            foreach (var item in ReadData)
             {
-                pnlAdvance.Show();
-                pnlUser.Hide();
+                if (item.Status == CheckState.Checked)
+                {
+                    listOfControls.Add(item.Name);
+                }
             }
-            else if (chkAdvance.Checked == false)
+            DisplayTextBox();
+        }
+
+        public void DisplayTextBox()
+        {
+            const int CellWidth = 255;
+            const int CellHeight = 29;
+            const int MaxRow = 7;
+            int RowCounter = 0;
+            int ColCounter = 0;
+            foreach (Control item in pnlUser.Controls)
             {
-                pnlUser.Show();
-                pnlAdvance.Hide();
+                if (item is Bunifu.Framework.UI.BunifuCustomLabel && listOfControls.Contains(item.Tag))
+                {
+                    var lblBox = (Bunifu.Framework.UI.BunifuCustomLabel)item;
+                    lblBox.Visible = true;
+                    lblBox.Left = 7 + (ColCounter * (CellWidth + 34));
+                    lblBox.Top = 1 + (RowCounter * (CellHeight * 2));
+                    foreach (Control txt in pnlUser.Controls)
+                    {
+                        if (txt is TextBox && txt.Tag == item.Tag)
+                        {
+                            var txtBox = (TextBox)txt;
+                            txtBox.Visible = true;
+                            txtBox.Text = "";
+                            txtBox.Left = 11 + (ColCounter * (CellWidth + 34));
+                            txtBox.Top = 27 + (RowCounter * (CellHeight * 2));
+                            break;
+                        }
+                    }
+
+                    RowCounter++;
+                }
+
+                if (RowCounter >= MaxRow) { ColCounter++; RowCounter = 0; }
+
+                if (item is TextBox && !listOfControls.Contains(item.Tag))
+                {
+                    ((TextBox)item).Visible = false;
+                }
+
+                if (item is Bunifu.Framework.UI.BunifuCustomLabel && !listOfControls.Contains(item.Tag))
+                {
+                    ((Bunifu.Framework.UI.BunifuCustomLabel)item).Visible = false;
+                }
             }
         }
     }
