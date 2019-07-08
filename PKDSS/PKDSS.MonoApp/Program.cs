@@ -22,36 +22,11 @@ namespace PKDSS.MonoApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //var ischecked = CheckChannel();
+            Logs.WriteAppLog("Application run....");
+            var main_form = new EntryFrm();
+            main_form.Show();
 
-            //if (ischecked)
-            //{
-                Logs.WriteAppLog("Application run....");
-                var main_form = new EntryFrm();
-                main_form.Show();
-
-                Application.Run();
-            //}
-        }
-
-        static bool CheckChannel()
-        {
-            bool isloop = true;
-
-            while(isloop)
-            {
-                Channel channel = new Channel("localhost:50051", ChannelCredentials.Insecure);
-                var start = channel.ConnectAsync();
-                start.Wait();
-                if (start.Status == TaskStatus.RanToCompletion)
-                {
-                    isloop = false;
-                    channel.ConnectAsync().Wait();
-                    return true;
-                }
-                channel.ConnectAsync().Wait();
-            }
-            return false;
+            Application.Run();
         }
     }
 }

@@ -40,29 +40,32 @@ namespace PKDSS.MonoApp
 
         private void btnConfigOK_Click(object sender, EventArgs e)
         {
-            List<OutputData> Datas = new List<OutputData>();
-            foreach(object item in chklbOutput.Items)
+            string message = "Aksi ini membutuhkan restart applikasi \nApakah anda ingin restart?";
+
+            var obj = new MessageBoxForm(message);
+            obj.ShowDialog();
+
+            if (obj.dialogResult == true)
             {
-                OutputData data1 = new OutputData
+                List<OutputData> Datas = new List<OutputData>();
+                foreach (object item in chklbOutput.Items)
                 {
-                    Name = chklbOutput.GetItemText(item),
-                    Status = chklbOutput.GetItemCheckState(chklbOutput.Items.IndexOf(item)),
-                };
+                    OutputData data1 = new OutputData
+                    {
+                        Name = chklbOutput.GetItemText(item),
+                        Status = chklbOutput.GetItemCheckState(chklbOutput.Items.IndexOf(item)),
+                    };
 
-                Datas.Add(data1);
-            }
+                    Datas.Add(data1);
+                }
 
-            var jsonData = JsonConvert.SerializeObject(Datas, Formatting.None);
-            string AppPath = Application.StartupPath;
-            File.WriteAllText(AppPath + "\\outputconfig.json", jsonData);
+                var jsonData = JsonConvert.SerializeObject(Datas, Formatting.None);
+                string AppPath = Application.StartupPath;
+                File.WriteAllText(AppPath + "\\outputconfig.json", jsonData);
 
-            DialogResult dialogResult = MessageBox.Show("This action require restart application \nAre you sure?", "Alert", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                var EntryFrm = new EntryFrm();
-                EntryFrm.ReadConfig();
+                //var EntryFrm = new EntryFrm();
+                //EntryFrm.ReadConfig();
                 this.Close();
-
                 Application.Restart();
             }
         }
