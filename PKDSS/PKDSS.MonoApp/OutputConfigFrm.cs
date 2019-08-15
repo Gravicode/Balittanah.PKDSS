@@ -14,6 +14,7 @@ namespace PKDSS.MonoApp
 {
     public partial class OutputConfigFrm : Form
     {
+        List<OutputData> ReadDataSort = new List<OutputData>();
         public OutputConfigFrm()
         {
             InitializeComponent();
@@ -22,19 +23,22 @@ namespace PKDSS.MonoApp
 
         private void ReadConfig()
         {
+            chklbOutput.Items.Clear();
             string AppPath = Application.StartupPath + "\\outputconfig.json";
             List<OutputData> ReadData = JsonConvert.DeserializeObject<List<OutputData>>(File.ReadAllText(AppPath));
+            ReadDataSort = ReadData.OrderBy(x => x.No).ToList<OutputData>();
 
-            foreach (var y in ReadData)
+            foreach (var y in ReadDataSort)
             {
-                foreach (var i in chklbOutput.Items)
-                {
-                    if (y.Name == chklbOutput.GetItemText(i) && y.Status == CheckState.Checked)
-                    {
-                        chklbOutput.SetItemChecked(chklbOutput.Items.IndexOf(i), true);
-                        break;
-                    }
-                }
+                chklbOutput.Items.Add(y.Initial, y.Status);
+                //foreach (var i in chklbOutput.Items)
+                //{
+                //    if (y.Name == chklbOutput.GetItemText(i) && y.Status == CheckState.Checked)
+                //    {
+                //        chklbOutput.SetItemChecked(chklbOutput.Items.IndexOf(i), true);
+                //        break;
+                //    }
+                //}
             };
         }
 
@@ -47,19 +51,26 @@ namespace PKDSS.MonoApp
 
             if (obj.dialogResult == true)
             {
-                List<OutputData> Datas = new List<OutputData>();
-                foreach (object item in chklbOutput.Items)
+                //List<OutputData> Datas = new List<OutputData>();
+                foreach (var item in chklbOutput.Items)
                 {
-                    OutputData data1 = new OutputData
+                    foreach (var data in ReadDataSort)
                     {
-                        Name = chklbOutput.GetItemText(item),
-                        Status = chklbOutput.GetItemCheckState(chklbOutput.Items.IndexOf(item)),
-                    };
+                        if (data.Initial == chklbOutput.GetItemText(item))
+                        {
+                            data.Status = chklbOutput.GetItemCheckState(chklbOutput.Items.IndexOf(item));
+                        }
+                        //OutputData data1 = new OutputData
+                        //{
+                        //    Initial = chklbOutput.GetItemText(item),
+                        //    Status = chklbOutput.GetItemCheckState(chklbOutput.Items.IndexOf(item))
+                        //};
 
-                    Datas.Add(data1);
+                        //Datas.Add(data1);
+                    }
                 }
 
-                var jsonData = JsonConvert.SerializeObject(Datas, Formatting.None);
+                var jsonData = JsonConvert.SerializeObject(ReadDataSort, Formatting.None);
                 string AppPath = Application.StartupPath;
                 File.WriteAllText(AppPath + "\\outputconfig.json", jsonData);
 
@@ -79,6 +90,8 @@ namespace PKDSS.MonoApp
     public class OutputData
     {
         public string Name { get; set; }
+        public string Initial { get; set; }
+        public int No { get; set; }
         public CheckState Status { get; set; }
     }
 }

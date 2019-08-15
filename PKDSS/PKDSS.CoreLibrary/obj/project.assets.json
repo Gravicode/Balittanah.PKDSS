@@ -225,11 +225,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Jobs\\GRAVICODE\\BalitTanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj",
+      "projectUniqueName": "C:\\Jobs\\GRAVICODE\\BalitTanah\\SoilSensor\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj",
       "projectName": "PKDSS.CoreLibrary",
-      "projectPath": "C:\\Jobs\\GRAVICODE\\BalitTanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj",
+      "projectPath": "C:\\Jobs\\GRAVICODE\\BalitTanah\\SoilSensor\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj",
       "packagesPath": "C:\\Users\\Janu\\.nuget\\packages\\",
-      "outputPath": "C:\\Jobs\\GRAVICODE\\BalitTanah\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\obj\\",
+      "outputPath": "C:\\Jobs\\GRAVICODE\\BalitTanah\\SoilSensor\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

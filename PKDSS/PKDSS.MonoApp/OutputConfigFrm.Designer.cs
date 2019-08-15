@@ -40,28 +40,6 @@
             this.chklbOutput.CheckOnClick = true;
             this.chklbOutput.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chklbOutput.FormattingEnabled = true;
-            this.chklbOutput.Items.AddRange(new object[] {
-            "Bray1_P2O5",
-            "C_N",
-            "Ca",
-            "CLAY",
-            "HCl25_K2O",
-            "HCl25_P2O5",
-            "Jumlah",
-            "K",
-            "KB_adjusted",
-            "KJELDAHL_N",
-            "KTK",
-            "Mg",
-            "Morgan_K2O",
-            "Na",
-            "Olsen_P2O5",
-            "PH_H2O",
-            "PH_KCL",
-            "RetensiP",
-            "SAND",
-            "SILT",
-            "WBC"});
             this.chklbOutput.Location = new System.Drawing.Point(9, 6);
             this.chklbOutput.Name = "chklbOutput";
             this.chklbOutput.Size = new System.Drawing.Size(233, 466);

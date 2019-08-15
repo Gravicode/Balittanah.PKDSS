@@ -34,7 +34,9 @@ namespace PKDSS.MonoApp
         public static ModelOutput Data = new ModelOutput();
         HashSet<string> listOfControls;
         MessageBoxForm CustomMessageBox;
-        
+        List<OutputData> ReadeDataSort = new List<OutputData>();
+
+
         public EntryFrm()
         {
             // Gembox Serial Key
@@ -147,11 +149,20 @@ namespace PKDSS.MonoApp
 
         private void ClearText()
         {
-            foreach (Control item in pnlUser.Controls)
+
+            foreach (Control pnl in pnlUser.Controls)
             {
-                if (item is TextBox)
+                if (pnl is Panel)
                 {
-                    item.Text = "0";
+                    foreach (Control childpnl in pnl.Controls)
+                    {
+                        if (childpnl is WindowsFormsControlLibrary1.BunifuCustomTextbox)
+                        {
+                            var txtBox = (WindowsFormsControlLibrary1.BunifuCustomTextbox)childpnl;
+                            txtBox.Text = "0";
+                            break;
+                        }
+                    }
                 }
             }
 
@@ -254,27 +265,27 @@ namespace PKDSS.MonoApp
                                         if (Data != null)
                                         {
                                             // textbox unsur tanah
-                                            Bray1_P2O5.Text = Data.Bray1_P2O5 > 0 ? Data.Bray1_P2O5.ToString("0.00") : "0";
-                                            Ca.Text = Data.Ca > 0 ? Data.Ca.ToString("0.00") : "0";
-                                            CLAY.Text = Data.CLAY > 0 ? Data.CLAY.ToString("0.00") : "0";
-                                            C_N.Text = Data.C_N > 0 ? Data.C_N.ToString("0.00") : "0";
-                                            HCl25_K2O.Text = Data.HCl25_K2O > 0 ? Data.HCl25_K2O.ToString("0.00") : "0";
-                                            HCl25_P2O5.Text = Data.HCl25_P2O5 > 0 ? Data.HCl25_P2O5.ToString("0.00") : "0";
-                                            Jumlah.Text = Data.Jumlah > 0 ? Data.Jumlah.ToString("0.00") : "0";
-                                            K.Text = Data.K > 0 ? Data.K.ToString("0.00") : "0";
-                                            KB_adjusted.Text = Data.KB_adjusted > 0 ? Data.KB_adjusted.ToString("0.00") : "0";
-                                            KJELDAHL_N.Text = Data.KJELDAHL_N > 0 ? Data.KJELDAHL_N.ToString("0.00") : "0";
-                                            KTK.Text = Data.KTK > 0 ? Data.KTK.ToString("0.00") : "0";
-                                            Mg.Text = Data.Mg > 0 ? Data.Mg.ToString("0.00") : "0";
-                                            Morgan_K2O.Text = Data.Morgan_K2O > 0 ? Data.Morgan_K2O.ToString("0.00") : "0";
-                                            Na.Text = Data.Na > 0 ? Data.Na.ToString("0.00") : "0";
-                                            Olsen_P2O5.Text = Data.Olsen_P2O5 > 0 ? Data.Olsen_P2O5.ToString("0.00") : "0";
-                                            PH_H2O.Text = Data.PH_H2O > 0 ? Data.PH_H2O.ToString("0.00") : "0";
-                                            PH_KCL.Text = Data.PH_KCL > 0 ? Data.PH_KCL.ToString("0.00") : "0";
-                                            RetensiP.Text = Data.RetensiP > 0 ? Data.RetensiP.ToString("0.00") : "0";
-                                            SAND.Text = Data.SAND > 0 ? Data.SAND.ToString("0.00") : "0";
-                                            SILT.Text = Data.SILT > 0 ? Data.SILT.ToString("0.00") : "0";
-                                            WBC.Text = Data.WBC > 0 ? Data.WBC.ToString("0.00") : "0";
+                                            TxtBray1_P2O5.Text = Data.Bray1_P2O5 > 0 ? Data.Bray1_P2O5.ToString("0.00") : "0";
+                                            TxtCa.Text = Data.Ca > 0 ? Data.Ca.ToString("0.00") : "0";
+                                            TxtCLAY.Text = Data.CLAY > 0 ? Data.CLAY.ToString("0.00") : "0";
+                                            //C_N.Text = Data.C_N > 0 ? Data.C_N.ToString("0.00") : "0";
+                                            TxtHCl25_K2O.Text = Data.HCl25_K2O > 0 ? Data.HCl25_K2O.ToString("0.00") : "0";
+                                            TxtHCl25_P2O5.Text = Data.HCl25_P2O5 > 0 ? Data.HCl25_P2O5.ToString("0.00") : "0";
+                                            //Jumlah.Text = Data.Jumlah > 0 ? Data.Jumlah.ToString("0.00") : "0";
+                                            TxtK.Text = Data.K > 0 ? Data.K.ToString("0.00") : "0";
+                                            TxtKB_adjusted.Text = Data.KB_adjusted > 0 ? Data.KB_adjusted.ToString("0.00") : "0";
+                                            TxtKJELDAHL_N.Text = Data.KJELDAHL_N > 0 ? Data.KJELDAHL_N.ToString("0.00") : "0";
+                                            TxtKTK.Text = Data.KTK > 0 ? Data.KTK.ToString("0.00") : "0";
+                                            TxtMg.Text = Data.Mg > 0 ? Data.Mg.ToString("0.00") : "0";
+                                            //Morgan_K2O.Text = Data.Morgan_K2O > 0 ? Data.Morgan_K2O.ToString("0.00") : "0";
+                                            TxtNa.Text = Data.Na > 0 ? Data.Na.ToString("0.00") : "0";
+                                            TxtOlsen_P2O5.Text = Data.Olsen_P2O5 > 0 ? Data.Olsen_P2O5.ToString("0.00") : "0";
+                                            TxtPH_H2O.Text = Data.PH_H2O > 0 ? Data.PH_H2O.ToString("0.00") : "0";
+                                            TxtPH_KCL.Text = Data.PH_KCL > 0 ? Data.PH_KCL.ToString("0.00") : "0";
+                                            //RetensiP.Text = Data.RetensiP > 0 ? Data.RetensiP.ToString("0.00") : "0";
+                                            TxtSAND.Text = Data.SAND > 0 ? Data.SAND.ToString("0.00") : "0";
+                                            TxtSILT.Text = Data.SILT > 0 ? Data.SILT.ToString("0.00") : "0";
+                                            TxtWBC.Text = Data.WBC > 0 ? Data.WBC.ToString("0.00") : "0";
 
                                             // save data to sqlite
                                             SaveToDB();
@@ -286,21 +297,21 @@ namespace PKDSS.MonoApp
                                             switch (komoditas)
                                             {
                                                 case "Padi":
-                                                    txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(KJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
-                                                    txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(HCl25_P2O5.Text), komoditas, "SP36").ToString("0.00");
-                                                    txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(HCl25_K2O.Text), komoditas, "KCL").ToString("0.00");
+                                                    txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
+                                                    txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_P2O5.Text), komoditas, "SP36").ToString("0.00");
+                                                    txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL").ToString("0.00");
                                                     break;
 
                                                 case "Jagung":
-                                                    txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(KJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
-                                                    txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(Bray1_P2O5.Text), komoditas, "SP36").ToString("0.00");
-                                                    txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(HCl25_K2O.Text), komoditas, "KCL").ToString("0.00");
+                                                    txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
+                                                    txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36").ToString("0.00");
+                                                    txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL").ToString("0.00");
                                                     break;
 
                                                 case "Kedelai":
-                                                    txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(KJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
-                                                    txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(Bray1_P2O5.Text), komoditas, "SP36").ToString("0.00");
-                                                    txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(K.Text), komoditas, "KCL").ToString("0.00");
+                                                    txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
+                                                    txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36").ToString("0.00");
+                                                    txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL").ToString("0.00");
                                                     break;
                                             }
 
@@ -317,27 +328,27 @@ namespace PKDSS.MonoApp
                                         if (Data != null)
                                         {
                                             // textbox unsur tanah
-                                            Bray1_P2O5.Text = Data.Bray1_P2O5 > 0 ? Data.Bray1_P2O5.ToString("0.00") : "0";
-                                            Ca.Text = Data.Ca > 0 ? Data.Ca.ToString("0.00") : "0";
-                                            CLAY.Text = Data.CLAY > 0 ? Data.CLAY.ToString("0.00") : "0";
-                                            C_N.Text = Data.C_N > 0 ? Data.C_N.ToString("0.00") : "0";
-                                            HCl25_K2O.Text = Data.HCl25_K2O > 0 ? Data.HCl25_K2O.ToString("0.00") : "0";
-                                            HCl25_P2O5.Text = Data.HCl25_P2O5 > 0 ? Data.HCl25_P2O5.ToString("0.00") : "0";
-                                            Jumlah.Text = Data.Jumlah > 0 ? Data.Jumlah.ToString("0.00") : "0";
-                                            K.Text = Data.K > 0 ? Data.K.ToString("0.00") : "0";
-                                            KB_adjusted.Text = Data.KB_adjusted > 0 ? Data.KB_adjusted.ToString("0.00") : "0";
-                                            KJELDAHL_N.Text = Data.KJELDAHL_N > 0 ? Data.KJELDAHL_N.ToString("0.00") : "0";
-                                            KTK.Text = Data.KTK > 0 ? Data.KTK.ToString("0.00") : "0";
-                                            Mg.Text = Data.Mg > 0 ? Data.Mg.ToString("0.00") : "0";
-                                            Morgan_K2O.Text = Data.Morgan_K2O > 0 ? Data.Morgan_K2O.ToString("0.00") : "0";
-                                            Na.Text = Data.Na > 0 ? Data.Na.ToString("0.00") : "0";
-                                            Olsen_P2O5.Text = Data.Olsen_P2O5 > 0 ? Data.Olsen_P2O5.ToString("0.00") : "0";
-                                            PH_H2O.Text = Data.PH_H2O > 0 ? Data.PH_H2O.ToString("0.00") : "0";
-                                            PH_KCL.Text = Data.PH_KCL > 0 ? Data.PH_KCL.ToString("0.00") : "0";
-                                            RetensiP.Text = Data.RetensiP > 0 ? Data.RetensiP.ToString("0.00") : "0";
-                                            SAND.Text = Data.SAND > 0 ? Data.SAND.ToString("0.00") : "0";
-                                            SILT.Text = Data.SILT > 0 ? Data.SILT.ToString("0.00") : "0";
-                                            WBC.Text = Data.WBC > 0 ? Data.WBC.ToString("0.00") : "0";
+                                            TxtBray1_P2O5.Text = Data.Bray1_P2O5 > 0 ? Data.Bray1_P2O5.ToString("0.00") : "0";
+                                            TxtCa.Text = Data.Ca > 0 ? Data.Ca.ToString("0.00") : "0";
+                                            TxtCLAY.Text = Data.CLAY > 0 ? Data.CLAY.ToString("0.00") : "0";
+                                            //C_N.Text = Data.C_N > 0 ? Data.C_N.ToString("0.00") : "0";
+                                            TxtHCl25_K2O.Text = Data.HCl25_K2O > 0 ? Data.HCl25_K2O.ToString("0.00") : "0";
+                                            TxtHCl25_P2O5.Text = Data.HCl25_P2O5 > 0 ? Data.HCl25_P2O5.ToString("0.00") : "0";
+                                            //Jumlah.Text = Data.Jumlah > 0 ? Data.Jumlah.ToString("0.00") : "0";
+                                            TxtK.Text = Data.K > 0 ? Data.K.ToString("0.00") : "0";
+                                            TxtKB_adjusted.Text = Data.KB_adjusted > 0 ? Data.KB_adjusted.ToString("0.00") : "0";
+                                            TxtKJELDAHL_N.Text = Data.KJELDAHL_N > 0 ? Data.KJELDAHL_N.ToString("0.00") : "0";
+                                            TxtKTK.Text = Data.KTK > 0 ? Data.KTK.ToString("0.00") : "0";
+                                            TxtMg.Text = Data.Mg > 0 ? Data.Mg.ToString("0.00") : "0";
+                                            //Morgan_K2O.Text = Data.Morgan_K2O > 0 ? Data.Morgan_K2O.ToString("0.00") : "0";
+                                            TxtNa.Text = Data.Na > 0 ? Data.Na.ToString("0.00") : "0";
+                                            TxtOlsen_P2O5.Text = Data.Olsen_P2O5 > 0 ? Data.Olsen_P2O5.ToString("0.00") : "0";
+                                            TxtPH_H2O.Text = Data.PH_H2O > 0 ? Data.PH_H2O.ToString("0.00") : "0";
+                                            TxtPH_KCL.Text = Data.PH_KCL > 0 ? Data.PH_KCL.ToString("0.00") : "0";
+                                            //RetensiP.Text = Data.RetensiP > 0 ? Data.RetensiP.ToString("0.00") : "0";
+                                            TxtSAND.Text = Data.SAND > 0 ? Data.SAND.ToString("0.00") : "0";
+                                            TxtSILT.Text = Data.SILT > 0 ? Data.SILT.ToString("0.00") : "0";
+                                            TxtWBC.Text = Data.WBC > 0 ? Data.WBC.ToString("0.00") : "0";
 
                                             // save data to sqlite
                                             SaveToDB();
@@ -349,21 +360,21 @@ namespace PKDSS.MonoApp
                                             switch (komoditas)
                                             {
                                                 case "Padi":
-                                                    txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(KJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
-                                                    txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(HCl25_P2O5.Text), komoditas, "SP36").ToString("0.00");
-                                                    txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(HCl25_K2O.Text), komoditas, "KCL").ToString("0.00");
+                                                    txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
+                                                    txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_P2O5.Text), komoditas, "SP36").ToString("0.00");
+                                                    txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL").ToString("0.00");
                                                     break;
 
                                                 case "Jagung":
-                                                    txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(KJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
-                                                    txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(Bray1_P2O5.Text), komoditas, "SP36").ToString("0.00");
-                                                    txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(HCl25_K2O.Text), komoditas, "KCL").ToString("0.00");
+                                                    txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
+                                                    txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36").ToString("0.00");
+                                                    txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL").ToString("0.00");
                                                     break;
 
                                                 case "Kedelai":
-                                                    txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(KJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
-                                                    txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(Bray1_P2O5.Text), komoditas, "SP36").ToString("0.00");
-                                                    txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(K.Text), komoditas, "KCL").ToString("0.00");
+                                                    txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
+                                                    txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36").ToString("0.00");
+                                                    txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL").ToString("0.00");
                                                     break;
                                             }
 
@@ -685,6 +696,7 @@ namespace PKDSS.MonoApp
             { listOfControls.Clear(); }
             string AppPath = Application.StartupPath + "\\outputconfig.json";
             List<OutputData> ReadData = JsonConvert.DeserializeObject<List<OutputData>>(File.ReadAllText(AppPath));
+            ReadeDataSort = ReadData.OrderBy(x => x.No).ToList<OutputData>();
 
             //add textbox
             foreach (var item in ReadData)
@@ -699,45 +711,31 @@ namespace PKDSS.MonoApp
 
         public void DisplayTextBox()
         {
-            const int CellWidth = 255;
-            const int CellHeight = 29;
-            const int MaxRow = 7;
+            const int CellWidth = 250;
+            const int CellHeight = 80;
+            const int MaxRow = 6;
             int RowCounter = 0;
             int ColCounter = 0;
-            foreach (Control item in pnlUser.Controls)
+
+            foreach (var data in ReadeDataSort)
             {
-                if (item is Bunifu.Framework.UI.BunifuCustomLabel && listOfControls.Contains(item.Tag))
+                foreach (Control item in pnlUser.Controls)
                 {
-                    var lblBox = (Bunifu.Framework.UI.BunifuCustomLabel)item;
-                    lblBox.Visible = true;
-                    lblBox.Left = 7 + (ColCounter * (CellWidth + 34));
-                    lblBox.Top = 1 + (RowCounter * (CellHeight * 2));
-                    foreach (Control txt in pnlUser.Controls)
+                    if (item is Panel && item.Name == data.Name && listOfControls.Contains(item.Tag))
                     {
-                        if (txt is TextBox && txt.Tag == item.Tag)
-                        {
-                            var txtBox = (TextBox)txt;
-                            txtBox.Visible = true;
-                            txtBox.Text = "0";
-                            txtBox.Left = 11 + (ColCounter * (CellWidth + 34));
-                            txtBox.Top = 27 + (RowCounter * (CellHeight * 2));
-                            break;
-                        }
+                        var panel = (Panel)item;
+                        panel.Visible = true;
+                        panel.Left = 13 + (ColCounter * (CellWidth + 30));
+                        panel.Top = 7 + (RowCounter * (CellHeight));
+                        RowCounter++;
                     }
 
-                    RowCounter++;
-                }
+                    if (RowCounter >= MaxRow) { ColCounter++; RowCounter = 0; }
 
-                if (RowCounter >= MaxRow) { ColCounter++; RowCounter = 0; }
-
-                if (item is TextBox && !listOfControls.Contains(item.Tag))
-                {
-                    ((TextBox)item).Visible = false;
-                }
-
-                if (item is Bunifu.Framework.UI.BunifuCustomLabel && !listOfControls.Contains(item.Tag))
-                {
-                    ((Bunifu.Framework.UI.BunifuCustomLabel)item).Visible = false;
+                    if (item is Panel && !listOfControls.Contains(item.Tag))
+                    {
+                        ((Panel)item).Visible = false;
+                    }
                 }
             }
         }
@@ -777,21 +775,21 @@ namespace PKDSS.MonoApp
                 switch (komoditas)
                 {
                     case "Padi":
-                        txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(KJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
-                        txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(HCl25_P2O5.Text), komoditas, "SP36").ToString("0.00");
-                        txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(HCl25_K2O.Text), komoditas, "KCL").ToString("0.00");
+                        txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
+                        txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_P2O5.Text), komoditas, "SP36").ToString("0.00");
+                        txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL").ToString("0.00");
                         break;
 
                     case "Jagung":
-                        txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(KJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
-                        txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(Bray1_P2O5.Text), komoditas, "SP36").ToString("0.00");
-                        txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(HCl25_K2O.Text), komoditas, "KCL").ToString("0.00");
+                        txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
+                        txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36").ToString("0.00");
+                        txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL").ToString("0.00");
                         break;
 
                     case "Kedelai":
-                        txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(KJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
-                        txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(Bray1_P2O5.Text), komoditas, "SP36").ToString("0.00");
-                        txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(K.Text), komoditas, "KCL").ToString("0.00");
+                        txtUrea.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea").ToString("0.00");
+                        txtSP36.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36").ToString("0.00");
+                        txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL").ToString("0.00");
                         break;
                 }
             }
