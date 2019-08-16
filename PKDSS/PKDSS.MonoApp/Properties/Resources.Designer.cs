@@ -83,6 +83,16 @@ namespace PKDSS.MonoApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap corn__2_ {
+            get {
+                object obj = ResourceManager.GetObject("corn__2_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_automatic_800 {
             get {
                 object obj = ResourceManager.GetObject("icons8-automatic-800", resourceCulture);
@@ -153,6 +163,16 @@ namespace PKDSS.MonoApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image_150nw_764148709 {
+            get {
+                object obj = ResourceManager.GetObject("image_150nw_764148709", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maps_and_flags_01 {
             get {
                 object obj = ResourceManager.GetObject("maps-and-flags-01", resourceCulture);
@@ -186,6 +206,16 @@ namespace PKDSS.MonoApp.Properties {
         internal static System.Drawing.Bitmap shovel {
             get {
                 object obj = ResourceManager.GetObject("shovel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap soy {
+            get {
+                object obj = ResourceManager.GetObject("soy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

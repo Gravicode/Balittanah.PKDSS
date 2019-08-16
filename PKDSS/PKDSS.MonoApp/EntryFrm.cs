@@ -29,12 +29,14 @@ namespace PKDSS.MonoApp
     {
         Channel channel = new Channel("localhost:50051", ChannelCredentials.Insecure);
         string ComPort = ConfigurationManager.AppSettings["ComPort"];
+        //string DataRekomendasi = ConfigurationManager.AppSettings["DataRekomendasi"];
         Thread LoopCheckDevice;
         int statusProcess = 0;
         public static ModelOutput Data = new ModelOutput();
         HashSet<string> listOfControls;
         MessageBoxForm CustomMessageBox;
         List<OutputData> ReadeDataSort = new List<OutputData>();
+        FertilizerCalculator calc = new FertilizerCalculator();
 
 
         public EntryFrm()
@@ -169,6 +171,8 @@ namespace PKDSS.MonoApp
             txtSP36.Text = "0";
             txtUrea.Text = "0";
             txtKCL.Text = "0";
+            txtNpk15.Text = "0";
+            txtUrea15.Text = "0";
         }
 
         private async void RequestIsDeviceReady()
@@ -293,7 +297,7 @@ namespace PKDSS.MonoApp
                                             string komoditas = cbKomoditas.SelectedItem.ToString();
 
                                             // textbox rekomendasi
-                                            var calc = new FertilizerCalculator(DataRekomendasi);
+                                            //var calc = new FertilizerCalculator(DataRekomendasi);
                                             switch (komoditas)
                                             {
                                                 case "Padi":
@@ -314,6 +318,13 @@ namespace PKDSS.MonoApp
                                                     txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL").ToString("0.00");
                                                     break;
                                             }
+
+                                            // textbox rekomendasi npk 15:15:15
+                                            var x = calc.GetNPKDoze(P2O5: float.Parse(TxtHCl25_P2O5.Text),
+                                                K2O: float.Parse(TxtHCl25_K2O.Text), Jenis: komoditas);
+
+                                            txtNpk15.Text = x.NPK.ToString("0.00");
+                                            txtUrea15.Text = x.Urea.ToString("0.00");
 
                                             Writelog("Process Finish....");
                                             setButtonEnable(true);
@@ -356,7 +367,7 @@ namespace PKDSS.MonoApp
                                             string komoditas = cbKomoditas.SelectedItem.ToString();
 
                                             // textbox rekomendasi
-                                            var calc = new FertilizerCalculator(DataRekomendasi);
+                                            //var calc = new FertilizerCalculator(DataRekomendasi);
                                             switch (komoditas)
                                             {
                                                 case "Padi":
@@ -377,6 +388,13 @@ namespace PKDSS.MonoApp
                                                     txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL").ToString("0.00");
                                                     break;
                                             }
+                                            
+                                            // textbox rekomendasi npk 15:15:15
+                                            var x = calc.GetNPKDoze(P2O5: float.Parse(TxtHCl25_P2O5.Text),
+                                                K2O: float.Parse(TxtHCl25_K2O.Text), Jenis: komoditas);
+
+                                            txtNpk15.Text = x.NPK.ToString("0.00");
+                                            txtUrea15.Text = x.Urea.ToString("0.00");
 
                                             Writelog("Process Finish....");
                                             setButtonEnable(true);
@@ -711,7 +729,7 @@ namespace PKDSS.MonoApp
 
         public void DisplayTextBox()
         {
-            const int CellWidth = 250;
+            const int CellWidth = 270;
             const int CellHeight = 80;
             const int MaxRow = 6;
             int RowCounter = 0;
@@ -725,7 +743,7 @@ namespace PKDSS.MonoApp
                     {
                         var panel = (Panel)item;
                         panel.Visible = true;
-                        panel.Left = 13 + (ColCounter * (CellWidth + 30));
+                        panel.Left = 13 + (ColCounter * (CellWidth + 20));
                         panel.Top = 7 + (RowCounter * (CellHeight));
                         RowCounter++;
                     }
@@ -766,12 +784,11 @@ namespace PKDSS.MonoApp
 
         private void BtnRecalculate_Click(object sender, EventArgs e)
         {
-            var DataRekomendasi = ConfigurationManager.AppSettings["DataRekomendasi"];
             string komoditas = cbKomoditas.SelectedItem.ToString();
             try
             {
                 // textbox rekomendasi
-                var calc = new FertilizerCalculator(DataRekomendasi);
+                //var calc = new FertilizerCalculator(DataRekomendasi);
                 switch (komoditas)
                 {
                     case "Padi":
@@ -792,6 +809,13 @@ namespace PKDSS.MonoApp
                         txtKCL.Text = calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL").ToString("0.00");
                         break;
                 }
+
+                // textbox rekomendasi npk 15:15:15
+                var x = calc.GetNPKDoze(P2O5: float.Parse(TxtHCl25_P2O5.Text),
+                    K2O: float.Parse(TxtHCl25_K2O.Text), Jenis: komoditas);
+
+                txtNpk15.Text = x.NPK.ToString("0.00");
+                txtUrea15.Text = x.Urea.ToString("0.00");
             }
             catch (Exception ex)
             {

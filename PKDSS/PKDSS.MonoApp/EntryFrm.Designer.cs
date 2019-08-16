@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.TimerFile = new System.Windows.Forms.Timer(this.components);
             this.tabScanning = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -164,6 +164,16 @@
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabRekomendasiPupuk = new System.Windows.Forms.TabPage();
+            this.bunifuCustomLabel68 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel67 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel63 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel64 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtUrea15 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel65 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtNpk15 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel66 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel62 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel61 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel60 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -194,6 +204,7 @@
             this.pnlMain = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabScanning.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWave)).BeginInit();
@@ -229,6 +240,8 @@
             this.tabInfoLokasi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabRekomendasiPupuk.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabExportData.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -271,17 +284,17 @@
             // 
             // chartWave
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartWave.ChartAreas.Add(chartArea1);
+            chartArea6.Name = "ChartArea1";
+            this.chartWave.ChartAreas.Add(chartArea6);
             this.chartWave.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartWave.Legends.Add(legend1);
+            legend6.Name = "Legend1";
+            this.chartWave.Legends.Add(legend6);
             this.chartWave.Location = new System.Drawing.Point(0, 0);
             this.chartWave.Name = "chartWave";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartWave.Series.Add(series1);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chartWave.Series.Add(series6);
             this.chartWave.Size = new System.Drawing.Size(1010, 215);
             this.chartWave.TabIndex = 0;
             this.chartWave.Text = "WaveChart";
@@ -548,7 +561,7 @@
             this.WBC.Controls.Add(this.TxtWBC);
             this.WBC.Location = new System.Drawing.Point(13, 169);
             this.WBC.Name = "WBC";
-            this.WBC.Size = new System.Drawing.Size(251, 80);
+            this.WBC.Size = new System.Drawing.Size(269, 80);
             this.WBC.TabIndex = 117;
             this.WBC.Tag = "WBC";
             // 
@@ -581,7 +594,7 @@
             this.SILT.Controls.Add(this.TxtSILT);
             this.SILT.Location = new System.Drawing.Point(594, 331);
             this.SILT.Name = "SILT";
-            this.SILT.Size = new System.Drawing.Size(251, 80);
+            this.SILT.Size = new System.Drawing.Size(269, 80);
             this.SILT.TabIndex = 128;
             this.SILT.Tag = "SILT";
             // 
@@ -614,7 +627,7 @@
             this.SAND.Controls.Add(this.TxtSAND);
             this.SAND.Location = new System.Drawing.Point(594, 250);
             this.SAND.Name = "SAND";
-            this.SAND.Size = new System.Drawing.Size(251, 80);
+            this.SAND.Size = new System.Drawing.Size(269, 80);
             this.SAND.TabIndex = 127;
             this.SAND.Tag = "SAND";
             // 
@@ -647,7 +660,7 @@
             this.CLAY.Controls.Add(this.TxtCLAY);
             this.CLAY.Location = new System.Drawing.Point(594, 169);
             this.CLAY.Name = "CLAY";
-            this.CLAY.Size = new System.Drawing.Size(251, 80);
+            this.CLAY.Size = new System.Drawing.Size(269, 80);
             this.CLAY.TabIndex = 126;
             this.CLAY.Tag = "CLAY";
             // 
@@ -680,7 +693,7 @@
             this.KB_adjusted.Controls.Add(this.bunifuCustomLabel36);
             this.KB_adjusted.Location = new System.Drawing.Point(594, 88);
             this.KB_adjusted.Name = "KB_adjusted";
-            this.KB_adjusted.Size = new System.Drawing.Size(251, 80);
+            this.KB_adjusted.Size = new System.Drawing.Size(269, 80);
             this.KB_adjusted.TabIndex = 125;
             this.KB_adjusted.Tag = "KB_adjusted";
             // 
@@ -713,7 +726,7 @@
             this.KTK.Controls.Add(this.TxtKTK);
             this.KTK.Location = new System.Drawing.Point(594, 7);
             this.KTK.Name = "KTK";
-            this.KTK.Size = new System.Drawing.Size(251, 80);
+            this.KTK.Size = new System.Drawing.Size(269, 80);
             this.KTK.TabIndex = 124;
             this.KTK.Tag = "KTK";
             // 
@@ -746,7 +759,7 @@
             this.Na.Controls.Add(this.TxtNa);
             this.Na.Location = new System.Drawing.Point(304, 413);
             this.Na.Name = "Na";
-            this.Na.Size = new System.Drawing.Size(251, 80);
+            this.Na.Size = new System.Drawing.Size(269, 80);
             this.Na.TabIndex = 123;
             this.Na.Tag = "Na";
             // 
@@ -779,7 +792,7 @@
             this.K.Controls.Add(this.TxtK);
             this.K.Location = new System.Drawing.Point(304, 331);
             this.K.Name = "K";
-            this.K.Size = new System.Drawing.Size(251, 80);
+            this.K.Size = new System.Drawing.Size(269, 80);
             this.K.TabIndex = 122;
             this.K.Tag = "K";
             // 
@@ -812,7 +825,7 @@
             this.Mg.Controls.Add(this.TxtMg);
             this.Mg.Location = new System.Drawing.Point(304, 250);
             this.Mg.Name = "Mg";
-            this.Mg.Size = new System.Drawing.Size(251, 80);
+            this.Mg.Size = new System.Drawing.Size(269, 80);
             this.Mg.TabIndex = 121;
             this.Mg.Tag = "Mg";
             // 
@@ -845,7 +858,7 @@
             this.Ca.Controls.Add(this.TxtCa);
             this.Ca.Location = new System.Drawing.Point(304, 169);
             this.Ca.Name = "Ca";
-            this.Ca.Size = new System.Drawing.Size(251, 80);
+            this.Ca.Size = new System.Drawing.Size(269, 80);
             this.Ca.TabIndex = 120;
             this.Ca.Tag = "Ca";
             // 
@@ -882,7 +895,7 @@
             this.Bray1_P2O5.Controls.Add(this.bunifuCustomLabel45);
             this.Bray1_P2O5.Location = new System.Drawing.Point(304, 7);
             this.Bray1_P2O5.Name = "Bray1_P2O5";
-            this.Bray1_P2O5.Size = new System.Drawing.Size(251, 80);
+            this.Bray1_P2O5.Size = new System.Drawing.Size(269, 80);
             this.Bray1_P2O5.TabIndex = 120;
             this.Bray1_P2O5.Tag = "Bray1_P2O5";
             // 
@@ -963,7 +976,7 @@
             this.Olsen_P2O5.Controls.Add(this.bunifuCustomLabel43);
             this.Olsen_P2O5.Location = new System.Drawing.Point(304, 88);
             this.Olsen_P2O5.Name = "Olsen_P2O5";
-            this.Olsen_P2O5.Size = new System.Drawing.Size(251, 80);
+            this.Olsen_P2O5.Size = new System.Drawing.Size(269, 80);
             this.Olsen_P2O5.TabIndex = 119;
             this.Olsen_P2O5.Tag = "Olsen_P2O5";
             // 
@@ -1042,7 +1055,7 @@
             this.HCl25_K2O.Controls.Add(this.TxtHCl25_K2O);
             this.HCl25_K2O.Location = new System.Drawing.Point(13, 413);
             this.HCl25_K2O.Name = "HCl25_K2O";
-            this.HCl25_K2O.Size = new System.Drawing.Size(251, 80);
+            this.HCl25_K2O.Size = new System.Drawing.Size(269, 80);
             this.HCl25_K2O.TabIndex = 118;
             this.HCl25_K2O.Tag = "HCl25_K2O";
             // 
@@ -1101,7 +1114,7 @@
             this.HCl25_P2O5.Controls.Add(this.TxtHCl25_P2O5);
             this.HCl25_P2O5.Location = new System.Drawing.Point(13, 331);
             this.HCl25_P2O5.Name = "HCl25_P2O5";
-            this.HCl25_P2O5.Size = new System.Drawing.Size(251, 80);
+            this.HCl25_P2O5.Size = new System.Drawing.Size(269, 80);
             this.HCl25_P2O5.TabIndex = 117;
             this.HCl25_P2O5.Tag = "HCl25_P2O5";
             // 
@@ -1178,7 +1191,7 @@
             this.KJELDAHL_N.Controls.Add(this.bunifuCustomLabel49);
             this.KJELDAHL_N.Location = new System.Drawing.Point(13, 250);
             this.KJELDAHL_N.Name = "KJELDAHL_N";
-            this.KJELDAHL_N.Size = new System.Drawing.Size(251, 80);
+            this.KJELDAHL_N.Size = new System.Drawing.Size(269, 80);
             this.KJELDAHL_N.TabIndex = 116;
             this.KJELDAHL_N.Tag = "KJELDAHL_N";
             // 
@@ -1211,7 +1224,7 @@
             this.PH_KCL.Controls.Add(this.TxtPH_KCL);
             this.PH_KCL.Location = new System.Drawing.Point(13, 88);
             this.PH_KCL.Name = "PH_KCL";
-            this.PH_KCL.Size = new System.Drawing.Size(251, 80);
+            this.PH_KCL.Size = new System.Drawing.Size(269, 80);
             this.PH_KCL.TabIndex = 115;
             this.PH_KCL.Tag = "PH_KCL";
             // 
@@ -1246,7 +1259,7 @@
             this.PH_H2O.Controls.Add(this.bunifuCustomLabel26);
             this.PH_H2O.Location = new System.Drawing.Point(13, 7);
             this.PH_H2O.Name = "PH_H2O";
-            this.PH_H2O.Size = new System.Drawing.Size(251, 80);
+            this.PH_H2O.Size = new System.Drawing.Size(269, 80);
             this.PH_H2O.TabIndex = 114;
             this.PH_H2O.Tag = "PH_H2O";
             // 
@@ -1456,6 +1469,7 @@
             // cbKabupaten
             // 
             this.cbKabupaten.DisplayMember = "0";
+            this.cbKabupaten.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKabupaten.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKabupaten.FormattingEnabled = true;
             this.cbKabupaten.Location = new System.Drawing.Point(305, 341);
@@ -1476,6 +1490,7 @@
             // cbProvinsi
             // 
             this.cbProvinsi.DisplayMember = "0";
+            this.cbProvinsi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProvinsi.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbProvinsi.FormattingEnabled = true;
             this.cbProvinsi.Location = new System.Drawing.Point(305, 270);
@@ -1724,6 +1739,16 @@
             // 
             // tabRekomendasiPupuk
             // 
+            this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel68);
+            this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel67);
+            this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel63);
+            this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel64);
+            this.tabRekomendasiPupuk.Controls.Add(this.txtUrea15);
+            this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel65);
+            this.tabRekomendasiPupuk.Controls.Add(this.txtNpk15);
+            this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel66);
+            this.tabRekomendasiPupuk.Controls.Add(this.pictureBox5);
+            this.tabRekomendasiPupuk.Controls.Add(this.pictureBox2);
             this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel62);
             this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel61);
             this.tabRekomendasiPupuk.Controls.Add(this.bunifuCustomLabel60);
@@ -1745,11 +1770,111 @@
             this.tabRekomendasiPupuk.Text = "Rekomendasi Pupuk";
             this.tabRekomendasiPupuk.UseVisualStyleBackColor = true;
             // 
+            // bunifuCustomLabel68
+            // 
+            this.bunifuCustomLabel68.AutoSize = true;
+            this.bunifuCustomLabel68.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel68.Location = new System.Drawing.Point(18, 144);
+            this.bunifuCustomLabel68.Name = "bunifuCustomLabel68";
+            this.bunifuCustomLabel68.Size = new System.Drawing.Size(226, 27);
+            this.bunifuCustomLabel68.TabIndex = 116;
+            this.bunifuCustomLabel68.Text = "Rekomendasi Pupuk";
+            // 
+            // bunifuCustomLabel67
+            // 
+            this.bunifuCustomLabel67.AutoSize = true;
+            this.bunifuCustomLabel67.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel67.Location = new System.Drawing.Point(438, 15);
+            this.bunifuCustomLabel67.Name = "bunifuCustomLabel67";
+            this.bunifuCustomLabel67.Size = new System.Drawing.Size(374, 27);
+            this.bunifuCustomLabel67.TabIndex = 115;
+            this.bunifuCustomLabel67.Text = "Rekomendasi Pupuk NPK 15:15:15";
+            // 
+            // bunifuCustomLabel63
+            // 
+            this.bunifuCustomLabel63.AutoSize = true;
+            this.bunifuCustomLabel63.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel63.Location = new System.Drawing.Point(704, 144);
+            this.bunifuCustomLabel63.Name = "bunifuCustomLabel63";
+            this.bunifuCustomLabel63.Size = new System.Drawing.Size(52, 23);
+            this.bunifuCustomLabel63.TabIndex = 114;
+            this.bunifuCustomLabel63.Text = "kg/ha";
+            // 
+            // bunifuCustomLabel64
+            // 
+            this.bunifuCustomLabel64.AutoSize = true;
+            this.bunifuCustomLabel64.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel64.Location = new System.Drawing.Point(704, 86);
+            this.bunifuCustomLabel64.Name = "bunifuCustomLabel64";
+            this.bunifuCustomLabel64.Size = new System.Drawing.Size(52, 23);
+            this.bunifuCustomLabel64.TabIndex = 113;
+            this.bunifuCustomLabel64.Text = "kg/ha";
+            // 
+            // txtUrea15
+            // 
+            this.txtUrea15.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtUrea15.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUrea15.Location = new System.Drawing.Point(443, 141);
+            this.txtUrea15.Name = "txtUrea15";
+            this.txtUrea15.ReadOnly = true;
+            this.txtUrea15.Size = new System.Drawing.Size(255, 29);
+            this.txtUrea15.TabIndex = 112;
+            // 
+            // bunifuCustomLabel65
+            // 
+            this.bunifuCustomLabel65.AutoSize = true;
+            this.bunifuCustomLabel65.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel65.Location = new System.Drawing.Point(439, 115);
+            this.bunifuCustomLabel65.Name = "bunifuCustomLabel65";
+            this.bunifuCustomLabel65.Size = new System.Drawing.Size(45, 23);
+            this.bunifuCustomLabel65.TabIndex = 111;
+            this.bunifuCustomLabel65.Text = "Urea";
+            // 
+            // txtNpk15
+            // 
+            this.txtNpk15.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtNpk15.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNpk15.Location = new System.Drawing.Point(443, 83);
+            this.txtNpk15.Name = "txtNpk15";
+            this.txtNpk15.ReadOnly = true;
+            this.txtNpk15.Size = new System.Drawing.Size(255, 29);
+            this.txtNpk15.TabIndex = 110;
+            // 
+            // bunifuCustomLabel66
+            // 
+            this.bunifuCustomLabel66.AutoSize = true;
+            this.bunifuCustomLabel66.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel66.Location = new System.Drawing.Point(439, 57);
+            this.bunifuCustomLabel66.Name = "bunifuCustomLabel66";
+            this.bunifuCustomLabel66.Size = new System.Drawing.Size(110, 23);
+            this.bunifuCustomLabel66.TabIndex = 109;
+            this.bunifuCustomLabel66.Text = "NPK 15:15:15";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::PKDSS.MonoApp.Properties.Resources.corn__2_;
+            this.pictureBox5.Location = new System.Drawing.Point(675, 335);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(119, 90);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 108;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PKDSS.MonoApp.Properties.Resources.image_150nw_764148709;
+            this.pictureBox2.Location = new System.Drawing.Point(634, 254);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(119, 90);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 107;
+            this.pictureBox2.TabStop = false;
+            // 
             // bunifuCustomLabel62
             // 
             this.bunifuCustomLabel62.AutoSize = true;
             this.bunifuCustomLabel62.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel62.Location = new System.Drawing.Point(283, 283);
+            this.bunifuCustomLabel62.Location = new System.Drawing.Point(284, 325);
             this.bunifuCustomLabel62.Name = "bunifuCustomLabel62";
             this.bunifuCustomLabel62.Size = new System.Drawing.Size(52, 23);
             this.bunifuCustomLabel62.TabIndex = 106;
@@ -1759,7 +1884,7 @@
             // 
             this.bunifuCustomLabel61.AutoSize = true;
             this.bunifuCustomLabel61.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel61.Location = new System.Drawing.Point(283, 225);
+            this.bunifuCustomLabel61.Location = new System.Drawing.Point(284, 267);
             this.bunifuCustomLabel61.Name = "bunifuCustomLabel61";
             this.bunifuCustomLabel61.Size = new System.Drawing.Size(52, 23);
             this.bunifuCustomLabel61.TabIndex = 105;
@@ -1769,7 +1894,7 @@
             // 
             this.bunifuCustomLabel60.AutoSize = true;
             this.bunifuCustomLabel60.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel60.Location = new System.Drawing.Point(283, 167);
+            this.bunifuCustomLabel60.Location = new System.Drawing.Point(284, 209);
             this.bunifuCustomLabel60.Name = "bunifuCustomLabel60";
             this.bunifuCustomLabel60.Size = new System.Drawing.Size(52, 23);
             this.bunifuCustomLabel60.TabIndex = 104;
@@ -1778,16 +1903,17 @@
             // lbKomoditas
             // 
             this.lbKomoditas.AutoSize = true;
-            this.lbKomoditas.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbKomoditas.Location = new System.Drawing.Point(18, 19);
+            this.lbKomoditas.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKomoditas.Location = new System.Drawing.Point(18, 15);
             this.lbKomoditas.Name = "lbKomoditas";
-            this.lbKomoditas.Size = new System.Drawing.Size(92, 23);
+            this.lbKomoditas.Size = new System.Drawing.Size(124, 27);
             this.lbKomoditas.TabIndex = 102;
             this.lbKomoditas.Text = "Komoditas";
             // 
             // cbKomoditas
             // 
             this.cbKomoditas.DisplayMember = "0";
+            this.cbKomoditas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKomoditas.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKomoditas.FormattingEnabled = true;
             this.cbKomoditas.Location = new System.Drawing.Point(22, 45);
@@ -1814,7 +1940,7 @@
             // 
             this.bunifuCustomLabel24.AutoSize = true;
             this.bunifuCustomLabel24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel24.Location = new System.Drawing.Point(555, 327);
+            this.bunifuCustomLabel24.Location = new System.Drawing.Point(634, 437);
             this.bunifuCustomLabel24.Name = "bunifuCustomLabel24";
             this.bunifuCustomLabel24.Size = new System.Drawing.Size(202, 24);
             this.bunifuCustomLabel24.TabIndex = 60;
@@ -1824,7 +1950,7 @@
             // 
             this.txtKCL.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtKCL.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKCL.Location = new System.Drawing.Point(22, 280);
+            this.txtKCL.Location = new System.Drawing.Point(23, 322);
             this.txtKCL.Name = "txtKCL";
             this.txtKCL.ReadOnly = true;
             this.txtKCL.Size = new System.Drawing.Size(255, 29);
@@ -1835,7 +1961,7 @@
             // 
             this.bunifuCustomLabel19.AutoSize = true;
             this.bunifuCustomLabel19.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel19.Location = new System.Drawing.Point(18, 254);
+            this.bunifuCustomLabel19.Location = new System.Drawing.Point(19, 296);
             this.bunifuCustomLabel19.Name = "bunifuCustomLabel19";
             this.bunifuCustomLabel19.Size = new System.Drawing.Size(36, 23);
             this.bunifuCustomLabel19.TabIndex = 38;
@@ -1845,7 +1971,7 @@
             // 
             this.txtSP36.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtSP36.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSP36.Location = new System.Drawing.Point(22, 222);
+            this.txtSP36.Location = new System.Drawing.Point(23, 264);
             this.txtSP36.Name = "txtSP36";
             this.txtSP36.ReadOnly = true;
             this.txtSP36.Size = new System.Drawing.Size(255, 29);
@@ -1856,7 +1982,7 @@
             // 
             this.bunifuCustomLabel20.AutoSize = true;
             this.bunifuCustomLabel20.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel20.Location = new System.Drawing.Point(18, 196);
+            this.bunifuCustomLabel20.Location = new System.Drawing.Point(19, 238);
             this.bunifuCustomLabel20.Name = "bunifuCustomLabel20";
             this.bunifuCustomLabel20.Size = new System.Drawing.Size(53, 23);
             this.bunifuCustomLabel20.TabIndex = 36;
@@ -1866,7 +1992,7 @@
             // 
             this.txtUrea.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtUrea.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUrea.Location = new System.Drawing.Point(22, 164);
+            this.txtUrea.Location = new System.Drawing.Point(23, 206);
             this.txtUrea.Name = "txtUrea";
             this.txtUrea.ReadOnly = true;
             this.txtUrea.Size = new System.Drawing.Size(255, 29);
@@ -1877,7 +2003,7 @@
             // 
             this.bunifuCustomLabel21.AutoSize = true;
             this.bunifuCustomLabel21.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel21.Location = new System.Drawing.Point(18, 138);
+            this.bunifuCustomLabel21.Location = new System.Drawing.Point(19, 180);
             this.bunifuCustomLabel21.Name = "bunifuCustomLabel21";
             this.bunifuCustomLabel21.Size = new System.Drawing.Size(45, 23);
             this.bunifuCustomLabel21.TabIndex = 34;
@@ -1885,10 +2011,10 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::PKDSS.MonoApp.Properties.Resources.seed_bag;
-            this.pictureBox3.Location = new System.Drawing.Point(492, 35);
+            this.pictureBox3.Image = global::PKDSS.MonoApp.Properties.Resources.soy;
+            this.pictureBox3.Location = new System.Drawing.Point(745, 254);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(316, 275);
+            this.pictureBox3.Size = new System.Drawing.Size(119, 90);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 59;
             this.pictureBox3.TabStop = false;
@@ -2154,6 +2280,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabRekomendasiPupuk.ResumeLayout(false);
             this.tabRekomendasiPupuk.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabExportData.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -2334,5 +2462,16 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel62;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel61;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel60;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel67;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel63;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel64;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtUrea15;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel65;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtNpk15;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel66;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel68;
     }
 }

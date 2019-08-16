@@ -19,7 +19,7 @@ namespace PKDSS.CoreLibrary.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -86,14 +86,14 @@ namespace PKDSS.CoreLibrary.Properties {
         ///  {
         ///    &quot;No&quot;: 4,
         ///    &quot;Tanaman&quot;: &quot;Jagung&quot;,
-        ///    &quot;C1&quot;: 22.002,
-        ///    &quot;C2&quot;: 0.00351,
+        ///    &quot;C1&quot;: 1.9615,
+        ///    &quot;C2&quot;: 0.00342,
         ///    &quot;Pupuk&quot;: &quot;Urea&quot;
         ///  },
         ///  {
         ///    &quot;No&quot;: 5,
         ///    &quot;Tanaman&quot;: &quot;Jagung&quot;,
-        ///    &quot;C1&quot;: 0.01334,
+        ///    &quot;C1&quot;: 0.01580,
         ///  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Data {
@@ -130,6 +130,28 @@ namespace PKDSS.CoreLibrary.Properties {
         internal static string Lokasi {
             get {
                 return ResourceManager.GetString("Lokasi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No,P2O5,K2O,NPK,UREA,Jenis
+        ///1,$A &lt; 20,$B &lt; 10,350,200,Padi
+        ///2,$A &lt; 20,$B &gt;= 10 and $B &lt;= 20,250,225,Padi
+        ///3,$A &lt; 20,$B&gt;20,250,225,Padi
+        ///4,$A&gt;=20 and $A&lt;=40,$B&lt; 10,300,200,Padi
+        ///5,$A &gt;= 20 and $A&lt;= 40,$B&gt;=10 and $B&lt;= 20,200,250,Padi
+        ///6,$A&gt;=20 and $A&lt;=40,$B&gt;20,200,250,Padi
+        ///7,$A &gt; 40,$B&lt; 10,300,200,Padi
+        ///8,$A &gt; 40,$B&gt;=10 and $B&lt;=20,200,250,Padi
+        ///9,$A &gt; 40,$B&gt;20,200,250,Padi
+        ///1,$A &lt; 20,$B &lt; 10,375,225,Jagung
+        ///2,$A &lt; 20,$B &gt;= 10 and $B &lt;= 20,350,250,Jagung
+        ///3,$A &lt; 20,$B&gt;20,350,250,Jagung
+        ///4,$A&gt;=20 and $A&lt;=40,$B [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string NPK {
+            get {
+                return ResourceManager.GetString("NPK", resourceCulture);
             }
         }
     }

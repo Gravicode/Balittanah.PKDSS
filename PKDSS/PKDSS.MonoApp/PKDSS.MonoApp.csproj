@@ -218,7 +218,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\clear-filters.png" />
+    <None Include="Resources\corn %282%29.png" />
     <Content Include="Resources\icons8-filter-40.png" />
+    <None Include="Resources\image-150nw-764148709.jpg" />
+    <None Include="Resources\soy.png" />
     <Content Include="Resources\trash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
