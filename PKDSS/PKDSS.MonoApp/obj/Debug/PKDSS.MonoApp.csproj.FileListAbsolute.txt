@@ -953,7 +953,6 @@ C:\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj
 C:\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.OutputConfigFrm.resources
 C:\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.Properties.Resources.resources
 C:\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.csproj.GenerateResource.cache
-C:\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.csproj.CoreCompileInputs.cache
 C:\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\grpc_csharp_ext.x86.dll
 C:\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\grpc_csharp_ext.x64.dll
 C:\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\bin\Debug\libgrpc_csharp_ext.x86.so

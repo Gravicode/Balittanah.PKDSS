@@ -114,6 +114,12 @@
     <Compile Include="Helper\RawChart.cs" />
     <Compile Include="Helper\SoilNutritionModel.cs" />
     <Compile Include="Helper\SqliteDataAccess.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MessageBoxForm.cs">
       <SubType>Form</SubType>
     </Compile>

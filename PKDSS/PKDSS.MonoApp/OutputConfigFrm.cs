@@ -31,14 +31,6 @@ namespace PKDSS.MonoApp
             foreach (var y in ReadDataSort)
             {
                 chklbOutput.Items.Add(y.Initial, y.Status);
-                //foreach (var i in chklbOutput.Items)
-                //{
-                //    if (y.Name == chklbOutput.GetItemText(i) && y.Status == CheckState.Checked)
-                //    {
-                //        chklbOutput.SetItemChecked(chklbOutput.Items.IndexOf(i), true);
-                //        break;
-                //    }
-                //}
             };
         }
 
@@ -60,13 +52,6 @@ namespace PKDSS.MonoApp
                         {
                             data.Status = chklbOutput.GetItemCheckState(chklbOutput.Items.IndexOf(item));
                         }
-                        //OutputData data1 = new OutputData
-                        //{
-                        //    Initial = chklbOutput.GetItemText(item),
-                        //    Status = chklbOutput.GetItemCheckState(chklbOutput.Items.IndexOf(item))
-                        //};
-
-                        //Datas.Add(data1);
                     }
                 }
 
@@ -74,8 +59,6 @@ namespace PKDSS.MonoApp
                 string AppPath = Application.StartupPath;
                 File.WriteAllText(AppPath + "\\outputconfig.json", jsonData);
 
-                //var EntryFrm = new EntryFrm();
-                //EntryFrm.ReadConfig();
                 this.Close();
                 Application.Restart();
             }

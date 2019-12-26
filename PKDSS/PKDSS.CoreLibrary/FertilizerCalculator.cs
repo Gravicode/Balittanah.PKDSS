@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
+using System.Configuration;
 using System.Text.RegularExpressions;
 
 namespace PKDSS.CoreLibrary
@@ -67,7 +68,20 @@ namespace PKDSS.CoreLibrary
             if (selConstant != null && selConstant.Count() > 0)
             {
                 var Node = selConstant.SingleOrDefault();
+                
                 return (1 - Node.C1 * Unsur) / Node.C2;
+                //if (Pupuk == "Urea")
+                //{
+                //    return ((1 - Node.C1 * Unsur) / Node.C2) * 100 /45;
+                //}
+                //else if (Pupuk == "SP36")
+                //{
+                //    return ((1 - Node.C1 * Unsur) / Node.C2) * 100 / 36;
+                //}
+                //else if (Pupuk == "KCL")
+                //{
+                //    return ((1 - Node.C1 * Unsur) / Node.C2) * 100 / 60;
+                //}
             }
             return -1;
         }

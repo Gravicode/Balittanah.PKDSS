@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.datahub";
+option java_outer_classname = "DataHubProto";
+option objc_class_prefix = "HLW";
+
+package datahub;
+
+// The greeting service definition.
+service MessageHub {
+  // do scanning
+  rpc DoScan (DataRequest) returns (DataReply) {}
+  // check if device is ready
+  rpc IsDeviceReady (DataRequest) returns (DataReply) {}
+  // do background
+  rpc DoBackground (DataRequest) returns (DataReply) {}
+}
+
+// The request method
+message DataRequest {
+  string parameter = 1;
+}
+
+// The response from method
+message DataReply {
+  string result = 1;
+  bool status = 2;
+}
