@@ -38,7 +38,7 @@ namespace PKDSS.MonoApp.Helper
         public async Task<bool> PushDataToServer(SensorData data)
         {
             if (!IsInternetAvailable()) return false;
-            var resp = await client.PostAsync(AppConstants.AddItem, new StringContent(JsonConvert.SerializeObject(new List<SensorData>() { data }), Encoding.UTF8, "application/json"));
+            var resp = await client.PostAsync(AppConstants.AddItemUrl, new StringContent(JsonConvert.SerializeObject(new List<SensorData>() { data }), Encoding.UTF8, "application/json"));
             if (resp.IsSuccessStatusCode)
             {
                 return true;

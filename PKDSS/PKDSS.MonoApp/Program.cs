@@ -25,7 +25,7 @@ namespace PKDSS.MonoApp
 
             Logs.WriteAppLog("Application run....");
             AppConstants.DeviceID = ConfigurationManager.AppSettings["DeviceID"];
-            AppConstants.ServiceUrl = ConfigurationManager.AppSettings["ServiceUrl"];
+            AppConstants.AddItemUrl = ConfigurationManager.AppSettings["AddServiceUrl"];
 
             var main_form = new EntryFrm();
             main_form.Show();
