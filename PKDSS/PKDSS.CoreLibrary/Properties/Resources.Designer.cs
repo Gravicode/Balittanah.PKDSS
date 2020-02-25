@@ -105,6 +105,48 @@ namespace PKDSS.CoreLibrary.Properties {
         /// <summary>
         ///   Looks up a localized string similar to [
         ///  {
+        ///    &quot;No&quot;: 1,
+        ///    &quot;Tanaman&quot;: &quot;Padi&quot;,
+        ///    &quot;C1&quot;: 3.5477,
+        ///    &quot;C2&quot;: 0.004433,
+        ///    &quot;Pupuk&quot;: &quot;Urea&quot;
+        ///  },
+        ///  {
+        ///    &quot;No&quot;: 2,
+        ///    &quot;Tanaman&quot;: &quot;Padi&quot;,
+        ///    &quot;C1&quot;: 0.024152,
+        ///    &quot;C2&quot;: 0.00667,
+        ///    &quot;Pupuk&quot;: &quot;SP36&quot;
+        ///  },
+        ///  {
+        ///    &quot;No&quot;: 3,
+        ///    &quot;Tanaman&quot;: &quot;Padi&quot;,
+        ///    &quot;C1&quot;: 0.059912,
+        ///    &quot;C2&quot;: 0.004799,
+        ///    &quot;Pupuk&quot;: &quot;KCL&quot;
+        ///  },
+        ///  {
+        ///    &quot;No&quot;: 4,
+        ///    &quot;Tanaman&quot;: &quot;Jagung&quot;,
+        ///    &quot;C1&quot;: 1.9615,
+        ///    &quot;C2&quot;: 0.00342,
+        ///    &quot;Pupuk&quot;: &quot;Urea&quot;
+        ///  },
+        ///  {
+        ///    &quot;No&quot;: 5,
+        ///    &quot;Tanaman&quot;: &quot;Jagung&quot;,
+        ///    &quot;C1&quot;: 0.01580,
+        ///  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string DataRekomendasi {
+            get {
+                return ResourceManager.GetString("DataRekomendasi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [
+        ///  {
         ///    &quot;Kabupaten&quot;: &quot;Kabupaten Aceh Barat Daya&quot;,
         ///    &quot;Propinsi&quot;: &quot;Aceh&quot;,
         ///    &quot;Pulau&quot;: &quot;Sumatera&quot;,

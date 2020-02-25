@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.TimerFile = new System.Windows.Forms.Timer(this.components);
             this.tabScanning = new System.Windows.Forms.TabPage();
+            this.chartWave = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelButton = new System.Windows.Forms.Panel();
             this.btnReset = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnBackground = new System.Windows.Forms.Button();
@@ -56,113 +57,113 @@
             this.pnlUser = new System.Windows.Forms.Panel();
             this.WBC = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel59 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtWBC = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtWBC = new Bunifu.Framework.BunifuCustomTextbox();
             this.SILT = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel38 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtSILT = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtSILT = new Bunifu.Framework.BunifuCustomTextbox();
             this.SAND = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel40 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtSAND = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtSAND = new Bunifu.Framework.BunifuCustomTextbox();
             this.CLAY = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel39 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtCLAY = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtCLAY = new Bunifu.Framework.BunifuCustomTextbox();
             this.KB_adjusted = new System.Windows.Forms.Panel();
-            this.TxtKB_adjusted = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtKB_adjusted = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel36 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.KTK = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel47 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtKTK = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtKTK = new Bunifu.Framework.BunifuCustomTextbox();
             this.Na = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel34 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtNa = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtNa = new Bunifu.Framework.BunifuCustomTextbox();
             this.K = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel48 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtK = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtK = new Bunifu.Framework.BunifuCustomTextbox();
             this.Mg = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel44 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtMg = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtMg = new Bunifu.Framework.BunifuCustomTextbox();
             this.Ca = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel46 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtCa = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtCa = new Bunifu.Framework.BunifuCustomTextbox();
             this.Bray1_P2O5 = new System.Windows.Forms.Panel();
-            this.TxtBray1_P2O5 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtBray1_P2O5 = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel45 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.Olsen_P2O5 = new System.Windows.Forms.Panel();
-            this.TxtOlsen_P2O5 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtOlsen_P2O5 = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel43 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.HCl25_K2O = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel52 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtHCl25_K2O = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtHCl25_K2O = new Bunifu.Framework.BunifuCustomTextbox();
             this.HCl25_P2O5 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel42 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtHCl25_P2O5 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtHCl25_P2O5 = new Bunifu.Framework.BunifuCustomTextbox();
             this.KJELDAHL_N = new System.Windows.Forms.Panel();
-            this.TxtKJELDAHL_N = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtKJELDAHL_N = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel49 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.PH_KCL = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel28 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtPH_KCL = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtPH_KCL = new Bunifu.Framework.BunifuCustomTextbox();
             this.PH_H2O = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel53 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtPH_H2O = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TxtPH_H2O = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnConfigUser = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomLabel41 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabInfoLokasi = new System.Windows.Forms.TabPage();
             this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtBalitTanah = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtBalitTanah = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel18 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtSample = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtSample = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel17 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtHorizon = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtHorizon = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel16 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cbKabupaten = new System.Windows.Forms.ComboBox();
             this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cbProvinsi = new System.Windows.Forms.ComboBox();
             this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtY = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtY = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lbInisial = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.lbInisial = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtX = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtX = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtKecamatan = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtKecamatan = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtPengirim = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtPengirim = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtDesa = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtDesa = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtNoTanah = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtNoTanah = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtTahun = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtTahun = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtMappingUnit = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtMappingUnit = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtNoObs = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtNoObs = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtNoForm = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtNoForm = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabRekomendasiPupuk = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtUrea = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtUrea = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel20 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtSP36 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtSP36 = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel19 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtKCL = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtKCL = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel60 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel62 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel61 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pnlNpk15 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel66 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtNpk15 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtNpk15 = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel64 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pnlUrea15 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel65 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtUrea15 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtUrea15 = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel63 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel68 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel67 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -189,8 +190,9 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.chartWave = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.BtnSync = new System.Windows.Forms.Button();
             this.tabScanning.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartWave)).BeginInit();
             this.panelButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnReset)).BeginInit();
             this.pnlSetting.SuspendLayout();
@@ -239,7 +241,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnResetFilter)).BeginInit();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartWave)).BeginInit();
             this.SuspendLayout();
             // 
             // TimerFile
@@ -259,6 +260,25 @@
             this.tabScanning.Size = new System.Drawing.Size(1016, 525);
             this.tabScanning.TabIndex = 3;
             this.tabScanning.Text = "Scanning";
+            // 
+            // chartWave
+            // 
+            this.chartWave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.Name = "ChartArea1";
+            this.chartWave.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartWave.Legends.Add(legend1);
+            this.chartWave.Location = new System.Drawing.Point(3, 3);
+            this.chartWave.Name = "chartWave";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartWave.Series.Add(series1);
+            this.chartWave.Size = new System.Drawing.Size(1010, 215);
+            this.chartWave.TabIndex = 0;
+            this.chartWave.Text = "WaveChart";
             // 
             // panelButton
             // 
@@ -1551,6 +1571,7 @@
             // 
             // tabRekomendasiPupuk
             // 
+            this.tabRekomendasiPupuk.Controls.Add(this.BtnSync);
             this.tabRekomendasiPupuk.Controls.Add(this.panel8);
             this.tabRekomendasiPupuk.Controls.Add(this.pnlNpk15);
             this.tabRekomendasiPupuk.Controls.Add(this.pnlUrea15);
@@ -1568,6 +1589,7 @@
             this.tabRekomendasiPupuk.TabIndex = 6;
             this.tabRekomendasiPupuk.Text = "Rekomendasi Pupuk";
             this.tabRekomendasiPupuk.UseVisualStyleBackColor = true;
+            this.tabRekomendasiPupuk.Click += new System.EventHandler(this.tabRekomendasiPupuk_Click);
             // 
             // panel8
             // 
@@ -2034,24 +2056,14 @@
             this.btnExit.Zoom = 10;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // chartWave
+            // BtnSync
             // 
-            this.chartWave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea4.Name = "ChartArea1";
-            this.chartWave.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartWave.Legends.Add(legend4);
-            this.chartWave.Location = new System.Drawing.Point(3, 3);
-            this.chartWave.Name = "chartWave";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartWave.Series.Add(series4);
-            this.chartWave.Size = new System.Drawing.Size(1010, 215);
-            this.chartWave.TabIndex = 0;
-            this.chartWave.Text = "WaveChart";
+            this.BtnSync.Location = new System.Drawing.Point(10, 338);
+            this.BtnSync.Name = "BtnSync";
+            this.BtnSync.Size = new System.Drawing.Size(196, 41);
+            this.BtnSync.TabIndex = 120;
+            this.BtnSync.Text = "&Sync Data ke Server";
+            this.BtnSync.UseVisualStyleBackColor = true;
             // 
             // EntryFrm
             // 
@@ -2070,6 +2082,7 @@
             this.Text = "Soil Sensing v0.1";
             this.tabScanning.ResumeLayout(false);
             this.tabScanning.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartWave)).EndInit();
             this.panelButton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnReset)).EndInit();
             this.pnlSetting.ResumeLayout(false);
@@ -2144,7 +2157,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnResetFilter)).EndInit();
             this.pnlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartWave)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2169,44 +2181,44 @@
         private System.Windows.Forms.TabPage tabInfoLokasi;
         private System.Windows.Forms.TabPage tabRekomendasiPupuk;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtY;
+        private Bunifu.Framework.BunifuCustomTextbox txtY;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox lbInisial;
+        private Bunifu.Framework.BunifuCustomTextbox lbInisial;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtX;
+        private Bunifu.Framework.BunifuCustomTextbox txtX;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtKecamatan;
+        private Bunifu.Framework.BunifuCustomTextbox txtKecamatan;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtPengirim;
+        private Bunifu.Framework.BunifuCustomTextbox txtPengirim;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtDesa;
+        private Bunifu.Framework.BunifuCustomTextbox txtDesa;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtNoTanah;
+        private Bunifu.Framework.BunifuCustomTextbox txtNoTanah;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtTahun;
+        private Bunifu.Framework.BunifuCustomTextbox txtTahun;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtMappingUnit;
+        private Bunifu.Framework.BunifuCustomTextbox txtMappingUnit;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtNoObs;
+        private Bunifu.Framework.BunifuCustomTextbox txtNoObs;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtNoForm;
+        private Bunifu.Framework.BunifuCustomTextbox txtNoForm;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtBalitTanah;
+        private Bunifu.Framework.BunifuCustomTextbox txtBalitTanah;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel18;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtSample;
+        private Bunifu.Framework.BunifuCustomTextbox txtSample;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel17;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtHorizon;
+        private Bunifu.Framework.BunifuCustomTextbox txtHorizon;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel16;
         private System.Windows.Forms.ComboBox cbKabupaten;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel15;
         private System.Windows.Forms.ComboBox cbProvinsi;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel14;
         private System.Windows.Forms.Button btnBackground;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtKCL;
+        private Bunifu.Framework.BunifuCustomTextbox txtKCL;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel19;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtSP36;
+        private Bunifu.Framework.BunifuCustomTextbox txtSP36;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel20;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtUrea;
+        private Bunifu.Framework.BunifuCustomTextbox txtUrea;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel21;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel22;
@@ -2219,35 +2231,35 @@
         private System.Windows.Forms.TabPage tabDataUnsur;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private Bunifu.Framework.UI.BunifuImageButton btnConfigUser;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtPH_KCL;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtNa;
+        private Bunifu.Framework.BunifuCustomTextbox TxtPH_KCL;
+        private Bunifu.Framework.BunifuCustomTextbox TxtNa;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel34;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtKB_adjusted;
+        private Bunifu.Framework.BunifuCustomTextbox TxtKB_adjusted;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel36;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtSILT;
+        private Bunifu.Framework.BunifuCustomTextbox TxtSILT;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel38;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtCLAY;
+        private Bunifu.Framework.BunifuCustomTextbox TxtCLAY;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel39;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtSAND;
+        private Bunifu.Framework.BunifuCustomTextbox TxtSAND;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel40;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel41;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtHCl25_P2O5;
+        private Bunifu.Framework.BunifuCustomTextbox TxtHCl25_P2O5;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel42;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtOlsen_P2O5;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtMg;
+        private Bunifu.Framework.BunifuCustomTextbox TxtOlsen_P2O5;
+        private Bunifu.Framework.BunifuCustomTextbox TxtMg;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel44;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtBray1_P2O5;
+        private Bunifu.Framework.BunifuCustomTextbox TxtBray1_P2O5;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel45;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtCa;
+        private Bunifu.Framework.BunifuCustomTextbox TxtCa;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel46;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtKTK;
+        private Bunifu.Framework.BunifuCustomTextbox TxtKTK;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel47;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtK;
+        private Bunifu.Framework.BunifuCustomTextbox TxtK;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel48;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtKJELDAHL_N;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtHCl25_K2O;
+        private Bunifu.Framework.BunifuCustomTextbox TxtKJELDAHL_N;
+        private Bunifu.Framework.BunifuCustomTextbox TxtHCl25_K2O;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel52;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtPH_H2O;
+        private Bunifu.Framework.BunifuCustomTextbox TxtPH_H2O;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel53;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel pnlMain;
@@ -2289,7 +2301,7 @@
         private System.Windows.Forms.Panel CLAY;
         private System.Windows.Forms.Panel WBC;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel59;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox TxtWBC;
+        private Bunifu.Framework.BunifuCustomTextbox TxtWBC;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel62;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel61;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel60;
@@ -2298,9 +2310,9 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel67;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel63;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel64;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtUrea15;
+        private Bunifu.Framework.BunifuCustomTextbox txtUrea15;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel65;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtNpk15;
+        private Bunifu.Framework.BunifuCustomTextbox txtNpk15;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel66;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel68;
@@ -2309,5 +2321,6 @@
         private System.Windows.Forms.Panel pnlUrea15;
         public System.Windows.Forms.Panel pnlUser;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartWave;
+        private System.Windows.Forms.Button BtnSync;
     }
 }

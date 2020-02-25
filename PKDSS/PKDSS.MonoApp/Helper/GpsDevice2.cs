@@ -8,6 +8,13 @@ namespace PKDSS.MonoApp.Helper
 {
     public class GpsDevice2
     {
+        public delegate void PositionUpdateHandler(GpsPoint data);
+        public event PositionUpdateHandler PositionUpdate;
+
+        private void UpdatePosition(GpsPoint data)
+        {
+            PositionUpdate?.Invoke(data);
+        }
         public GpsPoint CurrentLocation { get; set; }
         public GpsDevice2(string Port)
         {
@@ -53,7 +60,10 @@ namespace PKDSS.MonoApp.Helper
                 CurrentLocation.BearingInDegrees = msg.Course;
                 Console.WriteLine("-gprmc-");
                 Console.WriteLine(CurrentLocation);
-               
+                if(!double.IsNaN(CurrentLocation.Latitude) && !double.IsNaN(CurrentLocation.Longitude))
+                {
+                    UpdatePosition(CurrentLocation);
+                }
                 
             }
             else if (args.Message is NmeaParser.Nmea.Gps.Gpgga)
@@ -64,7 +74,10 @@ namespace PKDSS.MonoApp.Helper
                 CurrentLocation.Timestamp = DateTime.Now;
                 Console.WriteLine("-Gpgga-");
                 Console.WriteLine(CurrentLocation);
-               
+                if (!double.IsNaN(CurrentLocation.Latitude) && !double.IsNaN(CurrentLocation.Longitude))
+                {
+                    UpdatePosition(CurrentLocation);
+                }
                 //CurrentLocation.SpeedInKnots = 0;
                 //CurrentLocation.BearingInDegrees = 0;
             }
@@ -84,7 +97,10 @@ namespace PKDSS.MonoApp.Helper
                 CurrentLocation.Longitude = msg.Longitude;
                 Console.WriteLine("-Gpgll-");
                 Console.WriteLine(CurrentLocation);
-                
+                if (!double.IsNaN(CurrentLocation.Latitude) && !double.IsNaN(CurrentLocation.Longitude))
+                {
+                    UpdatePosition(CurrentLocation);
+                }
 
             }
             else if (args.Message is NmeaParser.Nmea.Gps.Garmin.Pgrme)

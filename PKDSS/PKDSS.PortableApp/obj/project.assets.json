@@ -4765,7 +4765,7 @@
   },
   "libraries": {
     "ColorCode.Core/2.0.3": {
-      "sha512": "sJMrb2EqhU3hcbE1zVQE7wc02farvYn33h50EpmRgDvsLJfa41zfdHpfZq+tGXT6NpuMfxB+Cm6eUAB1kJjVew==",
+      "sha512": "v/tmKmXILE0RnG4R8baVVnEajmwnSf6nJacUgAPOCQG6nCksQ5MFqWhaYB+ildngjuAC73mRp/RXrDFUrxP+sg==",
       "type": "package",
       "path": "colorcode.core/2.0.3",
       "files": [
@@ -4778,7 +4778,7 @@
       ]
     },
     "ColorCode.UWP/2.0.3": {
-      "sha512": "k6vK3lPnBplvGM2/scylTsSepv37H/vAkfT310j9kDrVDOolCNxW9B3PjzzHf1K6BulzwTUwldegJ9+HE1M6OQ==",
+      "sha512": "J6wUjyPsD5xzmTKdClrQE3+K58PFFWHsYuvuO1y6Esnp1Yku036s5N8gU7/n5atZREGiwgh9VrZJ5MzvzksyrA==",
       "type": "package",
       "path": "colorcode.uwp/2.0.3",
       "files": [
@@ -4792,7 +4792,7 @@
       ]
     },
     "GHIElectronics.UWP.LowLevelDrivers/0.1.0": {
-      "sha512": "EZtpwCGwF6lh91h5hRaSofybsGMCiQjoan0bdiBF+Ed5gGk7uIssiUzt5Tn764b5cA+ZbmqWT/NlfZEND/dC8w==",
+      "sha512": "h3nkKBts84CDzZpUPzTQx3mu9uxr+ZzoGgOUXV3c67lr8t5GEIKoFqOyZQc/tltr7YRhH+KETHr9dXHW3+ulEw==",
       "type": "package",
       "path": "ghielectronics.uwp.lowleveldrivers/0.1.0",
       "files": [
@@ -4805,7 +4805,7 @@
       ]
     },
     "GHIElectronics.UWP.Shields.FEZHAT/0.1.0": {
-      "sha512": "fFUb1Yyrt5Nqo+ighDy0k05LQAizdD0jQu23J565dRDNchcJYDX2dfaWpne6vIY5YDMqrU4EqYveoFYhGd97jw==",
+      "sha512": "VvGgt1lOvK0+eh3EnELPTAGwRYtLGR1QSSrFH6eA095chVQJ3nvS2p3ITP0fzIgyDBUoW/dFesVWZcswEq9G8A==",
       "type": "package",
       "path": "ghielectronics.uwp.shields.fezhat/0.1.0",
       "files": [
@@ -4818,7 +4818,7 @@
       ]
     },
     "Microsoft.Identity.Client/1.1.0-preview": {
-      "sha512": "1w91kS1YkwmEQGU7NfhX76S0gwga+bTPkS3rileKUDVUyk+pug0DGdRu2gU/ij5trbNPaGhbQtmX8Z4Q6vGvug==",
+      "sha512": "LM/xTx2B87kzOyvoHmMAJG0wPjEIRadvQ+hLj200/eKsQvqecaxh1R4fwWH711zObPxzr1iLzdDWoEYi46uqpg==",
       "type": "package",
       "path": "microsoft.identity.client/1.1.0-preview",
       "files": [
@@ -4842,7 +4842,7 @@
       ]
     },
     "Microsoft.Net.Native.Compiler/2.0.3": {
-      "sha512": "VAP+Jl6n697Dm3ulQyw/eYzhbUrx+Wg4iLMIRlnSrfxh8we9IM8Ke3YU7n3osRQ/C6TICfsdbG97MPTHMG/AYQ==",
+      "sha512": "EekTfKp3VRWglAN6MLVInKCt7Mf6tDhhilCkpYwpDTE7fey9dM+eJc8xr6TeKRHq+0hWJ6B4fFuChF2a75uCPQ==",
       "type": "package",
       "path": "microsoft.net.native.compiler/2.0.3",
       "hasTools": true,
@@ -5735,7 +5735,7 @@
       ]
     },
     "Microsoft.Net.Native.SharedLibrary-arm/2.0.0": {
-      "sha512": "Ggi72EHpPu8FiVE5oL0ZNSrC8qbFfVu9Dx1zs3H+kmMdRvO96FH08cKRh21nBZSXbu18TWPzeFFFuDZ2jv/KPQ==",
+      "sha512": "9ghAlkZXl3GtgXlSEBQuP4ktYQnUDoSeQ/932iIHEA83vEIbBh+DPg6AHeMWaqZemeBrZ58P2oysVr7VOtrHOQ==",
       "type": "package",
       "path": "microsoft.net.native.sharedlibrary-arm/2.0.0",
       "hasTools": true,
@@ -6089,7 +6089,7 @@
       ]
     },
     "Microsoft.Net.Native.SharedLibrary-x64/2.0.0": {
-      "sha512": "RH7WZcgUdoxVB9Y+uZqN+faQaw4/0JojakdTEQc1mvHCYTFzalaLr6fRkvMLt72LGG5HHR4uTbOihVoUD83bpA==",
+      "sha512": "Qlk13ElLq3RHO54j/4P2l0pr40Hfm3tkrYCoYZpdNWsGSt7EU8L+XZFuiDkmNw5RO7sRkq3dvZfVCg9mppBcAA==",
       "type": "package",
       "path": "microsoft.net.native.sharedlibrary-x64/2.0.0",
       "hasTools": true,
@@ -6443,7 +6443,7 @@
       ]
     },
     "Microsoft.Net.Native.SharedLibrary-x86/2.0.0": {
-      "sha512": "BRewn3Yqj/D9iZJTe94KNBPDKD2QYOsDLp7mJ/jf2Cu0Yk+WvHV3kdbytOQvxk9WLiYbv4GopYBHSi/au3AMgg==",
+      "sha512": "LExSkW6XHXyi4iIVhcGVN5sHmxXm8COAFGRhBAjhMdd75UD0Jbe9xtRpnTSfUdGmkQiLcydEW5uAw68Ye30RlQ==",
       "type": "package",
       "path": "microsoft.net.native.sharedlibrary-x86/2.0.0",
       "hasTools": true,
@@ -6797,7 +6797,7 @@
       ]
     },
     "Microsoft.Net.UWPCoreRuntimeSdk/2.1.2": {
-      "sha512": "AxVKlbHOIQbgHE7bbxo++qrXao3f3APPBXch/E0RYETmhmTlxSSssXcowGk3dch8K6VUpd77by87RysEogT6JQ==",
+      "sha512": "Lgwh58rl1g15JBcRYlEZjqNrfyOxf/RCZoxiC4x9A3ssXNOUdLrQiaWEyJYfxNQppKL/qE3M2CDg67W38Fz2Yw==",
       "type": "package",
       "path": "microsoft.net.uwpcoreruntimesdk/2.1.2",
       "hasTools": true,
@@ -6816,7 +6816,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.0.0": {
-      "sha512": "CCf4NjmDOoise7FAij2VPuHIgKKsu696vkTwhOkPVQfLsTmB2WLFfQ4yeO5Udtk8FD636UBMx6Y9eovzJKT76A==",
+      "sha512": "VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
       "type": "package",
       "path": "microsoft.netcore.platforms/2.0.0",
       "files": [
@@ -6833,7 +6833,7 @@
       ]
     },
     "Microsoft.NETCore.UniversalWindowsPlatform/6.0.8": {
-      "sha512": "U2qEvk7WkQjltzEhsbXDJQ9jGWHHj36j+2knDjUF6rorwgKksC2Kmj3P8YW0SPaijJgjfPAJ1T4PrPZ0m+Vnog==",
+      "sha512": "zGyKY3y4bLAFJPIaUUl+JBysmo++bRHT7zB93dmUJNs8U1Gy1D95grF1fPydr5ipPveE3PblYpQio98LQZR9lg==",
       "type": "package",
       "path": "microsoft.netcore.universalwindowsplatform/6.0.8",
       "files": [
@@ -7122,7 +7122,7 @@
       ]
     },
     "Microsoft.Toolkit/2.2.0": {
-      "sha512": "64r3+5xojDtg8JKjLifnrRtdBl6NsvlmOWPAMnkpbfNoE/nNQVEFhQfuDIgORrftDxdaewtCIikUWzxucVbpZw==",
+      "sha512": "zjjRQMvfE2To9anXW0/G3foUvoEJfQJqSlB42QyoXg2naTaU9Md+gWBqBuqOZHJ3b83IBtiiua7aZJT1hIv6lw==",
       "type": "package",
       "path": "microsoft.toolkit/2.2.0",
       "files": [
@@ -7135,7 +7135,7 @@
       ]
     },
     "Microsoft.Toolkit.Parsers/2.2.0": {
-      "sha512": "X5ZdAorjSZuNkMDqOWjF0xi1WW92Q7vwU9vl0i3qVseLwgkSBdXlzBC/8rB4b72fvjG1Eu31PRuV/wNWN91y5g==",
+      "sha512": "5vRMAik3vn2tiQhnv3l+wHYiwx0636tzgEiWGrmPeY1KtcsdHENIERkMUX5ZZSJ7+m7sCIhqHsy6kiz9JA+RBg==",
       "type": "package",
       "path": "microsoft.toolkit.parsers/2.2.0",
       "files": [
@@ -7148,7 +7148,7 @@
       ]
     },
     "Microsoft.Toolkit.Uwp/2.2.0": {
-      "sha512": "kMTkwC9yDyfSA6kerrBY17INsGM9BpcAyAJTlYADNyaTPoArhchkISrJXyeujRXzV+STOI++qor4hMQwivMzUg==",
+      "sha512": "F6XSDNjpJJGxAtvgsqkUqTFi0cH7rlXx/bO6KRLEpKNfKhauncnb4LqAcR3WxxJm/bHpKMtyIE7VeqxgCmj22A==",
       "type": "package",
       "path": "microsoft.toolkit.uwp/2.2.0",
       "files": [
@@ -7162,7 +7162,7 @@
       ]
     },
     "Microsoft.Toolkit.Uwp.UI/2.2.0": {
-      "sha512": "22Rk78jHGpt7aoT7n4ww/8G25Eq5lUaQ/FMxdU2nXHBSvTWfVXhGeaIf1996CCrmWCS5k5rQMOxFgkTiuUgmVA==",
+      "sha512": "HIEIb5wwxLblCHcuazwkp5kn3nmqgdLMXv/P2WCKnTPxBQDWkYGWDTJx7bEXsUeBdhLKoqm36mZdnjF0jBGamg==",
       "type": "package",
       "path": "microsoft.toolkit.uwp.ui/2.2.0",
       "files": [
@@ -7179,7 +7179,7 @@
       ]
     },
     "Microsoft.Toolkit.Uwp.UI.Animations/2.2.0": {
-      "sha512": "rPcfXMwAJKaCHmYi429c2cArBSY4fBoHvXtsMiSR30f52uel2Fg7yhxFX0iZILYTaDEJ2Jue0GwWW4rufwxTVQ==",
+      "sha512": "5Wr6Tslx4a6Acp2OvdC/NKP0i7zJM5Nrfx+YhUmeGAkyPWx3NjJXSwmqmIz5DxM6jFcnjAIUxm6JxGpDeF6nig==",
       "type": "package",
       "path": "microsoft.toolkit.uwp.ui.animations/2.2.0",
       "files": [
@@ -7196,7 +7196,7 @@
       ]
     },
     "Microsoft.Toolkit.Uwp.UI.Controls/2.2.0": {
-      "sha512": "gHSe07DDU3XSpWPCW/Zo1AJyjMFv9wX+jMfMZ+DlqoE8GS4/XGNIPeRqMk/LPbpzbhgjS8Fs6h51NTHmUnPhLA==",
+      "sha512": "S+AnX7dWZ+w+omHUnWwmcGTwR/2jBDDAUX9H5shQS1d54dFxkRkrcJC0AHM0l1KJe7Bq3k8lObdxitwGz7+Meg==",
       "type": "package",
       "path": "microsoft.toolkit.uwp.ui.controls/2.2.0",
       "hasTools": true,
@@ -7253,7 +7253,7 @@
       ]
     },
     "Microsoft.Xaml.Behaviors.Uwp.Managed/1.1.0": {
-      "sha512": "ICjmV6N8I9u4p2VkJVK3n5e7mFlZtKt2peLElgPLzehupdDDtwzb+GqKUfnaCr2qdI4cdpNEr1uAb+8cPDawTQ==",
+      "sha512": "Qxe4fblviCn2oFf7C4ahCsZHC0GzRa7Tz5z+L1QUHUljY3Oj/TMoT1O0jJ+ru6RcJ9qS8yFw/jIvstg2dxxpGA==",
       "type": "package",
       "path": "microsoft.xaml.behaviors.uwp.managed/1.1.0",
       "files": [
@@ -7272,7 +7272,7 @@
       ]
     },
     "NETStandard.Library/2.0.1": {
-      "sha512": "dYgVYk+xpF1HsQCQwfXb7JPt+lovQvTsvDUI5wKbxB2A31xbzNLj6u7bz9xyd/rE50OopkdzhCh4IzJzH1fkpw==",
+      "sha512": "oA6nwv9MhEKYvLpjZ0ggSpb1g4CQViDVQjLUcDWg598jtvJbpfeP2reqwI1GLW2TbxC/Ml7xL6BBR1HmKPXlTg==",
       "type": "package",
       "path": "netstandard.library/2.0.1",
       "files": [
@@ -7430,7 +7430,7 @@
       ]
     },
     "Robmikh.CompositionSurfaceFactory/0.7.3": {
-      "sha512": "CbiqNCWK0tUOJSmLL+TRMToaHweUJcFv02bsPfO1xzL4b0ZUbl3Ah5PlgOSQFFiZcXaD9OwRjkCq3XNRSboUNg==",
+      "sha512": "Q4wxUsGn6WScIrm2mdefOgKY26HOeCVashhHP17+V4y9vP/rPaAnM4P+ybbXvCfJ0EeLj1QU0FQO/aMLfxY9JA==",
       "type": "package",
       "path": "robmikh.compositionsurfacefactory/0.7.3",
       "files": [
@@ -7454,7 +7454,7 @@
       ]
     },
     "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.0.8": {
-      "sha512": "ibjUV1DEtckIKCUsvVsaQarz+GQYUDFrYgAcHvHN+PeFI+bhwM6t/ZinfozRAhvyeIculWIC2sr+2aDWZXSYcg==",
+      "sha512": "mCcoolv8UTrTcmRktwjlPk4N+kjcoJDFEI6cH/kT72zv31Mf5HH7/H99q6lNwSF1dXZAeZbzBXJcDOKFMJoKTw==",
       "type": "package",
       "path": "runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform/6.0.8",
       "files": [
@@ -7633,7 +7633,7 @@
       ]
     },
     "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.1.2": {
-      "sha512": "IasONRto6AAl6LdG/usV/CsC+gCvl3+oan4PmRiwhbtQnr8SOzN4L7OP3e78OjbcU99bzUoyWkYBD3C3WOOwag==",
+      "sha512": "J4XdbbcvE2iUCsup3rwOsZYaohWLIuP1IW/etf0bwQ9vWCqccuHO3yAWiaWZmWn7nn53PEJ9lZTfNNAiIm/bBw==",
       "type": "package",
       "path": "runtime.win10-arm.microsoft.net.uwpcoreruntimesdk/2.1.2",
       "hasTools": true,
@@ -7653,7 +7653,7 @@
       ]
     },
     "runtime.win10-arm.Microsoft.NETCore.UniversalWindowsPlatform/6.0.8": {
-      "sha512": "EhTEjRKidplw6+aNvqQVZpmjJ+RMyRbAXKIKCmxH7y/erpKTtwS7h3bjCOHHNxQfy5MPv6DGl1NnnBqJXfaW/A==",
+      "sha512": "tbmLG9GnSm0LWKkzvzq6Ppw85Lt4EE+aRDSGoYrbbiPTkzK9fzcPOv5YqzL86WKzxWi9E9pZvVytM1uvd3bYXg==",
       "type": "package",
       "path": "runtime.win10-arm.microsoft.netcore.universalwindowsplatform/6.0.8",
       "files": [
@@ -7831,7 +7831,7 @@
       ]
     },
     "runtime.win10-x64-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.0.8": {
-      "sha512": "LlCoJxISLN3rtg47uAX1uSagFXfjWb6g8g6DZ3kbJ0dQeEX8zCucv1jKiqHy3rQoBPUUYvGYZkbC+7GO91LUvQ==",
+      "sha512": "QhGAy+4NIyxehEg0t0Ps+TvLDj9EHZxwqK+St3q4ggMhGCKXsv7B1g1i9OjC3GGLWW1ShEaSGJMTXf05cDO8Cg==",
       "type": "package",
       "path": "runtime.win10-x64-aot.microsoft.netcore.universalwindowsplatform/6.0.8",
       "files": [
@@ -8010,7 +8010,7 @@
       ]
     },
     "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.1.2": {
-      "sha512": "O3ykUbGKlY3bdapcCEyUCRH/dR2ylrtnLnVOpzv33PPtZvorKWcrB8DNuaBmfAzTCNKMSSbtR0/3yYysUpXbFg==",
+      "sha512": "Mj9j4vg9yIdvppce0eC8+EIhLmv3Uv3CNKi2v84Fl5zeSs26w9l2svE2LTixB5OTE/pj2p7cW2lUMHeWWm1tgg==",
       "type": "package",
       "path": "runtime.win10-x64.microsoft.net.uwpcoreruntimesdk/2.1.2",
       "hasTools": true,
@@ -8030,7 +8030,7 @@
       ]
     },
     "runtime.win10-x64.Microsoft.NETCore.UniversalWindowsPlatform/6.0.8": {
-      "sha512": "7OlntYOA9CwfVME1hfT6JZkuz7YMK3zyzVeiYOlBlqYOSpho2SMM6yRkfsdVp70lzBFZpJrk3/1ZJa6+/ERAoA==",
+      "sha512": "gDKOajerneiwUinQpoVy0dEzX4QRB/oWO37vmfwTac4bSkAsrfdhA5gEeMR4y2JN0OHABLP8zjm1bOiHp4XnFQ==",
       "type": "package",
       "path": "runtime.win10-x64.microsoft.netcore.universalwindowsplatform/6.0.8",
       "files": [
@@ -8208,7 +8208,7 @@
       ]
     },
     "runtime.win10-x86-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.0.8": {
-      "sha512": "r/r7fJBFFnVWqF/ovOCt0+k0EETZOYHs4foaajMxA73Dsfmz38b6iQdCPsyFgPYSi9TF4SayrQG9A+AfUt5jBA==",
+      "sha512": "qlJZm6eLTkgsb4TjIlkeCU2DkEAtJw1l0X/YzsMwTmx5yz63gSc1UBp45IrPu699kG0AY3TuUJ6fXeWk9x9iIg==",
       "type": "package",
       "path": "runtime.win10-x86-aot.microsoft.netcore.universalwindowsplatform/6.0.8",
       "files": [
@@ -8387,7 +8387,7 @@
       ]
     },
     "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.1.2": {
-      "sha512": "7FFnETsDe+tu8JllHnJ+eGAqGG+8JSneCPKfwilk1gwAngzCw3+5g097LyomIjcHhCYMo3wjHFDP5sI2gvXrQA==",
+      "sha512": "MeYqB6D7vA9eRb2fDjN9LWTLAY+m5Ocg4SBoEtG1oLPXgfuJcUNUb+etdsid/V3j7jgr4ito60Wr8U03mmJGuA==",
       "type": "package",
       "path": "runtime.win10-x86.microsoft.net.uwpcoreruntimesdk/2.1.2",
       "hasTools": true,
@@ -8407,7 +8407,7 @@
       ]
     },
     "runtime.win10-x86.Microsoft.NETCore.UniversalWindowsPlatform/6.0.8": {
-      "sha512": "Bb+LSr3WI9vr/LwHaRdMnQBqkTLSY6v8f15SqKLX9/SZ3R4LZWtQkqVMQUXftmNApwjAnGEeFVxxXVw/LKouWw==",
+      "sha512": "CHjI9Nsqvw/8nOqiCJOnXr8HT/Fpo44Ir2sUqANdH9jnxGs4u7RTcZSG1dIRyJrOvd0nHLklAVfbwu8SIkXPWg==",
       "type": "package",
       "path": "runtime.win10-x86.microsoft.netcore.universalwindowsplatform/6.0.8",
       "files": [
@@ -8585,7 +8585,7 @@
       ]
     },
     "Win2D.uwp/1.21.0": {
-      "sha512": "mDwummDtvwHwKYcUDD1E+KfouZKFvu1yuwQulG874h0mFHUjm6DGp/53KuBhBhJVnTN/NBED5b/OwBbgskl+OA==",
+      "sha512": "4ddgs6Mt4cDVOPcKE+gV02Rn8G9nhp8C9S94A/msxULD2ysq6Q/z3CmeyATJhJNVfhumWUaXzx0B3v39vB5A4Q==",
       "type": "package",
       "path": "win2d.uwp/1.21.0",
       "files": [
@@ -8626,11 +8626,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\jobs\\Balittanah.PKDSS\\PKDSS\\PKDSS.PortableApp\\PKDSS.PortableApp.csproj",
+      "projectUniqueName": "C:\\jobs\\balittanah-pkdss\\Balittanah.PKDSS\\PKDSS\\PKDSS.PortableApp\\PKDSS.PortableApp.csproj",
       "projectName": "PKDSS.PortableApp",
-      "projectPath": "C:\\jobs\\Balittanah.PKDSS\\PKDSS\\PKDSS.PortableApp\\PKDSS.PortableApp.csproj",
+      "projectPath": "C:\\jobs\\balittanah-pkdss\\Balittanah.PKDSS\\PKDSS\\PKDSS.PortableApp\\PKDSS.PortableApp.csproj",
       "packagesPath": "C:\\Users\\gravi\\.nuget\\packages\\",
-      "outputPath": "C:\\jobs\\Balittanah.PKDSS\\PKDSS\\PKDSS.PortableApp\\obj\\",
+      "outputPath": "C:\\jobs\\balittanah-pkdss\\Balittanah.PKDSS\\PKDSS\\PKDSS.PortableApp\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -8645,13 +8645,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\experiment\\TinyCLR2\\Nuget\\TinyCLR OS Libraries v2.0.0-preview2": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.devexpress.com/EmIdQ6QhgJd82ZBjHN8YFqMUYQeJ4tnxjLu1OGkONisr3XfbmU/api": {}
       },
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\jobs\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj": {
-              "projectPath": "C:\\jobs\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj"
+            "C:\\jobs\\balittanah-pkdss\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj": {
+              "projectPath": "C:\\jobs\\balittanah-pkdss\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj"
             }
           }
         }

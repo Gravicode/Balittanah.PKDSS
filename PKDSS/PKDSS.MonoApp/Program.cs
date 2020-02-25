@@ -8,6 +8,7 @@ using PKDSS.Tools;
 using System.Net.Sockets;
 using System.Threading;
 using Grpc.Core;
+using System.Configuration;
 
 namespace PKDSS.MonoApp
 {
@@ -23,6 +24,9 @@ namespace PKDSS.MonoApp
             Application.SetCompatibleTextRenderingDefault(false);
 
             Logs.WriteAppLog("Application run....");
+            AppConstants.DeviceID = ConfigurationManager.AppSettings["DeviceID"];
+            AppConstants.ServiceUrl = ConfigurationManager.AppSettings["ServiceUrl"];
+
             var main_form = new EntryFrm();
             main_form.Show();
 

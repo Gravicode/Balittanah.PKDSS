@@ -1,0 +1,47 @@
+﻿@page "/fetchdata"
+
+@using PKDSS.Web.Data
+@using PKDSS.Web.Models
+@inject SensorDataService DataService
+
+<h1>Data Sensor</h1>
+
+<p>All Sensor Data.</p>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Creation Date</th>
+                <th>Device ID</th>
+                <th>Urea</th>
+                <th>SP36</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in forecasts)
+            {
+                <tr>
+                    <td>@item.CreatedDate.ToShortDateString()</td>
+                    <td>@item.DeviceID</td>
+                    <td>@item.Urea</td>
+                    <td>@item.SP36</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<SensorData> forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await DataService.GetAllData();
+    }
+}

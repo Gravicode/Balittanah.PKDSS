@@ -22,11 +22,14 @@ using PKDSS.Tools;
 using Newtonsoft.Json;
 using GemBox.Spreadsheet;
 using GemBox.Spreadsheet.WinFormsUtilities;
+using Bunifu.Framework;
 
 namespace PKDSS.MonoApp
 {
     public partial class EntryFrm : Form
     {
+        static CloudService cloud;
+        static GpsDevice2 gps;
         Channel channel = new Channel("localhost:50051", ChannelCredentials.Insecure);
         string ComPort = ConfigurationManager.AppSettings["ComPort"];
         //string DataRekomendasi = ConfigurationManager.AppSettings["DataRekomendasi"];
@@ -63,10 +66,73 @@ namespace PKDSS.MonoApp
             btnProcess.Enabled = false;
             btnReset.Enabled = false;
             btnScan.Enabled = false;
-
-            var gps = new GpsDevice2(ComPort);
-            gps.StartGPS();
-
+            if (!string.IsNullOrEmpty(ComPort))
+            {
+                gps = new GpsDevice2(ComPort);
+                gps.PositionUpdate += (x) =>
+                {
+                    txtX.Text = x.Longitude.ToString();
+                    txtY.Text = x.Latitude.ToString();
+                };
+                gps.StartGPS();
+            }
+            cloud = new CloudService();
+            BtnSync.Click += async (a, b) =>
+            {
+                try
+                {
+                    var newData = new SensorData()
+                    {
+                        Bray1_P2O5 = Data.Bray1_P2O5 > 0 ? float.Parse(Data.Bray1_P2O5.ToString("n2")) : 0,
+                        Ca = Data.Ca > 0 ? float.Parse(Data.Ca.ToString("n2")) : 0,
+                        CLAY = Data.CLAY > 0 ? float.Parse(Data.CLAY.ToString("n2")) : 0,
+                        C_N = Data.C_N > 0 ? float.Parse(Data.C_N.ToString("n2")) : 0,
+                        HCl25_K2O = Data.HCl25_K2O > 0 ? float.Parse(Data.HCl25_K2O.ToString("n2")) : 0,
+                        HCl25_P2O5 = Data.HCl25_P2O5 > 0 ? float.Parse(Data.HCl25_P2O5.ToString("n2")) : 0,
+                        Jumlah = Data.Jumlah > 0 ? float.Parse(Data.Jumlah.ToString("n2")) : 0,
+                        K = Data.K > 0 ? float.Parse(Data.K.ToString("n2")) : 0,
+                        KB_adjusted = Data.KB_adjusted > 0 ? float.Parse(Data.KB_adjusted.ToString("n2")) : 0,
+                        KJELDAHL_N = Data.KJELDAHL_N > 0 ? float.Parse(Data.KJELDAHL_N.ToString("n2")) : 0,
+                        KTK = Data.KTK > 0 ? float.Parse(Data.KTK.ToString("n2")) : 0,
+                        Mg = Data.Mg > 0 ? float.Parse(Data.Mg.ToString("n2")) : 0,
+                        Morgan_K2O = Data.Morgan_K2O > 0 ? float.Parse(Data.Morgan_K2O.ToString("n2")) : 0,
+                        Na = Data.Na > 0 ? float.Parse(Data.Na.ToString("n2")) : 0,
+                        Olsen_P2O5 = Data.Olsen_P2O5 > 0 ? float.Parse(Data.Olsen_P2O5.ToString("n2")) : 0,
+                        PH_H2O = Data.PH_H2O > 0 ? float.Parse(Data.PH_H2O.ToString("n2")) : 0,
+                        PH_KCL = Data.PH_KCL > 0 ? float.Parse(Data.PH_KCL.ToString("n2")) : 0,
+                        RetensiP = Data.RetensiP > 0 ? float.Parse(Data.RetensiP.ToString("n2")) : 0,
+                        SAND = Data.SAND > 0 ? float.Parse(Data.SAND.ToString("n2")) : 0,
+                        SILT = Data.SILT > 0 ? float.Parse(Data.SILT.ToString("n2")) : 0,
+                        WBC = Data.WBC > 0 ? float.Parse(Data.WBC.ToString("n2")) : 0,
+                        CreatedDate = DateTime.Now.Date,
+                        Desa = txtDesa.Text,
+                        DeviceID = AppConstants.DeviceID,
+                        Kabupaten = cbKabupaten.Text,
+                        Kecamatan = txtKecamatan.Text,
+                        Komoditas = cbKomoditas.Text,
+                        Latitude = double.Parse(txtX.Text),
+                        Longitude = double.Parse(txtY.Text),
+                        NPK15 = float.Parse(txtNpk15.Text),
+                        SP36 = float.Parse(txtSP36.Text),
+                        Urea = float.Parse(txtUrea.Text),
+                        Urea15 = float.Parse(txtUrea15.Text),
+                        Propinsi = cbProvinsi.Text,
+                        KCL = float.Parse(txtKCL.Text)
+                    };
+                    var res = await cloud.PushDataToServer(newData);
+                    if (res)
+                    {
+                        MessageBox.Show("Sync data berhasil", "Info");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sync data gagal, periksa koneksi internet Anda", "Info");
+                    }
+                }catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Terjadi kesalahan");
+                }
+            };
             // load sqlite data
             dgUnsur.Font = new Font("Times", 12);
             dgUnsur.DataSource = SqliteDataAccess.LoadUnsur();
@@ -88,9 +154,9 @@ namespace PKDSS.MonoApp
             cbResolution.SelectedIndex = 0;
             cbObticalGian.SelectedIndex = 0;
 
-            GpsPoint CurrentLocation = new GpsPoint();
-            txtX.Text = CurrentLocation.Longitude.ToString();
-            txtY.Text = CurrentLocation.Latitude.ToString();
+            //GpsPoint CurrentLocation = new GpsPoint();
+            txtX.Text = "0";// CurrentLocation.Longitude.ToString();
+            txtY.Text = "0";// CurrentLocation.Latitude.ToString();
 
             //populate propinsi
             cbProvinsi.Items.Clear();
@@ -158,9 +224,9 @@ namespace PKDSS.MonoApp
                 {
                     foreach (Control childpnl in pnl.Controls)
                     {
-                        if (childpnl is WindowsFormsControlLibrary1.BunifuCustomTextbox)
+                        if (childpnl is BunifuCustomTextbox)
                         {
-                            var txtBox = (WindowsFormsControlLibrary1.BunifuCustomTextbox)childpnl;
+                            var txtBox = (BunifuCustomTextbox)childpnl;
                             txtBox.Text = "0";
                             break;
                         }
@@ -217,7 +283,7 @@ namespace PKDSS.MonoApp
                             }
                             break;
 
-                        case 2:                            
+                        case 2:
                             //check background
                             if (reply.Status)
                             {
@@ -399,7 +465,7 @@ namespace PKDSS.MonoApp
                                                     txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
                                                     break;
                                             }
-                                            
+
                                             // textbox rekomendasi npk 15:15:15
                                             var x = calc.GetNPKDoze(P2O5: float.Parse(TxtHCl25_P2O5.Text),
                                                 K2O: float.Parse(TxtHCl25_K2O.Text), Jenis: komoditas);
@@ -681,7 +747,7 @@ namespace PKDSS.MonoApp
             SqliteDataAccess.SaveUnsur(dataunsur);
             dgUnsur.DataSource = SqliteDataAccess.LoadUnsur();
         }
-        
+
         private void btnReset_Click(object sender, EventArgs e)
         {
             resetAction();
@@ -945,6 +1011,11 @@ namespace PKDSS.MonoApp
                 //Console.WriteLine(ex);
                 //Logs.WriteAppLog(ex.ToString());
             }
+        }
+
+        private void tabRekomendasiPupuk_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

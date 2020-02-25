@@ -121,6 +121,9 @@
   <data name="Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\Data.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="DataRekomendasi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DataRekomendasi.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="Lokasi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\Lokasi.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
