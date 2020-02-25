@@ -71,8 +71,19 @@ namespace PKDSS.MonoApp
                 gps = new GpsDevice2(ComPort);
                 gps.PositionUpdate += (x) =>
                 {
-                    txtX.Text = x.Longitude.ToString();
-                    txtY.Text = x.Latitude.ToString();
+                    MethodInvoker methodInvokerDelegate = delegate ()
+                    {
+                        txtX.Text = x.Longitude.ToString();
+                        txtY.Text = x.Latitude.ToString();
+                    };
+                    if (this.InvokeRequired)
+                    { this.Invoke(methodInvokerDelegate); }
+                    else
+                    {
+                        txtX.Text = x.Longitude.ToString();
+                        txtY.Text = x.Latitude.ToString();
+                    }
+                   
                 };
                 gps.StartGPS();
             }
