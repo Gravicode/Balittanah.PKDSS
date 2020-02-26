@@ -218,33 +218,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gravi\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Janu\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\jobs\\balittanah-pkdss\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj",
+      "projectUniqueName": "D:\\Storage\\Jobs\\GRAVICODE\\BalitTanah\\SoilSensor\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj",
       "projectName": "PKDSS.CoreLibrary",
-      "projectPath": "C:\\jobs\\balittanah-pkdss\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj",
-      "packagesPath": "C:\\Users\\gravi\\.nuget\\packages\\",
-      "outputPath": "C:\\jobs\\balittanah-pkdss\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\obj\\",
+      "projectPath": "D:\\Storage\\Jobs\\GRAVICODE\\BalitTanah\\SoilSensor\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\PKDSS.CoreLibrary.csproj",
+      "packagesPath": "C:\\Users\\Janu\\.nuget\\packages\\",
+      "outputPath": "D:\\Storage\\Jobs\\GRAVICODE\\BalitTanah\\SoilSensor\\Balittanah.PKDSS\\PKDSS\\PKDSS.CoreLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\gravi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Janu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\experiment\\TinyCLR2\\Nuget\\TinyCLR OS Libraries v2.0.0-preview2": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.devexpress.com/EmIdQ6QhgJd82ZBjHN8YFqMUYQeJ4tnxjLu1OGkONisr3XfbmU/api": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {

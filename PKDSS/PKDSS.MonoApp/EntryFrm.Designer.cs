@@ -147,6 +147,7 @@
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabRekomendasiPupuk = new System.Windows.Forms.TabPage();
+            this.BtnSync = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtUrea = new Bunifu.Framework.BunifuCustomTextbox();
@@ -190,7 +191,6 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.BtnSync = new System.Windows.Forms.Button();
             this.tabScanning.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWave)).BeginInit();
             this.panelButton.SuspendLayout();
@@ -498,7 +498,7 @@
             this.lbOpticalGian.Name = "lbOpticalGian";
             this.lbOpticalGian.Size = new System.Drawing.Size(102, 23);
             this.lbOpticalGian.TabIndex = 3;
-            this.lbOpticalGian.Text = "Optical Gian";
+            this.lbOpticalGian.Text = "Optical Gain";
             // 
             // statusStrip1
             // 
@@ -1591,6 +1591,15 @@
             this.tabRekomendasiPupuk.UseVisualStyleBackColor = true;
             this.tabRekomendasiPupuk.Click += new System.EventHandler(this.tabRekomendasiPupuk_Click);
             // 
+            // BtnSync
+            // 
+            this.BtnSync.Location = new System.Drawing.Point(10, 338);
+            this.BtnSync.Name = "BtnSync";
+            this.BtnSync.Size = new System.Drawing.Size(267, 41);
+            this.BtnSync.TabIndex = 120;
+            this.BtnSync.Text = "&Sync Data ke Server";
+            this.BtnSync.UseVisualStyleBackColor = true;
+            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.bunifuCustomLabel21);
@@ -2055,15 +2064,6 @@
             this.btnExit.TabStop = false;
             this.btnExit.Zoom = 10;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // BtnSync
-            // 
-            this.BtnSync.Location = new System.Drawing.Point(10, 338);
-            this.BtnSync.Name = "BtnSync";
-            this.BtnSync.Size = new System.Drawing.Size(196, 41);
-            this.BtnSync.TabIndex = 120;
-            this.BtnSync.Text = "&Sync Data ke Server";
-            this.BtnSync.UseVisualStyleBackColor = true;
             // 
             // EntryFrm
             // 
