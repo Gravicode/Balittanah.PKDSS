@@ -115,7 +115,7 @@ namespace PKDSS.Web.Controllers
             var hasil = new OutputData() { IsSucceed = true };
             try
             {
-                var newUpdate = new UpdateInfo() { Description="Firmware version 1.0", ReleaseDate=DateTime.Now, UrlFirmware= @"https://storagemurahaje.blob.core.windows.net/update/PKDSSv1.zip", Version=1.0f };
+                var newUpdate = new UpdateInfo() { Description="Firmware version 1.1", ReleaseDate=DateTime.Now, UrlFirmware= @"https://storagemurahaje.blob.core.windows.net/update/PKDSSv11.zip", Version=1.1f };
                 _context.UpdateInfos.Add(newUpdate);
                 await _context.SaveChangesAsync();
                 hasil.Data = "ok";
