@@ -14,8 +14,8 @@ namespace PKDSS.Web.Data
         { }
 
         public DbSet<SensorData> SensorDatas { get; set; }
-       
 
+        public DbSet<UpdateInfo> UpdateInfos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

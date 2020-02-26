@@ -22,12 +22,36 @@ namespace PKDSS.Web.Controllers
            
         }
 
+        /// <summary>
+        /// get all firmware update releases
+        /// </summary>
 
+        /// <returns></returns>
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetFirmwareUpdate()
+        {
+
+            
+            var hasil = new OutputData() { IsSucceed = true };
+            try
+            {
+                var datas = (from x in _context.UpdateInfos
+                            orderby x.ReleaseDate descending
+                            select x).Take(10);
+                hasil.Data = datas.ToList();
+            }
+            catch (Exception ex)
+            {
+                hasil.IsSucceed = false;
+                hasil.ErrorMessage = ex.Message;
+            }
+            return Ok(hasil);
+        }
 
         /// <summary>
         /// get all data sensor
         /// </summary>
-    
+
         /// <returns></returns>
         [HttpGet("[action]")]
         public async Task<IActionResult> GetAllData()
@@ -78,5 +102,30 @@ namespace PKDSS.Web.Controllers
             return Ok(hasil);
         }
 
+        /// <summary>
+        /// add sample data for updates
+        /// </summary>
+
+        /// <returns></returns>
+        [HttpGet("[action]")]
+        public async Task<IActionResult> AddSampleData()
+        {
+
+
+            var hasil = new OutputData() { IsSucceed = true };
+            try
+            {
+                var newUpdate = new UpdateInfo() { Description="Firmware version 1.0", ReleaseDate=DateTime.Now, UrlFirmware= @"https://storagemurahaje.blob.core.windows.net/update/PKDSSv1.zip", Version=1.0f };
+                _context.UpdateInfos.Add(newUpdate);
+                await _context.SaveChangesAsync();
+                hasil.Data = "ok";
+            }
+            catch (Exception ex)
+            {
+                hasil.IsSucceed = false;
+                hasil.ErrorMessage = ex.Message;
+            }
+            return Ok(hasil);
+        }
     }
 }
