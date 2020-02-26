@@ -31,7 +31,7 @@ namespace PKDSS.MonoApp
         static CloudService cloud;
         static GpsDevice2 gps;
         Channel channel = new Channel("localhost:50051", ChannelCredentials.Insecure);
-        string ComPort = ConfigurationManager.AppSettings["ComPort"];
+        string ComPort = string.Empty;
         //string DataRekomendasi = ConfigurationManager.AppSettings["DataRekomendasi"];
         Thread LoopCheckDevice;
         int statusProcess = 0;
@@ -66,16 +66,34 @@ namespace PKDSS.MonoApp
             btnProcess.Enabled = false;
             btnReset.Enabled = false;
             btnScan.Enabled = false;
+            ComPort = ConfigurationManager.AppSettings["ComPort"];
             if (!string.IsNullOrEmpty(ComPort))
             {
+                //Looping Gps
                 gps = new GpsDevice2(ComPort);
                 gps.PositionUpdate += (x) =>
                 {
-                    txtX.Text = x.Longitude.ToString();
-                    txtY.Text = x.Latitude.ToString();
+                    MethodInvoker method = delegate ()
+                    {
+
+                        txtX.Text = x.Longitude.ToString();
+                        txtY.Text = x.Latitude.ToString();
+
+                    };
+
+                    if (this.InvokeRequired)
+                    { this.Invoke(method); }
+                    else
+                    {
+                        txtX.Text = x.Longitude.ToString();
+                        txtY.Text = x.Latitude.ToString();
+                    }
+
                 };
                 gps.StartGPS();
+
             }
+
             cloud = new CloudService();
             BtnSync.Click += async (a, b) =>
             {
@@ -110,14 +128,14 @@ namespace PKDSS.MonoApp
                         Kabupaten = cbKabupaten.Text,
                         Kecamatan = txtKecamatan.Text,
                         Komoditas = cbKomoditas.Text,
-                        Latitude = double.Parse(txtY.Text),
-                        Longitude = double.Parse(txtX.Text),
-                        NPK15 = float.Parse(txtNpk15.Text),
-                        SP36 = float.Parse(txtSP36.Text),
-                        Urea = float.Parse(txtUrea.Text),
-                        Urea15 = float.Parse(txtUrea15.Text),
+                        Latitude = string.IsNullOrEmpty(txtY.Text) ? 0 : double.Parse(txtY.Text),
+                        Longitude = string.IsNullOrEmpty(txtX.Text) ? 0 : double.Parse(txtX.Text),
+                        NPK15 = string.IsNullOrEmpty(txtNpk15.Text) ? 0 : float.Parse(txtNpk15.Text),
+                        SP36 = string.IsNullOrEmpty(txtSP36.Text) ? 0 : float.Parse(txtSP36.Text),
+                        Urea = string.IsNullOrEmpty(txtUrea.Text) ? 0 : float.Parse(txtUrea.Text),
+                        Urea15 = string.IsNullOrEmpty(txtUrea15.Text) ? 0 : float.Parse(txtUrea15.Text),
                         Propinsi = cbProvinsi.Text,
-                        KCL = float.Parse(txtKCL.Text)
+                        KCL = string.IsNullOrEmpty(txtKCL.Text) ? 0 : float.Parse(txtKCL.Text)
                     };
                     var res = await cloud.PushDataToServer(newData);
                     if (res)
@@ -128,7 +146,8 @@ namespace PKDSS.MonoApp
                     {
                         MessageBox.Show("Sync data gagal, periksa koneksi internet Anda", "Info");
                     }
-                }catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString(), "Terjadi kesalahan");
                 }
@@ -405,7 +424,7 @@ namespace PKDSS.MonoApp
 
                                             Writelog("Process Finish....");
                                             setButtonEnable(true);
-                                            Data = null;
+                                            //Data = null;
                                             statusProcess = 0;
                                         }
                                     };
@@ -483,7 +502,7 @@ namespace PKDSS.MonoApp
 
                                             Writelog("Process Finish....");
                                             setButtonEnable(true);
-                                            Data = null;
+                                            //Data = null;
                                             statusProcess = 0;
                                         }
                                     }
@@ -943,7 +962,7 @@ namespace PKDSS.MonoApp
         {
             if (float.Parse(txtUrea.Text) < 0)
             {
-                txtUrea.Text = "0";
+                txtUrea.Text = "0.50";
             }
         }
 
@@ -951,7 +970,7 @@ namespace PKDSS.MonoApp
         {
             if (float.Parse(txtSP36.Text) < 0)
             {
-                txtSP36.Text = "0";
+                txtSP36.Text = "0.50";
             }
         }
 
@@ -959,7 +978,7 @@ namespace PKDSS.MonoApp
         {
             if (float.Parse(txtKCL.Text) < 0)
             {
-                txtKCL.Text = "0";
+                txtKCL.Text = "0.50";
             }
         }
 
