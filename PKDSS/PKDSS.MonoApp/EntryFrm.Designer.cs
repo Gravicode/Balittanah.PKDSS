@@ -1595,7 +1595,7 @@
             // 
             this.BtnSync.Location = new System.Drawing.Point(10, 338);
             this.BtnSync.Name = "BtnSync";
-            this.BtnSync.Size = new System.Drawing.Size(196, 41);
+            this.BtnSync.Size = new System.Drawing.Size(267, 41);
             this.BtnSync.TabIndex = 120;
             this.BtnSync.Text = "&Sync Data ke Server";
             this.BtnSync.UseVisualStyleBackColor = true;
