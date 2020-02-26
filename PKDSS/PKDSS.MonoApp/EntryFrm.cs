@@ -99,52 +99,59 @@ namespace PKDSS.MonoApp
             {
                 try
                 {
-                    var newData = new SensorData()
+                    if (Data != null)
                     {
-                        Bray1_P2O5 = Data.Bray1_P2O5 > 0 ? float.Parse(Data.Bray1_P2O5.ToString("n2")) : 0,
-                        Ca = Data.Ca > 0 ? float.Parse(Data.Ca.ToString("n2")) : 0,
-                        CLAY = Data.CLAY > 0 ? float.Parse(Data.CLAY.ToString("n2")) : 0,
-                        C_N = Data.C_N > 0 ? float.Parse(Data.C_N.ToString("n2")) : 0,
-                        HCl25_K2O = Data.HCl25_K2O > 0 ? float.Parse(Data.HCl25_K2O.ToString("n2")) : 0,
-                        HCl25_P2O5 = Data.HCl25_P2O5 > 0 ? float.Parse(Data.HCl25_P2O5.ToString("n2")) : 0,
-                        Jumlah = Data.Jumlah > 0 ? float.Parse(Data.Jumlah.ToString("n2")) : 0,
-                        K = Data.K > 0 ? float.Parse(Data.K.ToString("n2")) : 0,
-                        KB_adjusted = Data.KB_adjusted > 0 ? float.Parse(Data.KB_adjusted.ToString("n2")) : 0,
-                        KJELDAHL_N = Data.KJELDAHL_N > 0 ? float.Parse(Data.KJELDAHL_N.ToString("n2")) : 0,
-                        KTK = Data.KTK > 0 ? float.Parse(Data.KTK.ToString("n2")) : 0,
-                        Mg = Data.Mg > 0 ? float.Parse(Data.Mg.ToString("n2")) : 0,
-                        Morgan_K2O = Data.Morgan_K2O > 0 ? float.Parse(Data.Morgan_K2O.ToString("n2")) : 0,
-                        Na = Data.Na > 0 ? float.Parse(Data.Na.ToString("n2")) : 0,
-                        Olsen_P2O5 = Data.Olsen_P2O5 > 0 ? float.Parse(Data.Olsen_P2O5.ToString("n2")) : 0,
-                        PH_H2O = Data.PH_H2O > 0 ? float.Parse(Data.PH_H2O.ToString("n2")) : 0,
-                        PH_KCL = Data.PH_KCL > 0 ? float.Parse(Data.PH_KCL.ToString("n2")) : 0,
-                        RetensiP = Data.RetensiP > 0 ? float.Parse(Data.RetensiP.ToString("n2")) : 0,
-                        SAND = Data.SAND > 0 ? float.Parse(Data.SAND.ToString("n2")) : 0,
-                        SILT = Data.SILT > 0 ? float.Parse(Data.SILT.ToString("n2")) : 0,
-                        WBC = Data.WBC > 0 ? float.Parse(Data.WBC.ToString("n2")) : 0,
-                        CreatedDate = DateTime.Now.Date,
-                        Desa = txtDesa.Text,
-                        DeviceID = AppConstants.DeviceID,
-                        Kabupaten = cbKabupaten.Text,
-                        Kecamatan = txtKecamatan.Text,
-                        Komoditas = cbKomoditas.Text,
-                        Latitude = string.IsNullOrEmpty(txtY.Text) ? 0 : double.Parse(txtY.Text),
-                        Longitude = string.IsNullOrEmpty(txtX.Text) ? 0 : double.Parse(txtX.Text),
-                        NPK15 = string.IsNullOrEmpty(txtNpk15.Text) ? 0 : float.Parse(txtNpk15.Text),
-                        SP36 = string.IsNullOrEmpty(txtSP36.Text) ? 0 : float.Parse(txtSP36.Text),
-                        Urea = string.IsNullOrEmpty(txtUrea.Text) ? 0 : float.Parse(txtUrea.Text),
-                        Urea15 = string.IsNullOrEmpty(txtUrea15.Text) ? 0 : float.Parse(txtUrea15.Text),
-                        Propinsi = cbProvinsi.Text,
-                        KCL = string.IsNullOrEmpty(txtKCL.Text) ? 0 : float.Parse(txtKCL.Text)
-                    };
-                    var res = await cloud.PushDataToServer(newData);
-                    if (res)
-                    {
-                        MessageBox.Show("Sync data berhasil", "Info");
+                        var newData = new SensorData()
+                        {
+                            Bray1_P2O5 = Data.Bray1_P2O5 > 0 ? float.Parse(Data.Bray1_P2O5.ToString("n2")) : 0,
+                            Ca = Data.Ca > 0 ? float.Parse(Data.Ca.ToString("n2")) : 0,
+                            CLAY = Data.CLAY > 0 ? float.Parse(Data.CLAY.ToString("n2")) : 0,
+                            C_N = Data.C_N > 0 ? float.Parse(Data.C_N.ToString("n2")) : 0,
+                            HCl25_K2O = Data.HCl25_K2O > 0 ? float.Parse(Data.HCl25_K2O.ToString("n2")) : 0,
+                            HCl25_P2O5 = Data.HCl25_P2O5 > 0 ? float.Parse(Data.HCl25_P2O5.ToString("n2")) : 0,
+                            Jumlah = Data.Jumlah > 0 ? float.Parse(Data.Jumlah.ToString("n2")) : 0,
+                            K = Data.K > 0 ? float.Parse(Data.K.ToString("n2")) : 0,
+                            KB_adjusted = Data.KB_adjusted > 0 ? float.Parse(Data.KB_adjusted.ToString("n2")) : 0,
+                            KJELDAHL_N = Data.KJELDAHL_N > 0 ? float.Parse(Data.KJELDAHL_N.ToString("n2")) : 0,
+                            KTK = Data.KTK > 0 ? float.Parse(Data.KTK.ToString("n2")) : 0,
+                            Mg = Data.Mg > 0 ? float.Parse(Data.Mg.ToString("n2")) : 0,
+                            Morgan_K2O = Data.Morgan_K2O > 0 ? float.Parse(Data.Morgan_K2O.ToString("n2")) : 0,
+                            Na = Data.Na > 0 ? float.Parse(Data.Na.ToString("n2")) : 0,
+                            Olsen_P2O5 = Data.Olsen_P2O5 > 0 ? float.Parse(Data.Olsen_P2O5.ToString("n2")) : 0,
+                            PH_H2O = Data.PH_H2O > 0 ? float.Parse(Data.PH_H2O.ToString("n2")) : 0,
+                            PH_KCL = Data.PH_KCL > 0 ? float.Parse(Data.PH_KCL.ToString("n2")) : 0,
+                            RetensiP = Data.RetensiP > 0 ? float.Parse(Data.RetensiP.ToString("n2")) : 0,
+                            SAND = Data.SAND > 0 ? float.Parse(Data.SAND.ToString("n2")) : 0,
+                            SILT = Data.SILT > 0 ? float.Parse(Data.SILT.ToString("n2")) : 0,
+                            WBC = Data.WBC > 0 ? float.Parse(Data.WBC.ToString("n2")) : 0,
+                            CreatedDate = DateTime.Now.Date,
+                            Desa = txtDesa.Text,
+                            DeviceID = AppConstants.DeviceID,
+                            Kabupaten = cbKabupaten.Text,
+                            Kecamatan = txtKecamatan.Text,
+                            Komoditas = cbKomoditas.Text,
+                            Latitude = string.IsNullOrEmpty(txtY.Text) ? 0 : double.Parse(txtY.Text),
+                            Longitude = string.IsNullOrEmpty(txtX.Text) ? 0 : double.Parse(txtX.Text),
+                            NPK15 = string.IsNullOrEmpty(txtNpk15.Text) ? 0 : float.Parse(txtNpk15.Text),
+                            SP36 = string.IsNullOrEmpty(txtSP36.Text) ? 0 : float.Parse(txtSP36.Text),
+                            Urea = string.IsNullOrEmpty(txtUrea.Text) ? 0 : float.Parse(txtUrea.Text),
+                            Urea15 = string.IsNullOrEmpty(txtUrea15.Text) ? 0 : float.Parse(txtUrea15.Text),
+                            Propinsi = cbProvinsi.Text,
+                            KCL = string.IsNullOrEmpty(txtKCL.Text) ? 0 : float.Parse(txtKCL.Text)
+                        };
+                        var res = await cloud.PushDataToServer(newData);
+                        if (res)
+                        {
+                            MessageBox.Show("Sync data berhasil", "Info");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Sync data gagal, periksa koneksi internet Anda", "Info");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Sync data gagal, periksa koneksi internet Anda", "Info");
+                        MessageBox.Show("Data masih kosong, harap lakukan scanning terlebih dahulu", "Info");
                     }
                 }
                 catch (Exception ex)

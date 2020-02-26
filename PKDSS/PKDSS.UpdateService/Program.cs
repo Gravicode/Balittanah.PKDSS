@@ -26,7 +26,7 @@ namespace PKDSS.UpdateService
 
         const string HistoryFileName = "update-history.json";
 
-        static string ExecuteableFile="PKDSS.MonoApp.exe";
+        static string ExecuteableFile="PKDSS.MonoApp";
 
         static UpdateInfo LatestUpdate;
 
@@ -99,29 +99,43 @@ namespace PKDSS.UpdateService
                             if (LatestUpdate == null || LatestUpdate.ReleaseDate < NewUpdate.ReleaseDate)
                             {
                                 Console.WriteLine($"Find new update => {NewUpdate.Description} / v{NewUpdate.Version} -> {NewUpdate.UrlFirmware}");
-                                //close main app
-                                KillProcess(ExecuteableFile);
+                                string _inpUser = "";
+                                Console.Write("Press Y to update ");
+                                _inpUser = Console.ReadLine();
 
-                                Console.WriteLine("try to download new firmware");
-                                //download file 
-                                var file = await client.GetByteArrayAsync(NewUpdate.UrlFirmware);
-                                var tmpZip = Path.GetTempFileName() + ".zip";
-                                File.WriteAllBytes(tmpZip, file);
-                                ZipFile.ExtractToDirectory(tmpZip, AppPath, true);
-
-                                //run main app
-                                var ExePath = $"{AppPath}\\{ExecuteableFile}";
-                                if (File.Exists(ExePath))
+                                if (_inpUser == "Y" || _inpUser == "y")
                                 {
-                                    ExecuteApp(ExePath);
-                                }
+                                    //close main app
+                                    KillProcess(ExecuteableFile);
 
-                                Console.WriteLine($"[{DateTime.Now}] -> New firmware has been updated successfully...");
-                                LatestUpdate = NewUpdate;
-                                ListHistory.Add(LatestUpdate);
-                                //write history
-                                WriteUpdateHistory();
-                                Console.WriteLine("history list has been updated");
+                                    Console.WriteLine("try to download new firmware");
+                                    //download file 
+                                    var file = await client.GetByteArrayAsync(NewUpdate.UrlFirmware);
+                                    var tmpZip = Path.GetTempFileName() + ".zip";
+                                    File.WriteAllBytes(tmpZip, file);
+                                    ZipFile.ExtractToDirectory(tmpZip, AppPath, true);
+
+                                    //run main app
+                                    var ExePath = $"{AppPath}\\{ExecuteableFile}";
+                                    if (File.Exists(ExePath))
+                                    {
+                                        ExecuteApp(ExePath);
+                                    }
+
+                                    Console.WriteLine($"[{DateTime.Now}] -> New firmware has been updated successfully...");
+                                    LatestUpdate = NewUpdate;
+                                    ListHistory.Add(LatestUpdate);
+                                    //write history
+                                    WriteUpdateHistory();
+                                    Console.WriteLine("history list has been updated");
+
+                                    //Restart
+                                    System.Diagnostics.Process.Start("cmd.exe /c shutdown", "-rf");
+                                }
+                                else
+                                {
+                                    Thread.Sleep(UpdateDelay);
+                                }
                             }
                         }
                     }
@@ -131,9 +145,7 @@ namespace PKDSS.UpdateService
                     Console.WriteLine($"error when updating... {ex}");
                 }
                 Thread.Sleep(UpdateDelay);
-            }
-            
-
+            }     
         }
         static void KillProcess(string AppExeName)
         {
@@ -141,7 +153,10 @@ namespace PKDSS.UpdateService
             var proc = Process.GetProcessesByName(AppExeName);
             if (proc.Length > 0)
             {
-                proc[0].CloseMainWindow();
+                foreach (Process i in proc)
+                {
+                    i.Kill();
+                }
                 Console.WriteLine("main app has been killed...");
             }else
                 Console.WriteLine("main app is not running...");
