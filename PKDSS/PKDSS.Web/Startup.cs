@@ -23,6 +23,7 @@ using PKDSS.Web.Models;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using PKDSS.Web.Helpers;
 
 namespace PKDSS.Web
 {
@@ -42,6 +43,8 @@ namespace PKDSS.Web
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddTransient<BlazorTimer>();
+            AppConstants.GMapApiKey = Configuration["GmapKey"];
             var sqlConnectionString = Configuration.GetConnectionString("MySqlCon");
 
             services.AddDbContext<PKDSSSDb>(options =>

@@ -9,6 +9,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="BlazorGoogleMaps" Version="0.5.4" />
+    <PackageReference Include="BlazorPWA.MSBuild" Version="1.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="GoogleMaps.LocationServices" Version="1.2.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />

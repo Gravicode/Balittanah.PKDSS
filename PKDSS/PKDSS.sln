@@ -35,11 +35,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{383C7665-7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{B3B263D5-90E4-4E30-BFCE-30C175B053A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PKDSS.UpdateService", "PKDSS.UpdateService\PKDSS.UpdateService.csproj", "{95E66A30-3EE2-4881-A308-662B2241B6E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PKDSS.UpdateService", "PKDSS.UpdateService\PKDSS.UpdateService.csproj", "{95E66A30-3EE2-4881-A308-662B2241B6E0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{3453B415-A718-4A72-B035-04B5AE37A33D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PKDSS.Shared", "PKDSS.Shared\PKDSS.Shared.csproj", "{A6ECFA1C-F8B8-4B47-BF7F-6C5BC4A05A34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PKDSS.Shared", "PKDSS.Shared\PKDSS.Shared.csproj", "{A6ECFA1C-F8B8-4B47-BF7F-6C5BC4A05A34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
