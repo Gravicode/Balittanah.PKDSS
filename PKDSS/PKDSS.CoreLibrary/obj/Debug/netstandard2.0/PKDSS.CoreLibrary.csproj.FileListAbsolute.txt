@@ -126,3 +126,4 @@ D:\Storage\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.Cor
 D:\Storage\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.AssemblyInfo.cs
 D:\Storage\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.dll
 D:\Storage\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.pdb
+D:\Storage\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.CoreLibrary\obj\Debug\netstandard2.0\PKDSS.CoreLibrary.csproj.CoreCompileInputs.cache

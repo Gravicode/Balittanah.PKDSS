@@ -99,43 +99,30 @@ namespace PKDSS.UpdateService
                             if (LatestUpdate == null || LatestUpdate.ReleaseDate < NewUpdate.ReleaseDate)
                             {
                                 Console.WriteLine($"Find new update => {NewUpdate.Description} / v{NewUpdate.Version} -> {NewUpdate.UrlFirmware}");
-                                string _inpUser = "";
-                                Console.Write("Press Y to update ");
-                                _inpUser = Console.ReadLine();
+                                //close main app
+                                KillProcess(ExecuteableFile);
 
-                                if (_inpUser == "Y" || _inpUser == "y")
+                                Console.WriteLine("try to download new firmware");
+                                //download file 
+                                var file = await client.GetByteArrayAsync(NewUpdate.UrlFirmware);
+                                var tmpZip = Path.GetTempFileName() + ".zip";
+                                File.WriteAllBytes(tmpZip, file);
+                                ZipFile.ExtractToDirectory(tmpZip, AppPath, true);
+
+                                //run main app
+                                var ExePath = $"{AppPath}\\{ExecuteableFile}";
+                                if (File.Exists(ExePath))
                                 {
-                                    //close main app
-                                    KillProcess(ExecuteableFile);
-
-                                    Console.WriteLine("try to download new firmware");
-                                    //download file 
-                                    var file = await client.GetByteArrayAsync(NewUpdate.UrlFirmware);
-                                    var tmpZip = Path.GetTempFileName() + ".zip";
-                                    File.WriteAllBytes(tmpZip, file);
-                                    ZipFile.ExtractToDirectory(tmpZip, AppPath, true);
-
-                                    //run main app
-                                    var ExePath = $"{AppPath}\\{ExecuteableFile}";
-                                    if (File.Exists(ExePath))
-                                    {
-                                        ExecuteApp(ExePath);
-                                    }
-
-                                    Console.WriteLine($"[{DateTime.Now}] -> New firmware has been updated successfully...");
-                                    LatestUpdate = NewUpdate;
-                                    ListHistory.Add(LatestUpdate);
-                                    //write history
-                                    WriteUpdateHistory();
-                                    Console.WriteLine("history list has been updated");
-
-                                    //Restart
-                                    System.Diagnostics.Process.Start("cmd.exe /c shutdown", "-rf");
+                                    ExecuteApp(ExePath);
                                 }
-                                else
-                                {
-                                    Thread.Sleep(UpdateDelay);
-                                }
+
+                                Console.WriteLine($"[{DateTime.Now}] -> New firmware has been updated successfully...");
+                                LatestUpdate = NewUpdate;
+                                ListHistory.Add(LatestUpdate);
+                                //write history
+                                WriteUpdateHistory();
+                                Console.WriteLine("history list has been updated");
+                                Console.WriteLine("please restart this device");
                             }
                         }
                     }

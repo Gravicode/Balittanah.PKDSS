@@ -45,7 +45,8 @@ namespace PKDSS.MonoApp
         public EntryFrm()
         {
             // Gembox Serial Key
-            SpreadsheetInfo.SetLicense("EDWG-SKFA-D7J1-LDQ5");
+            string SpreadsheetKey = ConfigurationManager.AppSettings["GemboxSpreadsheetKey"];
+            SpreadsheetInfo.SetLicense(SpreadsheetKey);
 
             InitializeComponent();
             Setup();
@@ -393,24 +394,109 @@ namespace PKDSS.MonoApp
 
                                             // textbox rekomendasi
                                             //var calc = new FertilizerCalculator(DataRekomendasi);
+                                            var ureaMin = double.Parse(ConfigurationManager.AppSettings["UreaMin"]);
+                                            var sp36Min = double.Parse(ConfigurationManager.AppSettings["SP36Min"]);
+                                            var kclMin = double.Parse(ConfigurationManager.AppSettings["KCLMin"]);
+
                                             switch (komoditas)
                                             {
                                                 case "Padi":
-                                                    txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
-                                                    txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
-                                                    txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
+                                                    var padi_urea = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"]);
+                                                    if (padi_urea < ureaMin)
+                                                    {
+                                                        txtUrea.Text = ureaMin.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtUrea.Text = padi_urea.ToString("n2");
+                                                    }
+                                                    //txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
+                                                    var padi_sp36 = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"]);
+                                                    if (padi_sp36 < sp36Min)
+                                                    {
+                                                        txtSP36.Text = sp36Min.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtSP36.Text = padi_sp36.ToString("n2");
+                                                    }
+                                                    //txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
+                                                    var padi_kcl = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"]);
+                                                    if (padi_kcl < kclMin)
+                                                    {
+                                                        txtKCL.Text = kclMin.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtKCL.Text = padi_kcl.ToString("n2");
+                                                    }
+                                                    //txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
                                                     break;
 
                                                 case "Jagung":
-                                                    txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
-                                                    txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
-                                                    txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
+                                                    var jagung_urea = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"]);
+                                                    if (jagung_urea < ureaMin)
+                                                    {
+                                                        txtUrea.Text = ureaMin.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtUrea.Text = jagung_urea.ToString("n2");
+                                                    }
+                                                    //txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
+                                                    var jagung_sp36 = calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"]);
+                                                    if (jagung_sp36 < sp36Min)
+                                                    {
+                                                        txtSP36.Text = sp36Min.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtSP36.Text = jagung_sp36.ToString("n2");
+                                                    }
+                                                    //txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
+                                                    var jagung_kcl = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"]);
+                                                    if (jagung_kcl < kclMin)
+                                                    {
+                                                        txtKCL.Text = kclMin.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtKCL.Text = jagung_kcl.ToString("n2");
+                                                    }
+                                                    //txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
                                                     break;
 
                                                 case "Kedelai":
-                                                    txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
-                                                    txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
-                                                    txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
+                                                    var kedelai_urea = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"]);
+                                                    if (kedelai_urea < ureaMin)
+                                                    {
+                                                        txtUrea.Text = ureaMin.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtUrea.Text = kedelai_urea.ToString("n2");
+                                                    }
+                                                    //txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
+                                                    var kedelai_sp36 = calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"]);
+                                                    if (kedelai_sp36 < sp36Min)
+                                                    {
+                                                        txtSP36.Text = sp36Min.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtSP36.Text = kedelai_sp36.ToString("n2");
+                                                    }
+                                                    //txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
+                                                    var kedelai_kcl = calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"]);
+                                                    if (kedelai_kcl < kclMin)
+                                                    {
+                                                        txtKCL.Text = kclMin.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtKCL.Text = kedelai_kcl.ToString("n2");
+                                                    }
+                                                    //txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
                                                     break;
                                             }
 
@@ -471,24 +557,109 @@ namespace PKDSS.MonoApp
 
                                             // textbox rekomendasi
                                             //var calc = new FertilizerCalculator(DataRekomendasi);
+                                            var ureaMin = double.Parse(ConfigurationManager.AppSettings["UreaMin"]);
+                                            var sp36Min = double.Parse(ConfigurationManager.AppSettings["SP36Min"]);
+                                            var kclMin = double.Parse(ConfigurationManager.AppSettings["KCLMin"]);
+
                                             switch (komoditas)
                                             {
                                                 case "Padi":
-                                                    txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
-                                                    txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
-                                                    txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
+                                                    var padi_urea = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"]);
+                                                    if (padi_urea < ureaMin)
+                                                    {
+                                                        txtUrea.Text = ureaMin.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtUrea.Text = padi_urea.ToString("n2");
+                                                    }
+                                                    //txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
+                                                    var padi_sp36 = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"]);
+                                                    if (padi_sp36 < sp36Min)
+                                                    {
+                                                        txtSP36.Text = sp36Min.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtSP36.Text = padi_sp36.ToString("n2");
+                                                    }
+                                                    //txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
+                                                    var padi_kcl = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"]);
+                                                    if (padi_kcl < kclMin)
+                                                    {
+                                                        txtKCL.Text = kclMin.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtKCL.Text = padi_kcl.ToString("n2");
+                                                    }
+                                                    //txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
                                                     break;
 
                                                 case "Jagung":
-                                                    txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
-                                                    txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
-                                                    txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
+                                                    var jagung_urea = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"]);
+                                                    if (jagung_urea < ureaMin)
+                                                    {
+                                                        txtUrea.Text = ureaMin.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtUrea.Text = jagung_urea.ToString("n2");
+                                                    }
+                                                    //txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
+                                                    var jagung_sp36 = calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"]);
+                                                    if (jagung_sp36 < sp36Min)
+                                                    {
+                                                        txtSP36.Text = sp36Min.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtSP36.Text = jagung_sp36.ToString("n2");
+                                                    }
+                                                    //txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
+                                                    var jagung_kcl = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"]);
+                                                    if (jagung_kcl < kclMin)
+                                                    {
+                                                        txtKCL.Text = kclMin.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtKCL.Text = jagung_kcl.ToString("n2");
+                                                    }
+                                                    //txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
                                                     break;
 
                                                 case "Kedelai":
-                                                    txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
-                                                    txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
-                                                    txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
+                                                    var kedelai_urea = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"]);
+                                                    if (kedelai_urea < ureaMin)
+                                                    {
+                                                        txtUrea.Text = ureaMin.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtUrea.Text = kedelai_urea.ToString("n2");
+                                                    }
+                                                    //txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
+                                                    var kedelai_sp36 = calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"]);
+                                                    if (kedelai_sp36 < sp36Min)
+                                                    {
+                                                        txtSP36.Text = sp36Min.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtSP36.Text = kedelai_sp36.ToString("n2");
+                                                    }
+                                                    //txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
+                                                    var kedelai_kcl = calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"]);
+                                                    if (kedelai_kcl < kclMin)
+                                                    {
+                                                        txtKCL.Text = kclMin.ToString("n2");
+                                                    }
+                                                    else
+                                                    {
+                                                        txtKCL.Text = kedelai_kcl.ToString("n2");
+                                                    }
+                                                    //txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
                                                     break;
                                             }
 
@@ -900,24 +1071,109 @@ namespace PKDSS.MonoApp
             {
                 // textbox rekomendasi
                 //var calc = new FertilizerCalculator(DataRekomendasi);
+                var ureaMin = double.Parse(ConfigurationManager.AppSettings["UreaMin"]);
+                var sp36Min = double.Parse(ConfigurationManager.AppSettings["SP36Min"]);
+                var kclMin = double.Parse(ConfigurationManager.AppSettings["KCLMin"]);
+
                 switch (komoditas)
                 {
                     case "Padi":
-                        txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
-                        txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
-                        txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
+                        var padi_urea = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"]);
+                        if (padi_urea < ureaMin)
+                        {
+                            txtUrea.Text = ureaMin.ToString("n2");
+                        }
+                        else
+                        {
+                            txtUrea.Text = padi_urea.ToString("n2");
+                        }
+                        //txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
+                        var padi_sp36 = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"]);
+                        if (padi_sp36 < sp36Min)
+                        {
+                            txtSP36.Text = sp36Min.ToString("n2");
+                        }
+                        else
+                        {
+                            txtSP36.Text = padi_sp36.ToString("n2");
+                        }
+                        //txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
+                        var padi_kcl = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"]);
+                        if (padi_kcl < kclMin)
+                        {
+                            txtKCL.Text = kclMin.ToString("n2");
+                        }
+                        else
+                        {
+                            txtKCL.Text = padi_kcl.ToString("n2");
+                        }
+                        //txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
                         break;
 
                     case "Jagung":
-                        txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
-                        txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
-                        txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
+                        var jagung_urea = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"]);
+                        if (jagung_urea < ureaMin)
+                        {
+                            txtUrea.Text = ureaMin.ToString("n2");
+                        }
+                        else
+                        {
+                            txtUrea.Text = jagung_urea.ToString("n2");
+                        }
+                        //txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
+                        var jagung_sp36 = calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"]);
+                        if (jagung_sp36 < sp36Min)
+                        {
+                            txtSP36.Text = sp36Min.ToString("n2");
+                        }
+                        else
+                        {
+                            txtSP36.Text = jagung_sp36.ToString("n2");
+                        }
+                        //txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
+                        var jagung_kcl = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"]);
+                        if (jagung_kcl < kclMin)
+                        {
+                            txtKCL.Text = kclMin.ToString("n2");
+                        }
+                        else
+                        {
+                            txtKCL.Text = jagung_kcl.ToString("n2");
+                        }
+                        //txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
                         break;
 
                     case "Kedelai":
-                        txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
-                        txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
-                        txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
+                        var kedelai_urea = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"]);
+                        if (kedelai_urea < ureaMin)
+                        {
+                            txtUrea.Text = ureaMin.ToString("n2");
+                        }
+                        else
+                        {
+                            txtUrea.Text = kedelai_urea.ToString("n2");
+                        }
+                        //txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
+                        var kedelai_sp36 = calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"]);
+                        if (kedelai_sp36 < sp36Min)
+                        {
+                            txtSP36.Text = sp36Min.ToString("n2");
+                        }
+                        else
+                        {
+                            txtSP36.Text = kedelai_sp36.ToString("n2");
+                        }
+                        //txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
+                        var kedelai_kcl = calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"]);
+                        if (kedelai_kcl < kclMin)
+                        {
+                            txtKCL.Text = kclMin.ToString("n2");
+                        }
+                        else
+                        {
+                            txtKCL.Text = kedelai_kcl.ToString("n2");
+                        }
+                        //txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
                         break;
                 }
 
@@ -996,24 +1252,109 @@ namespace PKDSS.MonoApp
             {
                 // textbox rekomendasi
                 //var calc = new FertilizerCalculator(DataRekomendasi);
+                var ureaMin = double.Parse(ConfigurationManager.AppSettings["UreaMin"]);
+                var sp36Min = double.Parse(ConfigurationManager.AppSettings["SP36Min"]);
+                var kclMin = double.Parse(ConfigurationManager.AppSettings["KCLMin"]);
+
                 switch (komoditas)
                 {
                     case "Padi":
-                        txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
-                        txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
-                        txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
+                        var padi_urea = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"]);
+                        if (padi_urea < ureaMin)
+                        {
+                            txtUrea.Text = ureaMin.ToString("n2");
+                        }
+                        else
+                        {
+                            txtUrea.Text = padi_urea.ToString("n2");
+                        }
+                        //txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
+                        var padi_sp36 = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"]);
+                        if (padi_sp36 < sp36Min)
+                        {
+                            txtSP36.Text = sp36Min.ToString("n2");
+                        }
+                        else
+                        {
+                            txtSP36.Text = padi_sp36.ToString("n2");
+                        }
+                        //txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
+                        var padi_kcl = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"]);
+                        if (padi_kcl < kclMin)
+                        {
+                            txtKCL.Text = kclMin.ToString("n2");
+                        }
+                        else
+                        {
+                            txtKCL.Text = padi_kcl.ToString("n2");
+                        }
+                        //txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
                         break;
 
                     case "Jagung":
-                        txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
-                        txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
-                        txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
+                        var jagung_urea = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"]);
+                        if (jagung_urea < ureaMin)
+                        {
+                            txtUrea.Text = ureaMin.ToString("n2");
+                        }
+                        else
+                        {
+                            txtUrea.Text = jagung_urea.ToString("n2");
+                        }
+                        //txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
+                        var jagung_sp36 = calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"]);
+                        if (jagung_sp36 < sp36Min)
+                        {
+                            txtSP36.Text = sp36Min.ToString("n2");
+                        }
+                        else
+                        {
+                            txtSP36.Text = jagung_sp36.ToString("n2");
+                        }
+                        //txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
+                        var jagung_kcl = calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"]);
+                        if (jagung_kcl < kclMin)
+                        {
+                            txtKCL.Text = kclMin.ToString("n2");
+                        }
+                        else
+                        {
+                            txtKCL.Text = jagung_kcl.ToString("n2");
+                        }
+                        //txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtHCl25_K2O.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
                         break;
 
                     case "Kedelai":
-                        txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
-                        txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
-                        txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
+                        var kedelai_urea = calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"]);
+                        if (kedelai_urea < ureaMin)
+                        {
+                            txtUrea.Text = ureaMin.ToString("n2");
+                        }
+                        else
+                        {
+                            txtUrea.Text = kedelai_urea.ToString("n2");
+                        }
+                        //txtUrea.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtKJELDAHL_N.Text), komoditas, "Urea") * double.Parse(ConfigurationManager.AppSettings["Urea"])).ToString("n2");
+                        var kedelai_sp36 = calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"]);
+                        if (kedelai_sp36 < sp36Min)
+                        {
+                            txtSP36.Text = sp36Min.ToString("n2");
+                        }
+                        else
+                        {
+                            txtSP36.Text = kedelai_sp36.ToString("n2");
+                        }
+                        //txtSP36.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtBray1_P2O5.Text), komoditas, "SP36") * double.Parse(ConfigurationManager.AppSettings["SP36"])).ToString("n2");
+                        var kedelai_kcl = calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"]);
+                        if (kedelai_kcl < kclMin)
+                        {
+                            txtKCL.Text = kclMin.ToString("n2");
+                        }
+                        else
+                        {
+                            txtKCL.Text = kedelai_kcl.ToString("n2");
+                        }
+                        //txtKCL.Text = (calc.GetFertilizerDoze(Convert.ToDouble(TxtK.Text), komoditas, "KCL") * double.Parse(ConfigurationManager.AppSettings["KCL"])).ToString("n2");
                         break;
                 }
 

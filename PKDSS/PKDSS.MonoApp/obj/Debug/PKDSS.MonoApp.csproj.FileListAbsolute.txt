@@ -1492,3 +1492,4 @@ D:\Storage\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.Mon
 D:\Storage\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.csproj.CopyComplete
 D:\Storage\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.exe
 D:\Storage\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.pdb
+D:\Storage\Jobs\GRAVICODE\BalitTanah\SoilSensor\Balittanah.PKDSS\PKDSS\PKDSS.MonoApp\obj\Debug\PKDSS.MonoApp.csproj.CoreCompileInputs.cache

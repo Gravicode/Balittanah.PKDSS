@@ -122,11 +122,11 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="GemBox.Spreadsheet, Version=45.0.35.1094, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
-      <HintPath>..\packages\GemBox.Spreadsheet.45.0.0.1094\lib\net35\GemBox.Spreadsheet.dll</HintPath>
+    <Reference Include="GemBox.Spreadsheet, Version=43.0.35.1140, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+      <HintPath>..\packages\GemBox.Spreadsheet.43.0.0.1140\lib\net35\GemBox.Spreadsheet.dll</HintPath>
     </Reference>
-    <Reference Include="GemBox.Spreadsheet.WinFormsUtilities, Version=45.0.35.1094, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
-      <HintPath>..\packages\GemBox.Spreadsheet.WinFormsUtilities.45.0.0.1094\lib\net35\GemBox.Spreadsheet.WinFormsUtilities.dll</HintPath>
+    <Reference Include="GemBox.Spreadsheet.WinFormsUtilities, Version=43.0.35.1140, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+      <HintPath>..\packages\GemBox.Spreadsheet.WinFormsUtilities.43.0.0.1140\lib\net35\GemBox.Spreadsheet.WinFormsUtilities.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
